@@ -1,7 +1,7 @@
 (function($) {
   /* define init variables for your organization */
   luminateExtend({
-    apiKey: 'ahrt3', 
+    apiKey: 'wDB09SQODRpVIOvX', 
     path: {
       nonsecure: 'http://www2.heart.org/site/', 
       secure: 'https://www2.heart.org/site/'
