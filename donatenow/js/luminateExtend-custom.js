@@ -3,8 +3,8 @@
   luminateExtend({
     apiKey: 'ahrt3', 
     path: {
-      nonsecure: 'http://honor.americanheart.org/site/', 
-      secure: 'https://secure2.convio.net/amha/site/'
+      nonsecure: 'http://www2.heart.org/', 
+      secure: 'https://www2.heart.org/'
     }
   });
   
@@ -183,7 +183,7 @@
 				  $('.donation-loading').remove();
 				  $('.donate-now, .header-donate').hide();
 				  $('.thank-you').show();
-				  $.get("thankyou.html?v=2",function(datat){ 
+				  $.get(donation_thank_you_page,function(datat){ 
 					  $('.thank-you').html($(datat).find('.thank-you').html());
 					  $('p.first').html(first);
 					  $('p.last').html(last);
@@ -347,7 +347,7 @@
           $('.donation-loading').remove();
 		  $('.donate-now').hide();
 		  $('.thank-you').show();
-		  $.get("thankyou.html",function(datat){
+		  $.get(donation_thank_you_page,function(datat){
 			  if (form == "3343") {
 				  datat = datat.replace("FIRST_NAME",first);
 				  datat = datat.replace("LAST_NAME",last);				  
