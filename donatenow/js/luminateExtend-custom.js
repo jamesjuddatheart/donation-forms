@@ -3,8 +3,8 @@
   luminateExtend({
     apiKey: 'ahrt3', 
     path: {
-      nonsecure: 'http://www2.heart.org/', 
-      secure: 'https://www2.heart.org/'
+      nonsecure: 'http://www2.heart.org/site/', 
+      secure: 'https://www2.heart.org/site/'
     }
   });
   
