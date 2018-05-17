@@ -7,16 +7,16 @@
 		<p>Life is why the American Heart Association exists.</p>
 		<p>Someone dies from heart disease, stroke or another cardiovascular disease every 43 seconds in this country. They miss out on life's precious moments. They leave behind a family and friends who loved them. This is your chance to help save lives. Millions of people are at risk of suffering a heart attack or stroke. But your action today will help fund innovative research for new treatments, provide programs and services for survivors and their families, and help more of our loved ones lower their risk.</p>
 		<p>Please use the secure form below to make your lifesaving gift and help create a world free of heart disease and stroke. Thank you!</p>
-      <form class="luminateApi donation-form" method="POST" action="https://secure2.convio.net/amha/site/CRDonationAPI" data-luminateApi='{"callback": "donateCallback"}' id="donateform">
+      <form class="luminateApi donation-form" method="POST" action="https://www2.heart.org/site/CRDonationAPI" data-luminateApi='{"callback": "donateCallback"}' id="donateform">
 	    <input type="hidden" name="recurring" value="" />
 	    <input type="hidden" name="method" value="donate" />
-	    <input type="hidden" name="form_id" value="2680" /> <!-- update per ghost form ID -->
+	    <input type="hidden" name="form_id" value="[[S80:form_id]]" /> <!-- update per ghost form ID -->
 	    <input type="hidden" name="validate" value="true" />
 	    <input type="hidden" name="source" value="GENERAL" /> <!-- update source as needed -->
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
 	    <input type="hidden" name="other_amount" value="100" />
-	    <input type="hidden" name="level_id" value="4184" /> <!-- update per ghost form's user entered recurring amount level ID -->
+	    <input type="hidden" name="level_id" value="[[S80:level_id]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
 	    <input type="hidden" name="payment_confirmation_id" value="" />
 	    <input type="hidden" name="PaymentType" id="PaymentType" value="cc" />
 	    <input type="hidden" name="is_hon_memorial" value="false" />
@@ -34,11 +34,11 @@
         	<h3>Your Gift</h3>
         	<div class='inline'>
         		<div class='input-group radio-group'>
-        			<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' checked data-level=4184 data-frequency="onetime" />
+        			<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' checked data-level=[[S80:level_id]] data-frequency="onetime" />
         			<label for='occurrence1'>One-Time Gift</label>
         		</div>
         		<div class='input-group radio-group'>
-        			<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' data-level=4241 data-frequency="recurring" />
+        			<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' data-level=[[S80:level_id_recurring]] data-frequency="recurring" />
         			<label for='occurrence2'>Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
         		</div>
         	</div> <!-- end occurrence options -->
