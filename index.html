@@ -3,11 +3,8 @@
 	<div class="donate-now">
     <!-- MAIN CONTENT -->
     <section class='col-xs-12 col-sm-8 main-content'>
-      <h1>Help save lives from heart disease and stroke. Donate Today.</h1>
-		<p>Life is why the American Heart Association exists.</p>
-		<p>Someone dies from heart disease, stroke or another cardiovascular disease every 43 seconds in this country. They miss out on life's precious moments. They leave behind a family and friends who loved them. This is your chance to help save lives. Millions of people are at risk of suffering a heart attack or stroke. But your action today will help fund innovative research for new treatments, provide programs and services for survivors and their families, and help more of our loved ones lower their risk.</p>
-		<p>Please use the secure form below to make your lifesaving gift and help create a world free of heart disease and stroke. Thank you!</p>
-      <form class="luminateApi donation-form" method="POST" action="https://www2.heart.org/site/CRDonationAPI" data-luminateApi='{"callback": "donateCallback"}' id="donateform">
+	[[S80:intro_text]]
+	<form class="luminateApi donation-form" method="POST" action="https://www2.heart.org/site/CRDonationAPI" data-luminateApi='{"callback": "donateCallback"}' id="donateform">
 	    <input type="hidden" name="instance" value="[[S80:instance]]" />
 	    <input type="hidden" name="recurring" value="" />
 	    <input type="hidden" name="method" value="donate" />
