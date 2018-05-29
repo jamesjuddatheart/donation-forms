@@ -1,12 +1,22 @@
 (function($) {
   /* define init variables for your organization */
-  luminateExtend({
-    apiKey: 'wDB09SQODRpVIOvX', 
-    path: {
-      nonsecure: 'http://www2.heart.org/site/', 
-      secure: 'https://www2.heart.org/site/'
-    }
-  });
+  if ($('input[name=instance]').val() == "heartdev") {
+     luminateExtend({
+    	apiKey: 'wDB09SQODRpVIOvX', 
+        path: {
+          nonsecure: 'http://heartdev.convio.net/site/', 
+          secure: 'https://secure3.convio.net/heartdev/site/'
+        }
+     });
+  } else {
+     luminateExtend({
+    	apiKey: 'wDB09SQODRpVIOvX', 
+        path: {
+          nonsecure: 'http://www2.heart.org/site/', 
+          secure: 'https://www2.heart.org/site/'
+        }
+     });
+  }
   
   $(function() {
     
