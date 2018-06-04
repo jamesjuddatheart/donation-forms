@@ -90,6 +90,7 @@
 		<div class='form-group'>
 			<h3>Personalize Your Gift</h3>
 			<div class='inline'>
+			   <fieldset>
 				<label style='font-size: 16px; padding-right: 20px'>Is this gift a tribute?</label><br class='visible-xs' />
 				<div class='input-group radio-group'>
 					<input type='radio' name='tribGift' id='tribGift1' value='true' />
@@ -99,6 +100,7 @@
 					<input type='radio' name='tribGift' id='tribGift2' value='false' checked />
 					<label for='tribGift2'>No</label>
 				</div>
+			   </fieldset>
 			</div>
 			<!-- start Tribute section -->
 			<div class='tributeSection'>
@@ -122,6 +124,7 @@
 				</div>
 				<h4 class='pad-top'>Would you like to send a gift announcement?</h4>
 				<div class='inline flex'>
+					<fieldset>
 					<div class='input-group radio-group dropdown'>
 						<input type='radio' name='ecard.send' id='emailaCard' value='true' />
 						<label for='emailaCard'>E-mail <br class='hide-break'/>a card<br/><a data-toggle='modal' href='#emailSample'>View sample</a></label>
@@ -135,6 +138,7 @@
 						<label for='noCard'>No card</label>
 						<!-- name='no_tribute_ack_cardsubmit' -->
 					</div>
+					</fieldset>
 				</div>
 
 				<!-- SELECT A CARD DESIGN -->
@@ -636,6 +640,7 @@
           <h3>Payment Information<span class='lock'></span></h3>
           <span class='required-field'>(*Required fields)</span>
           <div class='inline'>
+		 <fieldset>
             <div class='input-group radio-group'>
               <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" />
               <label for='payment1'><span class='cc-icon text-hide'>MasterCard, Visa, American Express, Discover</span></label>
@@ -644,6 +649,7 @@
               <input type='radio' name='payment' id='payment2' value='Amazon payments'/>
               <label for='payment2'><span class='amazon-pay text-hide'>Amazon payments</span></label>
             </div>
+		</fieldset>
           </div>
           <div class='inline row' id='payment1form'>
             <div class='input-group col-xs-12 col-sm-9 text-field'>
