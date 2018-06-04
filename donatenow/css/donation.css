@@ -615,6 +615,8 @@ label {
   vertical-align: top;
   width: 32%;
 }
+form input[type="checkbox"] ~ label:focus,
+form input[type="radio"] ~ label:focus,
 form input[type="checkbox"]:focus ~ label,
 form input[type="radio"]:focus ~ label,
 form input[type="checkbox"]:focus ~ input[type="text"],
