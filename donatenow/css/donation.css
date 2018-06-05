@@ -479,7 +479,7 @@ body {
 .navbar .header-right .phone a {
   font-size: 13px;
   font-weight: bold;
-  color: #ed1c24;
+  color: #d40000;
 }
 .navbar .header-right .phone a:hover,
 .navbar .header-right .phone a:focus {
@@ -844,7 +844,7 @@ form .form-group .input-group.gift input[type="radio"] ~ label:hover {
   color: #000;
 }
 form .form-group .input-group.gift input[type="radio"]:checked ~ label {
-  background-color: #ed1c24;
+  background-color: #d40000;
   color: #fff;
 }
 form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
