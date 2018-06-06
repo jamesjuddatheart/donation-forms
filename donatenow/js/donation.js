@@ -186,6 +186,13 @@ $('.radio-label').click(function(){
 	$('input[name=other_amount]').val($(this).data("amount"));
 	$('#giftOtherText').valid();
 });
+$('.radio-label').keypress(function(e) {
+    if(e.which == 13) {
+	$('#giftOtherText').val('').removeClass('validDonation');
+	$('input[name=other_amount]').val($(this).data("amount"));
+	$('#giftOtherText').valid();
+    }
+});
 
 $('.radio-input').blur(function(){
 	$(this).addClass('validDonation');
