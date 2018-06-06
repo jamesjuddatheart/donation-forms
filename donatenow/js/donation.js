@@ -208,6 +208,8 @@ $('#tributeType input[name^="year"]').click(function() {
 });
 */
 /* dynamically add tabindexs for accessibility */
+/*
 $("input:visible, select, input + label").not(':hidden').each(function (i) { 
 	$(this).attr('tabindex', i + 1);
 });
+*/
