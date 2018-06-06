@@ -511,14 +511,14 @@ body {
 .main-content h1 {
   font-size: 26px;
   font-weight: normal;
-  color: #ed1c24;
+  color: #d40000;
   padding: 0 8px;
   //margin-top: 0;
   margin-bottom: 20px;
 }
 .main-content h3 {
   font-size: 22px;
-  color: #ed1c24;
+  color: #d40000;
   margin-top: 0;
   margin-bottom: 15px;
 }
@@ -607,7 +607,7 @@ body {
 }
 .rightColHead h1 {
 	font-size: 1.65em;
-	color: #ed1c24;
+	color: #d40000;
 }
 .rightColContent p {
 	font-size: 16px;
@@ -741,7 +741,7 @@ form .form-group .input-group.checkBox input[type="checkbox"]:empty ~ label:befo
 }
 form .form-group .input-group.checkBox input[type="checkbox"]:checked ~ label:before {
   content: '\2714';
-  color: #ed1c24;
+  color: #d40000;
   font-size: 12px;
 }
 form .form-group .input-group.radio-group {
@@ -795,7 +795,7 @@ form .form-group .input-group.radio-group input[type="radio"]:empty ~ label:befo
 }
 form .form-group .input-group.radio-group input[type="radio"]:checked ~ label:before {
   content: '\2022';
-  color: #ed1c24;
+  color: #d40000;
   font-size: 34px;
 }
 form .form-group .input-group.dropdown input[type="radio"]:checked ~ label:after {
@@ -861,7 +861,7 @@ form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radi
   color: #000;
 }
 form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input.error {
-  border: 1px solid #ed1c24;
+  border: 1px solid #d40000;
 }
 form .form-group .input-group.select-box label,
 form .form-group .input-group.text-field label {
@@ -872,7 +872,7 @@ form .form-group .input-group.text-field label {
 }
 form .form-group .input-group.select-box label.error,
 form .form-group .input-group.text-field label.error {
-  color: #ed1c24;
+  color: #d40000;
   padding-left: 10px;
 }
 form .form-group .input-group.select-box select,
@@ -893,13 +893,13 @@ form .form-group .input-group.select-box select.error,
 form .form-group .input-group.text-field select.error,
 form .form-group .input-group.select-box input.error,
 form .form-group .input-group.text-field input.error {
-  border: 1px solid #ed1c24;
+  border: 1px solid #d40000;
 }
 form .form-group .input-group.text-area label {
   font-size: 16px;
 }
 form .form-group .input-group.text-area label.error {
-  color: #ed1c24;
+  color: #d40000;
   padding-left: 10px;
 }
 form .form-group .input-group.text-area textarea {
@@ -960,7 +960,7 @@ form .form-group .inner-form-group .selection input[type="radio"] ~ label {
   cursor: pointer;
 }
 form .form-group .inner-form-group .selection input[type="radio"]:checked ~ label img {
-  outline: 3px solid #ed1c24;
+  outline: 3px solid #d40000;
 }
 form .form-group .inner-form-group .selection input[type="radio"]:focus ~ label {
   outline-offset: 2px;
@@ -994,7 +994,7 @@ form .form-group .required-field {
 form .form-group .required-asterisk:after {
   content: '*';
   font-size: 16px;
-  color: #ed1c24;
+  color: #d40000;
   display: inline;
 }
 form .form-group .cc-icon {
@@ -1059,12 +1059,12 @@ form .outter-checkbox input[type="checkbox"]:empty ~ label:before {
 }
 form .outter-checkbox input[type="checkbox"]:checked ~ label:before {
   content: '\2714';
-  color: #ed1c24;
+  color: #d40000;
   font-size: 12px;
 }
 form .submit,
 form .redCTA {
-  background-color: #ed1c24;
+  background-color: #d40000;
   border: none;
   font-size: 24px;
   color: #fff;
@@ -1104,7 +1104,7 @@ form #payment2form {
   width:auto;
 }
 #giftOtherText-error {
-  color: #ed1c24;
+  color: #d40000;
   background-color: transparent;
   font-size: 16px;
   display: block;
@@ -1199,7 +1199,7 @@ form #payment2form {
   outline: 3px solid rgba(77, 144, 254, 0.4);
 }
 .modal.moreCards .modal-dialog .modal-content .modal-body .card-selection button.selected img {
-  outline: 3px solid #ed1c24;
+  outline: 3px solid #d40000;
 }
 .modal.moreCards .modal-dialog .modal-content .modal-body .card-selection p {
   margin-top: 20px;
@@ -1221,7 +1221,7 @@ form #payment2form {
 }
 
 .shareText .page-header h1 {
-  color: #ed1c24;
+  color: #d40000;
   font-size: 40px;
   text-align:center;
 }
@@ -1240,7 +1240,7 @@ form #payment2form {
     float: none;
 }
 .simple-social-icons ul li a, .simple-social-icons ul li a:hover {
-    background-color: #ed1c24;
+    background-color: #d40000;
     border-radius: 38px;
     color: #ffffff;
     font-size: 34px;
@@ -1286,11 +1286,11 @@ footer ul li:not(:last-child) {
 }
 footer ul li a {
   font-size: 14px;
-  color: #ed1c24 !important;
+  color: #d40000 !important;
   text-decoration: underline !important;
 }
 footer ul li a:focus {
-  color: #ed1c24;
+  color: #d40000;
   outline-offset: 2px;
   outline: 3px solid rgba(77, 144, 254, 0.4);
 }
@@ -1329,7 +1329,7 @@ footer ul li a:focus {
   .sidebar .content h4 {
     font-size: 17px;
     font-weight: bold;
-    color: #ed1c24;
+    color: #d40000;
     margin-bottom: 0;
   }
   .sidebar .content p {
