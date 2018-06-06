@@ -119,16 +119,18 @@
 						<option value='memorial'>Memorial &mdash; Remember the life of a loved one</option>
 					</select>
 				</div>
-				<div class='inline row'>
-					<div class='input-group col-xs-12 col-sm-6 text-field'>
-						<label for='honoreeFirstName' name='emailCardFirstName' class='required-asterisk'>Honoree First Name:</label>
-						<input type='text' id='honoreeFirstName' name='tribute.honoree.name.first' value='' class='required' />
+				<fieldset>
+					<div class='inline row'>
+						<div class='input-group col-xs-12 col-sm-6 text-field'>
+							<label for='honoreeFirstName' name='emailCardFirstName' class='required-asterisk'>Honoree First Name:</label>
+							<input type='text' id='honoreeFirstName' name='tribute.honoree.name.first' value='' class='required' />
+						</div>
+						<div class='input-group col-xs-12 col-sm-6 text-field'>
+							<label for='honoreeLastName' name='emailCardLastName' class='required-asterisk'>Honoree Last Name:</label>
+							<input type='text' id='honoreeLastName' name='tribute.honoree.name.last' value='' class='required' />
+						</div>
 					</div>
-					<div class='input-group col-xs-12 col-sm-6 text-field'>
-						<label for='honoreeLastName' name='emailCardLastName' class='required-asterisk'>Honoree Last Name:</label>
-						<input type='text' id='honoreeLastName' name='tribute.honoree.name.last' value='' class='required' />
-					</div>
-				</div>
+				</fieldset>
 				<h4 class='pad-top'>Would you like to send a gift announcement?</h4>
 				<fieldset>
 					<div class='inline flex'>
@@ -158,61 +160,63 @@
 								<img src='../donation-forms/donatenow/images/design-1.jpg' alt='Honor Card Default Design' class='img-responsive center-block memorial' />
 								<p class='text-center'>Your card</p>
 							</div>
-							<div class='selection col-xs-12 col-sm-6'>
-								<div class='row honor'>
-									<div class='input-group col-xs-4 col-sm-6'>
-										<input type='radio' id='hon-design-1' name='ecard.id' value='[[S80:honcard1]]' />
-										<label for='hon-design-1'><span class="text-hide">A Heartfelt Gift: Flowers</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-1-thumb.jpg' alt='A Heartfelt Gift: Flowers' class='img-responsive' /></label>
+							<fieldset>
+								<div class='selection col-xs-12 col-sm-6'>
+									<div class='row honor'>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='hon-design-1' name='ecard.id' value='[[S80:honcard1]]' />
+											<label for='hon-design-1'><span class="text-hide">A Heartfelt Gift: Flowers</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-1-thumb.jpg' alt='A Heartfelt Gift: Flowers' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='hon-design-2' name='ecard.id' value='[[S80:honcard2]]' />
+											<label for='hon-design-2'><span class="text-hide">A Heartfelt Gift: Rose</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-2-thumb.jpg' alt='A Heartfelt Gift: Rose' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='hon-design-3' name='ecard.id' value='[[S80:honcard3]]' />
+											<label for='hon-design-3'><span class="text-hide">A Heartfelt Gift: Bow</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-3-thumb.jpg' alt='A Heartfelt Gift: Bow' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='hon-design-4' name='ecard.id' value='[[S80:honcard4]]' />
+											<label for='hon-design-4'><span class="text-hide">A Heartfelt Gift: Heart</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-4-thumb.jpg' alt='A Heartfelt Gift: Heart' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='hon-design-5' name='ecard.id' value='[[S80:honcard5]]' />
+											<label for='hon-design-5'><span class="text-hide">A Heartfelt Gift: Cupcake</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-5-thumb.jpg' alt='A Heartfelt Gift: Cupcake' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='hon-design-6' name='ecard.id' value='[[S80:honcard6]]' />
+											<label for='hon-design-6'><span class="text-hide">A Heartfelt Gift: Balloons</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-6-thumb.jpg' alt='A Heartfelt Gift: Balloons' class='img-responsive' /></label>
+										</div>
 									</div>
-									<div class='input-group col-xs-4 col-sm-6'>
-										<input type='radio' id='hon-design-2' name='ecard.id' value='[[S80:honcard2]]' />
-										<label for='hon-design-2'><span class="text-hide">A Heartfelt Gift: Rose</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-2-thumb.jpg' alt='A Heartfelt Gift: Rose' class='img-responsive' /></label>
-									</div>
-									<div class='input-group col-xs-4 col-sm-6'>
-										<input type='radio' id='hon-design-3' name='ecard.id' value='[[S80:honcard3]]' />
-										<label for='hon-design-3'><span class="text-hide">A Heartfelt Gift: Bow</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-3-thumb.jpg' alt='A Heartfelt Gift: Bow' class='img-responsive' /></label>
-									</div>
-									<div class='input-group col-xs-4 col-sm-6'>
-										<input type='radio' id='hon-design-4' name='ecard.id' value='[[S80:honcard4]]' />
-										<label for='hon-design-4'><span class="text-hide">A Heartfelt Gift: Heart</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-4-thumb.jpg' alt='A Heartfelt Gift: Heart' class='img-responsive' /></label>
-									</div>
-									<div class='input-group col-xs-4 col-sm-6'>
-										<input type='radio' id='hon-design-5' name='ecard.id' value='[[S80:honcard5]]' />
-										<label for='hon-design-5'><span class="text-hide">A Heartfelt Gift: Cupcake</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-5-thumb.jpg' alt='A Heartfelt Gift: Cupcake' class='img-responsive' /></label>
-									</div>
-									<div class='input-group col-xs-4 col-sm-6'>
-										<input type='radio' id='hon-design-6' name='ecard.id' value='[[S80:honcard6]]' />
-										<label for='hon-design-6'><span class="text-hide">A Heartfelt Gift: Balloons</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-6-thumb.jpg' alt='A Heartfelt Gift: Balloons' class='img-responsive' /></label>
-									</div>
-								</div>
-								<div class='row memorial'>
-									<div class='input-group col-xs-4 col-sm-6'>
-										<input type='radio' id='mem-design-1' name='ecard.id' value='[[S80:memcard1]]' />
-										<label for='mem-design-1'><span class="text-hide">A Heartfelt Gift: Flower</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb01.jpg' alt='A Heartfelt Gift: Flower' class='img-responsive' /></label>
-									</div>
-									<div class='input-group col-xs-4 col-sm-6'>
-										<input type='radio' id='mem-design-2' name='ecard.id' value='[[S80:memcard2]]' />
-										<label for='mem-design-2'><span class="text-hide">A Heartfelt Gift: Floating Candle Bag</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb02.jpg' alt='A Heartfelt Gift: Floating Candle Bag' class='img-responsive' /></label>
-									</div>
-									<div class='input-group col-xs-4 col-sm-6'>
-										<input type='radio' id='mem-design-3' name='ecard.id' value='[[S80:memcard3]]' />
-										<label for='mem-design-3'><span class="text-hide">A Heartfelt Gift: Candle</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb03.jpg' alt='A Heartfelt Gift: Candle' class='img-responsive' /></label>
-									</div>
-									<div class='input-group col-xs-4 col-sm-6'>
-										<input type='radio' id='mem-design-4' name='ecard.id' value='[[S80:memcard4]]' />
-										<label for='mem-design-4'><span class="text-hide">A Heartfelt Gift: Candle in hands</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb04.jpg' alt='A Heartfelt Gift: Candle in hands' class='img-responsive' /></label>
-									</div>
-									<div class='input-group col-xs-4 col-sm-6'>
-										<input type='radio' id='mem-design-5' name='ecard.id' value='[[S80:memcard5]]' />
-										<label for='mem-design-5'><span class="text-hide">A Heartfelt Gift: Holding hands</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb05.jpg' alt='A Heartfelt Gift: Holding Hands' class='img-responsive' /></label>
-									</div>
-									<div class='input-group col-xs-4 col-sm-6'>
-										<input type='radio' id='mem-design-6' name='ecard.id' value='[[S80:memcard6]]' />
-										<label for='mem-design-6'><span class="text-hide">A Heartfelt Gift: Daisy</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb06.jpg' alt='A Heartfelt Gift: Daisy' class='img-responsive' /></label>
+									<div class='row memorial'>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='mem-design-1' name='ecard.id' value='[[S80:memcard1]]' />
+											<label for='mem-design-1'><span class="text-hide">A Heartfelt Gift: Flower</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb01.jpg' alt='A Heartfelt Gift: Flower' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='mem-design-2' name='ecard.id' value='[[S80:memcard2]]' />
+											<label for='mem-design-2'><span class="text-hide">A Heartfelt Gift: Floating Candle Bag</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb02.jpg' alt='A Heartfelt Gift: Floating Candle Bag' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='mem-design-3' name='ecard.id' value='[[S80:memcard3]]' />
+											<label for='mem-design-3'><span class="text-hide">A Heartfelt Gift: Candle</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb03.jpg' alt='A Heartfelt Gift: Candle' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='mem-design-4' name='ecard.id' value='[[S80:memcard4]]' />
+											<label for='mem-design-4'><span class="text-hide">A Heartfelt Gift: Candle in hands</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb04.jpg' alt='A Heartfelt Gift: Candle in hands' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='mem-design-5' name='ecard.id' value='[[S80:memcard5]]' />
+											<label for='mem-design-5'><span class="text-hide">A Heartfelt Gift: Holding hands</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb05.jpg' alt='A Heartfelt Gift: Holding Hands' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='mem-design-6' name='ecard.id' value='[[S80:memcard6]]' />
+											<label for='mem-design-6'><span class="text-hide">A Heartfelt Gift: Daisy</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb06.jpg' alt='A Heartfelt Gift: Daisy' class='img-responsive' /></label>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						</fieldset>
 						<!-- <input type="hidden" name="ecard.send" id="ecard_send" value="false" /> -->
 						<div class='input-group col-xs-12 col-sm-12 text-area'>
 							<label for='emailCardEmail' name='emailCardEmail' class='required-asterisk'>Recipient Email Address(es):</label>
