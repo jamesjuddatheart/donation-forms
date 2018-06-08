@@ -196,7 +196,7 @@ $('#tributeType').on('change', function () {
     }
 });
 
-$('.frequency label, .tributeSel label, .paymentSel label').keypress(function(e) {
+$('.frequency label, .tributeSel label, .paymentSel label, .cardSel label').keypress(function(e) {
     if(e.which == 13) {
 	$(this).click();
    	$(this).prev('input').click();
