@@ -222,6 +222,11 @@ $('.radio-input').blur(function(){
 		$('#giftOtherText').valid();
 	}
 });
+$('#AmazonPayButton').keypress(function(e) {
+    if(e.which == 13) {
+	$(this).find('img').click();
+    }
+});
 
 /*
 $('#tributeType input[name^="year"]').click(function() {
