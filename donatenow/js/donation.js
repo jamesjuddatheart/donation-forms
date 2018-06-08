@@ -74,12 +74,9 @@ $( 'input[type="radio"]' ).siblings( '.radio-input' ).blur(function() {
 	if (this.value != "") {
 		// Check radio
 		$(this).siblings('input[type="radio"]').prop( "checked", true );
-		// check for key strokes
-		$(this).on("keypress keyup blur",function (event) {
 		// adds value from text input into radio value
 		var input = $(this).val();
 		$(this).siblings('input[type="radio"]').val('$' + input);
-		});
 	}
 });
 
