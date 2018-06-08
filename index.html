@@ -138,18 +138,18 @@
 				<h4 class='pad-top'>Would you like to send a gift announcement?</h4>
 				<fieldset>
 					<legend class="text-hide">Card Type</legend>
-					<div class='inline flex'>
+					<div class='inline flex cardSel' role='radiogroup'>
 						<div class='input-group radio-group dropdown'>
 							<input type='radio' name='ecard.send' id='emailaCard' value='true' />
-							<label for='emailaCard'>E-mail <br class='hide-break'/>a card<br/><a data-toggle='modal' href='#emailSample'>View email sample</a></label>
+							<label for='emailaCard' role='radio' tabindex=0>E-mail <br class='hide-break'/>a card<br/><a data-toggle='modal' href='#emailSample'>View email sample</a></label>
 						</div>
 						<div class='input-group radio-group dropdown'>
 							<input type='radio' name='ecard.send' id='mailaPrintedCard' value='false' />
-							<label for='mailaPrintedCard'>Mail a printed card<br/><a data-toggle='modal' href='#mailSample'>View print sample</a></label>
+							<label for='mailaPrintedCard' role='radio' tabindex=0>Mail a printed card<br/><a data-toggle='modal' href='#mailSample'>View print sample</a></label>
 						</div>
 						<div class='input-group radio-group dropdown none'>
 							<input type='radio' name='ecard.send' id='noCard' value='false' checked="checked" />
-							<label for='noCard'>No card</label>
+							<label for='noCard' role='radio' tabindex=0>No card</label>
 							<!-- name='no_tribute_ack_cardsubmit' -->
 						</div>
 					</div>
