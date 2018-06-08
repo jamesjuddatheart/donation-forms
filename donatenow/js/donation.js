@@ -181,6 +181,12 @@ $('#tributeType').on('change', function () {
     }
 });
 
+$('.frequency label, .tributeSel label, .paymentSel label').keypress(function(e) {
+    if(e.which == 13) {
+	$(this).click();
+    }
+});
+
 $('.radio-label').click(function(){
 	$('#giftOtherText').val('').removeClass('validDonation');
 	$('input[name=other_amount]').val($(this).data("amount"));
@@ -188,9 +194,7 @@ $('.radio-label').click(function(){
 });
 $('.radio-label').keypress(function(e) {
     if(e.which == 13) {
-	$('#giftOtherText').val('').removeClass('validDonation');
-	$('input[name=other_amount]').val($(this).data("amount"));
-	$('#giftOtherText').valid();
+	$(this).click();
     }
 });
 
