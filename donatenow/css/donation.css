@@ -817,12 +817,12 @@ form .form-group .input-group.dropdown.none input[type="radio"]:checked ~ label:
 form .form-group .input-group.gift {
   margin-right: 5px;
 }
-/*
+
 form .form-group .input-group.gift input[type="radio"] {
   opacity: 0;
   position: absolute;
 }
-*/
+
 form .form-group .input-group.gift input[type="radio"] ~ label.radio-label {
   cursor: pointer;
   font-size: 22px;
