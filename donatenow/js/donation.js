@@ -214,12 +214,13 @@ $('.radio-label').keypress(function(e) {
 	$(this).prev('input').click();
     }
 });
-
+/*
 $('.radio-input').blur(function(){
 	$(this).addClass('validDonation');
 	$('input[name=other_amount]').val(this.value);
 	$('#giftOtherText').valid();
 });
+*/
 /*
 $('#tributeType input[name^="year"]').click(function() {
   var radioval = $(this).val();
