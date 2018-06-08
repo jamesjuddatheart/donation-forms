@@ -50,38 +50,38 @@
 			<div class='inline recurring d-none' role='radiogroup' aria-label="giftsel">
 				<div class='input-group gift'>
 					<input type='radio' name='gift' id='gift1' value='$10' />
-					<label for='gift1' class='radio-label' data-amount="10" role="radio" tabindex='0' title="$10">$10</label>
+					<label for='gift1' class='radio-label' data-amount="10" role="radio" tabindex='0' title="$10" aria-checked="false">$10</label>
 				</div>
 				<div class='input-group gift'>
 					<input type='radio' name='gift' id='gift2' value='$25' />
-					<label for='gift2' class='radio-label' data-amount="25" role="radio" tabindex='0' title="$25">$25</label>
+					<label for='gift2' class='radio-label' data-amount="25" role="radio" tabindex='0' title="$25" aria-checked="false">$25</label>
 				</div>
 				<div class='input-group gift'>
 					<input type='radio' name='gift' id='gift3' value='$35' />
-					<label for='gift3' class='radio-label' data-amount="35" role="radio" tabindex='0' title="$35">$35</label>
+					<label for='gift3' class='radio-label' data-amount="35" role="radio" tabindex='0' title="$35" aria-checked="false">$35</label>
 				</div>
 				<div class='input-group gift'>
 					<input type='radio' name='gift' id='gift4' value='$50' />
-					<label for='gift4' class='radio-label' data-amount="50" role="radio" tabindex='0' title="$50">$50</label>
+					<label for='gift4' class='radio-label' data-amount="50" role="radio" tabindex='0' title="$50" aria-checked="false">$50</label>
 				</div>
 			</div> <!-- end recurring -->
 
 			<div class='inline onetime display__inline-block' role='radiogroup' aria-label="giftsel2">
 					<div class='input-group gift'>
 						<input type='radio' name='gift' id='gift5' value='$40'/>
-						<label for='gift5' class='radio-label' data-amount="40" role="radio" tabindex='0' title="$40">$40</label>
+						<label for='gift5' class='radio-label' data-amount="40" role="radio" tabindex='0' title="$40" aria-checked="false">$40</label>
 					</div>
 					<div class='input-group gift'>
 						<input type='radio' name='gift' id='gift6' value='$60'/>
-						<label for='gift6' class='radio-label' data-amount="60" role="radio" tabindex='0' title="$60">$60</label>
+						<label for='gift6' class='radio-label' data-amount="60" role="radio" tabindex='0' title="$60" aria-checked="false">$60</label>
 					</div>
 					<div class='input-group gift'>
 						<input type='radio' name='gift' id='gift7' value='$100' checked />
-						<label for='gift7' class='radio-label' data-amount="100" role="radio" tabindex='0' title="$100">$100</label>
+						<label for='gift7' class='radio-label' data-amount="100" role="radio" tabindex='0' title="$100" aria-checked="false">$100</label>
 					</div>
 					<div class='input-group gift'>
 						<input type='radio' name='gift' id='gift8' value='$250'/>
-						<label for='gift8' class='radio-label' data-amount="250" role="radio" tabindex='0' title="$250">$250</label>
+						<label for='gift8' class='radio-label' data-amount="250" role="radio" tabindex='0' title="$250" aria-checked="false">$250</label>
 					</div>
 				</div> <!-- end 1x -->
 				<!-- OTHER - amount passed to ghost form -->
@@ -138,7 +138,7 @@
 				<h4 class='pad-top'>Would you like to send a gift announcement?</h4>
 				<fieldset>
 					<legend class="text-hide">Card Type</legend>
-					<div class='inline flex cardSel' role='radiogroup'>
+					<div class='inline flex cardSel' role='radiogroup' aria-label="cardSelection">
 						<div class='input-group radio-group dropdown'>
 							<input type='radio' name='ecard.send' id='emailaCard' value='true' />
 							<label for='emailaCard' role='radio' tabindex=0 title="E-mail">E-mail <br class='hide-break'/>a card<br/><a data-toggle='modal' href='#emailSample'>View email sample</a></label>
@@ -660,11 +660,11 @@
 			<legend class="text-hide">Select a payment type</legend>
             <div class='input-group radio-group'>
               <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" />
-              <label for='payment1' role="radio" tabindex=0 title="Credit Card"><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
+              <label for='payment1' role="radio" tabindex=0 title="Credit Card" aria-checked="false"><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
             </div>
             <div class='input-group radio-group'>
               <input type='radio' name='payment' id='payment2' value='Amazon payments'/>
-              <label for='payment2' role="radio" tabindex=0 title="AmazonPay"><span class='amazon-pay text-hide' aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
+              <label for='payment2' role="radio" tabindex=0 title="AmazonPay" aria-checked="false"><span class='amazon-pay text-hide' aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
             </div>
 		</fieldset>
           </div>
