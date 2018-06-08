@@ -632,6 +632,11 @@ body {
 .rightColStats {
 	padding-bottom: 20px;
 }
+
+.tributeSection fieldset {
+	display:flex;
+}
+
 form {
   margin-top: 5px;
   /* OUTTER CHECK BOX STYLING */
