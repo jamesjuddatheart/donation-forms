@@ -781,7 +781,8 @@ form .form-group .input-group.radio-group input[type="radio"] ~ label a {
   font-weight: normal;
   color: #2e6da4;
 }
-form .form-group .input-group.radio-group input[type="radio"] ~ label a:focus {
+form .form-group .paymentSel .input-group.radio-group input[type="radio"] ~ label:focus,
+form .form-group .input-group.radio-group input[type="radio"] ~ label a:focus{
   outline-offset: 2px;
   outline: 3px solid rgba(77, 144, 254, 0.4);
 }
