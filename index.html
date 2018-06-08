@@ -32,14 +32,14 @@
         	<h3>Your Gift</h3>
 		<fieldset>
 			<legend class="text-hide">Your Gift</legend>
-			<div class='inline frequency'>
+			<div class='inline frequency' role='radiogroup'>
 				<div class='input-group radio-group'>
 					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' checked data-level=[[S80:level_id]] data-frequency="onetime" />
-					<label for='occurrence1'>One-Time Gift</label>
+					<label for='occurrence1' role='radio' tabindex=0>One-Time Gift</label>
 				</div>
 				<div class='input-group radio-group'>
 					<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' data-level=[[S80:level_id_recurring]] data-frequency="recurring" />
-					<label for='occurrence2'>Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
+					<label for='occurrence2' role='radio' tabindex=0>Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
 				</div>
         		</div> 
 		</fieldset>
@@ -100,15 +100,15 @@
 			<h3>Personalize Your Gift</h3>
 			<fieldset>
 				<legend class="text-hide">Is this gift a tribute?</legend>
-				<div class='inline'>
+				<div class='inline tributeSel' role='radiogroup'>
 					<label style='font-size: 16px; padding-right: 20px'>Is this gift a tribute?</label><br class='visible-xs' />
 					<div class='input-group radio-group'>
 						<input type='radio' name='tribGift' id='tribGift1' value='true' />
-						<label for='tribGift1'>Yes</label>
+						<label for='tribGift1' role='radio' tabindex=0>Yes</label>
 					</div>
 					<div class='input-group radio-group'>
 						<input type='radio' name='tribGift' id='tribGift2' value='false' checked />
-						<label for='tribGift2'>No</label>
+						<label for='tribGift2' role='radio' tabindex=0>No</label>
 					</div>
 				</div>
 			</fieldset>
@@ -655,16 +655,16 @@
         <div class='form-group'>
           <h3>Payment Information<span class='lock'></span></h3>
           <span class='required-field'>(*Required fields)</span>
-          <div class='inline'>
+          <div class='inline paymentSel' role='radiogroup'>
 		 <fieldset>
 			<legend class="text-hide">Select a payment type</legend>
             <div class='input-group radio-group'>
               <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" />
-              <label for='payment1'><span class='cc-icon text-hide' role="img" aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
+              <label for='payment1'><span class='cc-icon text-hide' role="radio" aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover" tabindex=0>MasterCard, Visa, American Express, Discover</span></label>
             </div>
             <div class='input-group radio-group'>
               <input type='radio' name='payment' id='payment2' value='Amazon payments'/>
-              <label for='payment2'><span class='amazon-pay text-hide' role="img" aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
+              <label for='payment2'><span class='amazon-pay text-hide' role="radio" aria-label="Amazon payments" alt="Amazon payments" tabindex=0>Amazon payments</span></label>
             </div>
 		</fieldset>
           </div>
