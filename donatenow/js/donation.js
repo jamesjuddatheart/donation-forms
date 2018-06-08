@@ -55,7 +55,10 @@ function noFocus() {
       });
     }
   });
-};// when text input with radio is selected
+};
+
+// when text input with radio is selected
+/*
 $( 'input[type="radio"]' ).siblings( '.radio-input' ).focus(function() {
   // Check radio
   $(this).siblings('input[type="radio"]').prop( "checked", true );
@@ -65,7 +68,22 @@ $( 'input[type="radio"]' ).siblings( '.radio-input' ).focus(function() {
     var input = $(this).val();
     $(this).siblings('input[type="radio"]').val('$' + input);
   });
-});;// updates preview window with image selected in radio button
+});
+*/
+$( 'input[type="radio"]' ).siblings( '.radio-input' ).blur(function() {
+	if (this.value != "") {
+		// Check radio
+		$(this).siblings('input[type="radio"]').prop( "checked", true );
+		// check for key strokes
+		$(this).on("keypress keyup blur",function (event) {
+		// adds value from text input into radio value
+		var input = $(this).val();
+		$(this).siblings('input[type="radio"]').val('$' + input);
+		});
+	}
+});
+
+// updates preview window with image selected in radio button
 $( document ).on('click', '.selection input[type="radio"]', function () {
   var newSrc =  $(this).siblings('label').children('img').attr('src');
   $( '.preview-window img' ).attr('src',  newSrc )
