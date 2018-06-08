@@ -756,6 +756,7 @@ form .form-group .input-group.radio-group[class*="col-"] {
 form .form-group .input-group.radio-group input[type="radio"] {
   opacity: 0;
   position: absolute;
+  display:none;
 }
 form .form-group .input-group.radio-group input[type="radio"] ~ label {
   cursor: pointer;
@@ -821,6 +822,7 @@ form .form-group .input-group.gift {
 form .form-group .input-group.gift input[type="radio"] {
   opacity: 0;
   position: absolute;
+  display:none;
 }
 
 form .form-group .input-group.gift input[type="radio"] ~ label.radio-label {
