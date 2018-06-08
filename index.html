@@ -32,7 +32,7 @@
         	<h3>Your Gift</h3>
 		<fieldset>
 			<legend class="text-hide">Your Gift</legend>
-			<div class='inline frequency' role='radiogroup'>
+			<div class='inline frequency' role='radiogroup' aria-label="frequency">
 				<div class='input-group radio-group'>
 					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' checked data-level=[[S80:level_id]] data-frequency="onetime" />
 					<label for='occurrence1' role='radio' tabindex=0 title="One-Time Gift">One-Time Gift</label>
@@ -47,7 +47,7 @@
 
 		<fieldset>
 			<legend class="text-hide">Select Amount</legend>
-			<div class='inline recurring d-none' role='radiogroup' aria-labelledby="giftsel">
+			<div class='inline recurring d-none' role='radiogroup' aria-label="giftsel">
 				<div class='input-group gift'>
 					<input type='radio' name='gift' id='gift1' value='$10' />
 					<label for='gift1' class='radio-label' data-amount="10" role="radio" tabindex='0' title="$10">$10</label>
@@ -66,7 +66,7 @@
 				</div>
 			</div> <!-- end recurring -->
 
-			<div class='inline onetime display__inline-block' role='radiogroup' aria-labelledby="giftsel2">
+			<div class='inline onetime display__inline-block' role='radiogroup' aria-label="giftsel2">
 					<div class='input-group gift'>
 						<input type='radio' name='gift' id='gift5' value='$40'/>
 						<label for='gift5' class='radio-label' data-amount="40" role="radio" tabindex='0' title="$40">$40</label>
@@ -100,7 +100,7 @@
 			<h3>Personalize Your Gift</h3>
 			<fieldset>
 				<legend class="text-hide">Is this gift a tribute?</legend>
-				<div class='inline tributeSel' role='radiogroup'>
+				<div class='inline tributeSel' role='radiogroup' aria-label='tributeGfit'>
 					<label style='font-size: 16px; padding-right: 20px'>Is this gift a tribute?</label><br class='visible-xs' />
 					<div class='input-group radio-group'>
 						<input type='radio' name='tribGift' id='tribGift1' value='true' />
@@ -655,7 +655,7 @@
         <div class='form-group'>
           <h3>Payment Information<span class='lock'></span></h3>
           <span class='required-field'>(*Required fields)</span>
-          <div class='inline paymentSel' role='radiogroup'>
+          <div class='inline paymentSel' role='radiogroup' aria-label='paymentSelection'>
 		 <fieldset>
 			<legend class="text-hide">Select a payment type</legend>
             <div class='input-group radio-group'>
