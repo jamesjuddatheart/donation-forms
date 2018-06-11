@@ -671,11 +671,11 @@
           <div class='inline row' id='payment1form'>
             <div class='input-group col-xs-12 col-sm-9 text-field'>
               <label for='cardNumber' name='cardNumber' class='required-asterisk'>Card Number:</label>
-              <input placeholder='1234 5678 9012 3456' pattern='[0-9]*' type='text' id='cardNumber' name='card_number' autocomplete='off' value='' class='required' />
+              <input placeholder='1234 5678 9012 3456' pattern='[0-9]*' type='text' id='cardNumber' name='card_number' autocomplete='off' value='' class='required' title='Credit Card Number' />
             </div>
             <div class='input-group col-xs-12 col-sm-3 text-field'>
               <label for='CVVNumber' name='CVVNumber' class='required-asterisk'>CVV Number:</label>
-              <input type='text' id='CVVNumber' name='card_cvv' placeholder='123' class='required' />
+              <input type='text' id='CVVNumber' name='card_cvv' placeholder='123' class='required' title='CVV Number' />
             </div>
             <div class='input-group col-xs-12 col-sm-12 select-box'>
               <label name='expirationDate' class='required-asterisk' class='required'>Expiration Date:</label>
@@ -719,7 +719,7 @@
               <div id="AmazonPayment" style="margin-right: 22px;">
 	            	<div id="AmazonLogin">Please login to Amazon before continuing:</div>
 	            	<!-- BUTTON WIDGET -->
-	            	<div id="AmazonPayButton" role="button" tabindex=0> </div>
+	            	<div id="AmazonPayButton" role="button" tabindex=0 title="Amazon Pay"> </div>
 	            	<!-- WALLET WIDGET -->
 	            	<div id="walletWidgetDiv"> </div>
 	            	<!-- RECURRING PAYMENTS WIDGET -->
