@@ -1,0 +1,1533 @@
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+/**
+ * Prevent displaying `audio` without controls in Mobile Safari 4/5/6/7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none;
+}
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address inconsistent styling of `abbr[title]`.
+ * 1. Correct styling in Firefox 39 and Opera 12.
+ * 2. Correct missing styling in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+/**
+ * Address inconsistent styling of b and strong.
+ * 1. Correct duplicate application of `bolder` in Safari 6.0.2.
+ * 2. Correct style set to `bold` in Edge 12+, Safari 6.2+, and Chrome 18+.
+ */
+b,
+strong {
+  font-weight: inherit;
+  /* 1 */
+}
+b,
+strong {
+  font-weight: bolder;
+  /* 2 */
+}
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0;
+  max-width:100%;
+}
+img.img-responsive {
+	width:100%;
+}
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px;
+}
+/**
+ * Address inconsistent styling of `hr`.
+ * 1. Correct `box-sizing` set to `border-box` in Firefox.
+ * 2. Correct `overflow` set to `hidden` in IE 8/9/10/11 and Edge 12.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto;
+}
+/**
+ * 1. Correct inheritance and scaling of font-size for preformatted text.
+ * 2. Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct font properties not being inherited.
+ * 2. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible;
+}
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none;
+}
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+/**
+ * Restore focus style in Firefox 4+ (unset by a rule above)
+ */
+button:-moz-focusring,
+input:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal;
+}
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+/**
+ * Address `appearance` set to `searchfield` in Safari and Chrome.
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/**
+ * Define consistent border, margin, and padding.
+ */
+/*
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+*/
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+a.skip-main {
+    left:-999px;
+    position:absolute;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    z-index:-999;
+}
+a.skip-main:focus, a.skip-main:active {
+    color: #fff;
+    background-color:#000;
+    left: auto;
+    top: auto;
+    width: 30%;
+    height: auto;
+    overflow:auto;
+    margin: 10px 35%;
+    padding:5px;
+    border-radius: 15px;
+    border:4px solid yellow;
+    text-align:center;
+    font-size:1.2em;
+    z-index:999;
+}
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto;
+}
+/**
+ * Restore font weight (unset by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold;
+}
+
+#AmazonLogoutButton {
+    display: none;
+}
+#walletWidgetDiv {
+    display: none;
+    height: 228px;
+    width: 400px;
+}
+#consentWidgetDiv {
+    display: none;
+    height: 140px;
+    width: 400px;
+}
+#AmazonLogoutButton {
+    display: none;
+}
+#AmazonLogoutButton a {
+    font-size: 12px;
+}
+#AmazonPayment #walletWidgetDiv, #AmazonPayment #consentWidgetDiv {
+    margin-bottom: 10px;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background: #f5f5f5;
+}
+.container {
+  width: 100%;
+  max-width: 1080px;
+}
+.transitions {
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+.inFocus {
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+}
+.navbar {
+  background: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e7e7e7;
+}
+.navbar .container {
+  display: flex;
+  align-items: center;
+}
+.navbar .header-left {
+  margin-right: auto;
+}
+.navbar .header-left .navbar-brand {
+  background-image: url(../images/logo.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  display: block;
+  width: 107px;
+  height: 60px;
+}
+.navbar .header-left .navbar-brand:focus {
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+}
+.navbar .header-right {
+  margin-left: auto;
+}
+.navbar .header-right .phone {
+  margin-bottom: 15px;
+}
+.navbar .header-right .phone .phone-text {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+}
+.navbar .header-right .phone a {
+  font-size: 13px;
+  font-weight: bold;
+  color: #d40000;
+}
+.navbar .header-right .phone a:hover,
+.navbar .header-right .phone a:focus {
+  text-decoration: none;
+}
+.navbar .header-right .phone a:focus {
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+}
+.navbar .header-right .livechat .livechat-text {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+}
+.navbar .header-right .livechat a {
+  background-image: url(../images/chat-icon.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 44px;
+  height: 33px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.navbar .header-right .livechat a:focus {
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+}
+.main-content h1 {
+  font-size: 26px;
+  font-weight: normal;
+  color: #d40000;
+  padding: 0 8px;
+  //margin-top: 0;
+  margin-bottom: 20px;
+}
+.main-content h3 {
+  font-size: 22px;
+  color: #d40000;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.main-content h4 {
+  font-size: 20px;
+  color: #000;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.main-content h4.pad-top {
+  font-size: 20px;
+  color: #000;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.main-content p {
+  font-size: 16px;
+  color: #000;
+  padding-left: 8px;
+}
+.main-content a {
+  font-size: 14px;
+  font-weight: normal;
+  color: #2e6da4;
+}
+.main-content a:focus {
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+}
+.main-content .lock:after {
+  content: '';
+  background-image: url(../images/lock-icon.png );
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: inline-block;
+  width: 13px;
+  height: 16px;
+  margin-left: 3px;
+}
+/*
+.main-content .ssl {
+  display: inline-block;
+}
+*/
+.main-content .ssl img {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.main-content .ssl a {
+  display: block;
+}
+.main-content .bbb {
+  margin-top: 35px;
+}
+.main-content .bbb img {
+  width: 112px;
+  height: auto;
+}
+.main-content .bottom-links {
+  margin-top: 15px;
+}
+.main-content .bottom-links .text-left,
+.main-content .bottom-links .text-right,
+.main-content .bottom-links .text-center {
+  text-align: center;
+}
+.main-content .bottom-links a {
+  margin-top: 15px;
+}
+.main-content.thank-you .video {
+  background-color: #fff;
+  padding: 15px;
+}
+.tySubHead {
+	font-size: .75em;
+	color: #000000;
+}
+.button-ssl {
+	text-align: center;
+}
+.rightColHead {
+	padding: 20px 0 10px;
+}
+.rightColHead img {
+	margin-right: 10px;
+}
+.rightColHead h1 {
+	font-size: 1.65em;
+	color: #d40000;
+}
+.rightColContent p {
+	font-size: 16px;
+	color: #000;
+}
+.rightColLogo {
+	margin: 20px 0;
+	text-align: center;
+}
+.rightColLogo img {
+	padding: 0 10px;
+}
+.rightColChart img {
+	float: left;
+	padding: 20px 10px;
+	width:auto;
+}
+.rightColChart p {
+	font-size: 16px;
+	padding-top: 30px;
+}
+.rightColStats {
+	padding-bottom: 20px;
+}
+
+.tributeSection fieldset {
+	display:flex;
+}
+
+form {
+  margin-top: 5px;
+  /* OUTTER CHECK BOX STYLING */
+  /* END OUTTER CHECK BOX STYLING */
+}
+label {
+	white-space: normal;
+}
+.sidebar {
+  display: inline-block;
+  vertical-align: top;
+  width: 32%;
+}
+form input[type="checkbox"] ~ label:focus,
+form input[type="radio"] ~ label:focus,
+form input[type="checkbox"]:focus ~ label,
+form input[type="radio"]:focus ~ label,
+form input[type="checkbox"]:focus ~ input[type="text"],
+form input[type="radio"]:focus ~ input[type="text"] {
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+}
+form select:focus,
+form input[type="email"]:focus,
+form input[type="text"]:focus {
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+}
+form .form-group {
+  background: white;
+  margin-top: 10px;
+  padding: 20px 10px;
+  /* INNER FORM GROUP */
+  /* END INNER FORM GROUP */
+}
+form .form-group .inline.row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+form .form-group .inline .input-group:not([class*="col-"]) {
+  display: inline-block;
+  width:auto;
+  vertical-align:top;
+}
+form .form-group .inline .input-group[class*="col-"] {
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+form .form-group .inline.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+form .form-group .inline.flex .radio-group {
+  margin-right: 0 !important;
+  display: flex;
+  flex: 0 0 50%;
+}
+form .form-group .inline.flex .radio-group:nth-child(1) {
+  order: 2;
+}
+form .form-group .inline.flex .radio-group:nth-child(2) {
+  order: 3;
+}
+form .form-group .inline.flex .radio-group:nth-child(3) {
+  flex: 100%;
+  order: 1;
+}
+form .form-group .input-group {
+  /* CHECK BOX STYLING */
+  /* END CHECK BOX STYLING */
+  /* RADIO BUTTON STYLING */
+  /* END RADIO BUTTON STYLING */
+  /* GIFT BUTTON STYLING */
+  /* END GIFT BUTTON STYLING */
+  /* TEXT FIELD STYLING & SELECT BOX STYLING */
+  /* END TEXT FIELD STYLING & SELECT BOX STYLING */
+  /* TEXTAREA STYLING */
+  /* END TEXTAREA STYLING */
+  padding-left:0;
+}
+form .form-group .input-group.checkBox input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+form .form-group .input-group.checkBox input[type="checkbox"] ~ label {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: normal;
+  color: #000;
+  text-indent: -20px;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+form .form-group .input-group.checkBox input[type="checkbox"]:empty ~ label:before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  background: #fff;
+  border: 2px solid #d5d5d5;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  text-indent: 0;
+}
+form .form-group .input-group.checkBox input[type="checkbox"]:checked ~ label:before {
+  content: '\2714';
+  color: #d40000;
+  font-size: 12px;
+}
+form .form-group .input-group.radio-group {
+  //vertical-align: top;
+}
+form .form-group .input-group.radio-group:not(:last-child) {
+  margin-right: 20px;
+}
+form .form-group .input-group.radio-group[class*="col-"] {
+  margin-right: 0;
+}
+form .form-group .input-group.radio-group input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  display:none;
+}
+form .form-group .input-group.radio-group input[type="radio"] ~ label {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 20px;
+  text-indent: -30px;
+  padding-left: 30px;
+  line-height: 1;
+}
+form .form-group .input-group.radio-group input[type="radio"] ~ label .norm {
+  font-weight: normal;
+}
+form .form-group .input-group.radio-group input[type="radio"] ~ label a {
+  font-size: 14px;
+  font-weight: normal;
+  color: #2e6da4;
+}
+form .form-group .paymentSel .input-group.radio-group input[type="radio"] ~ label:focus,
+form .form-group .input-group.radio-group input[type="radio"] ~ label a:focus{
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+}
+form .form-group .input-group.radio-group input[type="radio"]:empty ~ label:before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  background: #fff;
+  border: 3px solid #d5d5d5;
+  border-radius: 50%;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  text-indent: 0;
+}
+form .form-group .input-group.radio-group input[type="radio"]:checked ~ label:before {
+  content: '\2022';
+  color: #d40000;
+  font-size: 34px;
+}
+form .form-group .input-group.dropdown input[type="radio"]:checked ~ label:after {
+  content: '';
+  display: block;
+  width: 39px;
+  height: 20px;
+  background-image: url(../images/arrow.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+form .form-group .input-group.dropdown.none input[type="radio"]:checked ~ label:after {
+  display: none;
+}
+form .form-group .input-group.gift {
+  margin-right: 5px;
+}
+
+form .form-group .input-group.gift input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  display:none;
+}
+
+form .form-group .input-group.gift input[type="radio"] ~ label.radio-label {
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: normal;
+  width: 82px;
+  height: 44px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  background-color: #ddd;
+  color: #595959;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+form .form-group .input-group.gift input[type="radio"] ~ label:hover {
+  background-color: #bfbfbf;
+  color: #000;
+}
+form .form-group .input-group.gift input[type="radio"]:checked ~ label {
+  background-color: #d40000;
+  color: #fff;
+}
+form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
+  font-size: 22px;
+  font-weight: normal;
+  height: 44px;
+  padding: 0 20px;
+  border: 1px solid #6a6a6a;
+  border-radius: 5px;
+  max-width: 174px;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: -5px;
+  color: #000;
+}
+form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input.error {
+  border: 1px solid #d40000;
+}
+form .form-group .input-group.select-box label,
+form .form-group .input-group.text-field label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin-top: 20px;
+}
+form .form-group .input-group.select-box label.error,
+form .form-group .input-group.text-field label.error {
+  color: #d40000;
+  padding-left: 10px;
+}
+form .form-group .input-group.select-box select,
+form .form-group .input-group.text-field select,
+form .form-group .input-group.select-box input,
+form .form-group .input-group.text-field input {
+  display: block;
+  border: 1px solid #6a6a6a;
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+  float: left;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #000;
+}
+form .form-group .input-group.select-box select.error,
+form .form-group .input-group.text-field select.error,
+form .form-group .input-group.select-box input.error,
+form .form-group .input-group.text-field input.error {
+  border: 1px solid #d40000;
+}
+form .form-group .input-group.text-area label {
+  font-size: 16px;
+}
+form .form-group .input-group.text-area label.error {
+  color: #d40000;
+  padding-left: 10px;
+}
+form .form-group .input-group.text-area textarea {
+  resize: none;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  color: #000;
+  border: 1px solid #6a6a6a;
+  border-radius: 5px;
+}
+form .form-group .input-group.text-area textarea.margin__top20 {
+  margin-top: 20px;
+}
+form .form-group .inner-form-group {
+  position: relative;
+  margin-left: -10px;
+  margin-right: -10px;
+  border: 15px solid #c8c8c8;
+  padding: 4px;
+}
+form .form-group .inner-form-group:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border-radius: 5px;
+  border: 5px solid #fff;
+}
+form .form-group .inner-form-group .preview-window, form .form-group .inner-form-group .preview-window-mail {
+  margin-top: 15px;
+  border: 1px solid #c8c8c8;
+  padding: 10px;
+}
+form .form-group .inner-form-group .preview-window p, form .form-group .inner-form-group .preview-window-mail p {
+  margin: 10px 0 0;
+}
+form .form-group .inner-form-group .selection {
+  margin-top: 15px;
+  padding: 0;
+}
+form .form-group .inner-form-group .selection .row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+form .form-group .inner-form-group .selection input[type='radio'] {
+    opacity: 0;
+    position: absolute;
+    display: block;
+    height: 80px;
+    width: 100%;
+	cursor:pointer;
+}
+form .form-group .inner-form-group .selection input[type="radio"] ~ label {
+  cursor: pointer;
+}
+form .form-group .inner-form-group .selection input[type="radio"]:checked ~ label img {
+  outline: 3px solid #d40000;
+}
+form .form-group .inner-form-group .selection input[type="radio"]:focus ~ label {
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+  outline-offset: 4px;
+}
+form .form-group .inner-form-group .selection .see-more {
+  border: 1px solid #d9d9d9;
+  padding-top: 65.8099173553719%;
+  /* other thumbnails height/width * 100 */
+  position: relative;
+}
+form .form-group .inner-form-group .selection .see-more a {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #2e6da4;
+}
+form .form-group .inner-form-group .form-field {
+  padding: 0 5px;
+}
+form .form-group .required-field {
+  font-size: 13px;
+  color: #000;
+  display: block;
+  margin-top: -10px;
+}
+form .form-group .required-asterisk:after {
+  content: '*';
+  font-size: 16px;
+  color: #d40000;
+  display: inline;
+}
+form .form-group .cc-icon {
+  content: '';
+  background-image: url(../images/cc-icon.png );
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: inline-block;
+  width: 223px;
+  height: 43px;
+  vertical-align: middle;
+}
+form .form-group .amazon-pay {
+  content: '';
+  background-image: url(../images/amazon-icon.png );
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: inline-block;
+  width: 187px;
+  height: 28px;
+  vertical-align: middle;
+}
+form .form-group .help-block {
+  font-size: 14px;
+  color: #000;
+  font-style: italic;
+}
+form .outter-checkbox input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+form .outter-checkbox input[type="checkbox"] ~ label {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: normal;
+  color: #000;
+  text-indent: -20px;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+form .outter-checkbox input[type="checkbox"] ~ label a {
+  font-size: 14px;
+  font-weight: normal;
+  color: #2e6da4;
+}
+form .outter-checkbox input[type="checkbox"] ~ label a:focus {
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+}
+form .outter-checkbox input[type="checkbox"]:empty ~ label:before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  background: #fff;
+  border: 2px solid #d5d5d5;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  text-indent: 0;
+}
+form .outter-checkbox input[type="checkbox"]:checked ~ label:before {
+  content: '\2714';
+  color: #d40000;
+  font-size: 12px;
+}
+form .submit,
+form .redCTA {
+  background-color: #d40000;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+  border-radius: 5px;
+  width: 260px;
+  height: 70px;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+form .submit:hover,
+form .redCTA:hover {
+  background-color: #b2151b;
+}
+form .submit:focus,
+form .redCTA:focus {
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+}
+form .submit {
+  margin-top: 20px;
+}
+form .tributeSection,
+form #billingInfo,
+form .emailaCard,
+form .mailaPrintedCard,
+form #payment2form {
+  display: none;
+}
+.memorial {
+	display: none;
+}
+.display__inline-block {
+  display: inline-block;
+  vertical-align: top;
+  width:auto;
+}
+#giftOtherText-error {
+  color: #d40000;
+  background-color: transparent;
+  font-size: 16px;
+  display: block;
+  margin: 16px 0px 0px 4px;
+  white-space: normal;
+  min-width: 200px;
+}
+.modal .modal-dialog {
+  margin-top: 30px;
+}
+.modal .modal-dialog .modal-content {
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+}
+.modal .modal-dialog .modal-content .close {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  float: none;
+  font-size: 14px;
+  font-weight: normal;
+  color: #000;
+  text-shadow: none;
+  opacity: 1;
+  background-color: #fff;
+  padding: 5px 10px 0;
+  border-radius: 5px 5px 0 0;
+}
+.modal .modal-dialog .modal-content .close span {
+  margin-left: 3px;
+  vertical-align: middle;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 0;
+}
+.modal .modal-dialog .modal-content .close:focus {
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+}
+.modal .modal-dialog .modal-content .modal-body {
+  padding: 10px 6px;
+}
+.modal .modal-dialog .modal-content .modal-body h4 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+.modal .modal-dialog .modal-content .modal-footer {
+  border: none;
+}
+.modal.moreCards .modal-dialog {
+  margin: 0;
+}
+.modal.moreCards .modal-dialog .modal-content .back {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  font-size: 16px;
+  color: #000;
+  font-weight: normal;
+}
+.modal.moreCards .modal-dialog .modal-content .back:focus {
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+}
+.modal.moreCards .modal-dialog .modal-content .modal-header {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 15px 20px;
+}
+.modal.moreCards .modal-dialog .modal-content .modal-body {
+  padding: 20px;
+}
+.modal.moreCards .modal-dialog .modal-content .modal-body h4 {
+  font-size: 24px;
+  font-weight: normal;
+  color: #000;
+}
+.modal.moreCards .modal-dialog .modal-content .modal-body .card-selection {
+  max-height: 1040px;
+  overflow-y: scroll;
+  padding: 5px 0;
+}
+.modal.moreCards .modal-dialog .modal-content .modal-body .card-selection button {
+  background: transparent;
+  border: none;
+}
+.modal.moreCards .modal-dialog .modal-content .modal-body .card-selection button:focus {
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+}
+.modal.moreCards .modal-dialog .modal-content .modal-body .card-selection button.selected img {
+  outline: 3px solid #d40000;
+}
+.modal.moreCards .modal-dialog .modal-content .modal-body .card-selection p {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.modal.moreCards .modal-dialog .modal-content .modal-footer {
+  padding: 0 20px 30px;
+}
+
+#otherGiving ul {
+    list-style-type: none;
+    margin-top: 30px;
+    text-align: center;
+}
+#otherGiving li {
+    display: inline;
+    padding: 30px;
+    text-decoration: underline;
+}
+
+.shareText .page-header h1 {
+  color: #d40000;
+  font-size: 40px;
+  text-align:center;
+}
+.simple-social-icons ul.aligncenter {
+    text-align: center;
+}
+.simple-social-icons ul {
+    margin: 0;
+    padding: 0;
+}
+.widget-area .simple-social-icons ul li a, .widget-area .simple-social-icons ul li a:hover {
+    border: 1px solid #ccc;
+}
+.simple-social-icons ul.aligncenter li {
+    display: inline-block;
+    float: none;
+}
+.simple-social-icons ul li a, .simple-social-icons ul li a:hover {
+    background-color: #d40000;
+    border-radius: 38px;
+    color: #ffffff;
+    font-size: 34px;
+    padding: 20px;
+}
+.simple-social-icons ul li a {
+    border: medium none;
+    box-sizing: content-box;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    width: 1em;
+}
+.bottom-links {
+	text-align:center;
+}
+/*
+footer {
+  margin-top: 40px;
+  padding: 20px 0 70px;
+  background-color: #242424;
+}
+footer p {
+  font-size: 14px;
+  color: #b9b9b9;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+footer ul li {
+  display: inline-block;
+  line-height: 14px;
+  padding: 0 10px;
+}
+footer ul li:not(:last-child) {
+  border-right: 1px solid #5c5c5c;
+}
+footer ul li a {
+  font-size: 14px;
+  color: #d40000 !important;
+  text-decoration: underline !important;
+}
+footer ul li a:focus {
+  color: #d40000;
+  outline-offset: 2px;
+  outline: 3px solid rgba(77, 144, 254, 0.4);
+}
+*/
+@media only screen and (min-width: 768px) {
+  .hide-break {
+    display: none;
+  }
+  .navbar {
+    margin-bottom: 46px;
+  }
+  .navbar .header-left .navbar-brand {
+    width: 150px;
+    height: 85px;
+    margin-left: 0 !important;
+  }
+  .navbar .header-right .phone {
+    display: inline-block;
+  }
+  .navbar .header-right .phone .phone-text {
+    font-size: 18px;
+  }
+  .navbar .header-right .phone a {
+    font-size: 18px;
+  }
+  .navbar .header-right .livechat {
+    display: inline-block;
+    margin-left: 30px;
+  }
+  .navbar .header-right .livechat .livechat-text {
+    font-size: 18px;
+  }
+  .sidebar .content {
+    margin-top: 26px;
+  }
+  .sidebar .content h4 {
+    font-size: 17px;
+    font-weight: bold;
+    color: #d40000;
+    margin-bottom: 0;
+  }
+  .sidebar .content p {
+    font-size: 22px;
+    color: #6a6a6a;
+    margin-bottom: 15px;
+  }
+  .main-content {
+    padding-right: 0;
+	display:inline-block;
+  }
+  .main-content h1 {
+    font-size: 36px;
+    padding: 0;
+    margin-bottom: 28px;
+  }
+  .main-content h3 {
+    font-size: 24px;
+    display: inline-block;
+  }
+  .main-content h4 {
+    display: inline-block;
+  }
+  .main-content p {
+    padding-left: 0;
+  }
+  .main-content .lock:after {
+    margin-left: 5px;
+  }
+  .main-content .ssl {
+    display: inline-block;
+  }
+  .main-content .ssl img {
+    margin: 5px 10px 0 25px;
+  }
+  .main-content .ssl a {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  .main-content .bottom-links {
+    margin-top: 35px;
+  }
+  .main-content .bottom-links .text-left {
+    text-align: left;
+  }
+  .main-content .bottom-links .text-right {
+    text-align: right;
+  }
+  .main-content.thank-you {
+    float: none;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .main-content.thank-you .video {
+    float: none;
+    margin: 0 auto;
+    padding: 30px;
+  }
+  .main-content.thank-you .video .copy {
+    margin-top: 30px;
+  }
+  .main-content.thank-you .video .copy h3 {
+    color: #000;
+    margin-bottom: 5px;
+  }
+  form {
+    margin-top: 10px;
+  }
+  form .form-group {
+    margin-top: 20px;
+    padding: 20px;
+    /* INNER FORM GROUP */
+    /* END INNER FORM GROUP */
+  }
+  form .form-group .inline.flex .radio-group {
+    margin-right: 20px !important;
+    flex: 0 0 auto;
+  }
+  form .form-group .inline.flex .radio-group:nth-child(1) {
+    order: 1;
+  }
+  form .form-group .inline.flex .radio-group:nth-child(2) {
+    order: 2;
+  }
+  form .form-group .inline.flex .radio-group:nth-child(3) {
+    flex: 0 0 auto;
+    order: 3;
+  }
+  form .form-group .input-group {
+    /* RADIO BUTTON STYLING */
+    /* END RADIO BUTTON STYLING */
+    /* GIFT BUTTON STYLING */
+    /* END GIFT BUTTON STYLING */
+    /* TEXT FIELD STYLING & SELECT BOX STYLING */
+    /* END TEXT FIELD STYLING & SELECT BOX STYLING */
+    /* TEXTAREA STYLING */
+    /* END TEXTAREA STYLING */
+  }
+  form .form-group .input-group.radio-group {
+    margin-right: 20px;
+  }
+  form .form-group .input-group.radio-group.col-auto {
+    width: auto;
+  }
+  form .form-group .input-group.gift input[type="radio"] ~ label {
+    font-size: 26px;
+    width: 106px;
+    height: 43px;
+  }
+  form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
+    font-size: 26px;
+    height: 43px;
+    max-width: 186px;
+  }
+  form .form-group .input-group.select-box select,
+  form .form-group .input-group.text-field select,
+  form .form-group .input-group.select-box input,
+  form .form-group .input-group.text-field input {
+    font-size: 16px;
+  }
+  form .form-group .input-group.text-area textarea {
+    padding: 15px;
+  }
+  form .form-group .inner-form-group {
+    margin-left: -20px;
+    margin-right: -20px;
+    border: 25px solid #c8c8c8;
+    padding: 15px;
+  }
+  form .form-group .inner-form-group .preview-window, form .form-group .inner-form-group .preview-window-mail {
+    margin-top: 10px;
+    margin-bottom: 5px;
+	border:none;
+  }
+  form .form-group .inner-form-group .selection {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 0 15px;
+  }
+  form .form-group .inner-form-group .selection .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  form .form-group .inner-form-group .form-field {
+    padding: 0 15px 0 5px;
+  }
+  form .form-group .required-field {
+    float: right;
+    margin-top: 0;
+  }
+  button.submit {
+  	margin-left: 12px;
+  }
+  .modal {
+    text-align: center;
+    padding: 0!important;
+  }
+  .modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+  }
+  .modal .modal-dialog {
+    width: 622px;
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+  .modal .modal-dialog .modal-content .modal-body {
+    padding: 10px;
+  }
+  .modal.moreCards .modal-dialog .modal-content .modal-body {
+    padding: 30px 30px 15px;
+  }
+  .modal.moreCards .modal-dialog .modal-content .modal-body .card-selection {
+    max-height: 460px;
+  }
+  .modal.moreCards .modal-dialog .modal-content .modal-body .card-selection p {
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+  .modal.moreCards .modal-dialog .modal-content .modal-footer {
+    padding: 0 30px 30px;
+  }
+  footer {
+    margin-top: 20px;
+    padding: 35px 0 85px;
+  }
+}
