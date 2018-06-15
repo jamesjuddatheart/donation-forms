@@ -357,6 +357,8 @@ legend {
   /* 1 */
   padding: 0;
   /* 2 */
+  float: none; 
+  /* Firefox and IE fix */
 }
 
 a.skip-main {
@@ -1026,6 +1028,7 @@ form .form-group .amazon-pay {
   width: 187px;
   height: 28px;
   vertical-align: middle;
+  margin-top: 10px;
 }
 form .form-group .help-block {
   font-size: 14px;
