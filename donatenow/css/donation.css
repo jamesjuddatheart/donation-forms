@@ -639,6 +639,23 @@ body {
 	display:flex;
 }
 
+/* IE10+ fix for tribute form section */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /*  Form field issue */
+  .tributeSection fieldset {
+	display:block;
+  }
+  
+  /* Handle card images displaying in grid correctly */
+  img.img-responsive {
+	width: 100%;
+	min-width: 121px;
+  }
+  form .form-group .inline .input-group[class*="col-"]{
+	min-width: 100px;
+  }
+}
+
 form {
   margin-top: 5px;
   /* OUTTER CHECK BOX STYLING */
