@@ -357,6 +357,8 @@ legend {
   /* 1 */
   padding: 0;
   /* 2 */
+  float: none; 
+  /* Firefox and IE fix */
 }
 
 a.skip-main {
@@ -635,6 +637,23 @@ body {
 
 .tributeSection fieldset {
 	display:flex;
+}
+
+/* IE10+ fix for tribute form section */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /*  Form field issue */
+  .tributeSection fieldset {
+	display:block;
+  }
+  
+  /* Handle card images displaying in grid correctly */
+  img.img-responsive {
+	width: 100%;
+	min-width: 121px;
+  }
+  form .form-group .inline .input-group[class*="col-"]{
+	min-width: 100px;
+  }
 }
 
 form {
@@ -1026,6 +1045,7 @@ form .form-group .amazon-pay {
   width: 187px;
   height: 28px;
   vertical-align: middle;
+  margin-top: 10px;
 }
 form .form-group .help-block {
   font-size: 14px;
