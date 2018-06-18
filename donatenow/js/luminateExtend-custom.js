@@ -272,7 +272,7 @@
 			async: false,
 			cache:false,
 			dataType: "json",
-			url:"https://hearttools.heart.org/donate/convio-offline/addOfflineDonation.php?"+params+"&callback=?",
+			url:"https://hearttools.heart.org/donate/convio-offline/addOfflineDonation-new.php?"+params+"&callback=?",
 			success: function(data){
 				//donateCallback.success(data.data);
 			}
