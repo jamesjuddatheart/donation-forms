@@ -1551,3 +1551,9 @@ footer ul li a:focus {
     padding: 35px 0 85px;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    width: auto;
+  }
+}
