@@ -10,13 +10,15 @@
 	    <input type="hidden" name="method" value="donate" />
 	    <input type="hidden" name="form_id" value="[[S80:form_id]]" /> <!-- update per ghost form ID -->
 	    <input type="hidden" name="validate" value="true" />
-	    <input type="hidden" name="source" value="GENERAL" /> <!-- update source as needed -->
+        <input type="hidden" name="source" value="life_is_why_i_give" /> <!-- update source as needed -->
+        <input type="hidden" name="sub_source" value="call_to_action">
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
 	    <input type="hidden" name="other_amount" value="100" />
 	    <input type="hidden" name="level_id" value="[[S80:level_id]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
 	    <input type="hidden" name="payment_confirmation_id" value="" />
-	    <input type="hidden" name="PaymentType" id="PaymentType" value="cc" />
+        <input type="hidden" name="PaymentType" id="PaymentType" value="cc" />
+        <input type="hidden" name="sustaining.duration" value="" />
 	    <input type="hidden" name="is_hon_memorial" value="false" />
 	    <input type="hidden" name="amount1" id="amount1" value="">
     	<input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/>
@@ -31,7 +33,7 @@
 		<div class='form-group'>
         	<h3>Your Gift</h3>
 		<fieldset>
-			<legend class="text-hide">Your Gift</legend>
+            <legend class="text-hide">Your Gift</legend>
 			<div class='inline frequency' role='radiogroup' aria-label="frequency">
 				<div class='input-group radio-group'>
 					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' checked data-level=[[S80:level_id]] data-frequency="onetime" />
@@ -678,10 +680,10 @@
               <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" />
               <label for='payment1' role="radio" tabindex=0 title="Credit Card" aria-checked="false"><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
             </div>
-            <div class='input-group radio-group'>
+            <!-- <div class='input-group radio-group'>
               <input type='radio' name='payment' id='payment2' value='Amazon payments'/>
               <label for='payment2' role="radio" tabindex=0 title="AmazonPay" aria-checked="false"><span class='amazon-pay text-hide' aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
-            </div>
+            </div> -->
 		</fieldset>
           </div>
           <div class='inline row' id='payment1form'>
@@ -772,7 +774,7 @@
         		<img src='../donation-forms/donatenow/images/comodo-secure-icon.png' alt='Comodo Secure Image' /><a href='https://ssl.comodo.com/'>SSL Certificate</a>
         	</div>
         </div>
-        <div class='row bottom-links'>
+        <!-- <div class='row bottom-links'>
           <div class='col-xs-12 col-sm-5 text-left'>
             <a href='https://www.heart.org/idc/groups/heart-public/@wcm/@tcs/documents/downloadable/ucm_430364.pdf'>Mail a Memorial or Tribute Donation</a>
           </div>
@@ -782,7 +784,7 @@
           <div class='col-xs-12 col-sm-3 text-right'>
             <a href='http://www.heart.org/HEARTORG/Giving/ForIndividuals/OtherWaystoGive/OtherWaystoGive_UCM_001143_SubHomePage.jsp'>Other Ways to Give</a>
           </div>
-        </div>
+        </div> -->
       </form>
     </section>
     <!-- END MAIN CONTENT -->
