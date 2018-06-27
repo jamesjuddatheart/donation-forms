@@ -24,8 +24,12 @@ function showLevels(frequency,level) {
 		$('.onetime').show()
 			.addClass('display__inline-block')
 			.removeAttr('style');
-		$('input[name=gift]').removeAttr('checked');			
-		$('input[id=gift7]').click().attr('checked','checked').next('label').addClass('active');
+		$('input[name=gift]').removeAttr('checked');
+		if(location.href.indexOf("donatenow_lifeiswhy" > 0)) {
+		    $('input[id=gift8]').click().attr('checked','checked').next('label').addClass('active');
+		} else {
+		    $('input[id=gift7]').click().attr('checked','checked').next('label').addClass('active');
+		}
 		$('input[name=other_amount]').val(100);
 		$('input[name=recurring]').val('false');
 		jQuery("#consentWidgetDiv").hide();
