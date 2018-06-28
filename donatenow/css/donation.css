@@ -1562,3 +1562,21 @@ footer ul li a:focus {
 a, a:link, a:hover {
   color: #d40000;
 }
+
+/* Life is Why specific styles */
+.share-thanks { display:none; }
+.share-thanks .why-container {
+  background: url(../images/line.png) left center repeat-x;
+}
+.share-thanks h5 {
+  background-color: #f5f5f5;
+  display: inline-block;
+  padding: 0 25px;
+  font-size: 2rem;
+}
+.share-thanks h5 span {
+  font-weight: bold;
+  font-style:  italic;
+  color: #d40000;
+}
+/* End LIW specific styles */
