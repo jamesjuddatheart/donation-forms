@@ -572,6 +572,9 @@ $('[name^=donor\\.]').each(function(){
 	if ($.getQuerystring("s_src")) {
 		$('input[name=source]').val($.getQuerystring("s_src"));
 	}
+	if ($.getQuerystring("sub_source")) {
+		$('input[name=sub_source]').val($.getQuerystring("sub_source"));
+	}
 		
 	if ($.getQuerystring("level_id")) {
 		$('input[name=level_id][value='+$.getQuerystring("level_id")+']').attr("checked","checked");
@@ -602,6 +605,13 @@ $('[name^=donor\\.]').each(function(){
 	}
 	if ($.getQuerystring("msource")) {
 		$('input[name=source]').val($.getQuerystring("msource"));
+	}
+	
+	// LIW customization
+	var why = $.getQuerystring("why");
+	if(typeof why != 'undefined' && location.href.indexOf("donatenow_lifeiswhy")>0) {
+		$('.share-thanks h5').html('I give <span>' + unescape(why)) + '</span>';
+		$('.share-thanks').show();
 	}
 // END QUERY STRING CODE 
 		
