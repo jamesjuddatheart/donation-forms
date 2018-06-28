@@ -1557,3 +1557,8 @@ footer ul li a:focus {
     width: auto;
   }
 }
+
+/* Override the default color from the cms global styles */
+a, a:link, a:hover {
+  color: #d40000;
+}
