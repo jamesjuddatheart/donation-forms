@@ -614,8 +614,24 @@ $('[name^=donor\\.]').each(function(){
 		$('.share-thanks').show();
 	}
 
+	// Get amount passed from query string
+	var amount = $.getQuerystring("amount");
+	if (amount.length > 0) {
+		var match = $('label[data-amount=' + $.getQuerystring("amount") + ']');
+		if(match.length>=1){
+			$(match).click();
+		} else {
+			console.log($.getQuerystring("amount"));
+			$('input[type="radio"]').prop( "checked", false );
+			$('.radio-input').click();
+			$('#giftOtherText').val(amount);
+			$('input[name=other_amount]').val(amount);
+		}
+	}
+
 // END QUERY STRING CODE 
-		
+
+/* TODO: remove unused 
 	if ($.getQuerystring("amount")) {
 		//$('label.active').removeClass("active");
 		//$('label.level_other').addClass("active");
@@ -625,7 +641,7 @@ $('[name^=donor\\.]').each(function(){
 		$('input[name=other_amount]').val($.getQuerystring("amount"));
 		$('input[name=other_amount_entered]').val($.getQuerystring("amount"));
 	}
-		
+*/		
 	var tmpDate = new Date().getTime();
 	var _user_id = ''; // IMPORTANT! Set to the user's ID, username, or email address, or '' if not yet known.
 	var _session_id = 's'+tmpDate; // Set to a unique session ID for the visitor's current browsing session.
