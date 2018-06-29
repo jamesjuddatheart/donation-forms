@@ -622,7 +622,7 @@ $('[name^=donor\\.]').each(function(){
 			$(match).click();
 		} else {
 			console.log($.getQuerystring("amount"));
-			$('input[type="radio"]').prop( "checked", false );
+			$('input[name="gift"]').prop( "checked", false );
 			$('.radio-input').click();
 			$('#giftOtherText').val(amount);
 			$('input[name=other_amount]').val(amount);
