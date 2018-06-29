@@ -609,10 +609,11 @@ $('[name^=donor\\.]').each(function(){
 	
 	// LIW customization
 	var why = $.getQuerystring("why");
-	if(typeof why != 'undefined' && location.href.indexOf("donatenow_lifeiswhy")>0) {
+	if(why.length > 0 && location.href.indexOf("donatenow_lifeiswhy") > 0) {
 		$('.share-thanks h5').html('I give <span>' + unescape(why)) + '</span>';
 		$('.share-thanks').show();
 	}
+
 // END QUERY STRING CODE 
 		
 	if ($.getQuerystring("amount")) {
