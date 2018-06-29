@@ -1566,7 +1566,7 @@ a, a:link, a:hover {
 /* Life is Why specific styles */
 .share-thanks { display:none; }
 .share-thanks .why-container {
-  background: url(../images/line.png) left center repeat-x;
+  background: url(../../images/line.png) left center repeat-x;
 }
 .share-thanks h5 {
   background-color: #f5f5f5;
