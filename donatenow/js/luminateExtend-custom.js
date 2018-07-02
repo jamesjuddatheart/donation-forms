@@ -46,32 +46,6 @@
 		
 		$('input[name=compliance]').val("true");
 		
-		if ($("input[name='donor.atpay_opt_in']").prop('checked')) {
-			$("input[name='card_number']").attr('data-atpay', 'card_number');
-			$("input[name='card_cvv']").attr('data-atpay', 'cvc');
-			$("select[name='card_exp_date_month']").attr('data-atpay', 'exp_month');
-			$("select[name='card_exp_date_year']").attr('data-atpay', 'exp_year');
-			$("input[name='donor.email']").attr('data-atpay', 'email');
-			
-			if ($("input[name=billingchange]").prop('checked')) {
-				$("input[name='billing.name.first']").attr('data-atpay', 'first_name');
-				$("input[name='billing.name.last']").attr('data-atpay', 'last_name');
-				$("input[name='billing.address.street1']").attr('data-atpay', 'street');
-				$("input[name='billing.address.city']").attr('data-atpay', 'city');
-				$("select[name='billing.address.state']").attr('data-atpay', 'state');
-				$("input[name='billing.address.zip']").attr('data-atpay', 'zip');
-				$("select[name='billing.address.country']").attr('data-atpay', 'country');
-			} else {
-				$("input[name='donor.name.first']").attr('data-atpay', 'first_name');
-				$("input[name='donor.name.last']").attr('data-atpay', 'last_name');
-				$("input[name='donor.address.street1']").attr('data-atpay', 'street');
-				$("input[name='donor.address.city']").attr('data-atpay', 'city');
-				$("select[name='donor.address.state']").attr('data-atpay', 'state');
-				$("input[name='donor.address.zip']").attr('data-atpay', 'zip');
-				$("select[name='donor.address.country']").attr('data-atpay', 'country');
-			}
-		}
-		
         window.scrollTo(0, 0);
         $(this).hide();
         $(this).before('<div class="well donation-loading">' + 
@@ -211,25 +185,6 @@
 					  
 					});
 							  
-					var postdata='form=heartchallenge&siftsess='+$('input[name=_session]').val()+'&';
-					postdata+="&cc="+cc.substr(cc.length-4,4);
-					
-					postdata+="&amount="+amt;
-					postdata+="&email_address="+email;
-					postdata+="&first_name="+first;
-					postdata+="&last_name="+last;
-					postdata+="&billing_name="+full;
-					
-					postdata+="&address_line_1="+street1;
-					postdata+="&address_line_2="+street2;
-					postdata+="&city="+city;
-					postdata+="&state="+state;
-					postdata+="&zip="+zip;
-					postdata+="&country="+country;
-					postdata+="&ref="+ref;
-		
-					$.getJSON("https://hearttools.heart.org/siftscience/postSSData.php?"+postdata+"&callback=?");		
-
 					$('.thank-you').append('<img src="http://www.offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
 					$.getScript("//action.dstillery.com/orbserv/nsjs?adv=cl1014039&ns=1985&nc=HBP-Donate-Now-Landing-Page&ncv=52&dstOrderId="+ref+"&dstOrderAmount="+amt);
 								
@@ -247,17 +202,6 @@
 					ga('ecommerce:send');
 					
 					ga('send', 'pageview', '/donateok.asp');
-					/*
-					_gaq.push(['_addTrans',
-						ref,           // transaction ID - required
-						'AHA Amazon Donation ',  // affiliation or store name
-						amt,      // total - required
-						$('input[name="donor.address.city"]').val(),      // city
-						$('select[name="donor.address.state"]').val()     // state or province
-					]);
-					
-					_gaq.push(['_trackTrans']); //submits transaction to the Analytics servers
-					*/
 				}
 			}
 		});
@@ -393,24 +337,6 @@
 			$('.thank-you').append('<img src="//www.offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
 			$.getScript("//action.dstillery.com/orbserv/nsjs?adv=cl1014039&ns=1985&nc=HBP-Donate-Now-Landing-Page&ncv=52&dstOrderId="+ref+"&dstOrderAmount="+amt);
 
-			var postdata='form=heartconvio&siftsess='+$('input[name=_session]').val()+'&';
-			postdata+="&cc="+cc.substr(cc.length-4,4);
-			
-			postdata+="&amount="+data.donationResponse.donation.amount.decimal;
-			postdata+="&email_address="+email;
-			postdata+="&first_name="+first;
-			postdata+="&last_name="+last;
-			postdata+="&billing_name="+full;
-			
-			postdata+="&address_line_1="+street1;
-			postdata+="&address_line_2="+street2;
-			postdata+="&city="+city;
-			postdata+="&state="+state;
-			postdata+="&zip="+zip;
-			postdata+="&ref="+ref;
-
-			$.getJSON("https://hearttools.heart.org/siftscience/postSSData.php?"+postdata+"&callback=?");		
-			
 			/* ECOMMERCE TRACKING CODE */ 
 			ga('require', 'ecommerce');
 
@@ -425,19 +351,7 @@
 			ga('ecommerce:send');
 
 			ga('send', 'pageview', '/donateok.asp');
-			/*
-			_gaq.push(['_addTrans',
-				ref,           // transaction ID - required
-				'AHA CC Donation ',  // affiliation or store name
-				amt,      // total - required
-				$('input[name="donor.address.city"]').val(),      // city
-				$('select[name="donor.address.state"]').val()     // state or province
-			]);
-			
-			_gaq.push(['_trackTrans']); //submits transaction to the Analytics servers
-			*/
-			
-			atpay.register(".donation-form",function(response){});
+
 			/* CHIRAG CHHITA ADD GOOGLE TRACKING PIXEL TO THANK YOU PAGE */
 			var google_conversion_id = 936930558;
 			var google_conversion_language = "en";
@@ -658,6 +572,9 @@ $('[name^=donor\\.]').each(function(){
 	if ($.getQuerystring("s_src")) {
 		$('input[name=source]').val($.getQuerystring("s_src"));
 	}
+	if ($.getQuerystring("sub_source")) {
+		$('input[name=sub_source]').val($.getQuerystring("sub_source"));
+	}
 		
 	if ($.getQuerystring("level_id")) {
 		$('input[name=level_id][value='+$.getQuerystring("level_id")+']').attr("checked","checked");
@@ -689,8 +606,32 @@ $('[name^=donor\\.]').each(function(){
 	if ($.getQuerystring("msource")) {
 		$('input[name=source]').val($.getQuerystring("msource"));
 	}
+	
+	// LIW customization
+	var why = $.getQuerystring("why");
+	if(why.length > 0 && location.href.indexOf("donatenow_lifeiswhy") > 0) {
+		$('.share-thanks h5').html('I give <span>' + unescape(why)) + '</span>';
+		$('.share-thanks').show();
+	}
+
+	// Get amount passed from query string
+	var amount = $.getQuerystring("amount");
+	if (amount.length > 0) {
+		var match = $('label[data-amount=' + $.getQuerystring("amount") + ']');
+		if(match.length>=1){
+			$(match).click();
+		} else {
+			console.log($.getQuerystring("amount"));
+			$('input[name="gift"]').prop( "checked", false );
+			$('.radio-input').click();
+			$('#giftOtherText').val(amount);
+			$('input[name=other_amount]').val(amount);
+		}
+	}
+
 // END QUERY STRING CODE 
-		
+
+/* TODO: remove unused 
 	if ($.getQuerystring("amount")) {
 		//$('label.active').removeClass("active");
 		//$('label.level_other').addClass("active");
@@ -700,29 +641,8 @@ $('[name^=donor\\.]').each(function(){
 		$('input[name=other_amount]').val($.getQuerystring("amount"));
 		$('input[name=other_amount_entered]').val($.getQuerystring("amount"));
 	}
-		
+*/		
 	var tmpDate = new Date().getTime();
 	var _user_id = ''; // IMPORTANT! Set to the user's ID, username, or email address, or '' if not yet known.
 	var _session_id = 's'+tmpDate; // Set to a unique session ID for the visitor's current browsing session.
 	$('input[name=_session]').val(_session_id);
-	
-	var _sift = _sift || [];
-	_sift.push(['_setAccount', 'fc4ebfb07e']);
-	_sift.push(['_setUserId', _user_id]);
-	_sift.push(['_setSessionId', _session_id]);
-	_sift.push(['_trackPageview']);
-	(function() {
-		function ls() {
-		  var e = document.createElement('script');
-		  e.type = 'text/javascript';
-		  e.async = true;
-		  e.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.siftscience.com/s.js';
-		  var s = document.getElementsByTagName('script')[0];
-		  s.parentNode.insertBefore(e, s);
-		}
-		if (window.attachEvent) {
-		  window.attachEvent('onload', ls);
-		} else {
-		  window.addEventListener('load', ls, false);
-		}
-	})();

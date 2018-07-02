@@ -4,6 +4,10 @@
     <!-- MAIN CONTENT -->
     <section class='col-xs-12 col-sm-8 main-content' aria-label="mainContent">
 	[[S80:intro_text]]
+	<div class="share-thanks">
+		<p>Thanks for sharing your "why" with the world. We're working to make sure everyone can experience more of life's precious moments with the ones they love.  Please donate in honor of your "why" below.</p>
+		<div class="why-container text-center"><h5></h5></div>
+	</div>
 	<form class="luminateApi donation-form" method="POST" action="[[?xheartdevx::x[[S80:instance]]x::https://secure3.convio.net/heartdev::https://www2.heart.org]]/site/CRDonationAPI" data-luminateApi='{"callback": "donateCallback"}' id="donateform">
 	    <input type="hidden" name="instance" value="[[S80:instance]]" />
 	    <input type="hidden" name="recurring" value="" />
@@ -762,10 +766,6 @@
         </div>
         <!-- END PAYMENT INFORMATION -->
 
-        <div class='outter-checkbox d-none'>
-          <input type='checkbox' id='saveTime' name='donor.atpay_opt_in' value='true' checked />
-          <label for='saveTime'>Yes, I want to save time in the future with 2-click giving <a href='http://www.atpay.com/clients/american-heart' title="Learn More about @pay">Learn more about @pay</a></label>
-        </div>
         <div class='button-ssl'>
         	<button type='button' class='submit' id='donate-submit'>Send My Gift</button>
 		<!-- button added for accessiblity testing -->

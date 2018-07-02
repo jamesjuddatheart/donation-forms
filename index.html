@@ -231,15 +231,15 @@
 						</div>
 						<div class='input-group col-xs-12 col-sm-6 text-field'>
 							<label for='emailCardFirstName' name='emailCardFirstName' class='required-asterisk'>Honoree First Name:</label>
-							<input type='text' id='emailCardFirstName' name='tribute.honoree.name.first' value='' class='required' />
+							<input type='text' id='emailCardFirstName' name='tribute.honoree.name.first' value='[[S334:giftFirstName]]' class='required' />
 						</div>
 						<div class='input-group col-xs-12 col-sm-6 text-field'>
 							<label for='emailCardLastName' name='emailCardLastName' class='required-asterisk'>Honoree Last Name:</label>
-							<input type='text' id='emailCardLastName' name='tribute.honoree.name.last' value='' class='required' />
+							<input type='text' id='emailCardLastName' name='tribute.honoree.name.last' value='[[S334:giftLastName]]' class='required' />
 						</div>
 						<div class='input-group col-xs-12 col-sm-12 text-field honor'>
 							<label for='emailCardSubject1' name='emailCardSubject' class='required-asterisk'>Subject Line:</label>
-			                <input type='text' id='emailCardSubject1' name='ecard.subject' value='In honor of  ' class='required' />
+			                <input type='text' id='emailCardSubject1' name='ecard.subject' value='In honor of [[S334:giftFirstName]] [[S334:giftLastName]]' class='required' />
 			            </div>
 			            <div class='input-group col-xs-12 col-sm-12 text-field memorial'>
 			            	<label for='emailCardSubject2' name='emailCardSubject' class='required-asterisk'>Subject Line:</label>
@@ -306,11 +306,11 @@
 									<input type="hidden" name="tribute.notify.name.full">
 									<div class='input-group col-xs-12 col-sm-12 text-field'>
 										<label for='printedCardFirstName' name='printedCardFirstName' class='required-asterisk'>First Name:</label>
-										<input type='text' id='printedCardFirstName' name='notification_first_name' class='required' />
+										<input type='text' id='printedCardFirstName' name='notification_first_name' class='required' value='' />
 									</div>
 									<div class='input-group col-xs-12 col-sm-12 text-field'>
 										<label for='printedCardLastName' name='printedCardLastName' class='required-asterisk'>Last Name:</label>
-										<input type='text' id='printedCardLastName' name='notification_last_name' class='required' />
+										<input type='text' id='printedCardLastName' name='notification_last_name' class='required' value='' />
 									</div>
 								</div>
 							</div>
@@ -390,11 +390,11 @@
 						</div>
 						<div class='input-group col-xs-12 col-sm-6 text-field'>
 							<label for='printedCardFirstName2' name='printedCardFirstName2' class='required-asterisk'>Honoree First Name:</label>
-							<input type='text' id='printedCardFirstName2' name='tribute.honoree.name.first' value='' class='required' />
+							<input type='text' id='printedCardFirstName2' name='tribute.honoree.name.first' value='[[S334:giftFirstName]]' class='required' />
 						</div>
 						<div class='input-group col-xs-12 col-sm-6 text-field'>
 							<label for='printedCardLastName2' name='printedCardLastName' class='required-asterisk'>Honoree Last Name:</label>
-							<input type='text' id='printedCardLastName2' name='tribute.honoree.name.last' value='' class='required' />
+							<input type='text' id='printedCardLastName2' name='tribute.honoree.name.last' value='[[S334:giftLastName]]' class='required' />
 						</div>
 						<div class='input-group col-xs-12 col-sm-9 select-box honor'>
 							<label for='printedCardMessage' name='printedCardMessage' class='required-asterisk'>Your Message:</label>
@@ -744,10 +744,6 @@
         </div>
         <!-- END PAYMENT INFORMATION -->
 
-        <div class='outter-checkbox d-none'>
-          <input type='checkbox' id='saveTime' name='donor.atpay_opt_in' value='true' checked />
-          <label for='saveTime'>Yes, I want to save time in the future with 2-click giving <a href='http://www.atpay.com/clients/american-heart' title="Learn More about @pay">Learn more about @pay</a></label>
-        </div>
         <div class='button-ssl'>
         	<button type='button' class='submit' id='donate-submit'>Send My Gift</button>
 		<!-- button added for accessiblity testing -->
