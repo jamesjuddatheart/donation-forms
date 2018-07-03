@@ -609,10 +609,12 @@ $('[name^=donor\\.]').each(function(){
 
 	// Legacy Tribute Settings
 	if (location.href.indexOf("donatenow_legacy") > 0) {
-		$('#tribGift1').click();
-		$('#tributeType > option:nth-child(3)').prop("selected", true);
+    		$('#tribGift1').click();
+		$('#tributeType > option:nth-child(3)').attr("selected", true)
 		$('#tributeType > option:nth-child(1)').hide();
 		$('#tributeType > option:nth-child(2)').hide();
+		$(".memorial").show();
+		$(".honor").hide();
 	}
 	
 	// LIW customization
