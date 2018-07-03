@@ -1575,8 +1575,11 @@ a, a:link, a:hover {
   font-size: 2rem;
 }
 .share-thanks h5 span {
-  font-weight: bold;
+  font-family: 'Shadows Into Light', cursive;
+  /*font-weight: bold;*/
   font-style:  italic;
+  text-transform: uppercase;
+  margin-left: .5rem;
   color: #d40000;
 }
 /* End LIW specific styles */
