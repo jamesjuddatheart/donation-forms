@@ -606,6 +606,14 @@ $('[name^=donor\\.]').each(function(){
 	if ($.getQuerystring("msource")) {
 		$('input[name=source]').val($.getQuerystring("msource"));
 	}
+
+	// Legacy Tribute Settings
+	if (location.href.indexOf("donatenow_legacy")) {
+	    $('#tribGift1').click();
+		$('#tributeType > option:nth-child(3)').select();
+		$('#tributeType > option:nth-child(1)').hide();
+		$('#tributeType > option:nth-child(2)').hide();
+	}
 	
 	// LIW customization
 	var why = $.getQuerystring("why");
