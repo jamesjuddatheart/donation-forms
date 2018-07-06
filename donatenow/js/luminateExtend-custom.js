@@ -39,7 +39,7 @@
       $('.donation-form').submit(function() {
 		//move contact info details to billing info if any fields are blank
 		$('[name^=billing\\.]').each(function(){
-		  if ($(this).val() == ""){
+		  if ($(this).val() == "" || $(this).val() == null){
 			   $(this).val($("[name='"+$(this).attr("name").replace("billing.","donor.")+"']").val());
 		  }
 		});
