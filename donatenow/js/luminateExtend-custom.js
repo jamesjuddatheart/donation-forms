@@ -39,7 +39,7 @@
       $('.donation-form').submit(function() {
 		//move contact info details to billing info if any fields are blank
 		$('[name^=billing\\.]').each(function(){
-		  if ($(this).val() == ""){
+		  if ($(this).val() == "" || $(this).val() == null){
 			   $(this).val($("[name='"+$(this).attr("name").replace("billing.","donor.")+"']").val());
 		  }
 		});
@@ -605,6 +605,16 @@ $('[name^=donor\\.]').each(function(){
 	}
 	if ($.getQuerystring("msource")) {
 		$('input[name=source]').val($.getQuerystring("msource"));
+	}
+
+	// Legacy Tribute Settings
+	if (location.href.indexOf("donatenow_legacy") > 0) {
+    		$('#tribGift1').click();
+		$('#tributeType > option:nth-child(3)').attr("selected", true)
+		$('#tributeType > option:nth-child(1)').hide();
+		$('#tributeType > option:nth-child(2)').hide();
+		$(".memorial").show();
+		$(".honor").hide();
 	}
 	
 	// LIW customization
