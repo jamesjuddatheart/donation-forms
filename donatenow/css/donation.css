@@ -1047,7 +1047,7 @@ form .form-group .amazon-pay {
   vertical-align: middle;
   margin-top: 10px;
 }
-form .form-group .paypal-pay {
+form .form-group .paypal {
   content: '';
   background-image: url(../images/donate-with-paypal.png );
   background-repeat: no-repeat;
