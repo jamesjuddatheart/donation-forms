@@ -696,7 +696,7 @@ form .form-group .inline.row {
   margin-right: -10px;
 }
 form .form-group .inline .input-group:not([class*="col-"]) {
-  /*display: inline-block;*/
+  display: inline-block;
   width:auto;
   vertical-align:top;
 }
