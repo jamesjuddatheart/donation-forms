@@ -152,28 +152,45 @@ $( '.dropdown input[type="radio"]' ).each( function(){
 });
 
 $( '#payment2' ).on('click',function () {
-  // Populate hidden form fields with updated values
-  $('#PaymentType').val('amazon');
-  $('input[name=source]').val('AMAZON');
-  $('input[name=payment_source]').val('AMAZON');
+	// Populate hidden form fields with updated values
+	$('#PaymentType').val('amazon');
+	$('input[name=source]').val('AMAZON');
+	$('input[name=payment_source]').val('AMAZON');
+	$('input[name=extproc]').val('');
+	$('input[name=method]').val('donate');
 
-  $('#payment1form').hide();
-  $('#payment2form').slideDown('slow');
-  if ($('input[name=occurrence]:checked').data("frequency") == "recurring") {
+	$('#payment1form').hide();
+	$('#payment2form').slideDown('slow');
+	if ($('input[name=occurrence]:checked').data("frequency") == "recurring") {
 	  $('input[name=level_id]').val($('input[name=occurrence]:first').data("level"));
-  }
+	}
 });
 $( '#payment1' ).on('click',function () {
-  // Populate hidden form fields with updated values
-  $('#PaymentType').val('cc');
-  $('input[name=source]').val('GENERAL');
-  $('input[name=payment_source]').val('CC');
+	// Populate hidden form fields with updated values
+	$('#PaymentType').val('cc');
+	$('input[name=source]').val('GENERAL');
+	$('input[name=payment_source]').val('CC');
+	$('input[name=extproc]').val('');
+	$('input[name=method]').val('donate');
 
-  $('#payment2form').hide();
-  $('#payment1form').slideDown('slow');
-  if ($('input[name=occurrence]:checked').data("frequency") == "recurring") {
+	$('#payment2form').hide();
+	$('#payment1form').slideDown('slow');
+	if ($('input[name=occurrence]:checked').data("frequency") == "recurring") {
 	  $('input[name=level_id]').val($('input[name=occurrence]:checked').data("level"));
-  }
+	}
+});
+$( '#payment3' ).on('click',function () {
+	// Populate hidden form fields with updated values
+	$('#PaymentType').val('cc');
+	$('input[name=source]').val('PAYPAL');
+	$('input[name=payment_source]').val('CC');
+	$('input[name=extproc]').val('paypal');
+	$('input[name=method]').val('startDonation');
+	$('input[name=level_autorepeat]').val("true");
+	$('#payment1form, #payment2form').hide();
+	if ($('input[name=occurrence]:checked').data("frequency") == "recurring") {
+	  $('input[name=level_id]').val($('input[name=occurrence]:checked').data("level"));
+	}
 });
 
 $('select[name=msgPrefillEcard]').change(function(){
