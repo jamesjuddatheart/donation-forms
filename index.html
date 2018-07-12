@@ -7,10 +7,13 @@
 	<form class="luminateApi donation-form" method="POST" action="[[?xheartdevx::x[[S80:instance]]x::https://secure3.convio.net/heartdev::https://www2.heart.org]]/site/CRDonationAPI" data-luminateApi='{"callback": "donateCallback"}' id="donateform">
 	    <input type="hidden" name="instance" value="[[S80:instance]]" />
 	    <input type="hidden" name="recurring" value="" />
+	    <input type="hidden" name="extproc" value="" />
+	    <input type="hidden" name="finish_error_redirect" value="[[S8]]">
+	    <input type="hidden" name="finish_success_redirect" value="[[S80:paypal_thankyou]]">
 	    <input type="hidden" name="method" value="donate" />
 	    <input type="hidden" name="form_id" value="[[S80:form_id]]" /> <!-- update per ghost form ID -->
 	    <input type="hidden" name="validate" value="true" />
-			<input type="hidden" name="source" value="[[?x[[S80:source]]x::xx::GENERAL::[[S80:source]]]]" /> <!-- update source as needed --> 
+	    <input type="hidden" name="source" value="[[?x[[S80:source]]x::xx::GENERAL::[[S80:source]]]]" /> <!-- update source as needed --> 
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
 	    <input type="hidden" name="other_amount" value="100" />
@@ -658,13 +661,17 @@
           <div class='inline paymentSel' role='radiogroup' aria-label='paymentSelection'>
 		 <fieldset>
 			<legend class="text-hide">Select a payment type</legend>
-            <div class='input-group radio-group'>
+            <div class='input-group radio-group radio-cc'>
               <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" />
               <label for='payment1' role="radio" tabindex=0 title="Credit Card" aria-checked="false"><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
             </div>
-            <div class='input-group radio-group'>
+            <div class='input-group radio-group radio-amazon'>
               <input type='radio' name='payment' id='payment2' value='Amazon payments'/>
               <label for='payment2' role="radio" tabindex=0 title="AmazonPay" aria-checked="false"><span class='amazon-pay text-hide' aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
+            </div>
+            <div class='input-group radio-group radio-paypal'>
+              <input type='radio' name='payment' id='payment3' value='Paypal payments'/>
+              <label for='payment3' role="radio" tabindex=0 title="PayPal" aria-checked="false"><span class='paypal text-hide' aria-label="Paypal payments" alt="Paypal payments">Paypal payments</span></label>
             </div>
 		</fieldset>
           </div>
