@@ -242,6 +242,12 @@
       }, 
       success: function(data) {
         $('#donation-errors').remove();
+
+	// PayPal redirect
+	if (typeof data.donationResponse.redirect != "undefined") {
+		location.href = data.donationResponse.redirect.url;
+		return;
+	}
         
         if(data.donationResponse.errors) {
           $('.donation-form').prepend('<div id="donation-errors">' + 
