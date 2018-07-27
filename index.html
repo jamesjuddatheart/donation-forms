@@ -21,7 +21,7 @@
 	[[S80:intro_text]]
 	<form class="luminateApi donation-form" method="POST" action="[[?xheartdevx::x[[S80:instance]]x::https://secure3.convio.net/heartdev::https://www2.heart.org]]/site/CRDonationAPI" data-luminateApi='{"callback": "donateCallback"}' id="donateform">
 	    <input type="hidden" name="instance" value="[[S80:instance]]" />
-	    <input type="hidden" name="recurring" value="" />
+	    <input type="hidden" name="recurring" value="[[?xtruex::x[[S80:sustainer_default]]x::true::]]" />
 	    <input type="hidden" name="extproc" value="" />
 	    <input type="hidden" name="finish_error_redirect" value="[[S8]]">
 	    <input type="hidden" name="finish_success_redirect" value="[[S80:paypal_thankyou]]">
@@ -32,7 +32,7 @@
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
 	    <input type="hidden" name="other_amount" value="100" />
-	    <input type="hidden" name="level_id" value="[[S80:level_id]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
+	    <input type="hidden" name="level_id" value="[[?xtruex::x[[S80:sustainer_default]]x::[[S80:level_id_recurring]]::[[S80:level_id]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
 	    <input type="hidden" name="payment_confirmation_id" value="" />
 	    <input type="hidden" name="PaymentType" id="PaymentType" value="cc" />
 	    <input type="hidden" name="is_hon_memorial" value="false" />
@@ -51,7 +51,7 @@
 		<fieldset>
 			<legend class="text-hide">Your Gift</legend>
 			<div class='inline frequency' role='radiogroup' aria-label="frequency">
-			[[?xtruex::x[[S80:sustainer]]x::
+			[[?xtruex::x[[S80:sustainer_default]]x::
 				<div class='input-group radio-group'>
 					<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' checked data-level=[[S80:level_id_recurring]] data-frequency="recurring" />
 					<label for='occurrence2' role='radio' tabindex=0 title="Monthly Gift" aria-checked="true">Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
