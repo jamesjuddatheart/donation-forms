@@ -25,7 +25,7 @@ function showLevels(frequency,level) {
 			.addClass('display__inline-block')
 			.removeAttr('style');
 		$('input[name=gift]').removeAttr('checked');
-		if(location.href.indexOf("donatenow_lifeiswhy" > 0)) {
+		if(location.href.indexOf("donatenow_lifeiswhy") > 0) {
 		    $('input[id=gift8]').click().attr('checked','checked').next('label').addClass('active');
 		} else {
 		    $('input[id=gift7]').click().attr('checked','checked').next('label').addClass('active');
