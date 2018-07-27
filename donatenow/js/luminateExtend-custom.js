@@ -297,12 +297,14 @@
 			var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();	
 			var form=$('input[name=form_id]').val();
 
-
-			if ($('input[name=occurrenc]:checked').val() == 'Monthly Gift') {
+			var freq = $('input[name=occurrence]:checked').val();
+			/* 
+			if ($('input[name=occurrence]:checked').val() == 'Monthly Gift') {
 				var freq = 'monthly';
 			} else {
 				var freq = 'one time';
 			}
+			*/
 					
           $('.donation-loading').remove();
 		  $('.donate-now').hide();
@@ -333,6 +335,7 @@
 			  $('p.state').html(state);
 			  $('p.zip').html(zip);
 			  $('p.email').html(email);
+			  $('p.freq').html(freq);
 			  $('p.cardtype').html(ctype);
 			  $('p.cardnumber').html(cc.substr(cc.length-4,4));
 			  $('p.carddate').html(cdate);
