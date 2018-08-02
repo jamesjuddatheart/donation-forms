@@ -26,6 +26,7 @@
 	    <input type="hidden" name="finish_error_redirect" value="[[S8]]">
 	    <input type="hidden" name="finish_success_redirect" value="[[S80:paypal_thankyou]]">
 	    <input type="hidden" name="method" value="donate" />
+		<input type="hidden" name="method" value="btmethod" />
 	    <input type="hidden" name="form_id" value="[[S80:form_id]]" /> <!-- update per ghost form ID -->
 	    <input type="hidden" name="validate" value="true" />
 	    <input type="hidden" name="source" value="[[?x[[S80:source]]x::xx::GENERAL::[[S80:source]]]]" /> <!-- update source as needed --> 
@@ -37,7 +38,8 @@
 	    <input type="hidden" name="PaymentType" id="PaymentType" value="cc" />
 	    <input type="hidden" name="is_hon_memorial" value="false" />
 	    <input type="hidden" name="amount1" id="amount1" value="">
-    	<input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/>
+	    <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/>
+		<input type="hidden" name="device_data" id="device_data" value=""/>
 		[[?x[[S334:df_preview]]x::xtruex::
 		<input type="hidden" name="sandbox" id="sandbox" value="true">
 		<input type="hidden" name="df_preview" value="true" />
