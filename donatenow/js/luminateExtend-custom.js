@@ -227,6 +227,7 @@
 		var amt = 0;
 		var ref = 0;
 		
+		braintree_aha.submitApplePayDonation();
 		$.ajax({
 			method: "POST",
 			async: false,
