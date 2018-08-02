@@ -340,7 +340,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 .hidden {
-	display:none;
+	display:none !important;
 }
 /**
  * Define consistent border, margin, and padding.
