@@ -355,41 +355,40 @@ var braintree_aha = {
 
 		session.begin();
 	},
-
 	DonationFillApplePayBillingAddress: function(billingContact, shippingContact) {
 		if (shippingContact.givenName != "" && shippingContact.familyName != "") {
-			$("#FirstName").val(shippingContact.givenName);
-			$("#LastName").val(shippingContact.familyName);
+			$("#firstName").val(shippingContact.givenName);
+			$("#lastName").val(shippingContact.familyName);
 		}
 		else {
-			$("#FirstName").val(billingContact.givenName);
-			$("#LastName").val(billingContact.familyName);
+			$("#firstName").val(billingContact.givenName);
+			$("#lastName").val(billingContact.familyName);
 		}
 
-		$("#EmailAddress").val(shippingContact.emailAddress);
-		$("#Phone").val("");
+		$("#emailAddress").val(shippingContact.emailAddress);
+		//$("#Phone").val("");
 
 		var countryCode = billingContact.countryCode.toUpperCase();
 		if (countryCode == "") countryCode = billingContact.country.toUpperCase();
 		if (countryCode == "USA") countryCode = "US";
 		if (countryCode == "UNITED STATES") countryCode = "US";
-		$("#CountryId").val(countryCode).trigger("change");;
+		//$("#CountryId").val(countryCode).trigger("change");;
 
-		$("#Address1").val(billingContact.addressLines[0]);
+		$("#streetAddress1").val(billingContact.addressLines[0]);
 
 		if (billingContact.addressLines.length > 1 && billingContact.locality == "")
-			$("#City").val(billingContact.addressLines[1]);
+			$("#city").val(billingContact.addressLines[1]);
 
 		if (billingContact.locality != "")
-			$("#City").val(billingContact.locality);
+			$("#city").val(billingContact.locality);
 
-		$("#StateId").val(billingContact.administrativeArea.toUpperCase());
-		$("#Province").val(billingContact.administrativeArea.toUpperCase());
-		$("#PostalCode").val(billingContact.postalCode);
+		$("#state").val(billingContact.administrativeArea.toUpperCase());
+		//$("#Province").val(billingContact.administrativeArea.toUpperCase());
+		//$("#zipCode").val(billingContact.postalCode);
 
 		var zip = billingContact.postalCode;
 		if (zip.length > 5) zip = zip.substr(0, 5);
-		$("#ZipCode").val(zip);
+		$("#zipCode").val(zip);
 	},
 
 	postDonationFormApplePay: function(callback_success, callback_fail) {
