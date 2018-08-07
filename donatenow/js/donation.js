@@ -45,6 +45,11 @@ $('input[name=occurrence]').click(function(){
 $('input[name="tribGift"]').click(function() {
   var honVal = $('input[name="tribGift"]:checked').val();
   $('input[name=is_hon_memorial]').val(honVal);
+  if (honVal == "true") {
+    $('input[name="tribute.type"]').val("Tribute");
+  } else {
+    $('input[name="tribute.type"]').val("");
+  }
 });
 
 $('input[name=notification_first_name], input[name=notification_last_name]').blur(function() {
@@ -208,13 +213,15 @@ $('textarea').keyup(function() {
 });
 
 $('#tributeType').on('change', function () {
-	if(this.value === "honor"){
-		$(".honor").show();
-		$(".memorial").hide();
-    } else {
-    		$(".memorial").show();
-		$(".honor").hide();
-    }
+  if(this.value === "honor"){
+    $(".honor").show();
+    $(".memorial").hide();
+    $('input[name="tribute.type"]').val("Tribute");
+  } else {
+    $(".memorial").show();
+    $(".honor").hide();
+    $('input[name="tribute.type"]').val("Memorial");
+  }
 });
 
 $('.frequency label, .tributeSel label, .paymentSel label, .cardSel label').keypress(function(e) {
