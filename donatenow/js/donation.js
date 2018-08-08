@@ -14,6 +14,9 @@ function showLevels(frequency,level) {
 			.removeClass('d-none')
 			.removeAttr('style');
 		$('.onetime').hide();
+		// hide Amazon monthly option and select CC
+		$('.radio-amazon').css('cssText', 'display: none !important');
+		$('#payment1').click();
 		$('input[name=gift]').removeAttr('checked');
 		$('input[id=gift2]').click().attr('checked','checked').next('label').addClass('active');
 		$('input[name=other_amount]').val(25);
@@ -24,6 +27,8 @@ function showLevels(frequency,level) {
 		$('.onetime').show()
 			.addClass('display__inline-block')
 			.removeAttr('style');
+		// Show Amazon if enabled
+		$('.radio-amazon').css('cssText', '');
 		$('input[name=gift]').removeAttr('checked');
 		if(location.href.indexOf("donatenow_lifeiswhy") > 0) {
 		    $('input[id=gift8]').click().attr('checked','checked').next('label').addClass('active');
