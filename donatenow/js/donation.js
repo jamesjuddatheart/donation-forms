@@ -203,6 +203,19 @@ $( '#payment3' ).on('click',function () {
 	}
 });
 
+$( '#payment4' ).on('click',function () {
+	// Populate hidden form fields with updated values
+	$('#PaymentType').val('applepay');
+	$('input[name=source]').val('APPLEPAY');
+	$('input[name=payment_source]').val('APPLEPAY');
+	$('input[name=extproc]').val('');
+	$('input[name=method]').val('donate');
+	$('#payment1form, #payment2form').hide();
+	if ($('input[name=occurrence]:checked').data("frequency") == "recurring") {
+	  $('input[name=level_id]').val($('input[name=occurrence]:checked').data("level"));
+	}
+});
+
 $('select[name=msgPrefillEcard]').change(function(){
 	$('textarea[name="ecard.message"]').val(this.value);
 });

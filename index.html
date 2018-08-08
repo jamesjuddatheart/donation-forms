@@ -26,6 +26,7 @@
 	    <input type="hidden" name="finish_error_redirect" value="[[S8]]">
 	    <input type="hidden" name="finish_success_redirect" value="[[S80:paypal_thankyou]]">
 	    <input type="hidden" name="method" value="donate" />
+		<input type="hidden" name="method" value="btmethod" />
 	    <input type="hidden" name="form_id" value="[[S80:form_id]]" /> <!-- update per ghost form ID -->
 	    <input type="hidden" name="validate" value="true" />
 	    <input type="hidden" name="source" value="[[?x[[S80:source]]x::xx::GENERAL::[[S80:source]]]]" /> <!-- update source as needed --> 
@@ -38,7 +39,9 @@
 	    <input type="hidden" name="is_hon_memorial" value="false" />
 	    <input type="hidden" name="tribute.type" value="" /> <!-- Memorial | Tribute | empty -->
 	    <input type="hidden" name="amount1" id="amount1" value="">
-    	<input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/>
+	    <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/>
+		<input type="hidden" name="device_data" id="device_data" value=""/>
+		<input type="hidden" name="payment_method_nonce" id="payment_method_nonce" value=""/>
 		[[?x[[S334:df_preview]]x::xtruex::
 		<input type="hidden" name="sandbox" id="sandbox" value="true">
 		<input type="hidden" name="df_preview" value="true" />
@@ -701,6 +704,10 @@
             <div class='input-group radio-group radio-paypal'>
               <input type='radio' name='payment' id='payment3' value='Paypal payments'/>
               <label for='payment3' role="radio" tabindex=0 title="PayPal" aria-checked="false"><span class='paypal text-hide' aria-label="Paypal payments" alt="Paypal payments">Paypal payments</span></label>
+            </div>
+            <div class='input-group radio-group radio-applepay hidden'>
+              <input type='radio' name='payment' id='payment4' value='ApplePay payments'/>
+              <label for='payment4' role="radio" tabindex=0 title="ApplePay" aria-checked="false"><span class='applepay text-hide' aria-label="ApplePay payments" alt="ApplePay payments">ApplePay payments</span></label>
             </div>
 		</fieldset>
           </div>

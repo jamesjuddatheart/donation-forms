@@ -338,6 +338,10 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
+
+.hidden {
+	display:none !important;
+}
 /**
  * Define consistent border, margin, and padding.
  */
@@ -1050,6 +1054,17 @@ form .form-group .amazon-pay {
 form .form-group .paypal {
   content: '';
   background-image: url(../images/donate-with-paypal.png );
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: inline-block;
+  width: 170px;
+  height: 40px;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+form .form-group .applepay {
+  content: '';
+  background-image: url(../images/DonateBlack_32pt_@2x.png );
   background-repeat: no-repeat;
   background-size: 100% auto;
   display: inline-block;
