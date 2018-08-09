@@ -65,9 +65,9 @@ $('input[name=notification_first_name], input[name=notification_last_name]').blu
 	$('input[name="recipient_last_name"]').val($('input[name=notification_last_name]').val());
 });
 
-$('input[name=tribute.honoree.name.first], input[name=tribute.honoree.name.last]').blur(function() {
-	$('input[name="honoree_first_name"]').val($('input[name=tribute.honoree.name.first]').val());
-	$('input[name="honoree_last_name"]').val($('input[name=tribute.honoree.name.last]').val());
+$('input[name="tribute.honoree.name.first"], input[name="tribute.honoree.name.last"]').blur(function() {
+	$('input[name="honoree_first_name"]').val($('input[name="tribute.honoree.name.first"]').val());
+	$('input[name="honoree_last_name"]').val($('input[name="tribute.honoree.name.last"]').val());
 });
 
 function noFocus() {
