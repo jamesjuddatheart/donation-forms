@@ -171,10 +171,12 @@
 						<div class='input-group col-xs-12 col-sm-6 text-field'>
 							<label for='honoreeFirstName' name='emailCardFirstName' class='required-asterisk'>Honoree First Name:</label>
 							<input type='text' id='honoreeFirstName' name='tribute.honoree.name.first' value='' class='required' />
+							<input type='hidden' id='honoree_first_name' name='honoree_first_name' />
 						</div>
 						<div class='input-group col-xs-12 col-sm-6 text-field'>
 							<label for='honoreeLastName' name='emailCardLastName' class='required-asterisk'>Honoree Last Name:</label>
 							<input type='text' id='honoreeLastName' name='tribute.honoree.name.last' value='' class='required' />
+							<input type='hidden' id='honoree_last_name' name='honoree_last_name' />
 						</div>
 					</div>
 				</fieldset>
@@ -350,10 +352,14 @@
 									<div class='input-group col-xs-12 col-sm-12 text-field'>
 										<label for='printedCardFirstName' name='printedCardFirstName' class='required-asterisk'>First Name:</label>
 										<input type='text' id='printedCardFirstName' name='notification_first_name' class='required' />
+										<input type="hidden" name="shipping.name.first" id="shipping.name.first" />
+										<input type="hidden" name="recipient_first_name" id="recipient_first_name" />
 									</div>
 									<div class='input-group col-xs-12 col-sm-12 text-field'>
 										<label for='printedCardLastName' name='printedCardLastName' class='required-asterisk'>Last Name:</label>
 										<input type='text' id='printedCardLastName' name='notification_last_name' class='required' />
+										<input type="hidden" name="shipping.name.last" id="shipping.name.last" />
+										<input type="hidden" name="recipient_last_name" id="recipient_last_name" />
 									</div>
 								</div>
 							</div>
