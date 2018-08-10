@@ -625,6 +625,8 @@ $('[name^=donor\\.]').each(function(){
 		$('#tributeType > option:nth-child(2)').hide();
 		$(".memorial").show();
 		$(".honor").hide();
+		$('input[name="tribute.type"]').val("Tribute");
+		$('input[name=is_hon_memorial]').val("true");
 	}
 	
 	// LIW customization
