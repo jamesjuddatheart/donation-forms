@@ -145,6 +145,21 @@ $('#tribGift1').on('click',function () {
 
 $('#tribGift2').on('click',function () {
 	$('.tributeSection').slideUp('slow');
+	$('#card_option').val('No Card');
+});
+
+$('input[name="ecard.send"]').click(function(event) {
+	var crd = $('#card_option');
+	switch(event.target.id) {
+		case "emailaCard":
+			crd.val('eCard');
+			break;
+		case "mailaPrintedCard":
+			crd.val('Mail Card');
+			break;
+		default:
+			crd.val('No Card');
+	}
 });
 
 $( '#differentBilling' ).on('click',function () {
