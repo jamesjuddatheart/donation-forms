@@ -185,10 +185,15 @@ $( '.dropdown input[type="radio"]' ).each( function(){
   });
 });
 
-$( '#payment2' ).on('click',function () {
+// Flag to keep source field intact from querystring
+var maintain_src = location.href.indexOf('wsa_recurring') > 0;
+
+$( '#payment2' ).on('click', {maintain_src}, function () {
 	// Populate hidden form fields with updated values
 	$('#PaymentType').val('amazon');
-	$('input[name=source]').val('AMAZON');
+	if (!maintain_src) {
+		$('input[name=source]').val('AMAZON');
+	}
 	$('input[name=payment_source]').val('AMAZON');
 	$('input[name=extproc]').val('');
 	$('input[name=method]').val('donate');
@@ -199,10 +204,12 @@ $( '#payment2' ).on('click',function () {
 	  $('input[name=level_id]').val($('input[name=occurrence]:first').data("level"));
 	}
 });
-$( '#payment1' ).on('click',function () {
+$( '#payment1' ).on('click', {maintain_src}, function () {
 	// Populate hidden form fields with updated values
 	$('#PaymentType').val('cc');
-	$('input[name=source]').val('GENERAL');
+	if (!maintain_src) {
+		$('input[name=source]').val('GENERAL');
+	}
 	$('input[name=payment_source]').val('CC');
 	$('input[name=extproc]').val('');
 	$('input[name=method]').val('donate');
@@ -213,10 +220,12 @@ $( '#payment1' ).on('click',function () {
 	  $('input[name=level_id]').val($('input[name=occurrence]:checked').data("level"));
 	}
 });
-$( '#payment3' ).on('click',function () {
+$( '#payment3' ).on('click', {maintain_src}, function () {
 	// Populate hidden form fields with updated values
 	$('#PaymentType').val('cc');
-	$('input[name=source]').val('PAYPAL');
+	if (!maintain_src) {
+		$('input[name=source]').val('PAYPAL');
+	}
 	$('input[name=payment_source]').val('CC');
 	$('input[name=extproc]').val('paypal');
 	$('input[name=method]').val('startDonation');

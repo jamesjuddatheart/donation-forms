@@ -21,7 +21,7 @@
 	[[S80:intro_text]]
 	<form class="luminateApi donation-form" method="POST" action="[[?xheartdevx::x[[S80:instance]]x::https://secure3.convio.net/heartdev::https://www2.heart.org]]/site/CRDonationAPI" data-luminateApi='{"callback": "donateCallback"}' id="donateform">
 	    <input type="hidden" name="instance" value="[[S80:instance]]" />
-	    <input type="hidden" name="recurring" value="[[?xtruex::x[[S80:sustainer_default]]x::true::]]" />
+	    <input type="hidden" name="recurring" value="true" />
 	    <input type="hidden" name="extproc" value="" />
 	    <input type="hidden" name="finish_error_redirect" value="[[S8]]">
 	    <input type="hidden" name="finish_success_redirect" value="[[S80:paypal_thankyou]]">
@@ -31,8 +31,8 @@
 	    <input type="hidden" name="source" value="[[?x[[S80:source]]x::xx::GENERAL::[[S80:source]]]]" /> <!-- update source as needed --> 
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
-	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::25::100]]" />
-	    <input type="hidden" name="level_id" value="[[?xtruex::x[[S80:sustainer_default]]x::[[S80:level_id_recurring]]::[[S80:level_id]]]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
+	    <input type="hidden" name="other_amount" value="25" />
+	    <input type="hidden" name="level_id" value="[[S80:level_id_recurring]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
 	    <input type="hidden" name="payment_confirmation_id" value="" />
 	    <input type="hidden" name="PaymentType" id="PaymentType" value="cc" />
 	    <input type="hidden" name="is_hon_memorial" value="false" />
