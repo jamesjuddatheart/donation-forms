@@ -666,6 +666,7 @@ $('[name^=donor\\.]').each(function(){
 	if ($.getQuerystring("honor") == "true") {
 		$(document).ready(function(){
 			$('input#tribGift1').click();
+			$('select#tributeType').val('honor');
 			if ($.getQuerystring("trib_fname")) {
 				$('input[name="tribute.honoree.name.first"]').val($.getQuerystring("trib_fname"));
 			}
@@ -677,6 +678,7 @@ $('[name^=donor\\.]').each(function(){
 	if ($.getQuerystring("memorial") == "true") { 
 		$(document).ready(function(){
 			$('input#tribGift1').click();
+			$('select#tributeType').val('memorial');
 			if ($.getQuerystring("trib_fname")) {
 				$('input[name="tribute.honoree.name.first"]').val($.getQuerystring("trib_fname"));
 			}
