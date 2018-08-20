@@ -665,7 +665,7 @@ $('[name^=donor\\.]').each(function(){
 // ADD QUERY STRING CODE 
 	if ($.getQuerystring("honor") == "true") {
 		$(document).ready(function(){
-			$('.tribute-select .icon-selection:eq(1) label').click();
+			$('input#tribGift1').click();
 			if ($.getQuerystring("trib_fname")) {
 				$('input[name="tribute.honoree.name.first"]').val($.getQuerystring("trib_fname"));
 			}
@@ -676,7 +676,7 @@ $('[name^=donor\\.]').each(function(){
 	}
 	if ($.getQuerystring("memorial") == "true") { 
 		$(document).ready(function(){
-			$('.tribute-select .icon-selection:eq(2) label').click();
+			$('input#tribGift1').click();
 			if ($.getQuerystring("trib_fname")) {
 				$('input[name="tribute.honoree.name.first"]').val($.getQuerystring("trib_fname"));
 			}
