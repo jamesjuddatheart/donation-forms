@@ -1,5 +1,5 @@
 /*!
- * American HEart Association
+ * American Heart Association
  * 
  * @author Dean Huntley, DH Web Works, Inc.
  * @version 1.0.0
