@@ -1,6 +1,5 @@
 /*!
- * Save the Children
- * Project files are compiled with gulp. See source for modifications
+ * American HEart Association
  * 
  * @author Dean Huntley, DH Web Works, Inc.
  * @version 1.0.0
@@ -211,7 +210,7 @@ var braintree_aha = {
 		var postParams = $(braintree_aha.donation_form).serialize();
 		postParams += "&amount="+$('input[name=level_standardexpanded]:checked').val();
 
-		$.post('https://hearttools.heart.org/braintree/checkout.php', postParams)
+		$.post('/braintree/checkout.php', postParams)
 			.done(function(data) {
 				braintree_aha.donation_result = JSON.parse(data.toString());
 				var donresult = JSON.parse(data.toString());
@@ -355,53 +354,55 @@ var braintree_aha = {
 
 		session.begin();
 	},
+
 	DonationFillApplePayBillingAddress: function(billingContact, shippingContact) {
 		if (shippingContact.givenName != "" && shippingContact.familyName != "") {
-			$("#firstName").val(shippingContact.givenName);
-			$("#lastName").val(shippingContact.familyName);
+			$("#FirstName").val(shippingContact.givenName);
+			$("#LastName").val(shippingContact.familyName);
 		}
 		else {
-			$("#firstName").val(billingContact.givenName);
-			$("#lastName").val(billingContact.familyName);
+			$("#FirstName").val(billingContact.givenName);
+			$("#LastName").val(billingContact.familyName);
 		}
 
-		$("#emailAddress").val(shippingContact.emailAddress);
-		//$("#Phone").val("");
+		$("#EmailAddress").val(shippingContact.emailAddress);
+		$("#Phone").val("");
 
 		var countryCode = billingContact.countryCode.toUpperCase();
 		if (countryCode == "") countryCode = billingContact.country.toUpperCase();
 		if (countryCode == "USA") countryCode = "US";
 		if (countryCode == "UNITED STATES") countryCode = "US";
-		//$("#CountryId").val(countryCode).trigger("change");;
+		$("#CountryId").val(countryCode).trigger("change");;
 
-		$("#streetAddress1").val(billingContact.addressLines[0]);
+		$("#Address1").val(billingContact.addressLines[0]);
 
 		if (billingContact.addressLines.length > 1 && billingContact.locality == "")
-			$("#city").val(billingContact.addressLines[1]);
+			$("#City").val(billingContact.addressLines[1]);
 
 		if (billingContact.locality != "")
-			$("#city").val(billingContact.locality);
+			$("#City").val(billingContact.locality);
 
-		$("#state").val(billingContact.administrativeArea.toUpperCase());
-		//$("#Province").val(billingContact.administrativeArea.toUpperCase());
-		//$("#zipCode").val(billingContact.postalCode);
+		$("#StateId").val(billingContact.administrativeArea.toUpperCase());
+		$("#Province").val(billingContact.administrativeArea.toUpperCase());
+		$("#PostalCode").val(billingContact.postalCode);
 
 		var zip = billingContact.postalCode;
 		if (zip.length > 5) zip = zip.substr(0, 5);
-		$("#zipCode").val(zip);
+		$("#ZipCode").val(zip);
 	},
 
 	postDonationFormApplePay: function(callback_success, callback_fail) {
 		var postParams = $(braintree_aha.donation_form).serialize();
 		postParams += "&amount="+$('input[name=other_amount]').val();
 				
-		$.post('https://hearttools.heart.org/braintree/checkout.php', postParams)
+		$.getJSON('https://hearttools.heart.org/braintree/checkout.php?callback=?', postParams)
 			.done(function(data) {
-				braintree_aha.donation_result = JSON.parse(data.toString());
-				var donresult = JSON.parse(data.toString());
-				console.log(donresult);
+				braintree_aha.donation_result = data; //JSON.parse('['+data.result.toString()+']');
+				console.log(data.result);
 				//
-				if (donresult.error == "") {
+				if (data.error == "") {
+					//$('input[name=processorAuthorizationCode]').val(data.result.processorAuthorizationCode);
+					$('input[name=processorAuthorizationCode]').val(data.result.processorAuthorizationCode);
 					session.completePayment(ApplePaySession.STATUS_SUCCESS);
 					callback_success();
 				} else {
@@ -409,7 +410,7 @@ var braintree_aha = {
 					callback_fail(data.error);
 				}
 			})
-			.error(function() {
+			.fail(function() {
 				//
 				callback_fail();
 			}
@@ -418,12 +419,7 @@ var braintree_aha = {
 	
 	successSubmitDonation: function() {
 		//braintree_aha.donation_result
-		// show confirmation
-		$('.payment').hide();
-		$('.confirmation').show();
-		$('body').css('overflow-y', 'hidden');
-		$('body').scrollTop(0);
-		$('body').css('overflow-y', 'auto');
+		location.href = $('input[name=finish_success_redirect]').val();
 	},
 	
 	showGlobalError: function(message) {
