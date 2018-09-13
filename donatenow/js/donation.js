@@ -191,15 +191,10 @@ $( '.dropdown input[type="radio"]' ).each( function(){
   });
 });
 
-// Flag to keep source field intact from querystring
-var maintain_src = location.href.indexOf('wsa_recurring') > 0;
 
-$( '#payment2' ).on('click', {maintain_src}, function () {
+$( '#payment2' ).on('click', function () {
 	// Populate hidden form fields with updated values
 	$('#PaymentType').val('amazon');
-	if (!maintain_src) {
-		$('input[name=source]').val('AMAZON');
-	}
 	$('input[name=payment_source]').val('AMAZON');
 	$('input[name=offline_payment_method]').val('cash');
 	$('input[name=extproc]').val('');
@@ -211,12 +206,9 @@ $( '#payment2' ).on('click', {maintain_src}, function () {
 	  $('input[name=level_id]').val($('input[name=occurrence]:first').data("level"));
 	}
 });
-$( '#payment1' ).on('click', {maintain_src}, function () {
+$( '#payment1' ).on('click', function () {
 	// Populate hidden form fields with updated values
 	$('#PaymentType').val('cc');
-	if (!maintain_src) {
-		$('input[name=source]').val('GENERAL');
-	}
 	$('input[name=payment_source]').val('CC');
 	$('input[name=offline_payment_method]').val('');
 	$('input[name=extproc]').val('');
@@ -228,12 +220,9 @@ $( '#payment1' ).on('click', {maintain_src}, function () {
 	  $('input[name=level_id]').val($('input[name=occurrence]:checked').data("level"));
 	}
 });
-$( '#payment3' ).on('click', {maintain_src}, function () {
+$( '#payment3' ).on('click', function () {
 	// Populate hidden form fields with updated values
 	$('#PaymentType').val('cc');
-	if (!maintain_src) {
-		$('input[name=source]').val('PAYPAL');
-	}
 	$('input[name=payment_source]').val('CC');
 	$('input[name=offline_payment_method]').val('');
 	$('input[name=extproc]').val('paypal');
