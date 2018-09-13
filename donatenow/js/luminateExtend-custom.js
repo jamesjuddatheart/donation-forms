@@ -92,7 +92,7 @@
 						return false;
 					}
 					break;
-				case "applepay":
+				case "APPLEPAY":
 					braintree_aha.submitApplePayDonation();					
 					break;
 			}
@@ -146,6 +146,7 @@
 					$('.donation-form').show();				
 				} else {
 					//save off amazon id into custom field
+					$('input[name=check_number]').val(ref);
 					$('input[name=payment_confirmation_id]').val('AMAZON:'+ref);
 					
 					//logout of amazon
@@ -220,8 +221,11 @@
 		$('.donation-form').hide();
 		var params = $('.donation-form').serialize();
 		var status = "";
-		var amt = 0;
-		var ref = 0;
+		var amt = $('input[name=other_amount]').val();
+		var ref = 'APPLEPAY:'+$('input[name=processorAuthorizationCode]').val();
+		//save off amazon id into custom field
+		$('input[name=check_number]').val(ref);
+		$('input[name=payment_confirmation_id]').val(ref);
 		
 		//make offline donation in luminate to record transaction
 		if ($('input[name="df_preview"]').val() != "true") donateOffline();
