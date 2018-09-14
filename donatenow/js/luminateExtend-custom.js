@@ -72,23 +72,29 @@
 
       $('#donate-submit').click(function() {
 		if ($(form).valid()) {
-			if ($('#PaymentType').val() == "cc") {
-				$(form).submit();  
-			} else {
-				if (typeof amazon.Login.AmazonBillingAgreementId != "undefined") {
-					if ($('label[for="type-monthly"] .active').length > 0) {				
-						if (amazon.Login.MODBuyerBillingAgreementConsentStatus === "true") {
-							donateAmazon();
+			switch ($('#PaymentType').val()) {
+				case "cc" : 
+					$(form).submit();  
+					break;
+				case "amazon" :
+					if (typeof amazon.Login.AmazonBillingAgreementId != "undefined") {
+						if ($('label[for="type-monthly"] .active').length > 0) {				
+							if (amazon.Login.MODBuyerBillingAgreementConsentStatus === "true") {
+								donateAmazon();
+							} else {
+								alert("Consent is needed before making donation");
+							}
 						} else {
-							alert("Consent is needed before making donation");
+							donateAmazon();					
 						}
 					} else {
-						donateAmazon();					
+						alert("Please login to Amazon and select payment before submitting");
+						return false;
 					}
-				} else {
-					alert("Please login to Amazon and select payment before submitting");
-					return false;
-				}
+					break;
+				case "APPLEPAY":
+					braintree_aha.submitApplePayDonation();					
+					break;
 			}
 		} else { 
 			return false;
@@ -140,7 +146,8 @@
 					$('.donation-form').show();				
 				} else {
 					//save off amazon id into custom field
-					$('input[name=payment_confirmation_id]').val(ref);
+					$('input[name=check_number]').val(ref);
+					$('input[name=payment_confirmation_id]').val('AMAZON:'+ref);
 					
 					//logout of amazon
 					amazon.Login.logout();
@@ -208,6 +215,76 @@
 
 	}
 
+
+	function donateApplePay() {
+		window.scrollTo(0, 0);
+		$('.donation-form').hide();
+		var params = $('.donation-form').serialize();
+		var status = "";
+		var amt = $('input[name=other_amount]').val();
+		var ref = 'APPLEPAY:'+$('input[name=processorAuthorizationCode]').val();
+		//save off amazon id into custom field
+		$('input[name=check_number]').val(ref);
+		$('input[name=payment_confirmation_id]').val(ref);
+		
+		//make offline donation in luminate to record transaction
+		if ($('input[name="df_preview"]').val() != "true") donateOffline();
+
+		//var amt = data.donationResponse.donation.amount.decimal;
+		var email = $('input[name="donor.email"]').val();
+		var first = $('input[name="donor.name.first"]').val();
+		var last = $('input[name="donor.name.last"]').val();
+		var full = $('input[name="donor.name.first"]').val()+' '+$('input[name="donor.name.last"]').val();
+		var street1 = $('input[name="donor.address.street1"]').val();
+		var street2 = $('input[name="donor.address.street2"]').val();
+		var city = $('input[name="donor.address.city"]').val();
+		var state = $('select[name="donor.address.state"]').val();
+		var zip = $('input[name="donor.address.zip"]').val();
+		var country = $('select[name="donor.address.country"]').val();
+		//var ref = data.donationResponse.donation.confirmation_code;
+		var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
+		var cc=$('input[name=card_number]').val();
+		var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();	
+					
+		$('.donation-loading').remove();
+		$('.donate-now, .header-donate').hide();
+		$('.thank-you').show();
+		$.get(donation_thank_you_page,function(datat){ 
+			  $('.thank-you').html($(datat).find('.thank-you').html());
+			  $('p.first').html(first);
+			  $('p.last').html(last);
+			  $('p.street1').html(street1);
+			  $('p.street2').html(street2);
+			  $('p.city').html(city);
+			  $('p.state').html(state);
+			  $('p.zip').html(zip);
+			  $('p.country').html(country);
+			  $('p.email').html(email);
+			  $('tr.cardGroup').hide();
+			  $('tr.amazon').show();
+			  $('p.amount').html("$"+amt);
+			  $('p.confcode').html(ref);
+		});
+							  
+		$('.thank-you').append('<img src="http://www.offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
+		$.getScript("//action.dstillery.com/orbserv/nsjs?adv=cl1014039&ns=1985&nc=HBP-Donate-Now-Landing-Page&ncv=52&dstOrderId="+ref+"&dstOrderAmount="+amt);
+								
+		/* ECOMMERCE TRACKING CODE */ 
+		ga('require', 'ecommerce');
+
+		ga('ecommerce:addTransaction', {
+		  'id': ref,
+		  'affiliation': 'AHA Amazon Donation '+khctitle,
+		  'revenue': amt,
+		  'city': $('input[name="donor.address.city"]').val(),
+		  'state': $('select[name="donor.address.state"]').val()  // local currency code.
+		});
+
+		ga('ecommerce:send');
+
+		ga('send', 'pageview', '/donateok.asp');
+	}
+	
 	function donateOffline() {
 		var params = $('.donation-form').serialize();
 
@@ -592,7 +669,8 @@ $('[name^=donor\\.]').each(function(){
 // ADD QUERY STRING CODE 
 	if ($.getQuerystring("honor") == "true") {
 		$(document).ready(function(){
-			$('.tribute-select .icon-selection:eq(1) label').click();
+			$('input#tribGift1').click();
+			$('select#tributeType').val('honor');
 			if ($.getQuerystring("trib_fname")) {
 				$('input[name="tribute.honoree.name.first"]').val($.getQuerystring("trib_fname"));
 			}
@@ -603,7 +681,8 @@ $('[name^=donor\\.]').each(function(){
 	}
 	if ($.getQuerystring("memorial") == "true") { 
 		$(document).ready(function(){
-			$('.tribute-select .icon-selection:eq(2) label').click();
+			$('input#tribGift1').click();
+			$('select#tributeType').val('memorial');
 			if ($.getQuerystring("trib_fname")) {
 				$('input[name="tribute.honoree.name.first"]').val($.getQuerystring("trib_fname"));
 			}
