@@ -358,7 +358,7 @@ function donateAmazon() {
 
 				ga('ecommerce:addTransaction', {
 				  'id': ref,
-				  'affiliation': 'AHA Amazon Donation '+khctitle,
+				  'affiliation': 'AHA Amazon Donation',
 				  'revenue': amt,
 				  'city': $('input[name="donor.address.city"]').val(),
 				  'state': $('select[name="donor.address.state"]').val()  // local currency code.
@@ -432,7 +432,7 @@ function donateApplePay() {
 
 	ga('ecommerce:addTransaction', {
 	  'id': ref,
-	  'affiliation': 'AHA Amazon Donation '+khctitle,
+	  'affiliation': 'AHA Amazon Donation',
 	  'revenue': amt,
 	  'city': $('input[name="donor.address.city"]').val(),
 	  'state': $('select[name="donor.address.state"]').val()  // local currency code.
