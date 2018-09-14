@@ -236,7 +236,7 @@ $( '#payment3' ).on('click', function () {
 
 $( '#payment4' ).on('click',function () {
 	// Populate hidden form fields with updated values
-	$('#PaymentType').val('APPLEPAY');
+	$('input[name=PaymentType]').val('APPLEPAY');
 	$('input[name=payment_source]').val('APPLEPAY');
 	$('input[name=offline_payment_method]').val('cash');
 	$('input[name=extproc]').val('');
