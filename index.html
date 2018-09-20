@@ -264,7 +264,7 @@
 						<!-- <input type="hidden" name="ecard.send" id="ecard_send" value="false" /> -->
 						<div class='input-group col-xs-12 col-sm-12 text-area'>
 							<label for='emailCardEmail' name='emailCardEmail' class='required-asterisk'>Recipient Email Address(es):</label>
-							<textarea id='emailCardEmail' name='ecard.recipients' class='required' title="Email Card Message"></textarea>
+							<textarea id='emailCardEmail' name='ecard.recipients' class='required' title="Email Card Recipient"></textarea>
 							<p class="help-block">Please separate each additional email address with a comma, e.g. 'JohnDoe@gmail.com, JaneRoe@hotmail.com'.</p>
 						</div>
 						<div class='input-group col-xs-12 col-sm-6 text-field'>
@@ -284,8 +284,8 @@
 			            	<input type='text' id='emailCardSubject2' name='ecard.subject' value='In memory of  ' class='required' />
 			            </div>
 			            <div class='input-group col-xs-12 col-sm-9 select-box honor'>
-			            	<label for='emailCardMessage' name='emailCardMessage' class='required-asterisk'>Your Message:</label>
-			            	<select id='emailCardMessage' name='msgPrefillEcard' class='required' class='required'>
+			            	<label for='emailCardMessage' name='emailCardMessage'>Your Message:</label>
+			            	<select id='emailCardMessage' name='msgPrefillEcard'>
 			            		<option value='' selected disabled >Choose a default message or type your own</option>
 								<option value='Thinking of you'>Thinking of you</option>
 								<option value='Happy birthday!'>Happy birthday!</option>
@@ -295,8 +295,8 @@
 							</select>
 						</div>
 						<div class='input-group col-xs-12 col-sm-9 select-box memorial'>
-							<label for='emailCardMessage2' name='emailCardMessage' class='required-asterisk'>Your Message:</label>
-							<select id='emailCardMessage2' name='msgPrefillEcard' class='required' class='required'>
+							<label for='emailCardMessage2' name='emailCardMessage'>Your Message:</label>
+							<select id='emailCardMessage2' name='msgPrefillEcard'>
 								<option value='' selected disabled >Choose a default message or type your own</option>
 								<option value='In loving memory.'>In loving memory.</option>
 								<option value='I am truly sorry for your loss.'>I am truly sorry for your loss.</option>
@@ -441,8 +441,8 @@
 							<input type='text' id='printedCardLastName2' name='tribute.honoree.name.last' value='[[S334:giftLastName]]' class='required' />
 						</div>
 						<div class='input-group col-xs-12 col-sm-9 select-box honor'>
-							<label for='printedCardMessage' name='printedCardMessage' class='required-asterisk'>Your Message:</label>
-							<select id='printedCardMessage' name='msgPrefillMail' class='required'>
+							<label for='printedCardMessage' name='printedCardMessage'>Your Message:</label>
+							<select id='printedCardMessage' name='msgPrefillMail'>
 								<option value='' selected disabled >Choose a default message or type your own</option>
 								<option value='Thinking of you'>Thinking of you</option>
 								<option value='Happy birthday!'>Happy birthday!</option>
@@ -452,8 +452,8 @@
 							</select>
 						</div>
 						<div class='input-group col-xs-12 col-sm-9 select-box memorial'>
-							<label for='printedCardMessage2' name='printedCardMessage' class='required-asterisk'>Your Message:</label>
-							<select id='printedCardMessage2' name='msgPrefillMail' class='required'>
+							<label for='printedCardMessage2' name='printedCardMessage'>Your Message:</label>
+							<select id='printedCardMessage2' name='msgPrefillMail'>
 								<option value='' selected disabled >Choose a default message or type your own</option>
 								<option value='In loving memory.'>In loving memory.</option>
 								<option value='I am truly sorry for your loss.'>I am truly sorry for your loss.</option>
