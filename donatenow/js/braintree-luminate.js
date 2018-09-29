@@ -57,7 +57,7 @@ var session = "";
 var braintree_aha = { 
 	applePayPaymentType	: ($.getQuerystring("btmethod") == "") ? true : false,
 	applePaySubmitButton: '.radio-applepay',
-	venmoPaymentType	: ($.getQuerystring("method") == "venmo") ? true : false,
+	venmoPaymentType	: ($.getQuerystring("method") == "") ? true : false,
 	venmoSubmitButton	: '#venmo-button',
 	venmoSubmitBlock	: '#venmo-button-block',
 	donation_form		: $('form'),
@@ -149,23 +149,22 @@ var braintree_aha = {
 			  return;
 			}
 			
-			$(braintree_aha.venmoSubmitButton).prop('disabled', false);  //set disabled status based on available fla
-			$(braintree_aha.venmoSubmitBlock).removeClass("hidden");
+			jQuery(braintree_aha.venmoSubmitButton).removeClass("hidden");
 			
-			$('.venmo-fields').show();
+			//$('.venmo-fields').show();
 			
-			$(braintree_aha.venmoSubmitButton).click(function(){
-				if ($(braintree_aha.donation_form).valid()) {
-					braintree_aha.submitVenmoDonation();
-				}
-			});
+			//$(braintree_aha.venmoSubmitButton).click(function(){
+			//	if ($(braintree_aha.donation_form).valid()) {
+			//		braintree_aha.submitVenmoDonation();
+			//	}
+			//});
 
 			// Check if tokenization results already exist. This occurs when your
 			// checkout page is relaunched in a new tab. This step can be omitted
 			// if allowNewBrowserTab is false.
-			if (venmoInstance.hasTokenizationResult()) {
-				braintree_aha.submitVenmoDonation();
-			}
+			//if (venmoInstance.hasTokenizationResult()) {
+			//	braintree_aha.submitVenmoDonation();
+			//}
 		});
 	},
 
@@ -187,14 +186,14 @@ var braintree_aha = {
 				// Display the Venmo username in your checkout UI.
 				console.log('Venmo user:', payload.details.username);
 
-				$(braintree_aha.venmoSubmitButton).hide().after("<div id='venmo-button' style='background-image:none;color:#fff;'>Processing. Please Wait...</div>");
+				//$(braintree_aha.venmoSubmitButton).hide().after("<div id='venmo-button' style='background-image:none;color:#fff;'>Processing. Please Wait...</div>");
 	
 				// Send payload.nonce to your server.
 				$("input#payment_method_nonce").val(payload.nonce);
 
 				// Success Venmo
 				braintree_aha.postDonationFormVenmo(
-					braintree_aha.successSubmitDonation,
+					donateVenmo,
 					function (textStatus) {
 						if (textStatus != "") {
 							braintree_aha.showGlobalError(textStatus);
@@ -208,15 +207,15 @@ var braintree_aha = {
 			
 	postDonationFormVenmo: function(callback_success, callback_fail) {
 		var postParams = $(braintree_aha.donation_form).serialize();
-		postParams += "&amount="+$('input[name=level_standardexpanded]:checked').val();
-
-		$.post('/braintree/checkout.php', postParams)
+		postParams += "&amount="+$('input[name=other_amount]').val();
+				
+		$.getJSON('https://hearttools.heart.org/braintree/checkout.php?callback=?', postParams)
 			.done(function(data) {
-				braintree_aha.donation_result = JSON.parse(data.toString());
-				var donresult = JSON.parse(data.toString());
-				console.log(donresult);
+				braintree_aha.donation_result = data; //JSON.parse('['+data.result.toString()+']');
+				console.log(data.result);
 				//
-				if (donresult.error == "") {
+				if (data.error == "") {
+					$('input[name=processorAuthorizationCode]').val(data.result.processorAuthorizationCode);
 					callback_success();
 				} else {
 					callback_fail(data.error);
