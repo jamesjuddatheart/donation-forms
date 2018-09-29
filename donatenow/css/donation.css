@@ -1073,6 +1073,17 @@ form .form-group .applepay {
   vertical-align: middle;
   margin-top: 10px;
 }
+form .form-group .venmo {
+  content: '';
+  background-image: url(../images/venmo-button.png );
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: inline-block;
+  width: 170px;
+  height: 40px;
+  vertical-align: middle;
+  margin-top: 10px;
+}
 form .form-group .help-block {
   font-size: 14px;
   color: #000;
