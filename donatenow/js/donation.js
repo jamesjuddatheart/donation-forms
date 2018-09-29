@@ -247,6 +247,19 @@ $( '#payment4' ).on('click',function () {
 	}
 });
 
+$( '#payment5' ).on('click',function () {
+	// Populate hidden form fields with updated values
+	$('input[name=PaymentType]').val('VENMO');
+	$('input[name=payment_source]').val('VENMO');
+	$('input[name=offline_payment_method]').val('cash');
+	$('input[name=extproc]').val('');
+	$('input[name=method]').val('donate');
+	$('#payment1form, #payment2form').hide();
+	if ($('input[name=occurrence]:checked').data("frequency") == "recurring") {
+	  $('input[name=level_id]').val($('input[name=occurrence]:checked').data("level"));
+	}
+});
+
 $('select[name=msgPrefillEcard]').change(function(){
 	$('textarea[name="ecard.message"]').val(this.value);
 });
