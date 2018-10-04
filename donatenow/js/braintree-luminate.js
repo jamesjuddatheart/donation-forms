@@ -67,7 +67,11 @@ var braintree_aha = {
 	initializeBraintree: function() {
 		
 		//if apple pay is available then start BT process
-		$.getJSON("https://hearttools.heart.org/braintree/gettoken.php?callback=?",function(data){
+		var tokenURL = "https://hearttools.heart.org/braintree/gettoken.php";
+		if ($('input[name=instance]').val() == "heartdev") {
+			tokenURL = "https://hearttools.heart.org/braintree/gettoken-test.php";
+		}
+		$.getJSON(tokenURL + "?callback=?",function(data){
 			console.log(data);
 			braintree_client_token = data.token;
 
@@ -209,7 +213,11 @@ var braintree_aha = {
 		var postParams = $(braintree_aha.donation_form).serialize();
 		postParams += "&amount="+$('input[name=other_amount]').val();
 				
-		$.getJSON('https://hearttools.heart.org/braintree/checkout.php?callback=?', postParams)
+		var tokenURL = "https://hearttools.heart.org/braintree/checkout.php";
+		if ($('input[name=instance]').val() == "heartdev") {
+			tokenURL = "https://hearttools.heart.org/braintree/checkout-test.php";
+		}
+		$.getJSON(tokenURL + '?callback=?', postParams)
 			.done(function(data) {
 				braintree_aha.donation_result = data; //JSON.parse('['+data.result.toString()+']');
 				console.log(data.result);
@@ -394,7 +402,11 @@ var braintree_aha = {
 		var postParams = $(braintree_aha.donation_form).serialize();
 		postParams += "&amount="+$('input[name=other_amount]').val();
 				
-		$.getJSON('https://hearttools.heart.org/braintree/checkout.php?callback=?', postParams)
+		var tokenURL = "https://hearttools.heart.org/braintree/checkout.php";
+		if ($('input[name=instance]').val() == "heartdev") {
+			tokenURL = "https://hearttools.heart.org/braintree/checkout-test.php";
+		}
+		$.getJSON(tokenURL + '?callback=?', postParams)
 			.done(function(data) {
 				braintree_aha.donation_result = data; //JSON.parse('['+data.result.toString()+']');
 				console.log(data.result);
