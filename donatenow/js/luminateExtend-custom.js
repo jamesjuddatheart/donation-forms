@@ -95,6 +95,9 @@
 				case "APPLEPAY":
 					braintree_aha.submitApplePayDonation();					
 					break;
+				case "VENMO":
+					braintree_aha.submitVenmoDonation();					
+					break;
 			}
 		} else { 
 			return false;
