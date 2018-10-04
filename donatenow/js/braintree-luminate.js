@@ -58,7 +58,7 @@ var braintree_aha = {
 	applePayPaymentType	: ($.getQuerystring("btmethod") == "") ? true : false,
 	applePaySubmitButton: '.radio-applepay',
 	venmoPaymentType	: ($.getQuerystring("method") == "") ? true : false,
-	venmoSubmitButton	: '#venmo-button',
+	venmoSubmitButton	: '.radio-venmo',
 	venmoSubmitBlock	: '#venmo-button-block',
 	donation_form		: $('form'),
 	donation_result		: "",
