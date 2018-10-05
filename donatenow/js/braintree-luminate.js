@@ -230,7 +230,7 @@ var braintree_aha = {
 					callback_fail(data.error);
 				}
 			})
-			.error(function() {
+			.fail(function() {
 				//
 				callback_fail();
 			}
