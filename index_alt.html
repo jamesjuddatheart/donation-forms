@@ -29,10 +29,10 @@
 	    <input type="hidden" name="form_id" value="[[S80:form_id]]" /> <!-- update per ghost form ID -->
 	    <input type="hidden" name="validate" value="true" />
 	    <input type="hidden" name="source" value="[[?x[[S80:source]]x::xx::GENERAL::[[S80:source]]]]" /> <!-- update source as needed --> 
-	    <input type="hidden" name="form_version" value="control" />
+	    <input type="hidden" name="form_version" value="test" />
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
-	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::25::100]]" />
+	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::25::125]]" />
 	    <input type="hidden" name="level_id" value="[[?xtruex::x[[S80:sustainer_default]]x::[[S80:level_id_recurring]]::[[S80:level_id]]]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
 	    <input type="hidden" name="payment_confirmation_id" value="" />
 	    <input type="hidden" name="check_number" value="" />
@@ -105,16 +105,16 @@
 
 			<div class='inline onetime display__inline-block' role='radiogroup' aria-label="giftsel2" [[?xtruex::x[[S80:sustainer_default]]x::style="display: none;"::]]>
 					<div class='input-group gift'>
-						<input type='radio' name='gift' id='gift5' value='$40'/>
-						<label for='gift5' class='radio-label' data-amount="40" role="radio" tabindex='0' title="$40" aria-checked="false">$40</label>
+						<input type='radio' name='gift' id='gift5' value='$25'/>
+						<label for='gift5' class='radio-label' data-amount="25" role="radio" tabindex='0' title="$25" aria-checked="false">$25</label>
 					</div>
 					<div class='input-group gift'>
-						<input type='radio' name='gift' id='gift6' value='$60'/>
-						<label for='gift6' class='radio-label' data-amount="60" role="radio" tabindex='0' title="$60" aria-checked="false">$60</label>
+						<input type='radio' name='gift' id='gift6' value='$50'/>
+						<label for='gift6' class='radio-label' data-amount="50" role="radio" tabindex='0' title="$50" aria-checked="false">$50</label>
 					</div>
 					<div class='input-group gift'>
-						<input type='radio' name='gift' id='gift7' value='$100' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
-						<label for='gift7' class='radio-label' data-amount="100" role="radio" tabindex='0' title="$100" aria-checked="false">$100</label>
+						<input type='radio' name='gift' id='gift7' value='$125' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
+						<label for='gift7' class='radio-label' data-amount="125" role="radio" tabindex='0' title="$125" aria-checked="false">$125</label>
 					</div>
 					<div class='input-group gift'>
 						<input type='radio' name='gift' id='gift8' value='$250'/>
