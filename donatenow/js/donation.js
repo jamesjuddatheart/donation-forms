@@ -15,6 +15,7 @@ function showLevels(frequency,level) {
 			.removeAttr('style');
 		if (!$('.radio-applepay').hasClass("hidden")) {
 			$('.radio-applepay').hide();
+			$('.radio-venmo').hide();
 		}
 		$('.onetime').hide();
 		// hide Amazon monthly option and select CC
@@ -34,6 +35,7 @@ function showLevels(frequency,level) {
 		$('.radio-amazon').css('cssText', '');
 		if (!$('.radio-applepay').hasClass("hidden")) {
 			$('.radio-applepay').show();
+			$('.radio-venmo').show();
 		}
 		$('input[name=gift]').removeAttr('checked');
 		if(location.href.indexOf("donatenow_lifeiswhy") > 0) {
