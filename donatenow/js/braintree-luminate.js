@@ -57,8 +57,8 @@ var session = "";
 var braintree_aha = { 
 	applePayPaymentType	: ($.getQuerystring("btmethod") == "") ? true : false,
 	applePaySubmitButton: '.radio-applepay',
-	venmoPaymentType	: ($.getQuerystring("method") == "venmo") ? true : false,
-	venmoSubmitButton	: '#venmo-button',
+	venmoPaymentType	: ($.getQuerystring("method") == "") ? true : false,
+	venmoSubmitButton	: '.radio-venmo',
 	venmoSubmitBlock	: '#venmo-button-block',
 	donation_form		: $('form'),
 	donation_result		: "",
@@ -67,7 +67,11 @@ var braintree_aha = {
 	initializeBraintree: function() {
 		
 		//if apple pay is available then start BT process
-		$.getJSON("https://hearttools.heart.org/braintree/gettoken.php?callback=?",function(data){
+		var tokenURL = "https://hearttools.heart.org/braintree/gettoken.php";
+		if ($('input[name=instance]').val() == "heartdev") {
+			tokenURL = "https://hearttools.heart.org/braintree/gettoken-test.php";
+		}
+		$.getJSON(tokenURL + "?callback=?",function(data){
 			console.log(data);
 			braintree_client_token = data.token;
 
@@ -149,29 +153,29 @@ var braintree_aha = {
 			  return;
 			}
 			
-			$(braintree_aha.venmoSubmitButton).prop('disabled', false);  //set disabled status based on available fla
-			$(braintree_aha.venmoSubmitBlock).removeClass("hidden");
+			jQuery(braintree_aha.venmoSubmitButton).removeClass("hidden");
 			
-			$('.venmo-fields').show();
+			//$('.venmo-fields').show();
 			
-			$(braintree_aha.venmoSubmitButton).click(function(){
-				if ($(braintree_aha.donation_form).valid()) {
-					braintree_aha.submitVenmoDonation();
-				}
-			});
+			//$(braintree_aha.venmoSubmitButton).click(function(){
+			//	if ($(braintree_aha.donation_form).valid()) {
+			//		braintree_aha.submitVenmoDonation();
+			//	}
+			//});
 
 			// Check if tokenization results already exist. This occurs when your
 			// checkout page is relaunched in a new tab. This step can be omitted
 			// if allowNewBrowserTab is false.
-			if (venmoInstance.hasTokenizationResult()) {
-				braintree_aha.submitVenmoDonation();
-			}
+			//if (venmoInstance.hasTokenizationResult()) {
+			//	braintree_aha.submitVenmoDonation();
+			//}
 		});
 	},
 
 	submitVenmoDonation: function() {
 		venmoInstance.tokenize(function (status, payload) {
-			if (payload == undefined) {d
+			console.log(status, payload);
+			if (payload == undefined) {
 				if (status.code === 'VENMO_CANCELED') {
 					alert('App is not available or user aborted payment flow');
 				} else if (status.code === 'VENMO_APP_CANCELED') {
@@ -187,14 +191,14 @@ var braintree_aha = {
 				// Display the Venmo username in your checkout UI.
 				console.log('Venmo user:', payload.details.username);
 
-				$(braintree_aha.venmoSubmitButton).hide().after("<div id='venmo-button' style='background-image:none;color:#fff;'>Processing. Please Wait...</div>");
+				//$(braintree_aha.venmoSubmitButton).hide().after("<div id='venmo-button' style='background-image:none;color:#fff;'>Processing. Please Wait...</div>");
 	
 				// Send payload.nonce to your server.
 				$("input#payment_method_nonce").val(payload.nonce);
 
 				// Success Venmo
 				braintree_aha.postDonationFormVenmo(
-					braintree_aha.successSubmitDonation,
+					donateVenmo,
 					function (textStatus) {
 						if (textStatus != "") {
 							braintree_aha.showGlobalError(textStatus);
@@ -208,21 +212,25 @@ var braintree_aha = {
 			
 	postDonationFormVenmo: function(callback_success, callback_fail) {
 		var postParams = $(braintree_aha.donation_form).serialize();
-		postParams += "&amount="+$('input[name=level_standardexpanded]:checked').val();
-
-		$.post('/braintree/checkout.php', postParams)
+		postParams += "&amount="+$('input[name=other_amount]').val();
+				
+		var tokenURL = "https://hearttools.heart.org/braintree/checkout.php";
+		if ($('input[name=instance]').val() == "heartdev") {
+			tokenURL = "https://hearttools.heart.org/braintree/checkout-test.php";
+		}
+		$.getJSON(tokenURL + '?callback=?', postParams)
 			.done(function(data) {
-				braintree_aha.donation_result = JSON.parse(data.toString());
-				var donresult = JSON.parse(data.toString());
-				console.log(donresult);
+				braintree_aha.donation_result = data; //JSON.parse('['+data.result.toString()+']');
+				console.log(data.result);
 				//
-				if (donresult.error == "") {
+				if (data.error == "") {
+					$('input[name=processorAuthorizationCode]').val(data.result.processorAuthorizationCode);
 					callback_success();
 				} else {
 					callback_fail(data.error);
 				}
 			})
-			.error(function() {
+			.fail(function() {
 				//
 				callback_fail();
 			}
@@ -395,7 +403,11 @@ var braintree_aha = {
 		var postParams = $(braintree_aha.donation_form).serialize();
 		postParams += "&amount="+$('input[name=other_amount]').val();
 				
-		$.getJSON('https://hearttools.heart.org/braintree/checkout.php?callback=?', postParams)
+		var tokenURL = "https://hearttools.heart.org/braintree/checkout.php";
+		if ($('input[name=instance]').val() == "heartdev") {
+			tokenURL = "https://hearttools.heart.org/braintree/checkout-test.php";
+		}
+		$.getJSON(tokenURL + '?callback=?', postParams)
 			.done(function(data) {
 				braintree_aha.donation_result = data; //JSON.parse('['+data.result.toString()+']');
 				console.log(data.result);

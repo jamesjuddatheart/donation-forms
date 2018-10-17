@@ -15,6 +15,7 @@ function showLevels(frequency,level) {
 			.removeAttr('style');
 		if (!$('.radio-applepay').hasClass("hidden")) {
 			$('.radio-applepay').hide();
+			$('.radio-venmo').hide();
 		}
 		$('.onetime').hide();
 		// hide Amazon monthly option and select CC
@@ -34,6 +35,7 @@ function showLevels(frequency,level) {
 		$('.radio-amazon').css('cssText', '');
 		if (!$('.radio-applepay').hasClass("hidden")) {
 			$('.radio-applepay').show();
+			$('.radio-venmo').show();
 		}
 		$('input[name=gift]').removeAttr('checked');
 		if(location.href.indexOf("donatenow_lifeiswhy") > 0) {
@@ -238,6 +240,19 @@ $( '#payment4' ).on('click',function () {
 	// Populate hidden form fields with updated values
 	$('input[name=PaymentType]').val('APPLEPAY');
 	$('input[name=payment_source]').val('APPLEPAY');
+	$('input[name=offline_payment_method]').val('cash');
+	$('input[name=extproc]').val('');
+	$('input[name=method]').val('donate');
+	$('#payment1form, #payment2form').hide();
+	if ($('input[name=occurrence]:checked').data("frequency") == "recurring") {
+	  $('input[name=level_id]').val($('input[name=occurrence]:checked').data("level"));
+	}
+});
+
+$( '#payment5' ).on('click',function () {
+	// Populate hidden form fields with updated values
+	$('input[name=PaymentType]').val('VENMO');
+	$('input[name=payment_source]').val('VENMO');
 	$('input[name=offline_payment_method]').val('cash');
 	$('input[name=extproc]').val('');
 	$('input[name=method]').val('donate');
