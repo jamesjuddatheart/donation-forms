@@ -266,7 +266,7 @@
 })(jQuery);
 
 function submitToVenmo() {
-	$('#venmoModal').modal('close');
+	$('#venmoModal').modal('hide');
 	braintree_aha.submitVenmoDonation();
 }
 
