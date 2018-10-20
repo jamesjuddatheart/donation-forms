@@ -265,6 +265,10 @@
   });
 })(jQuery);
 
+function submitToVenmo() {
+	$('#venmoModal').modal('close');
+	braintree_aha.submitVenmoDonation();
+}
 
 function donateAmazon() {
 	window.scrollTo(0, 0);
