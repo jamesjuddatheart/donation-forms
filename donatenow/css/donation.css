@@ -1594,7 +1594,7 @@ footer ul li a:focus {
     width: auto;
     display: none !important;
   }
-  .main-content.thank-you {
+  .thank-you {
     padding: 0 10px;
   }
 }
