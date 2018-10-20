@@ -96,6 +96,9 @@
 					braintree_aha.submitApplePayDonation();					
 					break;
 				case "VENMO":
+					var venmoData = $('input#firstName').val() + ' ' + $('input#lastName').val();
+					venmoData += "<br/>Amount: $" + $('input[name=other_amount]').val();
+					$('#venmoModal .modal-body').html(venmoData);
 					$('#venmoModal').modal();					
 					break;
 			}
