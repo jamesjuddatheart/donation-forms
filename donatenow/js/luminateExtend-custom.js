@@ -97,7 +97,7 @@
 					break;
 				case "VENMO":
 					var venmoData = "Donate to the American Heart Association";
-					venmoData += "<h1>$" + $('input[name=other_amount]').val() + "</h1>";
+					venmoData += "<div style='font-size:40px'>$" + $('input[name=other_amount]').val() + "</div>";
 					$('#venmoModal .modal-body').html(venmoData);
 					$('#venmoModal').modal();					
 					break;
