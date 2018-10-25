@@ -5,7 +5,7 @@
     	apiKey: 'wDB09SQODRpVIOvX', 
         path: {
           nonsecure: 'http://heartdev.convio.net/site/', 
-          secure: 'https://secure3.convio.net/heartdev/site/'
+          secure: 'https://dev2.convio.net/heartdev/site/'
         }
      });
   } else {
@@ -489,11 +489,12 @@ function getAmazonAddress() {
 	});
 }
 
-function includeCustomFBPixel() {
+function includeCustomFBPixel(amt) {
     if(typeof(thank_you_pixel)!=='undefined'){
-        $.get("https://www2.heart.org/site/SPageNavigator/"+ thank_you_pixel +".html", function(pgData){
-            $('.thank-you').append($(pgData).find('.confirmation-pixel').html());
-        });
+		fbq('track', 'Donation', { 
+			value: amt, 
+			currency: 'USD', 
+		});
     };
 }
 
