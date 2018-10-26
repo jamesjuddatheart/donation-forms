@@ -5,7 +5,7 @@
     	apiKey: 'wDB09SQODRpVIOvX', 
         path: {
           nonsecure: 'http://heartdev.convio.net/site/', 
-          secure: 'https://dev2.convio.net/heartdev/site/'
+          secure: 'https://dev2.heart.org/site/'
         }
      });
   } else {
