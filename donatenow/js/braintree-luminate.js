@@ -190,7 +190,8 @@ var braintree_aha = {
 				console.log('Got a payment method nonce:', payload.nonce);
 				// Display the Venmo username in your checkout UI.
 				console.log('Venmo user:', payload.details.username);
-
+                                $('#venmo_user').val(payload.details.username);
+				
 				//$(braintree_aha.venmoSubmitButton).hide().after("<div id='venmo-button' style='background-image:none;color:#fff;'>Processing. Please Wait...</div>");
 	
 				// Send payload.nonce to your server.
