@@ -490,7 +490,8 @@ function donateVenmo() {
 	//var ref = data.donationResponse.donation.confirmation_code;
 	var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
 	var cc=$('input[name=card_number]').val();
-	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();	
+	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
+	var venmo_user = $('input[name=venmo_user]').val();
 
 	$('.donation-loading').remove();
 	$('.donate-now, .header-donate').hide();
@@ -510,6 +511,8 @@ function donateVenmo() {
 		  $('tr.amazon').show();
 		  $('p.amount').html("$"+amt);
 		  $('p.confcode').html(ref);
+		  $('p.venmo_user').closest('tr').show();
+		  $('p.venmo_user').html(venmo_user);
 	});
 
 	$('.thank-you').append('<img src="http://www.offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
