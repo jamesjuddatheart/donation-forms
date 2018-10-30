@@ -511,7 +511,7 @@ function donateVenmo() {
 		  $('tr.amazon').show();
 		  $('p.amount').html("$"+amt);
 		  $('p.confcode').html(ref);
-		  $('p.venmo_user').closest('tr').removeAttr("hidden");
+		  $('p.venmo_user').closest('tr').removeClass("hidden");
 		  $('p.venmo_user').html(venmo_user);
 	});
 
