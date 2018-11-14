@@ -71,6 +71,12 @@
 	);
 
       $('#donate-submit').click(function() {
+		if (!formValidator()) {
+			return false;
+		} else {
+			// do form processing
+		}
+		
 		if ($(form).valid()) {
 			switch ($('#PaymentType').val()) {
 				case "cc" : 
@@ -578,6 +584,20 @@ function includeCustomFBPixel(amt) {
 			currency: 'USD', 
 		});
     };
+}
+
+function formValidator() {
+	var params = $('.donation-form').serialize();
+	$.ajax({
+		method: "POST",
+		async: false,
+		cache:false,
+		dataType: "json",
+		url:"https://hearttools.heart.org/donate/recaptcha/recaptcha.php?"+params+"&callback=?",
+		success: function(data){
+			//donateCallback.success(data.data);
+		}
+	});
 }
 
 (function ($) {
