@@ -587,17 +587,27 @@ function includeCustomFBPixel(amt) {
 }
 
 function formValidator(token) {
-	var params = $('.donation-form input[name!="card_number"][name!="card_cvv"]').serialize();
+	var srv = window.location.host;
+	var p2 = $('.donation-form [name="remote_addr"]').val();
+
 	$.ajax({
 		method: "POST",
 		async: false,
 		cache:false,
 		dataType: "json",
-		url:"https://hearttools.heart.org/donate/recaptcha/recaptcha.php?"+params+"&callback=?",
+		data: {
+			hst: srv,
+			remote_addr: p2,
+			captcha: token,
+		},
+		url:"https://hearttools.heart.org/donate/recaptcha/recaptcha.php?callback=?",
 		success: function(data){
 			console.log(data);
+			rslt = data.success;
 		}
 	});
+
+	return rslt;
 }
 
 (function ($) {
