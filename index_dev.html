@@ -19,7 +19,7 @@
     <!-- MAIN CONTENT -->
     <section class='col-xs-12 col-sm-8 main-content' aria-label="mainContent">
 	[[S80:intro_text]]
-	<form class="luminateApi donation-form" method="POST" action="[[?xheartdevx::x[[S80:instance]]x::https://secure3.convio.net/heartdev::https://www2.heart.org]]/site/CRDonationAPI" data-luminateApi='{"callback": "donateCallback"}' id="donateform">
+	<form class="luminateApi donation-form" method="POST" action="[[?xheartdevx::x[[S80:instance]]x::https://dev2.heart.org::https://www2.heart.org]]/site/CRDonationAPI" data-luminateApi='{"callback": "donateCallback"}' id="donateform">
 	    <input type="hidden" name="instance" value="[[S80:instance]]" />
 	    <input type="hidden" name="recurring" value="[[?xtruex::x[[S80:sustainer_default]]x::true::]]" />
 	    <input type="hidden" name="extproc" value="" />
@@ -809,7 +809,7 @@
 						data-callback='formValidator'>Send My Gift</button>
 		
 					<!-- button added for accessiblity testing -->
-					<input type="submit" value="submit" style="display:none;" onclick="return false;">
+					<input type="submit" value="submit" style="display:none;" onclick="return false;" data-sitekey="6LdnyXcUAAAAAKS7FiwmqRDA5g1dhTHPEJjps7WV">
 
         	<div class='ssl'>
         		<img src='../donation-forms/donatenow/images/comodo-secure-icon.png' alt='Comodo Secure Image' /><a href='https://ssl.comodo.com/'>SSL Certificate</a>
