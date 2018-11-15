@@ -71,16 +71,16 @@
 	);
 
       $('#donate-submit').click(function() {
-		if (!formValidator()) {
-			return false;
-		} else {
-			// do form processing
-		}
-		
-		if ($(form).valid()) {
-			switch ($('#PaymentType').val()) {
-				case "cc" : 
-					$(form).submit();  
+		  
+		  if ($(form).valid()) {
+			  switch ($('#PaymentType').val()) {
+				  case "cc" : 
+					  if (!formValidator()) {
+						  return false;
+					  } else {
+						  // do form processing
+						  $(form).submit();  
+					  }
 					break;
 				case "amazon" :
 					if (typeof amazon.Login.AmazonBillingAgreementId != "undefined") {
@@ -586,8 +586,8 @@ function includeCustomFBPixel(amt) {
     };
 }
 
-function formValidator() {
-	var params = $('.donation-form').serialize();
+function formValidator(token) {
+	var params = $('.donation-form input[name!="card_number"][name!="card_cvv"]').serialize();
 	$.ajax({
 		method: "POST",
 		async: false,
@@ -595,7 +595,7 @@ function formValidator() {
 		dataType: "json",
 		url:"https://hearttools.heart.org/donate/recaptcha/recaptcha.php?"+params+"&callback=?",
 		success: function(data){
-			//donateCallback.success(data.data);
+			console.log(data);
 		}
 	});
 }

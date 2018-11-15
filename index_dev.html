@@ -806,9 +806,10 @@
         <div class='button-ssl'>
         	<button type='button' class='g-recaptcha submit' id='donate-submit'
 						data-sitekey="6LdnyXcUAAAAAKS7FiwmqRDA5g1dhTHPEJjps7WV" 
-						data-callback='onSubmit'>Send My Gift</button>
-		<!-- button added for accessiblity testing -->
-		<input type="submit" value="submit" style="display:none;" onclick="return false;">
+						data-callback='formValidator'>Send My Gift</button>
+		
+					<!-- button added for accessiblity testing -->
+					<input type="submit" value="submit" style="display:none;" onclick="return false;">
 
         	<div class='ssl'>
         		<img src='../donation-forms/donatenow/images/comodo-secure-icon.png' alt='Comodo Secure Image' /><a href='https://ssl.comodo.com/'>SSL Certificate</a>
@@ -828,8 +829,6 @@
       </form>
     </section>
     <!-- END MAIN CONTENT -->
-
-<script src='https://www.google.com/recaptcha/api.js'></script>
 
 	<!-- SIDEBAR -->
 	[[E51:[[S80:sidebar]]]]
