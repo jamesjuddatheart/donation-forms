@@ -13,13 +13,32 @@
  .radio-paypal {display:inline-block !important;}
 ::]]
 </style>
+
+<div class="modal fade" id="venmoModal" tabindex="-1" role="dialog" aria-labelledby="venmoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><img src="../donation-forms/donatenow/images/venmo-button.png"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="bottom: initial;right: 16px;padding: 5px;border-radius: 5px;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align:center;font-size:22px;"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="submitToVenmo();">Continue to Venmo</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="row">
 	<div class="thank-you"></div>
 	<div class="donate-now">
     <!-- MAIN CONTENT -->
     <section class='col-xs-12 col-sm-8 main-content' aria-label="mainContent">
 	[[S80:intro_text]]
-	<form class="luminateApi donation-form" method="POST" action="[[?xheartdevx::x[[S80:instance]]x::https://secure3.convio.net/heartdev::https://www2.heart.org]]/site/CRDonationAPI" data-luminateApi='{"callback": "donateCallback"}' id="donateform">
+	<form class="luminateApi donation-form" method="POST" action="[[?xheartdevx::x[[S80:instance]]x::https://dev2.heart.org::https://www2.heart.org]]/site/CRDonationAPI" data-luminateApi='{"callback": "donateCallback"}' id="donateform">
 	    <input type="hidden" name="instance" value="[[S80:instance]]" />
 	    <input type="hidden" name="recurring" value="[[?xtruex::x[[S80:sustainer_default]]x::true::]]" />
 	    <input type="hidden" name="extproc" value="" />
@@ -43,6 +62,7 @@
 	    <input type="hidden" name="amount1" id="amount1" value="">
 	    <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/>
 	    <input type="hidden" name="card_option" id="card_option" value="" />
+  	    <input type="hidden" name="venmo_user" id="venmo_user" value="" />
 		<input type="hidden" name="device_data" id="device_data" value=""/>
 		<input type="hidden" name="payment_method_nonce" id="payment_method_nonce" value=""/>
 		<input type="hidden" name="processorAuthorizationCode" id="processorAuthorizationCode" value=""/>
@@ -718,6 +738,10 @@
             <div class='input-group radio-group radio-applepay hidden'>
               <input type='radio' name='payment' id='payment4' value='ApplePay payments'/>
               <label for='payment4' role="radio" tabindex=0 title="ApplePay" aria-checked="false"><span class='applepay text-hide' aria-label="ApplePay payments" alt="ApplePay payments">ApplePay payments</span></label>
+            </div>
+            <div class='input-group radio-group radio-venmo hidden'>
+              <input type='radio' name='payment' id='payment5' value='Venmo payments'/>
+              <label for='payment5' role="radio" tabindex=0 title="Venmo" aria-checked="false"><span class='venmo text-hide' aria-label="Venmo payments" alt="Venmo payments">Venmo payments</span></label>
             </div>
 		</fieldset>
           </div>
