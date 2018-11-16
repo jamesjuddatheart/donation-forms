@@ -809,6 +809,18 @@ $('[name^=donor\\.]').each(function(){
 		$('input[name=is_hon_memorial]').val("true");
 	}
 	
+	// Honor Settings
+	if (location.href.indexOf("donatenow_honor") > 0) {
+		$('#tribGift1').click();
+		$('#tributeType > option:nth-child(2)').attr("selected", true)
+		$('#tributeType > option:nth-child(1)').hide();
+		$('#tributeType > option:nth-child(3)').hide();
+		$(".memorial").hide();
+		$(".honor").show();
+		$('input[name="tribute.type"]').val("honor");
+		$('input[name=is_hon_memorial]').val("true");
+	}
+	
 	// LIW customization
 	var why = $.getQuerystring("why");
 	if(why.length > 0 && location.href.indexOf("donatenow_lifeiswhy") > 0) {
