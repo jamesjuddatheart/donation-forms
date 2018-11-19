@@ -819,6 +819,8 @@ $('[name^=donor\\.]').each(function(){
 		$(".honor").show();
 		$('input[name="tribute.type"]').val("honor");
 		$('input[name=is_hon_memorial]').val("true");
+		$("#imgSampleHonor").show();
+		$("#imgSampleMemorial").hide();
 	}
 	
 	// LIW customization
