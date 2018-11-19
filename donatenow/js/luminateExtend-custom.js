@@ -72,15 +72,15 @@
 
       $('#donate-submit').click(function() {
 		  
+		  if (!formValidator()) {
+			  grecaptcha.reset(); // reset recaptcha on failure
+			  return false;
+		  } else {
+		  
 		  if ($(form).valid()) {
 			  switch ($('#PaymentType').val()) {
 				  case "cc" : 
-					  if (!formValidator()) {
-						  return false;
-					  } else {
-						  // do form processing
 						  $(form).submit();  
-					  }
 					break;
 				case "amazon" :
 					if (typeof amazon.Login.AmazonBillingAgreementId != "undefined") {
@@ -111,6 +111,7 @@
 		} else { 
 			return false;
 		}
+		} // captcha
       });
     }
    
@@ -587,8 +588,11 @@ function includeCustomFBPixel(amt) {
 }
 
 function formValidator(token) {
+	var frm_instance = $('input[name=instance]').val();
 	var srv = window.location.host;
 	var p2 = $('.donation-form [name="remote_addr"]').val();
+	var rslt = false;
+	var errors = '';
 
 	$.ajax({
 		method: "POST",
@@ -596,7 +600,8 @@ function formValidator(token) {
 		cache:false,
 		dataType: "json",
 		data: {
-			hst: srv,
+			instance: frm_instance,
+			host: srv,
 			remote_addr: p2,
 			captcha: token,
 		},
@@ -604,6 +609,7 @@ function formValidator(token) {
 		success: function(data){
 			console.log(data);
 			rslt = data.success;
+			errors = data.errorCodes;
 		}
 	});
 
