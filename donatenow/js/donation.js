@@ -281,10 +281,14 @@ $('#tributeType').on('change', function () {
     $(".honor").show();
     $(".memorial").hide();
     $('input[name="tribute.type"]').val("Tribute");
+    $("#imgSampleHonor").show();
+    $("#imgSampleMemorial").hide();
   } else {
     $(".memorial").show();
     $(".honor").hide();
     $('input[name="tribute.type"]').val("Memorial");
+    $("#imgSampleHonor").hide();
+    $("#imgSampleMemorial").show();
   }
 });
 
