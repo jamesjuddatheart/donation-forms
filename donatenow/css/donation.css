@@ -618,6 +618,7 @@ body {
 .rightColHead h2 {
 	font-size: 30px;
 	color: #d40000;
+	font-weight: normal;
 }
 .rightColContent p {
 	font-size: 16px;
