@@ -1418,8 +1418,9 @@ footer ul li a:focus {
     padding: 0;
     margin-bottom: 28px;
   }
-  .main-content h3 {
+  .main-content h2 {
     font-size: 24px;
+    font-color:#D40000
     display: inline-block;
   }
   .main-content h4 {
