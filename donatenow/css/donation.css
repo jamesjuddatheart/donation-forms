@@ -522,8 +522,9 @@ body {
   // margin-top: 0;
   margin-bottom: 20px;
 }
-.main-content h3 {
+.main-content h2 {
   font-size: 22px;
+  font-weight: normal;
   color: #d40000;
   margin-top: 0;
   margin-bottom: 15px;
@@ -534,7 +535,7 @@ body {
   margin-top: 0;
   margin-bottom: 15px;
 }
-.main-content h4.pad-top {
+.main-content h3.pad-top {
   font-size: 20px;
   color: #000;
   margin-top: 30px;
@@ -614,6 +615,11 @@ body {
 .rightColHead h1 {
 	font-size: 1.65em;
 	color: #d40000;
+}
+.rightColHead h2 {
+	font-size: 30px;
+	color: #d40000;
+	font-weight: normal;
 }
 .rightColContent p {
 	font-size: 16px;
@@ -1413,8 +1419,9 @@ footer ul li a:focus {
     padding: 0;
     margin-bottom: 28px;
   }
-  .main-content h3 {
+  .main-content h2 {
     font-size: 24px;
+    font-color:#D40000
     display: inline-block;
   }
   .main-content h4 {
