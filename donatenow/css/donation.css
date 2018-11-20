@@ -522,8 +522,9 @@ body {
   // margin-top: 0;
   margin-bottom: 20px;
 }
-.main-content h3 {
+.main-content h2 {
   font-size: 22px;
+  font-weight: normal;
   color: #d40000;
   margin-top: 0;
   margin-bottom: 15px;
