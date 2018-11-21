@@ -71,12 +71,20 @@
 	);
 
       $('#donate-submit').click(function() {
-		  
-		  if (!formValidator()) {
-			  grecaptcha.reset(); // reset recaptcha on failure
-			  return false;
-		  } else {
-		  
+		token = grecaptcha.getResponse();
+		var x = postCaptcha(
+			getParams(token), 
+			function(responseData) {
+				console.log(responseData);
+				return responseData;
+			}
+		);
+
+		if (x.success==false) {
+			grecaptcha.reset(); // reset recaptcha on failure
+			return false;
+		} else {
+			
 		  if ($(form).valid()) {
 			  switch ($('#PaymentType').val()) {
 				  case "cc" : 
@@ -107,10 +115,10 @@
 					$('#venmoModal .modal-body').html(venmoData);
 					$('#venmoModal').modal();					
 					break;
+				}
+			} else { 
+				return false;
 			}
-		} else { 
-			return false;
-		}
 		} // captcha
       });
     }
@@ -587,34 +595,30 @@ function includeCustomFBPixel(amt) {
     };
 }
 
-function formValidator(token) {
-	var frm_instance = $('input[name=instance]').val();
-	var srv = window.location.host;
-	var p2 = $('.donation-form [name="remote_addr"]').val();
-	var rslt = false;
-	var errors = '';
-
+function postCaptcha(params, callback) {
 	$.ajax({
 		method: "POST",
 		async: false,
 		cache:false,
 		dataType: "json",
-		data: {
-			instance: frm_instance,
-			host: srv,
-			remote_addr: p2,
-			captcha: token,
-		},
+		data: params,
 		url:"https://hearttools.heart.org/donate/recaptcha/recaptcha.php?callback=?",
 		success: function(data){
-			console.log(data);
-			rslt = data.success;
-			errors = data.errorCodes;
+			callback(data);
 		}
 	});
-
-	return rslt;
 }
+
+function getParams(token){
+	return params = {
+		"frm_instance": $('input[name=instance]').val(),
+		"srv": window.location.host,
+		"p2": $('.donation-form [name="remote_addr"]').val(),
+		"token": token,
+		"btn": $('div.g-recaptcha').val()==""
+	};
+}
+
 
 (function ($) {
 	$.extend({
