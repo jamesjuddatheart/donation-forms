@@ -809,7 +809,7 @@
 					<div class="g-recaptcha" data-sitekey="6LeQ23oUAAAAALYu1FGf91T4hwoeDwxHSLLVuKxS"></div>
 
 					<!-- Disable the button by default, will enable when the widget loads -->
-					<button class="form-field submit" type="submit"  id='donate-submit' disabled>Send My Gift</button>
+					<button class="form-field submit" type="button"  id='donate-submit' disabled onclick="formValidator()">Send My Gift</button>
 		
 					<!-- button added for accessiblity testing -->
 			    <input type="submit" value="submit" style="display:none;" onclick="return false;">
@@ -834,7 +834,7 @@
     <!-- END MAIN CONTENT -->
 
     <script type="text/javascript">
-    var onloadCallback = function() {
+    var onloadCallback_btn = function() {
         var captchaContainer = document.querySelector('.g-recaptcha');
         grecaptcha.render(captchaContainer, {
           'sitekey' : '6LeQ23oUAAAAALYu1FGf91T4hwoeDwxHSLLVuKxS'
@@ -845,7 +845,7 @@
 
 
 <!-- checkbox -->
-<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=onloadCallback_btn&render=explicit" async defer></script>
 
 
 	<!-- SIDEBAR -->
