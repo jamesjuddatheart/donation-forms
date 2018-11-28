@@ -237,7 +237,7 @@
 	  var form =$('form.donation-form');
   
 	  if (jQuery(form).valid()) {
-		  //token = grecaptcha.getResponse();
+		  token = grecaptcha.getResponse();
 		  postCaptcha(
 			  getParams(token), 
 			  function(responseData) {
