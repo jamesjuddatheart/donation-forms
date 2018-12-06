@@ -1,0 +1,441 @@
+<style>
+.radio-cc,
+.radio-amazon,
+.radio-paypal {display:none !important;}
+	
+[[?xtruex::x[[S80:CC]]x::
+ .radio-cc {display:inline-block !important;}
+::]]
+[[?xtruex::x[[S80:AMAZON]]x::
+ .radio-amazon {display:inline-block !important;}
+::]]
+[[?xtruex::x[[S80:PAYPAL]]x::
+ .radio-paypal {display:inline-block !important;}
+::]]
+</style>
+<div class="row">
+	<div class="thank-you"></div>
+	<div class="donate-now">
+    <!-- MAIN CONTENT -->
+    <section class='col-xs-12 col-sm-8 main-content' aria-label="mainContent">
+	[[S80:intro_text]]
+	<form class="luminateApi donation-form" method="POST" action="[[?xheartdevx::x[[S80:instance]]x::https://secure3.convio.net/heartdev::https://www2.heart.org]]/site/CRDonationAPI" data-luminateApi='{"callback": "donateCallback"}' id="donateform">
+	    <input type="hidden" name="instance" value="[[S80:instance]]" />
+	    <input type="hidden" name="recurring" value="[[?xtruex::x[[S80:sustainer_default]]x::true::]]" />
+	    <input type="hidden" name="extproc" value="" />
+	    <input type="hidden" name="finish_error_redirect" value="[[S8]]">
+	    <input type="hidden" name="finish_success_redirect" value="[[S80:paypal_thankyou]]">
+	    <input type="hidden" name="method" value="donate" />
+	    <input type="hidden" name="form_id" value="[[S80:form_id]]" /> <!-- update per ghost form ID -->
+	    <input type="hidden" name="validate" value="true" />
+	    <input type="hidden" name="source" value="[[?x[[S80:source]]x::xx::GENERAL::[[S80:source]]]]" /> <!-- update source as needed --> 
+	    <input type="hidden" name="form_version" value="control" />
+	    <input type="hidden" name="payment_source" value="CC" />
+	    <input type="hidden" name="_session" value="" />
+	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::25::100]]" />
+	    <input type="hidden" name="level_id" value="[[?xtruex::x[[S80:sustainer_default]]x::[[S80:level_id_recurring]]::[[S80:level_id]]]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
+	    <input type="hidden" name="payment_confirmation_id" value="" /> 
+	    <input type="hidden" name="check_number" value="" />
+	    <input type="hidden" name="offline_payment_method" value="" />
+	    <input type="hidden" name="PaymentType" id="PaymentType" value="cc" />
+	    <input type="hidden" name="is_hon_memorial" value="false" />
+	    <input type="hidden" name="tribute.type" value="" /> <!-- Memorial | Tribute | empty -->
+	    <input type="hidden" name="amount1" id="amount1" value="">
+	    <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/>
+	    <input type="hidden" name="card_option" id="card_option" value="" />
+		<input type="hidden" name="device_data" id="device_data" value=""/>
+		<input type="hidden" name="payment_method_nonce" id="payment_method_nonce" value=""/>
+		<input type="hidden" name="processorAuthorizationCode" id="processorAuthorizationCode" value=""/>
+		[[?x[[S334:df_preview]]x::xtruex::
+		<input type="hidden" name="sandbox" id="sandbox" value="true">
+		<input type="hidden" name="df_preview" value="true" />
+		<h1 style="color:#ed1c24">PREVIEW MODE</h1>
+		:: 
+		<!-- <input type="hidden" name="sandbox" id="sandbox" value="false">  --> 
+		]]
+        <!-- YOUR GIFT -->
+		<div class='form-group'>
+        	<h2>Your Gift</h2>
+		<fieldset>
+			<legend class="text-hide">Your Gift</legend>
+			<div class='inline frequency' role='radiogroup' aria-label="frequency">
+			[[?xtruex::x[[S80:sustainer_default]]x::
+
+				<div class='input-group radio-group'>
+					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' data-level=[[S80:level_id]] data-frequency="onetime" />
+					<label for='occurrence1' role='radio' tabindex=0 title="One-Time Gift" aria-checked="false">One-Time Gift</label>
+				</div>
+			::
+				<div class='input-group radio-group'>
+					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' checked data-level=[[S80:level_id]] data-frequency="onetime" />
+					<label for='occurrence1' role='radio' tabindex=0 title="One-Time Gift" aria-checked="true">One-Time Gift</label>
+				</div>
+
+			]]
+        		</div> 
+		</fieldset>
+		<!-- end occurrence options -->
+
+		<fieldset>
+			<legend class="text-hide">Select Amount</legend>
+		
+
+			<div class='inline onetime display__inline-block' role='radiogroup' aria-label="giftsel2" [[?xtruex::x[[S80:sustainer_default]]x::style="display: none;"::]]>
+					<div class='input-group gift'>
+						<input type='radio' name='gift' id='gift5' value='$25'/>
+						<label for='gift5' class='radio-label' data-amount="25" role="radio" tabindex='0' title="$25" aria-checked="false">$25</label>
+					</div>
+					<div class='input-group gift'>
+						<input type='radio' name='gift' id='gift6' value='$50'/>
+						<label for='gift6' class='radio-label' data-amount="50" role="radio" tabindex='0' title="$50" aria-checked="false">$50</label>
+					</div>
+					<div class='input-group gift'>
+						<input type='radio' name='gift' id='gift7' value='$100' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
+						<label for='gift7' class='radio-label' data-amount="100" role="radio" tabindex='0' title="$100" aria-checked="false">$100</label>
+					</div>
+					<div class='input-group gift'>
+						<input type='radio' name='gift' id='gift8' value='$250'/>
+						<label for='gift8' class='radio-label' data-amount="250" role="radio" tabindex='0' title="$250" aria-checked="false">$250</label>
+					</div>
+				<div class="input-group gift">
+						<input type="radio" name="gift" id="gift9" value="$500">
+						<label for="gift9" class="radio-label" data-amount="500" role="radio" tabindex="0" title="$500" aria-checked="false">$500</label>
+					</div>
+                <div class="input-group gift display__inline-block">
+					<input type="radio" name="gift" id="giftOther" value="" disabled="" title="Other Gift Amount">
+					<label for="giftOtherText" style="height:0;width:0;text-indent:-9999px">Other Amount: </label>
+					<input type="text" class="radio-input" id="giftOtherText" maxlength="10" placeholder="$ Other" title="Enter a value $10 or greater" aria-label="enter other amount">
+				</div>
+				</div> <!-- end 1x -->
+				<!-- OTHER - amount passed to ghost form -->
+				
+			</fieldset></div>
+		<!-- end form-group -->
+        
+
+
+        <!-- PERSONAL INFORMATION -->
+        <div class='form-group'>
+          <h2>Your Personal Information<span class='lock'></span></h2>
+          <span class='required-field'>(*Required fields)</span>
+          <div class='inline row'>
+            <div class='input-group col-xs-12 col-sm-6 text-field'>
+              <label for='firstName' name='firstName' class='required-asterisk'>First Name:</label>
+              <input type='text' id='firstName' name='donor.name.first' class='required' />
+            </div>
+            <div class='input-group col-xs-12 col-sm-6 text-field'>
+              <label for='lastName' name='lastName' class='required-asterisk'>Last Name:</label>
+              <input type='text' id='lastName' name='donor.name.last' class='required' />
+            </div>
+            <div class='input-group col-xs-12 col-sm-9 text-field'>
+              <label for='emailAddress' name='emailAddress' class='required-asterisk'>Email Address:</label>
+              <input type='email' id='emailAddress' name='donor.email' class='required' />
+            </div>
+            <div class='input-group checkBox col-xs-12 col-sm-12'>
+              <input type='checkbox' name='donor.email_opt_in' id='recieveEmail' value='true' checked />
+              <label for='recieveEmail'>Yes, I'd like to receive email from American Heart Association</label>
+            </div>
+            <div class='input-group col-xs-12 col-sm-12 text-field'>
+              <label for='streetAddress1' name='streetAddress1' class='required-asterisk'>Street Address 1:</label>
+              <input type='text' id='streetAddress1' name='donor.address.street1' class='required' />
+            </div>
+            <div class='input-group col-xs-12 col-sm-12 text-field'>
+              <label for='streetAddress2' name='streetAddress2'>Street Address 2:</label>
+              <input type='text' id='streetAddress2' name='donor.address.street2' />
+            </div>
+            <div class='input-group col-xs-12 col-sm-12 col-md-5 text-field'>
+              <label for='city' class='required-asterisk'>City:</label>
+              <input type='text' id='city'  name='donor.address.city' class='required' />
+            </div>
+            <div class='input-group col-xs-7 col-sm-6 col-md-4 select-box'>
+              <label for='state' name='state' class='required-asterisk'>State:</label>
+              <select id='state'  name='donor.address.state' class='required'>
+                <option value='' selected disabled>Please select</option>
+                <option value='AL'>Alabama</option>
+                <option value='AK'>Alaska</option>
+                <option value='AZ'>Arizona</option>
+                <option value='AR'>Arkansas</option>
+                <option value='CA'>California</option>
+                <option value='CO'>Colorado</option>
+                <option value='CT'>Connecticut</option>
+                <option value='DE'>Delaware</option>
+                <option value='DC'>District Of Columbia</option>
+                <option value='FL'>Florida</option>
+                <option value='GA'>Georgia</option>
+                <option value='HI'>Hawaii</option>
+                <option value='ID'>Idaho</option>
+                <option value='IL'>Illinois</option>
+                <option value='IN'>Indiana</option>
+                <option value='IA'>Iowa</option>
+                <option value='KS'>Kansas</option>
+                <option value='KY'>Kentucky</option>
+                <option value='LA'>Louisiana</option>
+                <option value='ME'>Maine</option>
+                <option value='MD'>Maryland</option>
+                <option value='MA'>Massachusetts</option>
+                <option value='MI'>Michigan</option>
+                <option value='MN'>Minnesota</option>
+                <option value='MS'>Mississippi</option>
+                <option value='MO'>Missouri</option>
+                <option value='MT'>Montana</option>
+                <option value='NE'>Nebraska</option>
+                <option value='NV'>Nevada</option>
+                <option value='NH'>New Hampshire</option>
+                <option value='NJ'>New Jersey</option>
+                <option value='NM'>New Mexico</option>
+                <option value='NY'>New York</option>
+                <option value='NC'>North Carolina</option>
+                <option value='ND'>North Dakota</option>
+                <option value='OH'>Ohio</option>
+                <option value='OK'>Oklahoma</option>
+                <option value='OR'>Oregon</option>
+                <option value='PA'>Pennsylvania</option>
+                <option value='RI'>Rhode Island</option>
+                <option value='SC'>South Carolina</option>
+                <option value='SD'>South Dakota</option>
+                <option value='TN'>Tennessee</option>
+                <option value='TX'>Texas</option>
+                <option value='UT'>Utah</option>
+                <option value='VT'>Vermont</option>
+                <option value='VA'>Virginia</option>
+                <option value='WA'>Washington</option>
+                <option value='WV'>West Virginia</option>
+                <option value='WI'>Wisconsin</option>
+                <option value='WY'>Wyoming</option>
+              </select>
+            </div>
+            <div class='input-group col-xs-5 col-sm-6 col-md-3 text-field'>
+              <label for='zipCode' name='zipCode' class='required-asterisk'>Zip Code:</label>
+              <input type='text' id='zipCode'  name='donor.address.zip' class='required' />
+            </div>
+            <div class='input-group checkBox col-xs-12 col-sm-12'>
+              <input type='checkbox' name='differentBilling' id='differentBilling' value='I have a different billing address'>
+              <label for='differentBilling'>I have a different billing address</label>
+            </div>
+          </div>
+        </div>
+        <!-- END PERSONAL INFORMATION -->
+
+        <!-- BILLING INFORMATION -->
+        <div class='form-group' id='billingInfo'>
+          <h2>Billing information<span class='lock'></span></h2>
+          <span class='required-field'>(*Required fields)</span>
+          <div class='inline row'>
+            <div class='input-group col-xs-12 col-sm-6 text-field'>
+              <label for='billingFirstName' name='billingFirstName' class='required-asterisk'>First Name:</label>
+              <input type='text' id='billingFirstName' name='billing.name.first' class='required' />
+            </div>
+            <div class='input-group col-xs-12 col-sm-6 text-field'>
+              <label for='billingLastName' name='billingLastName' class='required-asterisk'>Last Name:</label>
+              <input type='text' id='billingLastName' name='billing.name.last' class='required' />
+            </div>
+            <div class='input-group col-xs-12 col-sm-12 text-field'>
+              <label for='billingStreetAddress1' name='billingStreetAddress1' class='required-asterisk'>Street Address 1:</label>
+              <input type='text' id='billingStreetAddress1' name='billing.address.street1' class='required' />
+            </div>
+            <div class='input-group col-xs-12 col-sm-12 text-field'>
+              <label for='billingStreetAddress2' name='billingStreetAddress2'>Street Address 2:</label>
+              <input type='text' id='billingStreetAddress2' name='billing.address.street2' />
+            </div>
+            <div class='input-group col-xs-12 col-sm-6 text-field'>
+              <label for='billingCity' name='billingCity' class='required-asterisk'>City:</label>
+              <input type='text' id='billingCity' name='billing.address.city' class='required' />
+            </div>
+            <div class='input-group col-xs-7 col-sm-3 select-box'>
+              <label for='billingState' name='billingState' class='required-asterisk'>State:</label>
+              <select id='billingState' name='billing.address.state' class='required'>
+                <option value='' selected disabled>Please select</option>
+                <option value='AL'>Alabama</option>
+                <option value='AK'>Alaska</option>
+                <option value='AZ'>Arizona</option>
+                <option value='AR'>Arkansas</option>
+                <option value='CA'>California</option>
+                <option value='CO'>Colorado</option>
+                <option value='CT'>Connecticut</option>
+                <option value='DE'>Delaware</option>
+                <option value='DC'>District Of Columbia</option>
+                <option value='FL'>Florida</option>
+                <option value='GA'>Georgia</option>
+                <option value='HI'>Hawaii</option>
+                <option value='ID'>Idaho</option>
+                <option value='IL'>Illinois</option>
+                <option value='IN'>Indiana</option>
+                <option value='IA'>Iowa</option>
+                <option value='KS'>Kansas</option>
+                <option value='KY'>Kentucky</option>
+                <option value='LA'>Louisiana</option>
+                <option value='ME'>Maine</option>
+                <option value='MD'>Maryland</option>
+                <option value='MA'>Massachusetts</option>
+                <option value='MI'>Michigan</option>
+                <option value='MN'>Minnesota</option>
+                <option value='MS'>Mississippi</option>
+                <option value='MO'>Missouri</option>
+                <option value='MT'>Montana</option>
+                <option value='NE'>Nebraska</option>
+                <option value='NV'>Nevada</option>
+                <option value='NH'>New Hampshire</option>
+                <option value='NJ'>New Jersey</option>
+                <option value='NM'>New Mexico</option>
+                <option value='NY'>New York</option>
+                <option value='NC'>North Carolina</option>
+                <option value='ND'>North Dakota</option>
+                <option value='OH'>Ohio</option>
+                <option value='OK'>Oklahoma</option>
+                <option value='OR'>Oregon</option>
+                <option value='PA'>Pennsylvania</option>
+                <option value='RI'>Rhode Island</option>
+                <option value='SC'>South Carolina</option>
+                <option value='SD'>South Dakota</option>
+                <option value='TN'>Tennessee</option>
+                <option value='TX'>Texas</option>
+                <option value='UT'>Utah</option>
+                <option value='VT'>Vermont</option>
+                <option value='VA'>Virginia</option>
+                <option value='WA'>Washington</option>
+                <option value='WV'>West Virginia</option>
+                <option value='WI'>Wisconsin</option>
+                <option value='WY'>Wyoming</option>
+              </select>
+            </div>
+            <div class='input-group col-xs-5 col-sm-3 text-field'>
+              <label for='billingZipCode' name='billingZipCode' class='required-asterisk'>Zip Code:</label>
+              <input type='text' id='billingZipCode' name='billing.address.zip' class='required' />
+            </div>
+          </div>
+        </div>
+        <!-- END BILLING INFORMATION -->
+
+        <!-- PAYMENT INFORMATION -->
+        <div class='form-group'>
+          <h2>Payment Information<span class='lock'></span></h2>
+          <span class='required-field'>(*Required fields)</span>
+          <div class='inline paymentSel' role='radiogroup' aria-label='paymentSelection'>
+		 <fieldset>
+			<legend class="text-hide">Select a payment type</legend>
+            <div class='input-group radio-group radio-cc'>
+              <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" />
+              <label for='payment1' role="radio" tabindex=0 title="Credit Card" aria-checked="false"><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
+            </div>
+            <div class='input-group radio-group radio-amazon'>
+              <input type='radio' name='payment' id='payment2' value='Amazon payments'/>
+              <label for='payment2' role="radio" tabindex=0 title="AmazonPay" aria-checked="false"><span class='amazon-pay text-hide' aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
+            </div>
+            <div class='input-group radio-group radio-paypal'>
+              <input type='radio' name='payment' id='payment3' value='Paypal payments'/>
+              <label for='payment3' role="radio" tabindex=0 title="PayPal" aria-checked="false"><span class='paypal text-hide' aria-label="Paypal payments" alt="Paypal payments">Paypal payments</span></label>
+            </div>
+            <div class='input-group radio-group radio-applepay hidden'>
+              <input type='radio' name='payment' id='payment4' value='ApplePay payments'/>
+              <label for='payment4' role="radio" tabindex=0 title="ApplePay" aria-checked="false"><span class='applepay text-hide' aria-label="ApplePay payments" alt="ApplePay payments">ApplePay payments</span></label>
+            </div>
+            <div class='input-group radio-group radio-venmo hidden'>
+              <input type='radio' name='payment' id='payment5' value='Venmo payments'/>
+              <label for='payment5' role="radio" tabindex=0 title="Venmo" aria-checked="false"><span class='venmo text-hide' aria-label="Venmo payments" alt="Venmo payments">Venmo payments</span></label>
+            </div>
+		</fieldset>
+          </div>
+          <div class='inline row' id='payment1form'>
+            <div class='input-group col-xs-12 col-sm-9 text-field'>
+              <label for='cardNumber' name='cardNumber' class='required-asterisk'>Card Number:</label>
+              <input placeholder='1234 5678 9012 3456' pattern='[0-9]*' type='text' id='cardNumber' name='card_number' autocomplete='off' value='' class='required' title='Credit Card Number' aria-required="true" />
+            </div>
+            <div class='input-group col-xs-12 col-sm-3 text-field'>
+              <label for='CVVNumber' name='CVVNumber' class='required-asterisk'>CVV Number:</label>
+              <input type='text' id='CVVNumber' name='card_cvv' placeholder='123' class='required' title='CVV Number' />
+            </div>
+            <div class='input-group col-xs-12 col-sm-12 select-box'>
+              <label name='expirationDate' class='required-asterisk' class='required'>Expiration Date:</label>
+            </div>
+            <div class='input-group col-xs-6 col-sm-6 col-md-4 select-box'>
+              <select name='card_exp_date_month' class='required' title="Credit Card Month">
+                <option value='' selected disabled>Select month</option>
+                  <option value='1'>January</option>
+                  <option value='2'>February</option>
+                  <option value='3'>March</option>
+                  <option value='4'>April</option>
+                  <option value='5'>May</option>
+                  <option value='6'>June</option>
+                  <option value='7'>July</option>
+                  <option value='8'>August</option>
+                  <option value='9'>September</option>
+                  <option value='10'>October</option>
+                  <option value='11'>November</option>
+                  <option value='12'>December</option>
+              </select>
+            </div>
+            <div class='input-group col-xs-6 col-sm-6 col-md-3 select-box'>
+              <select name='card_exp_date_year' class='required' title="Credit Card Year">
+                <option value='' selected disabled>Select year</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+              </select>
+            </div>
+          </div>
+          <div class='inline' id='payment2form'>
+            <div class='input-group'>
+              <div id="AmazonPayment" style="margin-right: 22px;">
+	            	<div id="AmazonLogin">Please login to Amazon before continuing:</div>
+	            	<!-- BUTTON WIDGET -->
+	            	<div id="AmazonPayButton" role="button" tabindex=0 title="Amazon Pay"> </div>
+	            	<!-- WALLET WIDGET -->
+	            	<div id="walletWidgetDiv"> </div>
+	            	<!-- RECURRING PAYMENTS WIDGET -->
+	            	<div id="consentWidgetDiv"> </div>
+	            	<!-- LOGOUT LINK -->
+	            	<div id="AmazonLogoutButton"> <a class="" href="#" onClick="javascript:amazon.Login.MODLogoutClickHandler()">Log out of Amazon Payments</a> </div>
+	            	<br />
+	            	<p>Amazon Payments is the secure payment for the American Heart Association. <a href="https://payments.amazon.com/help/Amazon-Simple-Pay/Creating-Managing-Your-Account/Verifying-Your-Account"         target="_blank">Learn more</a> about Amazon Payments.</p>
+	            	<p>Amazon Payments protects your privacy and security.</p>
+	            	<!-- BEGIN AMAZON PAYMENTS ADDITION -->
+	            	<input type="hidden" name="AmazonBillingAgreementId" value="" />
+	            	<!-- Passed on to Amazon REST call: SetBillingAgreementDetails -->
+	            	<input type="hidden" name="AmazonOrderReferenceId" value="" />
+	            	<!-- Passed to Amazon after Amazon returns error. -->
+	            	<input type="hidden" name="AmazonAccessToken" value="" />
+	            	<!-- Can be saved on our back end for getting updated user information at a later time. -->
+	            	<input type="hidden" name="AmazonPaymentSelected" value="" />
+	            	<!-- END AMAZON PAYMENTS ADDITION -->
+	            </div>
+            </div>
+          </div>
+        </div>
+        <!-- END PAYMENT INFORMATION -->
+
+        <div class='button-ssl'>
+        	<button type='button' class='submit' id='donate-submit'>Send My Gift</button>
+		<!-- button added for accessiblity testing -->
+		<input type="submit" value="submit" style="display:none;" onclick="return false;">
+        	<div class='ssl'>
+        		<img src='../donation-forms/donatenow/images/comodo-secure-icon.png' alt='Comodo Secure Image' /><a href='https://ssl.comodo.com/'>SSL Certificate</a>
+        	</div>
+        </div>
+        <div class='row bottom-links'>
+          <div class='col-xs-12 col-sm-5'>
+            <a href='https://www.heart.org/idc/groups/heart-public/@wcm/@tcs/documents/downloadable/ucm_430364.pdf'>I Prefer to Mail my Memorial or Tribute Gift</a>
+          </div>
+          <div class='col-xs-12 col-sm-4'>
+            <a href='https://www.heart.org/idc/groups/heart-public/@wcm/@tcs/documents/downloadable/ucm_430363.pdf'>I Prefer to Mail my Donation</a>
+          </div>
+          <div class='col-xs-12 col-sm-3'>
+            <a href='http://www.heart.org/HEARTORG/Giving/ForIndividuals/OtherWaystoGive/OtherWaystoGive_UCM_001143_SubHomePage.jsp'>Other Ways to Give</a>
+          </div>
+        </div>
+      </form>
+    </section>
+    <!-- END MAIN CONTENT -->
+
+	<!-- SIDEBAR -->
+	[[E51:[[S80:sidebar]]]]
+	<!-- END SIDEBAR -->
+    </div>
+    </div>
