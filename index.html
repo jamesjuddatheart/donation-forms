@@ -18,12 +18,12 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"><img src="../donation-forms/donatenow/images/venmo-button.png"></h5>
+        <img src="../donation-forms/donatenow/images/venmo-button.png" alt="Submit to Venmo">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="bottom: initial;right: 16px;padding: 5px;border-radius: 5px;">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" style="text-align:center;font-size:22px;"></div>
+      <div class="modal-body" style="text-align:center;font-size:22px;" id="venmoModalLabel"></div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" onclick="submitToVenmo();">Continue to Venmo</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -78,7 +78,7 @@
         	<h2>Your Gift</h2>
 		<fieldset>
 			<legend class="text-hide">Your Gift</legend>
-			<div class='inline frequency' role='radiogroup' aria-label="frequency">
+			<div class='inline frequency' aria-label="frequency">
 			[[?xtruex::x[[S80:sustainer_default]]x::
 				<div class='input-group radio-group'>
 					<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' checked data-level=[[S80:level_id_recurring]] data-frequency="recurring" />
@@ -104,7 +104,7 @@
 
 		<fieldset>
 			<legend class="text-hide">Select Amount</legend>
-			<div class='inline recurring display__inline-block' role='radiogroup' aria-label="giftsel" [[?xtruex::x[[S80:sustainer_default]]x::::style="display: none;"]]>
+			<div class='inline recurring display__inline-block'  aria-label="giftsel" [[?xtruex::x[[S80:sustainer_default]]x::::style="display: none;"]]>
 				<div class='input-group gift'>
 					<input type='radio' name='gift' id='gift1' value='$10' />
 					<label for='gift1' class='radio-label' data-amount="10" role="radio" tabindex='0' title="$10" aria-checked="false">$10</label>
@@ -123,7 +123,7 @@
 				</div>
 			</div> <!-- end recurring -->
 
-			<div class='inline onetime display__inline-block' role='radiogroup' aria-label="giftsel2" [[?xtruex::x[[S80:sustainer_default]]x::style="display: none;"::]]>
+			<div class='inline onetime display__inline-block'  aria-label="giftsel2" [[?xtruex::x[[S80:sustainer_default]]x::style="display: none;"::]]>
 					<div class='input-group gift'>
 						<input type='radio' name='gift' id='gift5' value='$40'/>
 						<label for='gift5' class='radio-label' data-amount="40" role="radio" tabindex='0' title="$40" aria-checked="false">$40</label>
@@ -157,7 +157,7 @@
 			<h2>Make Your Gift a Tribute</h2>
 			<fieldset>
 				<legend class="text-hide">Is this gift a tribute?</legend>
-				<div class='inline tributeSel' role='radiogroup' aria-label='tributeGfit'>
+				<div class='inline tributeSel'  aria-label='tributeGfit'>
 					<label style='font-size: 16px; padding-right: 20px'>Is this gift a tribute?</label><br class='visible-xs' />
 					<div class='input-group radio-group'>
 						<input type='radio' name='tribGift' id='tribGift1' value='true' />
@@ -197,7 +197,7 @@
 				<h3 class='pad-top'>Would you like to send a gift announcement?</h3>
 				<fieldset>
 					<legend class="text-hide">Card Type</legend>
-					<div class='inline flex cardSel' role='radiogroup' aria-label="cardSelection">
+					<div class='inline flex cardSel' ' aria-label="cardSelection">
 						<div class='input-group radio-group dropdown'>
 							<input type='radio' name='ecard.send' id='emailaCard' value='true' />
 							<label for='emailaCard' role='radio' tabindex=0 title="E-mail" aria-checked="true">E-mail <br class='hide-break'/>a card<br/><a data-toggle='modal' href='#emailSample'>View email sample</a></label>
@@ -498,13 +498,13 @@
         <div class='modal fade' id='emailSample' role='dialog' aria-labelledby='emailaCardSample'>
           <div class='modal-dialog' role='document'>
             <div class='modal-content'>
-            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+            <button type='button' class='close' data-dismiss='modal'>
               CLOSE<span aria-hidden='true'>&times;</span>
             </button>
             <div class='modal-body'>
               <h2 class='modal-title' id='emailaCardSample'>A sample personalized message is below:</h2>
-              <img src='../donation-forms/donatenow/images/sample-email.jpg' alt='A donation to the American Heart Association has been made in memory of a loved one. Please know this gift will help create a world free of heart disease and stroke by supporting innovation research, advocacy efforts and patient support.' class='img-responsive center-block' id="imgSampleMemorial" />
-	      <img src='../donation-forms/images/sample-email-honor.jpg' alt='A donation to the American Heart Association has been made in honor of a loved one. Please know this gift will help create a world free of heart disease and stroke by supporting innovation research, advocacy efforts and patient support.' class='img-responsive center-block' id="imgSampleHonor" style="display:none;"/>
+              <img src='../donation-forms/donatenow/images/sample-email.jpg' alt='A donation to the American Heart Association has been made in memory of a loved one. Please know this gift will help create a world free of heart disease and stroke by supporting innovative research, advocacy efforts and patient support.' class='img-responsive center-block' id="imgSampleMemorial" />
+	      <img src='../donation-forms/images/sample-email-honor.jpg' alt='A donation to the American Heart Association has been made in honor of a loved one. Please know this gift will help create a world free of heart disease and stroke by supporting innovative research, advocacy efforts and patient support.' class='img-responsive center-block' id="imgSampleHonor" style="display:none;"/>
             </div>
             </div>
           </div>
@@ -513,7 +513,7 @@
         <div class='modal fade' id='mailSample' role='dialog' aria-labelledby='emailaCardSample2'>
           <div class='modal-dialog' role='document'>
             <div class='modal-content'>
-            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+            <button type='button' class='close' data-dismiss='modal'>
               CLOSE<span aria-hidden='true'>&times;</span>
             </button>
             <div class='modal-body'>
@@ -721,7 +721,7 @@
         <div class='form-group'>
           <h2>Payment Information<span class='lock'></span></h2>
           <span class='required-field'>(*Required fields)</span>
-          <div class='inline paymentSel' role='radiogroup' aria-label='paymentSelection'>
+          <div class='inline paymentSel'  aria-label='paymentSelection'>
 		 <fieldset>
 			<legend class="text-hide">Select a payment type</legend>
             <div class='input-group radio-group radio-cc'>

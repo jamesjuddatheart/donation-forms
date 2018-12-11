@@ -232,7 +232,7 @@
 			$.getScript("//action.dstillery.com/orbserv/nsjs?adv=cl1014039&ns=1985&nc=HBP-Donate-Now-Landing-Page&ncv=52&dstOrderId="+ref+"&dstOrderAmount="+amt);
 
 			// Custom Tracking code
-			includeCustomFBPixel();
+			includeCustomFBPixel(amt);
 
 			/* ECOMMERCE TRACKING CODE */ 
 			ga('require', 'ecommerce');
@@ -368,7 +368,7 @@ function donateAmazon() {
 				$.getScript("//action.dstillery.com/orbserv/nsjs?adv=cl1014039&ns=1985&nc=HBP-Donate-Now-Landing-Page&ncv=52&dstOrderId="+ref+"&dstOrderAmount="+amt);
 
 				// Custom Tracking code
-				includeCustomFBPixel();
+				includeCustomFBPixel(amt);
 				
 				/* ECOMMERCE TRACKING CODE */ 
 				ga('require', 'ecommerce');
@@ -445,7 +445,7 @@ function donateApplePay() {
 	$.getScript("//action.dstillery.com/orbserv/nsjs?adv=cl1014039&ns=1985&nc=HBP-Donate-Now-Landing-Page&ncv=52&dstOrderId="+ref+"&dstOrderAmount="+amt);
 
 	// Custom Tracking code
-	includeCustomFBPixel();
+	includeCustomFBPixel(amt);
 	
 	/* ECOMMERCE TRACKING CODE */ 
 	ga('require', 'ecommerce');
@@ -519,6 +519,9 @@ function donateVenmo() {
 	$('.thank-you').append('<img src="http://www.offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
 	$.getScript("//action.dstillery.com/orbserv/nsjs?adv=cl1014039&ns=1985&nc=HBP-Donate-Now-Landing-Page&ncv=52&dstOrderId="+ref+"&dstOrderAmount="+amt);
 
+	// Custom Tracking code
+	includeCustomFBPixel(amt);
+	
 	/* ECOMMERCE TRACKING CODE */ 
 	ga('require', 'ecommerce');
 
