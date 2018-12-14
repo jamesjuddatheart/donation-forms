@@ -12,8 +12,8 @@ window.loconn = {
         loconn.token = args.token;
 
         if (loconn.consid !== null && loconn.token !== null && loconn.baseURL !== null && loconn.token !== null) {
-            pmx.cookies.delete('dasprev');
-            pmx.cookies.delete('dascust');
+            pmx.cookie.delete('dasprev');
+            pmx.cookie.delete('dascust');
             pmx.methods.getUser();
             pmx.methods.getUserTransactions();
             pmx.methods.updateFormFields();
