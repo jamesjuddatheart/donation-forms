@@ -11,7 +11,7 @@ window.loconn = {
         loconn.key = args.key;
         loconn.token = args.token;
 
-        if (loconn.consid !== null && loconn.token !== null && loconn.baseURL !== null && loconn.token !== null) {
+        if (loconn.consid && loconn.token !== null && loconn.baseURL !== null && loconn.token !== null) {
             pmx.cookie.delete('dasprev');
             pmx.cookie.delete('dascust');
             pmx.methods.getUser();
