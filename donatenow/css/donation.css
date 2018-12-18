@@ -1465,7 +1465,7 @@ footer ul li a:focus {
   .main-content.thank-you .video .copy {
     margin-top: 30px;
   }
-  .main-content.thank-you .video .copy h3 {
+  .main-content.thank-you .video .copy h3 { 
     color: #000;
     margin-bottom: 5px;
   }
@@ -1519,6 +1519,7 @@ footer ul li a:focus {
     height: 43px;
     max-width: 186px;
     display:inline;
+
   }
   form .form-group .input-group.select-box select,
   form .form-group .input-group.text-field select,
