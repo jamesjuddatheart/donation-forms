@@ -272,7 +272,7 @@
 function submitToVenmo() {
 	window.scrollTo(0, 300);
 	$('#venmoModal').modal('hide');
-	$('.donate-now').hide();
+	$('.donation-form').hide();
 	$('.processing').show();
 	braintree_aha.submitVenmoDonation();
 }
