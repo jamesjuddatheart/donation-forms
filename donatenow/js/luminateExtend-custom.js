@@ -270,6 +270,7 @@
 })(jQuery);
 
 function submitToVenmo() {
+	window.scrollTo(0, 0);
 	$('#venmoModal').modal('hide');
 	$('.donate-now').hide();
 	$('.processing').show();
