@@ -1634,3 +1634,6 @@ a, a:link, a:hover {
   color: #d40000;
 }
 /* End LIW specific styles */
+
+/* processing div */
+.processing {display:none;}
