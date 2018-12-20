@@ -467,6 +467,7 @@ function donateApplePay() {
 
 function donateVenmo() {
 	window.scrollTo(0, 0);
+        $('.processing').hide();
 	$('.donation-form').hide();
 	var params = $('.donation-form').serialize();
 	var status = "";
