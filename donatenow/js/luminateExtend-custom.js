@@ -271,6 +271,8 @@
 
 function submitToVenmo() {
 	$('#venmoModal').modal('hide');
+	$('.donate-now').hide();
+	$('.processing').show();
 	braintree_aha.submitVenmoDonation();
 }
 
