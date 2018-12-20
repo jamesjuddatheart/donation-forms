@@ -183,7 +183,7 @@ var braintree_aha = {
 				} else {
   				  alert('An error occurred:', err.message);
   				}
-        	                $('.donate-now').show();
+        	                $('.donation-form').show();
   	                        $('.processing').hide();
 			} else {
 				console.log(payload);
@@ -439,7 +439,7 @@ var braintree_aha = {
 	
 	showGlobalError: function(message) {
 		alert(message);
-                $('.donate-now').show();
+                $('.donation-form').show();
                 $('.processing').hide();
 	}
 }
