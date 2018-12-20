@@ -1636,4 +1636,9 @@ a, a:link, a:hover {
 /* End LIW specific styles */
 
 /* processing div */
-.processing {display:none;}
+.processing {
+	display: none;
+	padding: 20px 20px 40px;
+	font-size: 18px;
+	background: #fff;
+}
