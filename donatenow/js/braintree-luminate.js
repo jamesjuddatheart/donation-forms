@@ -183,6 +183,8 @@ var braintree_aha = {
 				} else {
   				  alert('An error occurred:', err.message);
   				}
+        	                $('.donate-now').show();
+  	                        $('.processing').hide();
 			} else {
 				console.log(payload);
 				// Send the payment method nonce to your server, e.g. by injecting
@@ -437,6 +439,8 @@ var braintree_aha = {
 	
 	showGlobalError: function(message) {
 		alert(message);
+                $('.donate-now').show();
+                $('.processing').hide();
 	}
 }
 
