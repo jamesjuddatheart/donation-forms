@@ -191,7 +191,7 @@
 			*/
 					
           $('.donation-loading').remove();
-		  $('.donate-now').hide();
+		  $('.donation-form').hide();
 		  $('.thank-you').show();
 		  $.get(donation_thank_you_page,function(datat){
 			  if (form == "3343") {
@@ -270,7 +270,10 @@
 })(jQuery);
 
 function submitToVenmo() {
+	window.scrollTo(0, 300);
 	$('#venmoModal').modal('hide');
+	$('.donation-form').hide();
+	$('.processing').show();
 	braintree_aha.submitVenmoDonation();
 }
 
@@ -465,6 +468,7 @@ function donateApplePay() {
 
 function donateVenmo() {
 	window.scrollTo(0, 0);
+        $('.processing').hide();
 	$('.donation-form').hide();
 	var params = $('.donation-form').serialize();
 	var status = "";
