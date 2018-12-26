@@ -191,7 +191,8 @@
 			*/
 					
           $('.donation-loading').remove();
-		  $('.donation-form').hide();
+		  //$('.donation-form').hide();
+		  $('.donate-now, .header-donate').hide();
 		  $('.thank-you').show();
 		  $.get(donation_thank_you_page,function(datat){
 			  if (form == "3343") {
