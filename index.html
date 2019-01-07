@@ -81,7 +81,6 @@
         	<h2>Your Gift</h2>
 			</legend>
 		<fieldset>
-			<legend class="text-hide">Your Gift</legend>
 			<div class='inline frequency' aria-label="frequency">
 			[[?xtruex::x[[S80:sustainer_default]]x::
 				<div class='input-group radio-group'>
@@ -107,7 +106,6 @@
 		<!-- end occurrence options -->
 
 		<fieldset>
-			<legend class="text-hide">Select Amount</legend>
 			<div class='inline recurring display__inline-block'  aria-label="giftsel" [[?xtruex::x[[S80:sustainer_default]]x::::style="display: none;"]]>
 				<div class='input-group gift'>
 					<input type='radio' name='gift' id='gift1' value='$10' />
@@ -158,9 +156,10 @@
 
         <!-- PERSONALIZE GIFT -->
 		<div class='form-group'>
+			<legend>
 			<h2>Make Your Gift a Tribute</h2>
+			</legend>
 			<fieldset>
-				<legend class="text-hide">Is this gift a tribute?</legend>
 				<div class='inline tributeSel'  aria-label='tributeGfit'>
 					<label style='font-size: 16px; padding-right: 20px'>Is this gift a tribute?</label><br class='visible-xs' />
 					<div class='input-group radio-group'>
@@ -729,7 +728,6 @@
           <span class='required-field'>(*Required fields)</span>
           <div class='inline paymentSel'  aria-label='paymentSelection'>
 		 <fieldset>
-			<legend class="text-hide">Select a payment type</legend>
             <div class='input-group radio-group radio-cc'>
               <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" />
               <label for='payment1' title="Credit Card" aria-checked="false"><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
