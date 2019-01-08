@@ -147,7 +147,7 @@ var braintree_aha = {
 		
 		var paymentsClient = new google.payments.api.PaymentsClient({
 		  environment: 'TEST' // Or 'PRODUCTION'
-		}));
+		});
 		
 		paymentsClient.loadPaymentData(paymentDataRequest).then(function(paymentData) {
 			braintree_aha.googlePaymentInstance.parseResponse(paymentData, function (err, result) {
