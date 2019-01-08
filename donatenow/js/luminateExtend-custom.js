@@ -101,6 +101,9 @@
 					$('#venmoModal .modal-body').html(venmoData);
 					$('#venmoModal').modal();					
 					break;
+				case "GOOGLEPAY":
+					braintree_aha.submitGooglePayDonation();					
+					break;
 			}
 		} else { 
 			return false;
