@@ -55,11 +55,9 @@ var venmoInstance;
 var session = "";
 
 var braintree_aha = { 
-	applePayPaymentType	: ($.getQuerystring("btmethod") == "") ? true : false,
-	applePaySubmitButton: '.radio-applepay',
-	venmoPaymentType	: ($.getQuerystring("method") == "") ? true : false,
+	applePaySubmitButton	: '.radio-applepay',
 	venmoSubmitButton	: '.radio-venmo',
-	venmoSubmitBlock	: '#venmo-button-block',
+	googlePaySubmitButton	: '.radio-google',
 	donation_form		: $('form'),
 	donation_result		: "",
 	payment_method		: ($.getQuerystring("btmethod") == "") ? "applepay" : "venmo",
@@ -96,19 +94,103 @@ var braintree_aha = {
 					$('input[name=device_data]').val(dataCollectorInstance.deviceData);
 				});
 				
-				if (braintree_aha.applePayPaymentType) {
-					//Initialize Apple Pay
-					braintree_aha.InitializeApplePay(clientInstance);
-				}
+				//Initialize Apple Pay
+				braintree_aha.InitializeApplePay(clientInstance);
 
-				if (braintree_aha.venmoPaymentType) {
-					//Initialize Venmo
-					braintree_aha.InitializeVenmo(clientInstance);
-				}
+				//Initialize Venmo
+				braintree_aha.InitializeVenmo(clientInstance);
 
+				//Initialize Google Pay
+				braintree_aha.InitializeGooglePay(clientInstance);
 			});
 		});
 	},
+	
+	//----------------
+	// Initialize GooglePay using Braintree
+	//----------------
+	InitializeGooglePay: function(clientInstance) {
+		braintree.googlePayment.create({
+   			client: clientInstance, // From braintree.client.create, see below for full example
+			googlePayVersion: 2,
+			googleMerchantId: 'merchant-id-from-google' // Optional in sandbox; if set in sandbox, this value must be a valid production Google Merchant ID
+		  }, function (err, googlePaymentInstance) {
+		  	// Set up Google Pay button
+			jQuery(braintree_aha.googlePaySubmitButton).removeClass("hidden");
+		  }
+		);
+	},
+	submitGooglePayDonation: function() {
+		var paymentDataRequest = googlePaymentInstance.createPaymentDataRequest({
+			transactionInfo: {
+				currencyCode: 'USD',
+				totalPriceStatus: 'FINAL',
+				totalPrice: $('input[name=other_amount]').val() // Your amount
+			}
+		});
+
+		// We recommend collecting billing address information, at minimum
+		// billing postal code, and passing that billing postal code with all
+		// Google Pay card transactions as a best practice.
+		// See all available options at https://developers.google.com/pay/api/web/reference/object
+		var cardPaymentMethod = paymentDataRequest.allowedPaymentMethods[0];
+		cardPaymentMethod.parameters.billingAddressRequired = true;
+		cardPaymentMethod.parameters.billingAddressParameters = {
+			format: 'FULL',
+			phoneNumberRequired: true
+		};
+
+		paymentsClient.loadPaymentData(paymentDataRequest).then(function(paymentData) {
+			googlePaymentInstance.parseResponse(paymentData, function (err, result) {
+				if (err) {
+				// Handle parsing error
+				}
+
+				// Send payload.nonce to your server.
+				$("input#payment_method_nonce").val(result.nonce);
+
+				// Success Venmo
+				braintree_aha.postDonationFormGooglePay(
+					donateGooglePay,
+					function (textStatus) {
+						if (textStatus != "") {
+							braintree_aha.showGlobalError(textStatus);
+							console.log(textStatus);
+						}
+					}
+				);
+			});
+		}).catch(function (err) {
+			// Handle errors
+		});
+	},
+	postDonationFormGooglePay: function(callback_success, callback_fail) {
+		var postParams = $(braintree_aha.donation_form).serialize();
+		postParams += "&amount="+$('input[name=other_amount]').val();
+				
+		var tokenURL = "https://hearttools.heart.org/braintree/checkout.php";
+		if ($('input[name=instance]').val() == "heartdev") {
+			tokenURL = "https://hearttools.heart.org/braintree/checkout-test.php";
+		}
+		$.getJSON(tokenURL + '?callback=?', postParams)
+			.done(function(data) {
+				braintree_aha.donation_result = data; //JSON.parse('['+data.result.toString()+']');
+				console.log(data.result);
+				//
+				if (data.error == "") {
+					$('input[name=processorAuthorizationCode]').val(data.result.processorAuthorizationCode);
+					callback_success();
+				} else {
+					callback_fail(data.error);
+				}
+			})
+			.fail(function() {
+				//
+				callback_fail();
+			}
+		);
+	},
+	
 	//----------------
 	// Initialize Venmo using BrainTree
 	//----------------
