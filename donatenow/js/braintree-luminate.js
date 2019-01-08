@@ -60,6 +60,7 @@ var braintree_aha = {
 	googlePaySubmitButton	: '.radio-googlepay',
 	donation_form		: $('form'),
 	donation_result		: "",
+	googlePaymentInstance 	: "",
 	
 	initializeBraintree: function() {
 		
@@ -116,7 +117,8 @@ var braintree_aha = {
 		  }, function (err, googlePaymentInstance) {
 		  	// Set up Google Pay button
 			if (googlePaymentInstance != undefined) {
-				jQuery(braintree_aha.googlePaySubmitButton).removeClass("hidden").attr("googlePaymentInstance",googlePaymentInstance);
+				jQuery(braintree_aha.googlePaySubmitButton).removeClass("hidden")
+				braintree_aha.googlePaymentInstance = googlePaymentInstance;
 			} else {
 				console.log(err, googlePaymentInstance);
 			}
@@ -124,8 +126,7 @@ var braintree_aha = {
 		);
 	},
 	submitGooglePayDonation: function() {
-		var googlePaymentInstance = jQuery(braintree_aha.googlePaySubmitButton).attr("googlePaymentInstance");
-		var paymentDataRequest = googlePaymentInstance.createPaymentDataRequest({
+		var paymentDataRequest = braintree_aha.googlePaymentInstance.createPaymentDataRequest({
 			transactionInfo: {
 				currencyCode: 'USD',
 				totalPriceStatus: 'FINAL',
