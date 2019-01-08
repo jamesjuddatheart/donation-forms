@@ -146,7 +146,7 @@ var braintree_aha = {
 		};
 
 		paymentsClient.loadPaymentData(paymentDataRequest).then(function(paymentData) {
-			googlePaymentInstance.parseResponse(paymentData, function (err, result) {
+			braintree_aha.googlePaymentInstance.parseResponse(paymentData, function (err, result) {
 				if (err) {
 				// Handle parsing error
 				}
