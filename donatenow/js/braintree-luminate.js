@@ -116,7 +116,7 @@ var braintree_aha = {
 		  }, function (err, googlePaymentInstance) {
 		  	// Set up Google Pay button
 			if (googlePaymentInstance != undefined) {
-				jQuery(braintree_aha.googlePaySubmitButton).removeClass("hidden");
+				jQuery(braintree_aha.googlePaySubmitButton).removeClass("hidden").attr("googlePaymentInstance",googlePaymentInstance);
 			} else {
 				console.log(err, googlePaymentInstance);
 			}
@@ -124,11 +124,12 @@ var braintree_aha = {
 		);
 	},
 	submitGooglePayDonation: function() {
+		var googlePaymentInstance = jQuery(braintree_aha.googlePaySubmitButton).attr("googlePaymentInstance");
 		var paymentDataRequest = googlePaymentInstance.createPaymentDataRequest({
 			transactionInfo: {
 				currencyCode: 'USD',
 				totalPriceStatus: 'FINAL',
-				totalPrice: $('input[name=other_amount]').val() // Your amount
+				totalPrice: jQuery('input[name=other_amount]').val() // Your amount
 			}
 		});
 
