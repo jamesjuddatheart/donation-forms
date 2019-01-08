@@ -59,8 +59,7 @@ var braintree_aha = {
 	venmoSubmitButton	: '.radio-venmo',
 	googlePaySubmitButton	: '.radio-google',
 	donation_form		: $('form'),
-	donation_result		: "",
-	payment_method		: ($.getQuerystring("btmethod") == "") ? "applepay" : "venmo",
+	donation_result		: ""
 	
 	initializeBraintree: function() {
 		
@@ -116,6 +115,7 @@ var braintree_aha = {
 			googleMerchantId: 'merchant-id-from-google' // Optional in sandbox; if set in sandbox, this value must be a valid production Google Merchant ID
 		  }, function (err, googlePaymentInstance) {
 		  	// Set up Google Pay button
+			console.log(err, googlePaymentInstance);
 			jQuery(braintree_aha.googlePaySubmitButton).removeClass("hidden");
 		  }
 		);
@@ -149,7 +149,7 @@ var braintree_aha = {
 				// Send payload.nonce to your server.
 				$("input#payment_method_nonce").val(result.nonce);
 
-				// Success Venmo
+				// Success GooglePay
 				braintree_aha.postDonationFormGooglePay(
 					donateGooglePay,
 					function (textStatus) {
