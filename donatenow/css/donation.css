@@ -1090,6 +1090,17 @@ form .form-group .venmo {
   vertical-align: middle;
   margin-top: 10px;
 }
+form .form-group .googlepay {
+  content: '';
+  background-image: url(../images/googlepay-button.png );
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: inline-block;
+  width: 170px;
+  height: 40px;
+  vertical-align: middle;
+  margin-top: 10px;
+}
 form .form-group .help-block {
   font-size: 14px;
   color: #000;
