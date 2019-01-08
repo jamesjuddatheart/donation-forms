@@ -57,7 +57,7 @@ var session = "";
 var braintree_aha = { 
 	applePaySubmitButton	: '.radio-applepay',
 	venmoSubmitButton	: '.radio-venmo',
-	googlePaySubmitButton	: '.radio-google',
+	googlePaySubmitButton	: '.radio-googlepay',
 	donation_form		: $('form'),
 	donation_result		: "",
 	
