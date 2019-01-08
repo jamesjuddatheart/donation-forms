@@ -115,7 +115,7 @@ var braintree_aha = {
 			googleMerchantId: 'merchant-id-from-google' // Optional in sandbox; if set in sandbox, this value must be a valid production Google Merchant ID
 		  }, function (err, googlePaymentInstance) {
 		  	// Set up Google Pay button
-			if (googlePaymentInstance != "undefined") {
+			if (googlePaymentInstance != undefined) {
 				jQuery(braintree_aha.googlePaySubmitButton).removeClass("hidden");
 			} else {
 				console.log(err, googlePaymentInstance);
