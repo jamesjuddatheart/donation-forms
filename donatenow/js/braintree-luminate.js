@@ -59,7 +59,7 @@ var braintree_aha = {
 	venmoSubmitButton	: '.radio-venmo',
 	googlePaySubmitButton	: '.radio-google',
 	donation_form		: $('form'),
-	donation_result		: ""
+	donation_result		: "",
 	
 	initializeBraintree: function() {
 		
