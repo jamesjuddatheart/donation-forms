@@ -145,8 +145,8 @@
 					</div>
 				</div> <!-- end 1x -->
 				<!-- OTHER - amount passed to ghost form -->
-				<div class='input-group gift display__inline-block'>
-					<input type='radio' name='gift' id='giftOther' value='' disabled title="Other Gift Amount" aria-labelledby= 'giftother'/>
+				<div class='input-group gift display__inline-block' aria-labelledby= 'giftother'>
+					<input type='radio' name='gift' id='giftOther' value='' disabled title="Other Gift Amount"/>
 					<label for="giftOtherText" style="height:0;width:0;text-indent:-9999px">Other Amount: </label>
 					<input type='text' class='radio-input' id='giftOtherText' maxlength='10' placeholder='$ Other' title="Enter a value $10 or greater"  />
 				</div>
@@ -163,12 +163,12 @@
 			<fieldset>
 				<div class='inline tributeSel' >
 					<label style='font-size: 16px; padding-right: 20px'>Is this gift a tribute?</label><br class='visible-xs' />
-					<div class='input-group radio-group' aria-label='tribGift1'>
-						<input type='radio' name='tribGift' id='tribGift1' value='true' aria-labelledby= 'tributeSel tribGift1'/>
+					<div class='input-group radio-group' aria-label='tribGift1' aria-labelledby= 'tribGift1'>
+						<input type='radio' name='tribGift' id='tribGift1' value='true'/>
 						<label for='tribGift1' title="Yes" aria-checked="true">Yes</label>
 					</div>
-					<div class='input-group radio-group' aria-label='tribGift2'>
-						<input type='radio' name='tribGift' id='tribGift2' value='false' aria-labelledby= 'tributeSel tribGift2' />
+					<div class='input-group radio-group' aria-label='tribGift2'  aria-labelledby= 'tribGift2'>
+						<input type='radio' name='tribGift' id='tribGift2' value='false' />
 						<label for='tribGift2' title="No" aria-checked="false">No</label>
 					</div>
 				</div>
@@ -202,16 +202,16 @@
 				<fieldset>
 					<legend class="text-hide">Card Type</legend>
 					<div class='inline flex cardSel' aria-label="cardSelection">
-						<div class='input-group radio-group dropdown'>
-							<input type='radio' name='ecard.send' id='emailaCard' value='true' aria-labelledby= 'cardSel emailaCard' />
+						<div class='input-group radio-group dropdown' aria-labelledby= 'emailaCard'>
+							<input type='radio' name='ecard.send' id='emailaCard' value='true'  />
 							<label for='emailaCard' title="E-mail" aria-checked="true">E-mail <br class='hide-break'/>a card<br/><a data-toggle='modal' href='#emailSample'>View email sample</a></label>
 						</div>
-						<div class='input-group radio-group dropdown'>
-							<input type='radio' name='ecard.send' id='mailaPrintedCard' value='false' aria-labelledby= 'cardSel mailaPrintedCard'/>
+						<div class='input-group radio-group dropdown' aria-labelledby= 'mailaPrintedCard'>
+							<input type='radio' name='ecard.send' id='mailaPrintedCard' value='false'/>
 							<label for='mailaPrintedCard' title="Mail" aria-checked="false">Mail a printed card<br/><a data-toggle='modal' href='#mailSample'>View print sample</a></label>
 						</div>
-						<div class='input-group radio-group dropdown none'>
-							<input type='radio' name='ecard.send' id='noCard' value='false' checked="checked" aria-labelledby= 'cardSel noCard' />
+						<div class='input-group radio-group dropdown none'  aria-labelledby= 'noCard'>
+							<input type='radio' name='ecard.send' id='noCard' value='false' checked="checked" />
 							<label for='noCard' title="No Card" aria-checked="false">No card</label>
 							<!-- name='no_tribute_ack_cardsubmit' -->
 						</div>
