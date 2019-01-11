@@ -836,7 +836,7 @@ form .form-group .input-group.radio-group input[type="radio"]:empty ~ label:befo
 }
 form .form-group .input-group.radio-group input[type="radio"]:checked ~ label:before {
   content: '\2022';
-  color: #d40000;
+  color: transparent;
   font-size: 34px;
 }
 form .form-group .input-group.dropdown input[type="radio"]:checked ~ label:after {
