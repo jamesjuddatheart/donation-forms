@@ -826,7 +826,7 @@ form .form-group .input-group.radio-group input[type="radio"]:empty ~ label:befo
   height: 24px;
   margin-right: 5px;
   background: #fff;
-  border: 3px solid #d5d5d5;
+  border: none;
   border-radius: 50%;
   display: inline-flex;
   vertical-align: middle;
