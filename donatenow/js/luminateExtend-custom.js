@@ -552,7 +552,7 @@ function donateGooglePay() {
 	var params = $('.donation-form').serialize();
 	var status = "";
 	var amt = $('input[name=other_amount]').val();
-	var ref = 'APPLEPAY:'+$('input[name=processorAuthorizationCode]').val();
+	var ref = 'GOOGLEPAY:'+$('input[name=processorAuthorizationCode]').val();
 	//save off amazon id into custom field
 	$('input[name=check_number]').val(ref);
 	$('input[name=payment_confirmation_id]').val(ref);
