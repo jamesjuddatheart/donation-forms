@@ -316,6 +316,8 @@ $('.radio-label').click(function(){
 	$('#giftOtherText').val('').removeClass('validDonation');
 	$('input[name=other_amount]').val($(this).data("amount"));
 	$('#giftOtherText').valid();
+	$('.radio-label').removeClass("active");
+	$(this).addClass("active");
 });
 $('.radio-label').keypress(function(e) {
     if(e.which == 13) {
