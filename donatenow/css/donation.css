@@ -866,7 +866,7 @@ form .form-group .input-group.gift input[type="radio"] {
   display:none;
 }
 
-form .form-group .input-group.gift input[type="radio"] ~ label.radio-label {
+form .form-group .input-group.gift .radio-label {
   cursor: pointer;
   font-size: 22px;
   font-weight: normal;
@@ -884,11 +884,11 @@ form .form-group .input-group.gift input[type="radio"] ~ label.radio-label {
   -o-transition: 0.5s all ease;
   transition: 0.5s all ease;
 }
-form .form-group .input-group.gift input[type="radio"] ~ label:hover {
+form .form-group .input-group.gift button:hover {
   background-color: #bfbfbf;
   color: #000;
 }
-form .form-group .input-group.gift input[type="radio"]:checked ~ label {
+form .form-group .input-group.gift .radio-label.active {
   background-color: #d40000;
   color: #fff;
 }
