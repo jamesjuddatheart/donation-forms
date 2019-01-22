@@ -1479,8 +1479,8 @@ footer ul li a:focus {
     margin-top: 10px;
   }
   form .form-group {
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 0px;
+    padding: 10px;
     /* INNER FORM GROUP */
     /* END INNER FORM GROUP */
   }
