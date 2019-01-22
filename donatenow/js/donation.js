@@ -331,6 +331,8 @@ $('.radio-input').blur(function(){
 		$(this).addClass('validDonation');
 		$('input[name=other_amount]').val(this.value);
 		$('#giftOtherText').valid();
+		$('.radio-label').removeClass("active");
+		$(this).addClass("active");
 	}
 });
 $('#AmazonPayButton').keypress(function(e) {
