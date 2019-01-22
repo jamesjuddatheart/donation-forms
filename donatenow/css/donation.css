@@ -905,8 +905,11 @@ form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radi
   margin-bottom: -5px;
   color: #000;
 }
-form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input.error {
+form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input.active {
   border: 1px solid #d40000;
+}
+form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input.error {
+  border: 2px solid #d40000;
 }
 form .form-group .input-group.select-box label,
 form .form-group .input-group.text-field label {
