@@ -54,7 +54,7 @@
 			<legend class="text-hide">Your Gift</legend>
 			<div class='inline frequency' aria-label="frequency">
 				<div class='input-group radio-group'>
-					<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' checked data-level=[[S80:level_id_recurring]] data-frequency="recurring" />
+					<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' tabindex="-1" checked data-level=[[S80:level_id_recurring]] data-frequency="recurring" />
 					<label for='occurrence2' role='radio' tabindex=0 title="Monthly Gift" aria-checked="true">Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
 				</div>
             </div> 
@@ -65,20 +65,20 @@
 			<legend class="text-hide">Select Amount</legend>
 			<div class='inline recurring display__inline-block' aria-label="giftsel">
 				<div class='input-group gift'>
-					<input type='radio' name='gift' id='gift1' value='$10' />
-					<label for='gift1' class='radio-label' data-amount="10" title="$10" aria-checked="false">$10</label>
+					<input type='radio' name='gift' id='gift1' value='$10' tabindex="-1" />
+					<button type="button" for='gift1' class='radio-label' data-amount="10" title="$10" aria-checked="false" tabindex="0">$10</button>
 				</div>
 				<div class='input-group gift'>
-					<input type='radio' name='gift' id='gift2' value='$25' checked />
-					<label for='gift2' class='radio-label' data-amount="25" title="$25" aria-checked="false">$25</label>
+					<input type='radio' name='gift' id='gift2' value='$25' tabindex="-1" checked />
+					<button type="button" for='gift2' class='radio-label' data-amount="25" title="$25" aria-checked="false" tabindex="0">$25</button>
 				</div>
 				<div class='input-group gift'>
-					<input type='radio' name='gift' id='gift3' value='$35' />
-					<label for='gift3' class='radio-label' data-amount="35" title="$35" aria-checked="false">$35</label>
+					<input type='radio' name='gift' id='gift3' value='$35' tabindex="-1" />
+					<button type="button" for='gift3' class='radio-label' data-amount="35" title="$35" aria-checked="false" tabindex="0">$35</button>
 				</div>
 				<div class='input-group gift'>
-					<input type='radio' name='gift' id='gift4' value='$50' />
-					<label for='gift4' class='radio-label' data-amount="50" title="$50" aria-checked="false">$50</label>
+					<input type='radio' name='gift' id='gift4' value='$50' tabindex="-1" />
+					<button type="button" for='gift4' class='radio-label' data-amount="50" title="$50" aria-checked="false" tabindex="0">$50</button>
 				</div>
 			</div> <!-- end recurring -->
 
@@ -101,12 +101,12 @@
 				<div class='inline tributeSel' aria-label='tributeGfit'>
 					<label style='font-size: 16px; padding-right: 20px'>Is this gift a tribute?</label><br class='visible-xs' />
 					<div class='input-group radio-group'>
-						<input type='radio' name='tribGift' id='tribGift1' value='true' />
-						<label for='tribGift1' title="Yes" aria-checked="true">Yes</label>
+						<input type='radio' name='tribGift' id='tribGift1' value='true' tabindex="-1" />
+						<label for='tribGift1' title="Yes" aria-checked="true" tabindex="0">Yes</label>
 					</div>
 					<div class='input-group radio-group'>
-						<input type='radio' name='tribGift' id='tribGift2' value='false' checked />
-						<label for='tribGift2' title="No" aria-checked="false">No</label>
+						<input type='radio' name='tribGift' id='tribGift2' value='false' tabindex="-1" checked />
+						<label for='tribGift2' title="No" aria-checked="false" tabindex="0">No</label>
 					</div>
 				</div>
 			</fieldset>
@@ -669,16 +669,16 @@
 		 <fieldset>
 			<legend class="text-hide">Select a payment type</legend>
             <div class='input-group radio-group radio-cc'>
-              <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" />
-              <label for='payment1' role="radio" tabindex=0 title="Credit Card" aria-checked="false"><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
+              <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' tabindex="-1" checked="checked" />
+              <label for='payment1' role="radio" tabindex=0 title="Credit Card" aria-checked="false" tabindex="0"><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
             </div>
             <div class='input-group radio-group radio-amazon'>
-              <input type='radio' name='payment' id='payment2' value='Amazon payments'/>
-              <label for='payment2' role="radio" tabindex=0 title="AmazonPay" aria-checked="false"><span class='amazon-pay text-hide' aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
+              <input type='radio' name='payment' id='payment2' value='Amazon payments' tabindex="-1"/>
+              <label for='payment2' role="radio" tabindex=0 title="AmazonPay" aria-checked="false" tabindex="0"><span class='amazon-pay text-hide' aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
             </div>
             <div class='input-group radio-group radio-paypal'>
-              <input type='radio' name='payment' id='payment3' value='Paypal payments'/>
-              <label for='payment3' role="radio" tabindex=0 title="PayPal" aria-checked="false"><span class='paypal text-hide' aria-label="Paypal payments" alt="Paypal payments">Paypal payments</span></label>
+              <input type='radio' name='payment' id='payment3' value='Paypal payments' tabindex="-1"/>
+              <label for='payment3' role="radio" tabindex=0 title="PayPal" aria-checked="false" tabindex="0"><span class='paypal text-hide' aria-label="Paypal payments" alt="Paypal payments">Paypal payments</span></label>
             </div>
 		</fieldset>
           </div>
