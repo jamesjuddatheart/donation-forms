@@ -788,9 +788,15 @@ form .form-group .input-group.radio-group[class*="col-"] {
   margin-right: 0;
 }
 form .form-group .input-group.radio-group input[type="radio"] {
-  opacity: 0;
-  position: absolute;
-  display:none;
+    /* opacity: 0; */
+    position: absolute;
+    /* display: none; */
+    top: 3px;
+    left: 6px;
+    /* right: 10px; */
+    width: 20px;
+    height: 20px;
+   line-height: normal;
 }
 form .form-group .input-group.radio-group input[type="radio"] ~ label {
   cursor: pointer;
@@ -821,7 +827,7 @@ form .form-group .input-group.radio-group input[type="radio"]:empty ~ label:befo
   height: 24px;
   margin-right: 5px;
   background: #fff;
-  border: 3px solid #d5d5d5;
+  border: none;
   border-radius: 50%;
   display: inline-flex;
   vertical-align: middle;
@@ -831,7 +837,7 @@ form .form-group .input-group.radio-group input[type="radio"]:empty ~ label:befo
 }
 form .form-group .input-group.radio-group input[type="radio"]:checked ~ label:before {
   content: '\2022';
-  color: #d40000;
+  color: transparent;
   font-size: 34px;
 }
 form .form-group .input-group.dropdown input[type="radio"]:checked ~ label:after {
@@ -860,13 +866,14 @@ form .form-group .input-group.gift input[type="radio"] {
   display:none;
 }
 
-form .form-group .input-group.gift input[type="radio"] ~ label.radio-label {
+form .form-group .input-group.gift .radio-label {
   cursor: pointer;
   font-size: 22px;
   font-weight: normal;
   width: 82px;
   height: 44px;
   border-radius: 5px;
+  border:none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -878,11 +885,11 @@ form .form-group .input-group.gift input[type="radio"] ~ label.radio-label {
   -o-transition: 0.5s all ease;
   transition: 0.5s all ease;
 }
-form .form-group .input-group.gift input[type="radio"] ~ label:hover {
+form .form-group .input-group.gift button:hover {
   background-color: #bfbfbf;
   color: #000;
 }
-form .form-group .input-group.gift input[type="radio"]:checked ~ label {
+form .form-group .input-group.gift .radio-label.active {
   background-color: #d40000;
   color: #fff;
 }
@@ -899,8 +906,11 @@ form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radi
   margin-bottom: -5px;
   color: #000;
 }
-form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input.error {
+form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input.active {
   border: 1px solid #d40000;
+}
+form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input.error {
+  border: 2px solid #d40000;
 }
 form .form-group .input-group.select-box label,
 form .form-group .input-group.text-field label {
@@ -1082,6 +1092,17 @@ form .form-group .applepay {
 form .form-group .venmo {
   content: '';
   background-image: url(../images/venmo-button.png );
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: inline-block;
+  width: 170px;
+  height: 40px;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+form .form-group .googlepay {
+  content: '';
+  background-image: url(../images/googlepay-button.png );
   background-repeat: no-repeat;
   background-size: 100% auto;
   display: inline-block;

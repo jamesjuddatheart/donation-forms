@@ -262,6 +262,19 @@ $( '#payment5' ).on('click',function () {
 	}
 });
 
+$( '#payment6' ).on('click',function () {
+	// Populate hidden form fields with updated values
+	$('input[name=PaymentType]').val('GOOGLEPAY');
+	$('input[name=payment_source]').val('GOOGLEPAY');
+	$('input[name=offline_payment_method]').val('cash');
+	$('input[name=extproc]').val('');
+	$('input[name=method]').val('donate');
+	$('#payment1form, #payment2form').hide();
+	if ($('input[name=occurrence]:checked').data("frequency") == "recurring") {
+	  $('input[name=level_id]').val($('input[name=occurrence]:checked').data("level"));
+	}
+});
+
 $('select[name=msgPrefillEcard]').change(function(){
 	$('textarea[name="ecard.message"]').val(this.value);
 });
@@ -293,7 +306,7 @@ $('#tributeType').on('change', function () {
 });
 
 $('.frequency label, .tributeSel label, .paymentSel label, .cardSel label').keypress(function(e) {
-    if(e.which == 13) {
+    if(e.which == 13 || e.which == 32) {
 	$(this).click();
    	$(this).prev('input').click();
     }
@@ -303,6 +316,8 @@ $('.radio-label').click(function(){
 	$('#giftOtherText').val('').removeClass('validDonation');
 	$('input[name=other_amount]').val($(this).data("amount"));
 	$('#giftOtherText').valid();
+	$('.radio-label').removeClass("active");
+	$(this).addClass("active");
 });
 $('.radio-label').keypress(function(e) {
     if(e.which == 13) {
@@ -316,6 +331,8 @@ $('.radio-input').blur(function(){
 		$(this).addClass('validDonation');
 		$('input[name=other_amount]').val(this.value);
 		$('#giftOtherText').valid();
+		$('.radio-label').removeClass("active");
+		$(this).addClass("active");
 	}
 });
 $('#AmazonPayButton').keypress(function(e) {
