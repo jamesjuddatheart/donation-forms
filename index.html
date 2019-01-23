@@ -160,12 +160,12 @@
 				<div class='inline tributeSel'  aria-label='tributeGfit'>
 					<label style='font-size: 16px; padding-right: 20px'>Is this gift a tribute?</label><br class='visible-xs' />
 					<div class='input-group radio-group'>
-						<input type='radio' name='tribGift' id='tribGift1' value='true' />
-						<label for='tribGift1' title="Yes" aria-checked="true">Yes</label>
+						<input type='radio' name='tribGift' id='tribGift1' value='true' tabindex="-1" />
+						<label for='tribGift1' title="Yes" aria-checked="true" tabindex="0">Yes</label>
 					</div>
 					<div class='input-group radio-group'>
-						<input type='radio' name='tribGift' id='tribGift2' value='false' checked />
-						<label for='tribGift2' title="No" aria-checked="false">No</label>
+						<input type='radio' name='tribGift' id='tribGift2' value='false' checked tabindex="-1" />
+						<label for='tribGift2' title="No" aria-checked="false" tabindex="0">No</label>
 					</div>
 				</div>
 			</fieldset>
@@ -197,16 +197,16 @@
 				<fieldset>
 					<div class='inline flex cardSel' aria-label="cardSelection">
 						<div class='input-group radio-group dropdown' aria-labelledby= 'emailaCard'>
-							<input type='radio' name='ecard.send' id='emailaCard' value='true' />
-							<label for='emailaCard' title="E-mail" aria-checked="true">E-mail <br class='hide-break'/>a card<br/><a data-toggle='modal' href='#emailSample'>View email sample</a></label>
+							<input type='radio' name='ecard.send' id='emailaCard' value='true' tabindex="-1" />
+							<label for='emailaCard' title="E-mail" aria-checked="true" tabindex="0">E-mail <br class='hide-break'/>a card<br/><a data-toggle='modal' href='#emailSample'>View email sample</a></label>
 						</div>
 						<div class='input-group radio-group dropdown' aria-labelledby= 'mailaPrintedCard'>
-							<input type='radio' name='ecard.send' id='mailaPrintedCard' value='false' />
-							<label for='mailaPrintedCard' title="Mail" aria-checked="false">Mail a printed card<br/><a data-toggle='modal' href='#mailSample'>View print sample</a></label>
+							<input type='radio' name='ecard.send' id='mailaPrintedCard' value='false' tabindex="-1" />
+							<label for='mailaPrintedCard' title="Mail" aria-checked="false" tabindex="0">Mail a printed card<br/><a data-toggle='modal' href='#mailSample'>View print sample</a></label>
 						</div>
 						<div class='input-group radio-group dropdown none' aria-labelledby= 'noCard'>
-							<input type='radio' name='ecard.send' id='noCard' value='false' checked="checked" />
-							<label for='noCard' title="No Card" aria-checked="false">No card</label>
+							<input type='radio' name='ecard.send' id='noCard' value='false' checked="checked" tabindex="-1" />
+							<label for='noCard' title="No Card" aria-checked="false" tabindex="0">No card</label>
 							<!-- name='no_tribute_ack_cardsubmit' -->
 						</div>
 					</div>
@@ -721,28 +721,28 @@
           <div class='inline paymentSel'  aria-label='paymentSelection'>
 		 <fieldset>
             <div class='input-group radio-group radio-cc'>
-              <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" />
-              <label for='payment1' title="Credit Card" aria-checked="false"><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
+              <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" tabindex="-1" />
+              <label for='payment1' title="Credit Card" aria-checked="false" tabindex="0"><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
             </div>
             <div class='input-group radio-group radio-amazon'>
-              <input type='radio' name='payment' id='payment2' value='Amazon payments'/>
-              <label for='payment2' title="AmazonPay" aria-checked="false"><span class='amazon-pay text-hide' aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
+              <input type='radio' name='payment' id='payment2' value='Amazon payments' tabindex="-1"/>
+              <label for='payment2' title="AmazonPay" aria-checked="false" tabindex="0"><span class='amazon-pay text-hide' aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
             </div>
             <div class='input-group radio-group radio-paypal'>
-              <input type='radio' name='payment' id='payment3' value='Paypal payments'/>
-              <label for='payment3' title="PayPal" aria-checked="false"><span class='paypal text-hide' aria-label="Paypal payments" alt="Paypal payments">Paypal payments</span></label>
+              <input type='radio' name='payment' id='payment3' value='Paypal payments' tabindex="-1" tabindex="-1"/>
+              <label for='payment3' title="PayPal" aria-checked="false" tabindex="0"><span class='paypal text-hide' aria-label="Paypal payments" alt="Paypal payments">Paypal payments</span></label>
             </div>
             <div class='input-group radio-group radio-applepay hidden'>
-              <input type='radio' name='payment' id='payment4' value='ApplePay payments'/>
-              <label for='payment4' title="ApplePay" aria-checked="false"><span class='applepay text-hide' aria-label="ApplePay payments" alt="ApplePay payments">ApplePay payments</span></label>
+              <input type='radio' name='payment' id='payment4' value='ApplePay payments' tabindex="-1"/>
+              <label for='payment4' title="ApplePay" aria-checked="false" tabindex="0"><span class='applepay text-hide' aria-label="ApplePay payments" alt="ApplePay payments">ApplePay payments</span></label>
             </div>
             <div class='input-group radio-group radio-venmo hidden'>
-              <input type='radio' name='payment' id='payment5' value='Venmo payments'/>
-              <label for='payment5'  title="Venmo" aria-checked="false"><span class='venmo text-hide' aria-label="Venmo payments" alt="Venmo payments">Venmo payments</span></label>
+              <input type='radio' name='payment' id='payment5' value='Venmo payments' tabindex="-1"/>
+              <label for='payment5'  title="Venmo" aria-checked="false" tabindex="0"><span class='venmo text-hide' aria-label="Venmo payments" alt="Venmo payments">Venmo payments</span></label>
             </div>
             <div class='input-group radio-group radio-googlepay hidden'>
-              <input type='radio' name='payment' id='payment6' value='GooglePay payments'/>
-              <label for='payment6'  title="GooglePay" aria-checked="false"><span class='googlepay text-hide' aria-label="GooglePay payments" alt="GooglePay payments">GooglePay payments</span></label>
+              <input type='radio' name='payment' id='payment6' value='GooglePay payments' tabindex="-1"/>
+              <label for='payment6'  title="GooglePay" aria-checked="false" tabindex="0"><span class='googlepay text-hide' aria-label="GooglePay payments" alt="GooglePay payments">GooglePay payments</span></label>
             </div>
 		</fieldset>
           </div>
