@@ -325,10 +325,14 @@ $('#AmazonPayButton').keypress(function(e) {
 });
 
 // focus close click
-jQuery('a[data-reveal-id="modal"]').on('click', function(){ 
+jQuery('a[data-reveal-id="emailaCard"]').on('click', function(){ 
 jQuery('.close').trigger('focus');
 });
 
+// focus close click
+jQuery('a[data-reveal-id="mailaPrintedCard"]').on('click', function(){ 
+jQuery('.close').trigger('focus');
+});
 
 
 /*
