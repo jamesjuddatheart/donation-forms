@@ -324,6 +324,13 @@ $('#AmazonPayButton').keypress(function(e) {
     }
 });
 
+// focus close click
+jQuery('a[data-reveal-id="modal"]').on('click', function(){ 
+jQuery('.close-reveal-modal').trigger('focus');
+});
+
+
+
 /*
 $('#tributeType input[name^="year"]').click(function() {
   var radioval = $(this).val();
