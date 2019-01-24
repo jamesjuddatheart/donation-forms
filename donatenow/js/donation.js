@@ -330,7 +330,7 @@ jQuery('.close').trigger('focus');
 });
 
 // focus close click
-jQuery('a[data-reveal-id="mailaPrintedCard"]').on('click', function(){ 
+jQuery('a[data-reveal-id="emailSample"]').on('click', function(){ 
 jQuery('.close').trigger('focus');
 });
 
