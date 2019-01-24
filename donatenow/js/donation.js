@@ -325,8 +325,8 @@ $('#AmazonPayButton').keypress(function(e) {
 });
 
 // focus close click
-jQuery('a[data-reveal-id="modal"]').on('click', function(){ 
-jQuery('.close-reveal-modal').trigger('focus');
+jQuery('a[data-reveal-id="emailaCardSample"]').on('click', function(){ 
+jQuery('.close').trigger('focus');
 });
 
 
