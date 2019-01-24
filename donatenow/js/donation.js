@@ -325,7 +325,7 @@ $('#AmazonPayButton').keypress(function(e) {
 });
 
 // focus close click
-jQuery('a[data-reveal-id="emailSample"]').on('click', function(){ 
+jQuery('a[data-reveal-id="modal-body"]').on('click', function(){ 
 jQuery('.close').trigger('focus');
 });
 
