@@ -82,21 +82,21 @@
 			<div class='inline frequency' aria-label="frequency">
 			[[?xtruex::x[[S80:sustainer_default]]x::
 				<div class='input-group radio-group' aria-labelledby= 'occurrence2'>
-					<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' checked data-level=[[S80:level_id_recurring]] data-frequency="recurring" tabindex="-1"/>
-					<label for='occurrence2' title="Monthly Gift" aria-checked="true" tabindex="0">Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
+					<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' checked data-level=[[S80:level_id_recurring]] data-frequency="recurring"/>
+					<label for='occurrence2' title="Monthly Gift" aria-checked="true" >Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
 				</div>
 				<div class='input-group radio-group'  aria-labelledby= 'occurrence1'>
-					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' data-level=[[S80:level_id]] data-frequency="onetime" tabindex="-1" />
-					<label for='occurrence1' title="One-Time Gift" aria-checked="false" tabindex="0">One-Time Gift</label>
+					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' data-level=[[S80:level_id]] data-frequency="onetime" />
+					<label for='occurrence1' title="One-Time Gift" aria-checked="false" >One-Time Gift</label>
 				</div>
 			::
 				<div class='input-group radio-group'>
-					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' checked data-level=[[S80:level_id]] data-frequency="onetime" tabindex="-1" />
-					<label for='occurrence1' title="One-Time Gift" aria-checked="true" tabindex="0">One-Time Gift</label>
+					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' checked data-level=[[S80:level_id]] data-frequency="onetime" />
+					<label for='occurrence1' title="One-Time Gift" aria-checked="true" >One-Time Gift</label>
 				</div>
 				<div class='input-group radio-group'>
-					<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' data-level=[[S80:level_id_recurring]] data-frequency="recurring" tabindex="-1" />
-					<label for='occurrence2' title="Monthly Gift" aria-checked="false" tabindex="0">Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
+					<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' data-level=[[S80:level_id_recurring]] data-frequency="recurring"/>
+					<label for='occurrence2' title="Monthly Gift" aria-checked="false" >Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
 				</div>
 			]]
         		</div> 
@@ -106,38 +106,38 @@
 		<fieldset>
 			<div class='inline recurring display__inline-block'  aria-label="giftsel" [[?xtruex::x[[S80:sustainer_default]]x::::style="display: none;"]]>
 				<div class='input-group gift' role='group' aria-labelledby= 'gift1'>
-					<input type='radio' name='gift' id='gift1' value='$10' />
+					<input type='radio' name='gift' aria-label='10' id='gift1' value='$10' />
 					<button type="button" for='gift1' class='radio-label' data-amount="10" title="$10" aria-checked="false">$10</button>
 				</div>
 				<div class='input-group gift' role='group'  aria-labelledby= 'gift2'>
-					<input type='radio' name='gift' id='gift2' value='$25' [[?xtruex::x[[S80:sustainer_default]]x::checked::]] />
+					<input type='radio' name='gift' aria-label='25' id='gift2' value='$25' [[?xtruex::x[[S80:sustainer_default]]x::checked::]] />
 					<button type="button" for='gift2' class='radio-label [[?xtruex::x[[S80:sustainer_default]]x::active::]]' data-amount="25"  title="$25" aria-checked="false">$25</button>
 				</div>
 				<div class='input-group gift' role='group'  aria-labelledby= 'gift3'>
-					<input type='radio' name='gift' id='gift3' value='$35' />
+					<input type='radio' name='gift' aria-label='35' id='gift3' value='$35' />
 					<button type="button" for='gift3' class='radio-label' data-amount="35" title="$35" aria-checked="false">$35</button>
 				</div>
 				<div class='input-group gift' role='group'  aria-labelledby= 'gift4'>
-					<input type='radio' name='gift' id='gift4' value='$50' />
+					<input type='radio' name='gift' aria-label='50' id='gift4' value='$50' />
 					<button type="button" for='gift4' class='radio-label' data-amount="50" title="$50" aria-checked="false">$50</button>
 				</div>
 			</div> <!-- end recurring -->
 
 			<div class='inline onetime display__inline-block'  aria-label="giftsel2" [[?xtruex::x[[S80:sustainer_default]]x::style="display: none;"::]]>
 					<div class='input-group gift' role='group'  aria-labelledby= 'gift5'>
-						<input type='radio' name='gift' id='gift5' value='$40'/>
+						<input type='radio' name='gift' aria-label='40' id='gift5' value='$40'/>
 						<button type="button" for='gift5' class='radio-label' data-amount="40" title="$40" aria-checked="false">$40</button>
 					</div>
 					<div class='input-group gift' role='group'  aria-labelledby= 'gift6'>
-						<input type='radio' name='gift' id='gift6' value='$60'/>
+						<input type='radio' name='gift' aria-label='60' id='gift6' value='$60'/>
 						<button type="button" for='gift6' class='radio-label' data-amount="60"  title="$60" aria-checked="false">$60</button>
 					</div>
 					<div class='input-group gift' role='group'  aria-labelledby= 'gift7'>
-						<input type='radio' name='gift' id='gift7' value='$100' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
+						<input type='radio' name='gift' aria-label='100' id='gift7' value='$100' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
 						<button type="button" for='gift7' class='radio-label [[?xtruex::x[[S80:sustainer_default]]x::::active]]' data-amount="100"  title="$100" aria-checked="false">$100</button>
 					</div>
 					<div class='input-group gift' role='group'  aria-labelledby= 'gift8'>
-						<input type='radio' name='gift' id='gift8' value='$250'/>
+						<input type='radio' name='gift' aria-label='250' id='gift8' value='$250'/>
 						<button type="button" for='gift8' class='radio-label' data-amount="250"  title="$250" aria-checked="false">$250</button>
 					</div>
 				</div> <!-- end 1x -->
@@ -160,12 +160,12 @@
 				<div class='inline tributeSel'  aria-label='tributeGfit'>
 					<label style='font-size: 16px; padding-right: 20px'>Is this gift a tribute?</label><br class='visible-xs' />
 					<div class='input-group radio-group'>
-						<input type='radio' name='tribGift' id='tribGift1' value='true' tabindex="-1" />
-						<label for='tribGift1' title="Yes" aria-checked="true" tabindex="0">Yes</label>
+						<input type='radio' name='tribGift' id='tribGift1' value='true' />
+						<label for='tribGift1' title="Yes" aria-checked="true" >Yes</label>
 					</div>
 					<div class='input-group radio-group'>
-						<input type='radio' name='tribGift' id='tribGift2' value='false' checked tabindex="-1" />
-						<label for='tribGift2' title="No" aria-checked="false" tabindex="0">No</label>
+						<input type='radio' name='tribGift' id='tribGift2' value='false' checked />
+						<label for='tribGift2' title="No" aria-checked="false" >No</label>
 					</div>
 				</div>
 			</fieldset>
@@ -196,24 +196,24 @@
 				<h3 class='pad-top'>Would you like to send a gift announcement?</h3>
 				<fieldset>
 					<div class='inline flex cardSel' aria-label="cardSelection">
-						<div class='input-group radio-group dropdown' aria-labelledby= 'emailaCard'>
-							<input type='radio' name='ecard.send' id='emailaCard' value='true' tabindex="-1" />
-							<label for='emailaCard' title="E-mail" aria-checked="true" tabindex="0">E-mail <br class='hide-break'/>a card<br/><a data-toggle='modal' href='#emailSample'>View email sample</a></label>
+						<div class='input-group radio-group dropdown' role = 'radiogroup' aria-labelledby= 'emailaCard'>
+							<input type='radio' name='ecard.send' id='emailaCard' value='true'  />
+							<label for='emailaCard' title="E-mail" aria-checked="true" >E-mail <br class='hide-break'/>a card<br/><a data-toggle='modal' href='#emailSample'>View email sample</a></label>
 						</div>
-						<div class='input-group radio-group dropdown' aria-labelledby= 'mailaPrintedCard'>
-							<input type='radio' name='ecard.send' id='mailaPrintedCard' value='false' tabindex="-1" />
-							<label for='mailaPrintedCard' title="Mail" aria-checked="false" tabindex="0">Mail a printed card<br/><a data-toggle='modal' href='#mailSample'>View print sample</a></label>
+						<div class='input-group radio-group dropdown' role = 'radiogroup' aria-labelledby= 'mailaPrintedCard'>
+							<input type='radio' name='ecard.send' id='mailaPrintedCard' value='false'  />
+							<label for='mailaPrintedCard' title="Mail" aria-checked="false" >Mail a printed card<br/><a data-toggle='modal' href='#mailSample'>View print sample</a></label>
 						</div>
-						<div class='input-group radio-group dropdown none' aria-labelledby= 'noCard'>
-							<input type='radio' name='ecard.send' id='noCard' value='false' checked="checked" tabindex="-1" />
-							<label for='noCard' title="No Card" aria-checked="false" tabindex="0">No card</label>
+						<div class='input-group radio-group dropdown none' role = 'radiogroup' aria-labelledby= 'noCard'>
+							<input type='radio' name='ecard.send' id='noCard' value='false' checked="checked"/>
+							<label for='noCard' title="No Card" aria-checked="false" >No card</label>
 							<!-- name='no_tribute_ack_cardsubmit' -->
 						</div>
 					</div>
 				</fieldset>
 				<!-- SELECT A CARD DESIGN -->
 				<div class='inner-form-group emailaCard'>
-					<h4>Please select a card design:</h4>
+					
 					<span class='required-field'>(*Required fields)</span>
 					<div class='inline row'>
 						<div class='input-group col-xs-12 col-sm-12'>
@@ -222,58 +222,58 @@
 								<img src='../donation-forms/donatenow/images/design-1.jpg' alt='Honor Card Default Design' class='img-responsive center-block memorial' />
 								<p class='text-center'>Your card</p>
 							</div>
-							<fieldset>
+							<fieldset><legend><h4>Please select a card design:</h4></legend>
 								<div class='selection col-xs-12 col-sm-6'>
 									<div class='row honor'>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-1' name='ecard.id' value='[[S80:honcard1]]' />
-											<label for='hon-design-1'><span class="text-hide">A Heartfelt Gift: Flowers</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-1-thumb.jpg' alt='A Heartfelt Gift: Flowers' class='img-responsive' /></label>
+											<label for='hon-design-1'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-1-thumb.jpg' alt='A Heartfelt Gift: Flowers' title='Flowers' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-2' name='ecard.id' value='[[S80:honcard2]]' />
-											<label for='hon-design-2'><span class="text-hide">A Heartfelt Gift: Rose</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-2-thumb.jpg' alt='A Heartfelt Gift: Rose' class='img-responsive' /></label>
+											<label for='hon-design-2'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-2-thumb.jpg' alt='A Heartfelt Gift: Rose' title='Rose' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-3' name='ecard.id' value='[[S80:honcard3]]' />
-											<label for='hon-design-3'><span class="text-hide">A Heartfelt Gift: Bow</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-3-thumb.jpg' alt='A Heartfelt Gift: Bow' class='img-responsive' /></label>
+											<label for='hon-design-3'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-3-thumb.jpg' alt='A Heartfelt Gift: Bow' title='Bow' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-4' name='ecard.id' value='[[S80:honcard4]]' />
-											<label for='hon-design-4'><span class="text-hide">A Heartfelt Gift: Heart</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-4-thumb.jpg' alt='A Heartfelt Gift: Heart' class='img-responsive' /></label>
+											<label for='hon-design-4'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-4-thumb.jpg' alt='A Heartfelt Gift: Heart' title='Heart' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-5' name='ecard.id' value='[[S80:honcard5]]' />
-											<label for='hon-design-5'><span class="text-hide">A Heartfelt Gift: Cupcake</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-5-thumb.jpg' alt='A Heartfelt Gift: Cupcake' class='img-responsive' /></label>
+											<label for='hon-design-5'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-5-thumb.jpg' alt='A Heartfelt Gift: Cupcake' title='Cupcake' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-6' name='ecard.id' value='[[S80:honcard6]]' />
-											<label for='hon-design-6'><span class="text-hide">A Heartfelt Gift: Balloons</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-6-thumb.jpg' alt='A Heartfelt Gift: Balloons' class='img-responsive' /></label>
+											<label for='hon-design-6'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-6-thumb.jpg' alt='A Heartfelt Gift: Balloons' title='Balloons' class='img-responsive' /></label>
 										</div>
 									</div>
 									<div class='row memorial'>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-1' name='ecard.id' value='[[S80:memcard1]]' />
-											<label for='mem-design-1'><span class="text-hide">A Heartfelt Gift: Flower</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb01.jpg' alt='A Heartfelt Gift: Flower' class='img-responsive' /></label>
+											<label for='mem-design-1'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb01.jpg' alt='A Heartfelt Gift: Flower' title='Flower' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-2' name='ecard.id' value='[[S80:memcard2]]' />
-											<label for='mem-design-2'><span class="text-hide">A Heartfelt Gift: Floating Candle Bag</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb02.jpg' alt='A Heartfelt Gift: Floating Candle Bag' class='img-responsive' /></label>
+											<label for='mem-design-2'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb02.jpg' alt='A Heartfelt Gift: Floating Candle Bag' title='Candle' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-3' name='ecard.id' value='[[S80:memcard3]]' />
-											<label for='mem-design-3'><span class="text-hide">A Heartfelt Gift: Candle</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb03.jpg' alt='A Heartfelt Gift: Candle' class='img-responsive' /></label>
+											<label for='mem-design-3'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb03.jpg' alt='A Heartfelt Gift: Candle' title='candle' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-4' name='ecard.id' value='[[S80:memcard4]]' />
-											<label for='mem-design-4'><span class="text-hide">A Heartfelt Gift: Candle in hands</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb04.jpg' alt='A Heartfelt Gift: Candle in hands' class='img-responsive' /></label>
+											<label for='mem-design-4'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb04.jpg' alt='A Heartfelt Gift: Candle in hands' title='candle' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-5' name='ecard.id' value='[[S80:memcard5]]' />
-											<label for='mem-design-5'><span class="text-hide">A Heartfelt Gift: Holding hands</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb05.jpg' alt='A Heartfelt Gift: Holding Hands' class='img-responsive' /></label>
+											<label for='mem-design-5'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb05.jpg' alt='A Heartfelt Gift: Holding Hands' title='hands' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-6' name='ecard.id' value='[[S80:memcard6]]' />
-											<label for='mem-design-6'><span class="text-hide">A Heartfelt Gift: Daisy</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb06.jpg' alt='A Heartfelt Gift: Daisy' class='img-responsive' /></label>
+											<label for='mem-design-6'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb06.jpg' alt='A Heartfelt Gift: Daisy' title='daisy' class='img-responsive' /></label>
 										</div>
 									</div>
 								</div>
@@ -524,7 +524,10 @@
 
         <!-- PERSONAL INFORMATION -->
         <div class='form-group'>
-          <h2>Your Personal Information<span class='lock'></span></h2>
+		<legend>
+          <h2>Your Personal Information
+<span class='lock'></span></h2>
+		</legend>
           <span class='required-field'>(*Required fields)</span>
           <div class='inline row'>
             <div class='input-group col-xs-12 col-sm-6 text-field'>
@@ -716,33 +719,34 @@
 
         <!-- PAYMENT INFORMATION -->
         <div class='form-group'>
-          <h2>Payment Information<span class='lock'></span></h2>
-          <span class='required-field'>(*Required fields)</span>
+		
           <div class='inline paymentSel'  aria-label='paymentSelection'>
 		 <fieldset>
+			 <legend>  <h2>Payment Information<span class='lock'></span></h2></legend> 
+          <span class='required-field'>(*Required fields)</span>
             <div class='input-group radio-group radio-cc'>
-              <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" tabindex="-1" />
-              <label for='payment1' title="Credit Card" aria-checked="false" tabindex="0"><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
+              <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" />
+              <label for='payment1' title="Credit Card" aria-checked="false" ><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
             </div>
             <div class='input-group radio-group radio-amazon'>
-              <input type='radio' name='payment' id='payment2' value='Amazon payments' tabindex="-1"/>
-              <label for='payment2' title="AmazonPay" aria-checked="false" tabindex="0"><span class='amazon-pay text-hide' aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
+              <input type='radio' name='payment' id='payment2' value='Amazon payments'/>
+              <label for='payment2' title="AmazonPay" aria-checked="false" ><span class='amazon-pay text-hide' aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
             </div>
             <div class='input-group radio-group radio-paypal'>
-              <input type='radio' name='payment' id='payment3' value='Paypal payments' tabindex="-1" tabindex="-1"/>
-              <label for='payment3' title="PayPal" aria-checked="false" tabindex="0"><span class='paypal text-hide' aria-label="Paypal payments" alt="Paypal payments">Paypal payments</span></label>
+              <input type='radio' name='payment' id='payment3' value='Paypal payments'/>
+              <label for='payment3' title="PayPal" aria-checked="false" ><span class='paypal text-hide' aria-label="Paypal payments" alt="Paypal payments">Paypal payments</span></label>
             </div>
             <div class='input-group radio-group radio-applepay hidden'>
-              <input type='radio' name='payment' id='payment4' value='ApplePay payments' tabindex="-1"/>
-              <label for='payment4' title="ApplePay" aria-checked="false" tabindex="0"><span class='applepay text-hide' aria-label="ApplePay payments" alt="ApplePay payments">ApplePay payments</span></label>
+              <input type='radio' name='payment' id='payment4' value='ApplePay payments' />
+              <label for='payment4' title="ApplePay" aria-checked="false"><span class='applepay text-hide' aria-label="ApplePay payments" alt="ApplePay payments">ApplePay payments</span></label>
             </div>
             <div class='input-group radio-group radio-venmo hidden'>
-              <input type='radio' name='payment' id='payment5' value='Venmo payments' tabindex="-1"/>
-              <label for='payment5'  title="Venmo" aria-checked="false" tabindex="0"><span class='venmo text-hide' aria-label="Venmo payments" alt="Venmo payments">Venmo payments</span></label>
+              <input type='radio' name='payment' id='payment5' value='Venmo payments' />
+              <label for='payment5'  title="Venmo" aria-checked="false" ><span class='venmo text-hide' aria-label="Venmo payments" alt="Venmo payments">Venmo payments</span></label>
             </div>
             <div class='input-group radio-group radio-googlepay hidden'>
-              <input type='radio' name='payment' id='payment6' value='GooglePay payments' tabindex="-1"/>
-              <label for='payment6'  title="GooglePay" aria-checked="false" tabindex="0"><span class='googlepay text-hide' aria-label="GooglePay payments" alt="GooglePay payments">GooglePay payments</span></label>
+              <input type='radio' name='payment' id='payment6' value='GooglePay payments' />
+              <label for='payment6'  title="GooglePay" aria-checked="false"><span class='googlepay text-hide' aria-label="GooglePay payments" alt="GooglePay payments">GooglePay payments</span></label>
             </div>
 		</fieldset>
           </div>
