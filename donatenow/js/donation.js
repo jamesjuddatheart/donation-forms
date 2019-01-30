@@ -22,7 +22,7 @@ function showLevels(frequency,level) {
 		$('.radio-amazon').css('cssText', 'display: none !important');
 		$('#payment1').click();
 		$('input[name=gift]').removeAttr('checked');
-		$('input[id=gift2]').click().attr('checked','checked').next('label').addClass('active');
+		$('input[id=gift2]').click().attr('checked','checked').next('button').addClass('active');
 		$('input[name=other_amount]').val(25);
 		$('input[name=recurring]').val('true');
 		jQuery("#consentWidgetDiv").show();
@@ -39,9 +39,11 @@ function showLevels(frequency,level) {
 		}
 		$('input[name=gift]').removeAttr('checked');
 		if(location.href.indexOf("donatenow_lifeiswhy") > 0) {
-		    $('input[id=gift8]').click().attr('checked','checked').next('label').addClass('active');
+		    $('input[id=gift8]').click().attr('checked','checked').next('button').addClass('active');
+		} else if(location.href.indexOf("jan19_ecc_appeal") > 0) {
+		    $('input[id=gift5]').click().attr('checked','checked').next('button').addClass('active');
 		} else {
-		    $('input[id=gift7]').click().attr('checked','checked').next('label').addClass('active');
+		    $('input[id=gift7]').click().attr('checked','checked').next('button').addClass('active');
 		}
 		$('input[name=other_amount]').val(100);
 		$('input[name=recurring]').val('false');
