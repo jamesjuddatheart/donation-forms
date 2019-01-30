@@ -42,10 +42,11 @@ function showLevels(frequency,level) {
 		    $('input[id=gift8]').click().attr('checked','checked').next('button').addClass('active');
 		} else if(location.href.indexOf("jan19_ecc_appeal") > 0) {
 		    $('input[id=gift5]').click().attr('checked','checked').next('button').addClass('active');
+		    $('input[name=other_amount]').val(10);
 		} else {
 		    $('input[id=gift7]').click().attr('checked','checked').next('button').addClass('active');
+		    $('input[name=other_amount]').val(100);
 		}
-		$('input[name=other_amount]').val(100);
 		$('input[name=recurring]').val('false');
 		jQuery("#consentWidgetDiv").hide();
 	}
