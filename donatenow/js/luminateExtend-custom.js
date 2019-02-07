@@ -178,6 +178,7 @@
 			var city = $('input[name="billing.address.city"]').val();
 			var state = $('select[name="billing.address.state"]').val();
 			var zip = $('input[name="billing.address.zip"]').val();
+			var transactionId = data.donationResponse.donation.transaction_id;
 			var ref = data.donationResponse.donation.confirmation_code;
 			var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
 			var cc=$('input[name=card_number]').val();
@@ -263,7 +264,8 @@
 			$.getScript("//www.googleadservices.com/pagead/conversion.js");
 
 			/* END TRACKING PIXEL CODE */
-			
+
+			pushDonationSuccessToDataLayer(form, transactionId, amt);
         }
       }
     };
