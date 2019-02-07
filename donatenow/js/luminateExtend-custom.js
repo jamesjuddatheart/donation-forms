@@ -238,7 +238,7 @@
 			// Custom Tracking code
 			includeCustomFBPixel(amt);
 
-			/* ECOMMERCE TRACKING CODE */ 
+		/*
 			ga('require', 'ecommerce');
 
 			ga('ecommerce:addTransaction', {
@@ -252,6 +252,7 @@
 			ga('ecommerce:send');
 
 			ga('send', 'pageview', '/donateok.asp');
+			*/
 
 			/* CHIRAG CHHITA ADD GOOGLE TRACKING PIXEL TO THANK YOU PAGE */
 			var google_conversion_id = 936930558;
@@ -377,7 +378,7 @@ function donateAmazon() {
 				// Custom Tracking code
 				includeCustomFBPixel(amt);
 				
-				/* ECOMMERCE TRACKING CODE */ 
+				/*				
 				ga('require', 'ecommerce');
 
 				ga('ecommerce:addTransaction', {
@@ -391,6 +392,7 @@ function donateAmazon() {
 				ga('ecommerce:send');
 
 				ga('send', 'pageview', '/donateok.asp');
+				*/
 			}
 		}
 	});
@@ -454,7 +456,8 @@ function donateApplePay() {
 	// Custom Tracking code
 	includeCustomFBPixel(amt);
 	
-	/* ECOMMERCE TRACKING CODE */ 
+
+	/*
 	ga('require', 'ecommerce');
 
 	ga('ecommerce:addTransaction', {
@@ -468,6 +471,7 @@ function donateApplePay() {
 	ga('ecommerce:send');
 
 	ga('send', 'pageview', '/donateok.asp');
+	*/
 }
 
 function donateVenmo() {
@@ -530,8 +534,7 @@ function donateVenmo() {
 	// Custom Tracking code
 	includeCustomFBPixel(amt);
 	
-	/* ECOMMERCE TRACKING CODE */ 
-	ga('require', 'ecommerce');
+/*	ga('require', 'ecommerce');
 
 	ga('ecommerce:addTransaction', {
 	  'id': ref,
@@ -544,6 +547,7 @@ function donateVenmo() {
 	ga('ecommerce:send');
 
 	ga('send', 'pageview', '/donateok.asp');
+	*/
 }
 
 function donateGooglePay() {
@@ -602,7 +606,7 @@ function donateGooglePay() {
 	// Custom Tracking code
 	includeCustomFBPixel(amt);
 	
-	/* ECOMMERCE TRACKING CODE */ 
+/*
 	ga('require', 'ecommerce');
 
 	ga('ecommerce:addTransaction', {
@@ -616,6 +620,7 @@ function donateGooglePay() {
 	ga('ecommerce:send');
 
 	ga('send', 'pageview', '/donateok.asp');
+	*/
 }
 
 function donateOffline() {
