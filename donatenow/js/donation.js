@@ -19,7 +19,7 @@ function showLevels(frequency,level) {
 		}
 		$('.onetime').hide();
 		// hide Amazon monthly option and select CC
-		$('.radio-amazon').css('cssText', 'display: none !important');
+		$('.radio-amazon, .radio-googlepay').css('cssText', 'display: none !important');
 		$('#payment1').click();
 		$('input[name=gift]').removeAttr('checked');
 		$('input[id=gift2]').click().attr('checked','checked').next('button').addClass('active');
@@ -32,7 +32,7 @@ function showLevels(frequency,level) {
 			.addClass('display__inline-block')
 			.removeAttr('style');
 		// Show Amazon if enabled
-		$('.radio-amazon').css('cssText', '');
+		$('.radio-amazon, .radio-googlepay').css('cssText', '');
 		if (!$('.radio-applepay').hasClass("hidden")) {
 			$('.radio-applepay').show();
 			$('.radio-venmo').show();
