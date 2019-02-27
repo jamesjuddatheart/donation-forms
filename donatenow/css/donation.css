@@ -1113,7 +1113,7 @@ form .form-group .googlepay {
 }
 @media only screen and (max-width: 767px) {
    .paymentSel .radio-group {
-      display:block !important;
+      width:100% !important;
    }
 }
 form .form-group .help-block {
