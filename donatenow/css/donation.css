@@ -1080,7 +1080,7 @@ form .form-group .paypal {
 }
 form .form-group .applepay {
   content: '';
-  background-image: url(../images/DonateBlack_32pt_@2x.png );
+  background-image: url(../images/Apple_Pay_Mark_RGB_SMALL_052318.png );
   background-repeat: no-repeat;
   background-size: 100% auto;
   display: inline-block;
