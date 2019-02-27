@@ -1111,6 +1111,11 @@ form .form-group .googlepay {
   vertical-align: middle;
   margin-top: 10px;
 }
+@media only screen and (max-width: 767px) {
+   .paymentSel .radio-group {
+      display:block;
+   }
+}
 form .form-group .help-block {
   font-size: 14px;
   color: #000;
