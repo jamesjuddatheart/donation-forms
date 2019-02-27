@@ -1082,9 +1082,9 @@ form .form-group .applepay {
   content: '';
   background-image: url(../images/Apple_Pay_Mark_RGB_SMALL_052318.png );
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: auto 100%;
   display: inline-block;
-  width: 170px;
+  width: 65px;
   height: 40px;
   vertical-align: middle;
   margin-top: 10px;
