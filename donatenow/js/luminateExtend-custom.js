@@ -880,6 +880,10 @@ $('[name^=donor\\.]').each(function(){
 	if ($.getQuerystring("msource")) {
 		$('input[name=source]').val($.getQuerystring("msource"));
 	}
+	// Get contact Id from main site
+	if ($.getQuerystring("contactid")){
+		$('input[name=sitecore_contact_id]').val($.getQuerystring("contactid"));
+	}
 
 	// Legacy Tribute Settings
 	if (location.href.indexOf("donatenow_legacy") > 0 ||
