@@ -184,20 +184,15 @@
 						</div>
 					</div>
 				</fieldset>
-				<h4 class='pad-top'>Would you like to send a gift announcement?</h4>
-				<fieldset>
-					<legend class="text-hide">Card Type</legend>
+				<h3 class='pad-top'>Would you like to send a gift announcement?</h3>					<fieldset>
 					<div class='inline flex cardSel' aria-label="cardSelection">
-						<div class='input-group radio-group dropdown'>
-							<input type='radio' name='ecard.send' id='emailaCard' value='true' />
+			<div class='input-group radio-group dropdown' role = 'radiogroup' aria-labelledby= 'emailaCard'>							<input type='radio' name='ecard.send' id='emailaCard' value='true' />
 							<label for='emailaCard' title="E-mail" aria-checked="true">E-mail <br class='hide-break'/>a card<br/><a data-toggle='modal' href='#emailSample'>View email sample</a></label>
 						</div>
-						<div class='input-group radio-group dropdown'>
-							<input type='radio' name='ecard.send' id='mailaPrintedCard' value='false' />
+			<div class='input-group radio-group dropdown' role = 'radiogroup' aria-labelledby= 'mailaPrintedCard'>							<input type='radio' name='ecard.send' id='mailaPrintedCard' value='false' />
 							<label for='mailaPrintedCard' title="Mail" aria-checked="false">Mail a printed card<br/><a data-toggle='modal' href='#mailSample'>View print sample</a></label>
 						</div>
-						<div class='input-group radio-group dropdown none'>
-							<input type='radio' name='ecard.send' id='noCard' value='false' checked="checked" />
+			<div class='input-group radio-group dropdown none' role = 'radiogroup' aria-labelledby= 'noCard'>							<input type='radio' name='ecard.send' id='noCard' value='false' checked="checked" />
 							<label for='noCard' title="No Card" aria-checked="false">No card</label>
 							<!-- name='no_tribute_ack_cardsubmit' -->
 						</div>
@@ -205,7 +200,6 @@
 				</fieldset>
 				<!-- SELECT A CARD DESIGN -->
 				<div class='inner-form-group emailaCard'>
-					<h4>Please select a card design:</h4>
 					<span class='required-field'>(*Required fields)</span>
 					<div class='inline row'>
 						<div class='input-group col-xs-12 col-sm-12'>
@@ -215,58 +209,59 @@
 								<p class='text-center'>Your card</p>
 							</div>
 							<fieldset>
-								<legend class="text-hide">Card Choice</legend>
-								<div class='selection col-xs-12 col-sm-6'>
+								<legend>
+									<h4>Please select a card design:</h4>
+								</legend>									<div class='selection col-xs-12 col-sm-6'>
 									<div class='row honor'>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-1' name='ecard.id' value='[[S80:honcard1]]' />
-											<label for='hon-design-1'><span class="text-hide">A Heartfelt Gift: Flowers</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-1-thumb.jpg' alt='A Heartfelt Gift: Flowers' class='img-responsive' /></label>
+											<label for='hon-design-1'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-1-thumb.jpg' alt='A Heartfelt Gift: Flowers' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-2' name='ecard.id' value='[[S80:honcard2]]' />
-											<label for='hon-design-2'><span class="text-hide">A Heartfelt Gift: Rose</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-2-thumb.jpg' alt='A Heartfelt Gift: Rose' class='img-responsive' /></label>
+											<label for='hon-design-2'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-2-thumb.jpg' alt='A Heartfelt Gift: Rose' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-3' name='ecard.id' value='[[S80:honcard3]]' />
-											<label for='hon-design-3'><span class="text-hide">A Heartfelt Gift: Bow</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-3-thumb.jpg' alt='A Heartfelt Gift: Bow' class='img-responsive' /></label>
+											<label for='hon-design-3'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-3-thumb.jpg' alt='A Heartfelt Gift: Bow' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-4' name='ecard.id' value='[[S80:honcard4]]' />
-											<label for='hon-design-4'><span class="text-hide">A Heartfelt Gift: Heart</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-4-thumb.jpg' alt='A Heartfelt Gift: Heart' class='img-responsive' /></label>
+											<label for='hon-design-4'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-4-thumb.jpg' alt='A Heartfelt Gift: Heart' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-5' name='ecard.id' value='[[S80:honcard5]]' />
-											<label for='hon-design-5'><span class="text-hide">A Heartfelt Gift: Cupcake</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-5-thumb.jpg' alt='A Heartfelt Gift: Cupcake' class='img-responsive' /></label>
+											<label for='hon-design-5'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-5-thumb.jpg' alt='A Heartfelt Gift: Cupcake' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-6' name='ecard.id' value='[[S80:honcard6]]' />
-											<label for='hon-design-6'><span class="text-hide">A Heartfelt Gift: Balloons</span><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-6-thumb.jpg' alt='A Heartfelt Gift: Balloons' class='img-responsive' /></label>
+											<label for='hon-design-6'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-6-thumb.jpg' alt='A Heartfelt Gift: Balloons' class='img-responsive' /></label>
 										</div>
 									</div>
 									<div class='row memorial'>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-1' name='ecard.id' value='[[S80:memcard1]]' />
-											<label for='mem-design-1'><span class="text-hide">A Heartfelt Gift: Flower</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb01.jpg' alt='A Heartfelt Gift: Flower' class='img-responsive' /></label>
+											<label for='mem-design-1'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb01.jpg' alt='A Heartfelt Gift: Flower' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-2' name='ecard.id' value='[[S80:memcard2]]' />
-											<label for='mem-design-2'><span class="text-hide">A Heartfelt Gift: Floating Candle Bag</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb02.jpg' alt='A Heartfelt Gift: Floating Candle Bag' class='img-responsive' /></label>
+											<label for='mem-design-2'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb02.jpg' alt='A Heartfelt Gift: Floating Candle Bag' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-3' name='ecard.id' value='[[S80:memcard3]]' />
-											<label for='mem-design-3'><span class="text-hide">A Heartfelt Gift: Candle</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb03.jpg' alt='A Heartfelt Gift: Candle' class='img-responsive' /></label>
+											<label for='mem-design-3'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb03.jpg' alt='A Heartfelt Gift: Candle' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-4' name='ecard.id' value='[[S80:memcard4]]' />
-											<label for='mem-design-4'><span class="text-hide">A Heartfelt Gift: Candle in hands</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb04.jpg' alt='A Heartfelt Gift: Candle in hands' class='img-responsive' /></label>
+											<label for='mem-design-4'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb04.jpg' alt='A Heartfelt Gift: Candle in hands' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-5' name='ecard.id' value='[[S80:memcard5]]' />
-											<label for='mem-design-5'><span class="text-hide">A Heartfelt Gift: Holding hands</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb05.jpg' alt='A Heartfelt Gift: Holding Hands' class='img-responsive' /></label>
+											<label for='mem-design-5'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb05.jpg' alt='A Heartfelt Gift: Holding Hands' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-6' name='ecard.id' value='[[S80:memcard6]]' />
-											<label for='mem-design-6'><span class="text-hide">A Heartfelt Gift: Daisy</span><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb06.jpg' alt='A Heartfelt Gift: Daisy' class='img-responsive' /></label>
+											<label for='mem-design-6'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb06.jpg' alt='A Heartfelt Gift: Daisy' class='img-responsive' /></label>
 										</div>
 									</div>
 								</div>
@@ -485,29 +480,30 @@
         <!-- END GIFT DEDICATION -->
 
         <!-- GIFT DEDICATION MODAL -->
-        <div class='modal fade' id='emailSample' role='dialog' aria-labelledby='emailaCardSample'>
-          <div class='modal-dialog' role='document'>
+ <div class='modal fade' tabindex='-1' id='emailSample' role='dialog' aria-labelledby='emailaCardSample'>
+	 <div class='modal-dialog' role='document'>
             <div class='modal-content'>
-            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+            <button type='button' class='close' data-dismiss='modal' title ='close' aria-label='Close'>
               CLOSE<span aria-hidden='true'>&times;</span>
             </button>
             <div class='modal-body'>
               <h2 class='modal-title' id='emailaCardSample'>A sample personalized message is below:</h2>
-              <img src='../donation-forms/donatenow/images/sample-email.jpg' alt='A donation to the American Heart Association has been made in memory of a loved one. Please know this gift will help create a world free of heart disease and stroke by supporting innovative research, advocacy efforts and patient support.' class='img-responsive center-block'/>
-            </div>
+              <img src='../donation-forms/donatenow/images/sample-email.jpg' alt='A donation to the American Heart Association has been made in memory of a loved one. Please know this gift will help create a world free of heart disease and stroke by supporting innovative research, advocacy efforts and patient support.' class='img-responsive center-block' id="imgSampleMemorial"/>
+           <img src='../donation-forms/images/sample-email-honor.jpg' alt='A donation to the American Heart Association has been made in honor of a loved one. Please know this gift will help create a world free of heart disease and stroke by supporting innovative research, advocacy efforts and patient support.' class='img-responsive center-block' id="imgSampleHonor" style="display:none;"/>
+		    </div>
             </div>
           </div>
         </div>
 
-        <div class='modal fade' id='mailSample' role='dialog' aria-labelledby='emailaCardSample2'>
+        <div class='modal fade' tabindex='-1' id='mailSample' role='dialog' aria-labelledby='emailaCardSample2'>
           <div class='modal-dialog' role='document'>
             <div class='modal-content'>
-            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-              CLOSE<span aria-hidden='true'>&times;</span>
+    <button type='button' class='close' data-dismiss='modal' title = 'close' aria-label = 'close'>
+	    CLOSE<span aria-hidden='true'>&times;</span>
             </button>
             <div class='modal-body'>
               <h2 class='modal-title' id='emailaCardSample2'>A sample personalized message is below:</h2>
-              <img src='../donation-forms/donatenow/images/aha-sampleprintcard.jpg' alt='A donation to the American Heart Association has been made in honor of a loved one. Please know this gift will help create a world free of heart disease and stroke by supporting innovative research, advocacy efforts and patient support.' class='img-responsive center-block'/>
+              <img src='../donation-forms/donatenow/images/aha-sampleprintcard.jpg' alt='Sample print card, In honor of first name and last name. A contribution has been recieved by the American Heart Association' class='img-responsive center-block'/>
             </div>
             </div>
           </div>
@@ -516,7 +512,9 @@
 
         <!-- PERSONAL INFORMATION -->
         <div class='form-group'>
-          <h2>Your Personal Information<span class='lock'></span></h2>
+		<legend>
+			<h2>Your Personal Information<span class='lock'></span></h2>
+		</legend>
           <span class='required-field'>(*Required fields)</span>
           <div class='inline row'>
             <div class='input-group col-xs-12 col-sm-6 text-field'>
@@ -709,10 +707,9 @@
         <!-- PAYMENT INFORMATION -->
         <div class='form-group'>
           <h2>Payment Information<span class='lock'></span></h2>
-          <span class='required-field'>(*Required fields)</span>
           <div class='inline paymentSel' aria-label='paymentSelection'>
-		 <fieldset>
-			<legend class="text-hide">Select a payment type</legend>
+ <fieldset>		
+	 <legend>  <h2>Payment Information<span class='lock'></span></h2></legend> 
             <div class='input-group radio-group radio-cc'>
               <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" />
               <label for='payment1' title="Credit Card" aria-checked="false"><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
