@@ -126,21 +126,18 @@
 					<div class='input-group gift' role='group'  aria-labelledby= 'gift6'>
 						<input type='radio' name='gift' aria-label='60' id='gift6' value='$60'/>
 <button type="button" for='gift6' class='radio-label' data-amount="60"  title="$60" aria-checked="false">$60</button>					</div>
-					<div class='input-group gift'>
-						<input type='radio' name='gift' id='gift7' value='$100' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
-						<label for='gift7' class='radio-label' data-amount="100" title="$100" aria-checked="false">$100</label>
-					</div>
-					<div class='input-group gift'>
+					<div class='input-group gift' role='group'  aria-labelledby= 'gift7'>
+						<input type='radio' name='gift'  aria-label='100' id='gift7' value='$100' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
+<button type="button" for='gift7' class='radio-label [[?xtruex::x[[S80:sustainer_default]]x::::active]]' data-amount="100"  title="$100" aria-checked="false">$100</button>					</div>
+					<div class='input-group gift' role='group'  aria-labelledby= 'gift8'>
 						<input type='radio' name='gift' id='gift8' value='$250'/>
-						<label for='gift8' class='radio-label' data-amount="250"  title="$250" aria-checked="false">$250</label>
-					</div>
+<button type="button" for='gift8' class='radio-label' data-amount="250"  title="$250" aria-checked="false">$250</button>					</div>
 				</div> <!-- end 1x -->
 				<!-- OTHER - amount passed to ghost form -->
-				<div class='input-group gift display__inline-block'>
+				<div class='input-group gift display__inline-block' role='group'  aria-labelledby= 'giftOther'>	
 					<input type='radio' name='gift' id='giftOther' value='' disabled title="Other Gift Amount"/>
 					<label for="giftOtherText" style="height:0;width:0;text-indent:-9999px">Other Amount: </label>
-					<input type='text' class='radio-input' id='giftOtherText' maxlength='10' placeholder='$ Other' title="Enter a value $10 or greater" aria-label="enter other amount" />
-				</div>
+<input type='text' class='radio-input' id='giftOtherText' maxlength='10' placeholder='$ Other' title="Enter a value $10 or greater"  />				</div>
 			</div>
 		</fieldset>
 		<!-- end form-group -->
@@ -148,10 +145,9 @@
 
         <!-- PERSONALIZE GIFT -->
 		<div class='form-group'>
-			<h2>Make Your Gift a Tribute</h2>
 			<fieldset>
-				<legend class="text-hide">Is this gift a tribute?</legend>
-				<div class='inline tributeSel' aria-label='tributeGfit'>
+				<legend><h2>Make Your Gift a Tribute</h2>	</legend>
+					<div class='inline tributeSel' aria-label='tributeGfit'>
 					<label style='font-size: 16px; padding-right: 20px'>Is this gift a tribute?</label><br class='visible-xs' />
 					<div class='input-group radio-group'>
 						<input type='radio' name='tribGift' id='tribGift1' value='true' />
@@ -159,7 +155,7 @@
 					</div>
 					<div class='input-group radio-group'>
 						<input type='radio' name='tribGift' id='tribGift2' value='false' checked />
-						<label for='tribGift2'  title="No" aria-checked="false">No</label>
+						<label for='tribGift2' title="No" aria-checked="false">No</label>
 					</div>
 				</div>
 			</fieldset>
