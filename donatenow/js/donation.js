@@ -213,6 +213,7 @@ $( '#payment2' ).on('click', function () {
 });
 $( '#payment1' ).on('click', function () {
 	// Populate hidden form fields with updated values
+	$('.addressInfo').show();
 	$('#PaymentType').val('cc');
 	$('input[name=payment_source]').val('CC');
 	$('input[name=offline_payment_method]').val('');
@@ -227,6 +228,7 @@ $( '#payment1' ).on('click', function () {
 });
 $( '#payment3' ).on('click', function () {
 	// Populate hidden form fields with updated values
+	$('.addressInfo').show();
 	$('#PaymentType').val('cc');
 	$('input[name=payment_source]').val('CC');
 	$('input[name=offline_payment_method]').val('');
@@ -241,6 +243,7 @@ $( '#payment3' ).on('click', function () {
 
 $( '#payment4' ).on('click',function () {
 	// Populate hidden form fields with updated values
+	$('.addressInfo').hide();
 	$('input[name=PaymentType]').val('APPLEPAY');
 	$('input[name=payment_source]').val('APPLEPAY');
 	$('input[name=offline_payment_method]').val('cash');
@@ -254,6 +257,7 @@ $( '#payment4' ).on('click',function () {
 
 $( '#payment5' ).on('click',function () {
 	// Populate hidden form fields with updated values
+	$('.addressInfo').hide();
 	$('input[name=PaymentType]').val('VENMO');
 	$('input[name=payment_source]').val('VENMO');
 	$('input[name=offline_payment_method]').val('cash');
@@ -267,6 +271,7 @@ $( '#payment5' ).on('click',function () {
 
 $( '#payment6' ).on('click',function () {
 	// Populate hidden form fields with updated values
+	$('.addressInfo').hide();
 	$('input[name=PaymentType]').val('GOOGLEPAY');
 	$('input[name=payment_source]').val('GOOGLEPAY');
 	$('input[name=offline_payment_method]').val('cash');
