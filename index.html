@@ -523,6 +523,117 @@
         </div>
         <!-- END GIFT DEDICATION MODAL -->
 
+        <!-- PAYMENT INFORMATION -->
+        <div class='form-group'>
+		
+          <div class='inline paymentSel'  aria-label='paymentSelection'>
+		 <fieldset>
+			 <legend>  <h2>Payment Information<span class='lock'></span></h2></legend> 
+          <span class='required-field'>(*Required fields)</span>
+            <div class='input-group radio-group radio-cc'>
+              <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" />
+              <label for='payment1' title="Credit Card" aria-checked="false" ><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
+            </div>
+            <div class='input-group radio-group radio-amazon'>
+              <input type='radio' name='payment' id='payment2' value='Amazon payments'/>
+              <label for='payment2' title="AmazonPay" aria-checked="false" ><span class='amazon-pay text-hide' aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
+            </div>
+            <div class='input-group radio-group radio-paypal'>
+              <input type='radio' name='payment' id='payment3' value='Paypal payments'/>
+              <label for='payment3' title="PayPal" aria-checked="false" ><span class='paypal text-hide' aria-label="Paypal payments" alt="Paypal payments">Paypal payments</span></label>
+            </div>
+            <div class='input-group radio-group radio-applepay hidden'>
+              <input type='radio' name='payment' id='payment4' value='ApplePay payments' />
+              <label for='payment4' title="ApplePay" aria-checked="false"><span class='applepay text-hide' aria-label="ApplePay payments" alt="ApplePay payments">ApplePay payments</span></label>
+            </div>
+            <div class='input-group radio-group radio-venmo hidden'>
+              <input type='radio' name='payment' id='payment5' value='Venmo payments' />
+              <label for='payment5'  title="Venmo" aria-checked="false" ><span class='venmo text-hide' aria-label="Venmo payments" alt="Venmo payments">Venmo payments</span></label>
+            </div>
+            <div class='input-group radio-group radio-googlepay hidden'>
+              <input type='radio' name='payment' id='payment6' value='GooglePay payments' />
+              <label for='payment6'  title="GooglePay" aria-checked="false"><span class='googlepay text-hide' aria-label="GooglePay payments" alt="GooglePay payments">GooglePay payments</span></label>
+            </div>
+		</fieldset>
+          </div>
+          <div class='inline row' id='payment1form'>
+            <div class='input-group col-xs-12 col-sm-9 text-field'>
+              <label for='cardNumber' name='cardNumber' class='required-asterisk'>Card Number:</label>
+              <input placeholder='1234 5678 9012 3456' pattern='[0-9]*' type='text' id='cardNumber' name='card_number' autocomplete='off' value='' class='required' title='Credit Card Number' aria-required="true" />
+            </div>
+            <div class='input-group col-xs-12 col-sm-3 text-field'>
+              <label for='CVVNumber' name='CVVNumber' class='required-asterisk'>CVV Number:</label>
+              <input type='text' id='CVVNumber' name='card_cvv' placeholder='123' class='required' title='CVV Number' />
+            </div>
+            <div class='input-group col-xs-12 col-sm-12 select-box'>
+              <label name='expirationDate' class='required-asterisk' class='required'>Expiration Date:</label>
+            </div>
+            <div class='input-group col-xs-6 col-sm-6 col-md-4 select-box'>
+          <label for ='mnth' id='card_exp_date_month' name = 'month'>Month</label>
+              <select name='card_exp_date_month' class='required' id='mnth'>
+                <option value='' selected disabled>Select month</option>
+                  <option value='1'>January</option>
+                  <option value='2'>February</option>
+                  <option value='3'>March</option>
+                  <option value='4'>April</option>
+                  <option value='5'>May</option>
+                  <option value='6'>June</option>
+                  <option value='7'>July</option>
+                  <option value='8'>August</option>
+                  <option value='9'>September</option>
+                  <option value='10'>October</option>
+                  <option value='11'>November</option>
+                  <option value='12'>December</option>
+              </select>
+            </div>
+            <div class='input-group col-xs-6 col-sm-6 col-md-3 select-box'>
+	<label for="year" name="card_exp_date_year" style="">Year</label>
+              <select name='card_exp_date_year' class='required' id='year'>
+                <option value='' selected disabled>Select year</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+              </select>
+            </div>
+          </div>
+          <div class='inline' id='payment2form'>
+            <div class='input-group'>
+              <div id="AmazonPayment" style="margin-right: 22px;">
+	            	<div id="AmazonLogin">Please login to Amazon before continuing:</div>
+	            	<!-- BUTTON WIDGET -->
+	            	<div id="AmazonPayButton" role="button" tabindex=0 title="Amazon Pay"> </div>
+	            	<!-- WALLET WIDGET -->
+	            	<div id="walletWidgetDiv"> </div>
+	            	<!-- RECURRING PAYMENTS WIDGET -->
+	            	<div id="consentWidgetDiv"> </div>
+	            	<!-- LOGOUT LINK -->
+	            	<div id="AmazonLogoutButton"> <a class="" href="#" onClick="javascript:amazon.Login.MODLogoutClickHandler()">Log out of Amazon Payments</a> </div>
+	            	<br />
+	            	<p>Amazon Payments is the secure payment for the American Heart Association. <a href="https://payments.amazon.com/help/Amazon-Simple-Pay/Creating-Managing-Your-Account/Verifying-Your-Account"         target="_blank">Learn more</a> about Amazon Payments.</p>
+	            	<p>Amazon Payments protects your privacy and security.</p>
+	            	<!-- BEGIN AMAZON PAYMENTS ADDITION -->
+	            	<input type="hidden" name="AmazonBillingAgreementId" value="" />
+	            	<!-- Passed on to Amazon REST call: SetBillingAgreementDetails -->
+	            	<input type="hidden" name="AmazonOrderReferenceId" value="" />
+	            	<!-- Passed to Amazon after Amazon returns error. -->
+	            	<input type="hidden" name="AmazonAccessToken" value="" />
+	            	<!-- Can be saved on our back end for getting updated user information at a later time. -->
+	            	<input type="hidden" name="AmazonPaymentSelected" value="" />
+	            	<!-- END AMAZON PAYMENTS ADDITION -->
+	            </div>
+            </div>
+          </div>
+        </div>
+        <!-- END PAYMENT INFORMATION -->
+
         <!-- PERSONAL INFORMATION -->
         <div class='form-group'>
 		<legend>
@@ -547,6 +658,8 @@
               <input type='checkbox' name='donor.email_opt_in' id='recieveEmail' value='true' checked />
               <label for='recieveEmail'>Yes, I'd like to receive email from American Heart Association</label>
             </div>
+	  </div>
+	  <div class='inline row addressInfo'>
             <div class='input-group col-xs-12 col-sm-12 text-field'>
               <label for='streetAddress1' name='streetAddress1' class='required-asterisk'>Street Address 1:</label>
               <input type='text' id='streetAddress1' name='donor.address.street1' class='required' />
@@ -718,116 +831,6 @@
         </div>
         <!-- END BILLING INFORMATION -->
 
-        <!-- PAYMENT INFORMATION -->
-        <div class='form-group'>
-		
-          <div class='inline paymentSel'  aria-label='paymentSelection'>
-		 <fieldset>
-			 <legend>  <h2>Payment Information<span class='lock'></span></h2></legend> 
-          <span class='required-field'>(*Required fields)</span>
-            <div class='input-group radio-group radio-cc'>
-              <input type='radio' name='payment' id='payment1' value='MasterCard, Visa, American Express, Discover' checked="checked" />
-              <label for='payment1' title="Credit Card" aria-checked="false" ><span class='cc-icon text-hide' aria-label="MasterCard, Visa, American Express, Discover" alt="MasterCard, Visa, American Express, Discover">MasterCard, Visa, American Express, Discover</span></label>
-            </div>
-            <div class='input-group radio-group radio-amazon'>
-              <input type='radio' name='payment' id='payment2' value='Amazon payments'/>
-              <label for='payment2' title="AmazonPay" aria-checked="false" ><span class='amazon-pay text-hide' aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
-            </div>
-            <div class='input-group radio-group radio-paypal'>
-              <input type='radio' name='payment' id='payment3' value='Paypal payments'/>
-              <label for='payment3' title="PayPal" aria-checked="false" ><span class='paypal text-hide' aria-label="Paypal payments" alt="Paypal payments">Paypal payments</span></label>
-            </div>
-            <div class='input-group radio-group radio-applepay hidden'>
-              <input type='radio' name='payment' id='payment4' value='ApplePay payments' />
-              <label for='payment4' title="ApplePay" aria-checked="false"><span class='applepay text-hide' aria-label="ApplePay payments" alt="ApplePay payments">ApplePay payments</span></label>
-            </div>
-            <div class='input-group radio-group radio-venmo hidden'>
-              <input type='radio' name='payment' id='payment5' value='Venmo payments' />
-              <label for='payment5'  title="Venmo" aria-checked="false" ><span class='venmo text-hide' aria-label="Venmo payments" alt="Venmo payments">Venmo payments</span></label>
-            </div>
-            <div class='input-group radio-group radio-googlepay hidden'>
-              <input type='radio' name='payment' id='payment6' value='GooglePay payments' />
-              <label for='payment6'  title="GooglePay" aria-checked="false"><span class='googlepay text-hide' aria-label="GooglePay payments" alt="GooglePay payments">GooglePay payments</span></label>
-            </div>
-		</fieldset>
-          </div>
-          <div class='inline row' id='payment1form'>
-            <div class='input-group col-xs-12 col-sm-9 text-field'>
-              <label for='cardNumber' name='cardNumber' class='required-asterisk'>Card Number:</label>
-              <input placeholder='1234 5678 9012 3456' pattern='[0-9]*' type='text' id='cardNumber' name='card_number' autocomplete='off' value='' class='required' title='Credit Card Number' aria-required="true" />
-            </div>
-            <div class='input-group col-xs-12 col-sm-3 text-field'>
-              <label for='CVVNumber' name='CVVNumber' class='required-asterisk'>CVV Number:</label>
-              <input type='text' id='CVVNumber' name='card_cvv' placeholder='123' class='required' title='CVV Number' />
-            </div>
-            <div class='input-group col-xs-12 col-sm-12 select-box'>
-              <label name='expirationDate' class='required-asterisk' class='required'>Expiration Date:</label>
-            </div>
-            <div class='input-group col-xs-6 col-sm-6 col-md-4 select-box'>
-          <label for ='mnth' id='card_exp_date_month' name = 'month'>Month</label>
-              <select name='card_exp_date_month' class='required' id='mnth'>
-                <option value='' selected disabled>Select month</option>
-                  <option value='1'>January</option>
-                  <option value='2'>February</option>
-                  <option value='3'>March</option>
-                  <option value='4'>April</option>
-                  <option value='5'>May</option>
-                  <option value='6'>June</option>
-                  <option value='7'>July</option>
-                  <option value='8'>August</option>
-                  <option value='9'>September</option>
-                  <option value='10'>October</option>
-                  <option value='11'>November</option>
-                  <option value='12'>December</option>
-              </select>
-            </div>
-            <div class='input-group col-xs-6 col-sm-6 col-md-3 select-box'>
-	<label for="year" name="card_exp_date_year" style="">Year</label>
-              <select name='card_exp_date_year' class='required' id='year'>
-                <option value='' selected disabled>Select year</option>
-                  <option value="2018">2018</option>
-                  <option value="2019">2019</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
-                  <option value="2024">2024</option>
-                  <option value="2025">2025</option>
-                  <option value="2026">2026</option>
-                  <option value="2027">2027</option>
-                  <option value="2028">2028</option>
-              </select>
-            </div>
-          </div>
-          <div class='inline' id='payment2form'>
-            <div class='input-group'>
-              <div id="AmazonPayment" style="margin-right: 22px;">
-	            	<div id="AmazonLogin">Please login to Amazon before continuing:</div>
-	            	<!-- BUTTON WIDGET -->
-	            	<div id="AmazonPayButton" role="button" tabindex=0 title="Amazon Pay"> </div>
-	            	<!-- WALLET WIDGET -->
-	            	<div id="walletWidgetDiv"> </div>
-	            	<!-- RECURRING PAYMENTS WIDGET -->
-	            	<div id="consentWidgetDiv"> </div>
-	            	<!-- LOGOUT LINK -->
-	            	<div id="AmazonLogoutButton"> <a class="" href="#" onClick="javascript:amazon.Login.MODLogoutClickHandler()">Log out of Amazon Payments</a> </div>
-	            	<br />
-	            	<p>Amazon Payments is the secure payment for the American Heart Association. <a href="https://payments.amazon.com/help/Amazon-Simple-Pay/Creating-Managing-Your-Account/Verifying-Your-Account"         target="_blank">Learn more</a> about Amazon Payments.</p>
-	            	<p>Amazon Payments protects your privacy and security.</p>
-	            	<!-- BEGIN AMAZON PAYMENTS ADDITION -->
-	            	<input type="hidden" name="AmazonBillingAgreementId" value="" />
-	            	<!-- Passed on to Amazon REST call: SetBillingAgreementDetails -->
-	            	<input type="hidden" name="AmazonOrderReferenceId" value="" />
-	            	<!-- Passed to Amazon after Amazon returns error. -->
-	            	<input type="hidden" name="AmazonAccessToken" value="" />
-	            	<!-- Can be saved on our back end for getting updated user information at a later time. -->
-	            	<input type="hidden" name="AmazonPaymentSelected" value="" />
-	            	<!-- END AMAZON PAYMENTS ADDITION -->
-	            </div>
-            </div>
-          </div>
-        </div>
-        <!-- END PAYMENT INFORMATION -->
 
         <div class='button-ssl'>
         	<button type='button' class='submit' id='donate-submit'>Send My Gift</button>
