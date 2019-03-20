@@ -460,16 +460,16 @@ var braintree_aha = {
 	},
 
 	DonationFillApplePayBillingAddress: function(billingContact, shippingContact) {
-		if (shippingContact.givenName != "" && shippingContact.familyName != "") {
-			$("#FirstName").val(shippingContact.givenName);
-			$("#LastName").val(shippingContact.familyName);
-		}
-		else {
-			$("#FirstName").val(billingContact.givenName);
-			$("#LastName").val(billingContact.familyName);
-		}
+		//if (shippingContact.givenName != "" && shippingContact.familyName != "") {
+		//	$("#FirstName").val(shippingContact.givenName);
+		//	$("#LastName").val(shippingContact.familyName);
+		//}
+		//else {
+		//	$("#FirstName").val(billingContact.givenName);
+		//	$("#LastName").val(billingContact.familyName);
+		//}
 
-		$("#EmailAddress").val(shippingContact.emailAddress);
+		//$("#EmailAddress").val(shippingContact.emailAddress);
 		$("#Phone").val("");
 
 		var countryCode = billingContact.countryCode.toUpperCase();
