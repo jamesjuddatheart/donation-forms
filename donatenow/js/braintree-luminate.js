@@ -101,9 +101,7 @@ var braintree_aha = {
 				braintree_aha.InitializeVenmo(clientInstance);
 
 				//Initialize Google Pay
-				if (jQuery('input[name=instance]').val() == "heartdev") {
-					braintree_aha.InitializeGooglePay(clientInstance);
-				}
+				braintree_aha.InitializeGooglePay(clientInstance);
 			});
 		});
 	},
