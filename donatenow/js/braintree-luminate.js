@@ -101,9 +101,7 @@ var braintree_aha = {
 				braintree_aha.InitializeVenmo(clientInstance);
 
 				//Initialize Google Pay
-				if (jQuery('input[name=instance]').val() == "heartdev") {
-					braintree_aha.InitializeGooglePay(clientInstance);
-				}
+				braintree_aha.InitializeGooglePay(clientInstance);
 			});
 		});
 	},
@@ -115,11 +113,14 @@ var braintree_aha = {
 		braintree.googlePayment.create({
    			client: clientInstance, // From braintree.client.create, see below for full example
 			googlePayVersion: 2,
-			googleMerchantId: 'merchant-id-from-google' // Optional in sandbox; if set in sandbox, this value must be a valid production Google Merchant ID
+			googleMerchantId: '14659556990032307902' // Optional in sandbox; if set in sandbox, this value must be a valid production Google Merchant ID
 		  }, function (err, googlePaymentInstance) {
 		  	// Set up Google Pay button
 			if (googlePaymentInstance != undefined) {
-				jQuery(braintree_aha.googlePaySubmitButton).removeClass("hidden")
+				//jQuery(braintree_aha.googlePaySubmitButton).removeClass("hidden");
+				if (location.href.indexOf("showGooglePay=true") > 0) {
+					jQuery(braintree_aha.googlePaySubmitButton).removeClass("hidden");
+				}
 				braintree_aha.googlePaymentInstance = googlePaymentInstance;
 			} else {
 				console.log(err, googlePaymentInstance);
@@ -147,8 +148,9 @@ var braintree_aha = {
 			phoneNumberRequired: true
 		};
 		
+		var googleEnv = ($('input[name=instance]').val() == 'heartdev') ? 'TEST' : 'PRODUCTION';
 		var paymentsClient = new google.payments.api.PaymentsClient({
-		  environment: 'TEST' // Or 'PRODUCTION'
+		  environment:  googleEnv // 'TEST' Or 'PRODUCTION'
 		});
 		
 		paymentsClient.loadPaymentData(paymentDataRequest).then(function(paymentData) {
