@@ -199,6 +199,7 @@ $( '.dropdown input[type="radio"]' ).each( function(){
 
 $( '#payment2' ).on('click', function () {
 	// Populate hidden form fields with updated values
+	$('.addressInfo').hide();
 	$('#PaymentType').val('amazon');
 	$('input[name=payment_source]').val('AMAZON');
 	$('input[name=offline_payment_method]').val('cash');
@@ -258,6 +259,7 @@ $( '#payment4' ).on('click',function () {
 $( '#payment5' ).on('click',function () {
 	// Populate hidden form fields with updated values
 	$('.addressInfo').hide();
+	$('.addressInfo.state').show();
 	$('input[name=PaymentType]').val('VENMO');
 	$('input[name=payment_source]').val('VENMO');
 	$('input[name=offline_payment_method]').val('cash');
@@ -272,6 +274,7 @@ $( '#payment5' ).on('click',function () {
 $( '#payment6' ).on('click',function () {
 	// Populate hidden form fields with updated values
 	$('.addressInfo').hide();
+	$('.addressInfo.state').show();
 	$('input[name=PaymentType]').val('GOOGLEPAY');
 	$('input[name=payment_source]').val('GOOGLEPAY');
 	$('input[name=offline_payment_method]').val('cash');
