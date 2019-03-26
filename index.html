@@ -637,8 +637,7 @@
         <!-- PERSONAL INFORMATION -->
         <div class='form-group'>
 		<legend>
-          <h2>Your Personal Information
-<span class='lock'></span></h2>
+          <h2>Your Personal Information <span class='lock'></span></h2>
 		</legend>
           <span class='required-field'>(*Required fields)</span>
           <div class='inline row'>
@@ -658,17 +657,15 @@
               <input type='checkbox' name='donor.email_opt_in' id='recieveEmail' value='true' checked />
               <label for='recieveEmail'>Yes, I'd like to receive email from American Heart Association</label>
             </div>
-	  </div>
-	  <div class='inline row addressInfo'>
-            <div class='input-group col-xs-12 col-sm-12 text-field'>
+            <div class='input-group col-xs-12 col-sm-12 text-field addressInfo'>
               <label for='streetAddress1' name='streetAddress1' class='required-asterisk'>Street Address 1:</label>
               <input type='text' id='streetAddress1' name='donor.address.street1' class='required' />
             </div>
-            <div class='input-group col-xs-12 col-sm-12 text-field'>
+            <div class='input-group col-xs-12 col-sm-12 text-field addressInfo'>
               <label for='streetAddress2' name='streetAddress2'>Street Address 2:</label>
               <input type='text' id='streetAddress2' name='donor.address.street2' />
             </div>
-            <div class='input-group col-xs-12 col-sm-12 col-md-5 text-field'>
+            <div class='input-group col-xs-12 col-sm-12 col-md-5 text-field addressInfo'>
               <label for='city' class='required-asterisk'>City:</label>
               <input type='text' id='city'  name='donor.address.city' class='required' />
             </div>
@@ -729,11 +726,11 @@
                 <option value='WY'>Wyoming</option>
               </select>
             </div>
-            <div class='input-group col-xs-5 col-sm-6 col-md-3 text-field'>
+            <div class='input-group col-xs-5 col-sm-6 col-md-3 text-field addressInfo'>
               <label for='zipCode' name='zipCode' class='required-asterisk'>Zip Code:</label>
               <input type='text' id='zipCode'  name='donor.address.zip' class='required' />
             </div>
-            <div class='input-group checkBox col-xs-12 col-sm-12'>
+            <div class='input-group checkBox col-xs-12 col-sm-12 addressInfo'>
               <input type='checkbox' name='differentBilling' id='differentBilling' value='I have a different billing address'>
               <label for='differentBilling'>I have a different billing address</label>
             </div>
