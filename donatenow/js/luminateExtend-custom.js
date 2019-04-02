@@ -37,6 +37,11 @@
       });
       
       $('.donation-form').submit(function() {
+	        var r = /(?:\d{4}[ -]?){3}(?=\d{4}\b)\d{4}/gm;
+                $('[type=text]:not(#cardNumber):not(:hidden)').each(function() {
+                   jQuery(this).val(jQuery(this).val().replace(r,""));
+                });
+	      
 		//move contact info details to billing info if any fields are blank
 		$('[name^=billing\\.]').each(function(){
 		  if ($(this).val() == "" || $(this).val() == null){
