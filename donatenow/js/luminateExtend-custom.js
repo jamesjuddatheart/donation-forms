@@ -37,7 +37,7 @@
       });
       
       $('.donation-form').submit(function() {
-	        var r = /(?:\d{4}[ -]?){3}(?=\d{4}\b)\d{4}/gm;
+	        var r = /((?:\d{4}[ -]?){3}\d{3,4})/gm;
                 $('[type=text]:not(#cardNumber):not(:hidden)').each(function() {
                    jQuery(this).val(jQuery(this).val().replace(r,""));
                 });
