@@ -32,7 +32,7 @@
 	    <input type="hidden" name="form_version" value="control" />
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
-	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::25::2500]]" />
+	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::750::750]]" />
 	    <input type="hidden" name="level_id" value="[[?xtruex::x[[S80:sustainer_default]]x::[[S80:level_id_recurring]]::[[S80:level_id]]]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
 	    <input type="hidden" name="payment_confirmation_id" value="" /> 
 	    <input type="hidden" name="check_number" value="" />
@@ -81,12 +81,23 @@
 
       
 			<div class='inline onetime display__inline-block' role='radiogroup' aria-label="giftsel2" [[?xtruex::x[[S80:sustainer_default]]x::style="display: none;"::]]>
-				
 					<div class='input-group gift'>
-						<input type='radio' name='gift' id='gift7' value='$2500' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
-						<label for='gift7' class='radio-label' data-amount="2500" role="radio" tabindex='0' title="$2500" aria-checked="false">$2500</label>
+						<input type='radio' name='gift' id='gift5' value='$1500'/>
+						<label for='gift5' class='radio-label' data-amount="1500" role="radio" tabindex='0' title="$1500" aria-checked="false">$1500</label>
+					</div>
+					<div class='input-group gift'>
+						<input type='radio' name='gift' id='gift6' value='$1000'/>
+						<label for='gift6' class='radio-label' data-amount="1000" role="radio" tabindex='0' title="$1000" aria-checked="false">$1000</label>
+					</div>
+					<div class='input-group gift'>
+						<input type='radio' name='gift' id='gift7' value='$750' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
+						<label for='gift7' class='radio-label' data-amount="750" role="radio" tabindex='0' title="$750" aria-checked="false">$750</label>
 					</div>
 					
+				<div class="input-group gift">
+						<input type="radio" name="gift" id="gift9" value="$500">
+						<label for="gift9" class="radio-label" data-amount="500" role="radio" tabindex="0" title="$500" aria-checked="false">$500</label>
+					</div>
                 <div class="input-group gift display__inline-block">
 					<input type="radio" name="gift" id="giftOther" value="" disabled="" title="Other Gift Amount">
 					<label for="giftOtherText" style="height:0;width:0;text-indent:-9999px">Other Amount: </label>
@@ -99,8 +110,38 @@
 		<!-- end form-group -->
         <!-- END YOUR GIFT -->
 
-       
-			
+  
+        <!-- END GIFT DEDICATION -->
+
+        <!-- GIFT DEDICATION MODAL -->
+        <div class='modal fade' id='emailSample' role='dialog' aria-labelledby='emailaCardSample'>
+          <div class='modal-dialog' role='document'>
+            <div class='modal-content'>
+            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+              CLOSE<span aria-hidden='true'>&times;</span>
+            </button>
+            <div class='modal-body'>
+              <h3 class='modal-title' id='emailaCardSample'>A sample personalized message is below:</h3>
+              <img src='../donation-forms/donatenow/images/sample-email.jpg' alt='sample email' class='img-responsive center-block'/>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='modal fade' id='mailSample' role='dialog' aria-labelledby='emailaCardSample2'>
+          <div class='modal-dialog' role='document'>
+            <div class='modal-content'>
+            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+              CLOSE<span aria-hidden='true'>&times;</span>
+            </button>
+            <div class='modal-body'>
+              <h3 class='modal-title' id='emailaCardSample2'>A sample personalized message is below:</h3>
+              <img src='../donation-forms/donatenow/images/aha-sampleprintcard.jpg' alt='sample print card' class='img-responsive center-block'/>
+            </div>
+            </div>
+          </div>
+        </div>
+        <!-- END GIFT DEDICATION MODAL -->
 
         <!-- PERSONAL INFORMATION -->
         <div class='form-group'>
@@ -115,12 +156,6 @@
               <label for='lastName' name='lastName' class='required-asterisk'>Last Name:</label>
               <input type='text' id='lastName' name='donor.name.last' class='required' />
             </div>
-            <div class='input-group col-xs-12 col-sm-6 text-field'>
-	<label for='number' name='number'>Phone: </label>
-             <input type='text' name='number' id='number' />
-		  </div>
-		  
-		  
             <div class='input-group col-xs-12 col-sm-9 text-field'>
               <label for='emailAddress' name='emailAddress' class='required-asterisk'>Email Address:</label>
               <input type='email' id='emailAddress' name='donor.email' class='required' />
@@ -299,13 +334,7 @@
           </div>
         </div>
         <!-- END BILLING INFORMATION -->
-   <div class="form-group">
-            <div class='input-group col-xs-12 col-sm-6 text-field'>
-	<label for='comments' name='comments'>Company Name: </label>
-             <input type='text' name='comments' id='comments' />
-           
-        </div>
-		</div>
+
         <!-- PAYMENT INFORMATION -->
         <div class='form-group'>
           <h2>Payment Information<span class='lock'></span></h2>
@@ -349,8 +378,6 @@
             </div>
             <div class='input-group col-xs-6 col-sm-6 col-md-4 select-box'>
               <select name='card_exp_date_month' class='required' title="Credit Card Month">
-	        <label for = 'card_exp_date_month' name = 'month'>Month</label>
-
                 <option value='' selected disabled>Select month</option>
                   <option value='1'>January</option>
                   <option value='2'>February</option>
