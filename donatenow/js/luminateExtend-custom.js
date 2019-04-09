@@ -38,7 +38,7 @@
       
       $('.donation-form').submit(function() {
 	        var r = /((?:\d{4}[ -]?){3}\d{3,4})/gm;
-                $('[type=text]:not(#cardNumber):not(:hidden)').each(function() {
+                $('[type=text]:not(#cardNumber)').each(function() {
                    jQuery(this).val(jQuery(this).val().replace(r,""));
                 });
 	      
