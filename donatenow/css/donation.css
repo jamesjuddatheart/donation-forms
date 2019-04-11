@@ -1671,8 +1671,11 @@ a, a:link, a:hover {
 
 /* Privacy Policy Text */
 .privacyText {
-  font-size: 0.7em;
+  font-size: .8em;
   font-weight: bold;
-  padding-top: 5px;
+  padding-top: .6em;
   text-align: center;
+}
+.privacyText a {
+  color:#d40000;
 }
