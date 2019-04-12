@@ -149,6 +149,10 @@
 					<input type='text' class='radio-input' id='giftOtherText' maxlength='10' placeholder='$ Other' title="Enter a value $10 or greater"  />
 				</div>
 			</div>
+			  <div class='input-group checkBox col-xs-12 col-sm-12'>
+              <input type='checkbox' name='donor.email_opt_in' id='recieveEmail' value='true' checked />
+              <label for='recieveEmail'>Yes, I'd like to receive email from American Heart Association</label>
+            </div>
 		</fieldset>
 		<!-- end form-group -->
         <!-- END YOUR GIFT -->
@@ -208,10 +212,7 @@
               <label for='emailAddress' name='emailAddress' class='required-asterisk'>Email Address:</label>
               <input type='email' id='emailAddress' name='donor.email' class='required' />
             </div>
-            <div class='input-group checkBox col-xs-12 col-sm-12'>
-              <input type='checkbox' name='donor.email_opt_in' id='recieveEmail' value='true' checked />
-              <label for='recieveEmail'>Yes, I'd like to receive email from American Heart Association</label>
-            </div>
+          
             <div class='input-group col-xs-12 col-sm-12 text-field'>
               <label for='streetAddress1' name='streetAddress1' class='required-asterisk'>Street Address 1:</label>
               <input type='text' id='streetAddress1' name='donor.address.street1' class='required' />
