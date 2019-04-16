@@ -37,6 +37,11 @@
       });
       
       $('.donation-form').submit(function() {
+	        var r = /((?:\d{4}[ -]?){3}\d{3,4})/gm;
+                $('[type=text]:not(#cardNumber)').each(function() {
+                   jQuery(this).val(jQuery(this).val().replace(r,""));
+                });
+	      
 		//move contact info details to billing info if any fields are blank
 		$('[name^=billing\\.]').each(function(){
 		  if ($(this).val() == "" || $(this).val() == null){
@@ -70,6 +75,10 @@
 		"Please enter an amount $10 or greater"
 	);
 
+	$.validator.addMethod("zipCodeValidation", function(value,element) {
+		return (/(^\d{5}$)|(^\d{5}-\d{4}$)/).test(value); // returns boolean
+	}, "Please enter a valid US zip code (use a hyphen if 9 digits).");
+	    
       $('#donate-submit').click(function() {
 		if ($(form).valid()) {
 			switch ($('#PaymentType').val()) {
