@@ -263,16 +263,7 @@
 
 			ga('send', 'pageview', '/donateok.asp');
 
-			/* CHIRAG CHHITA ADD GOOGLE TRACKING PIXEL TO THANK YOU PAGE */
-			var google_conversion_id = 936930558;
-			var google_conversion_language = "en";
-			var google_conversion_format = "3";
-			var google_conversion_color = "ffffff";
-			var google_conversion_label = "HZKtCMmH2WIQ_tnhvgM";
-			var google_remarketing_only = false;
-			$.getScript("//www.googleadservices.com/pagead/conversion.js");
-
-			/* END TRACKING PIXEL CODE */
+			
 
 			pushDonationSuccessToDataLayer(form, transactionId, amt);
         }
