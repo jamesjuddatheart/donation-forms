@@ -74,6 +74,10 @@
 		},
 		"Please enter an amount $10 or greater"
 	);
+	    
+    	$.validator.addMethod("acceptTerms", function(value, element) {
+		return ($(element).is(":checked") || value == 'yes');
+	}, "Please accept the terms.");
 
 	$.validator.addMethod("zipCodeValidation", function(value,element) {
 		return (/(^\d{5}$)|(^\d{5}-\d{4}$)/).test(value); // returns boolean
