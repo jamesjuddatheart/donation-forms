@@ -268,7 +268,7 @@ $( '#payment5' ).on('click',function () {
 $( '#payment6' ).on('click',function () {
 	// Populate hidden form fields with updated values
 	$('input[name=PaymentType]').val('GOOGLEPAY');
-	$('input[name=payment_source]').val('GOOGLEPAY');
+	$('input[name=payment_source]').val('GOOGLE PAY');
 	$('input[name=offline_payment_method]').val('cash');
 	$('input[name=extproc]').val('');
 	$('input[name=method]').val('donate');
