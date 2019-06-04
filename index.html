@@ -829,11 +829,24 @@
         </div>
         <!-- END PAYMENT INFORMATION -->
 
+	<div class="form-group">
+	    <div class="inline row" id="privacyText">
+		<div class="input-group checkBox col-xs-12 col-sm-12 error">
+		    <label id="acceptterms-error" class="error" for="acceptterms" style="color: #d40000;font-size: 1.3em;font-weight: bold;clear: both; display:none;">This field is required.</label>
+		</div>
+		<div class="input-group checkBox col-xs-12 col-sm-12">
+
+		    <input type="checkbox" name="acceptterms" id="acceptterms" value="true" class="acceptTerms required" aria-required="true" aria-invalid="true">
+		    <label for="acceptterms">I accept the
+			<a href="https://www.heart.org/en/about-us/statements-and-policies/privacy-statement?_ga=2.35125605.517429444.1559155833-1822007798.1551734893" target="_blank">AHA privacy policy</a> *</label>
+		</div>
+	    </div>
+	</div>
+		
         <div class='button-ssl'>
         	<button type='button' class='submit' id='donate-submit'>Send My Gift</button>
 		<!-- button added for accessiblity testing -->
 		<input type="submit" value="submit" style="display:none;" onclick="return false;">
-		<div class="privacyText main-content col-lg-12">By making my gift, I accept the <a href="https://www.heart.org/en/about-us/statements-and-policies/privacy-statement" target="_blank">AHA privacy policy</a></div>
         	<div class='ssl'>
         		<img src='../donation-forms/donatenow/images/comodo-secure-icon.png' alt='Comodo Secure Image' /><a href='https://ssl.comodo.com/'>SSL Certificate</a>
         	</div>
