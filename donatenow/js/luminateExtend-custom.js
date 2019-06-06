@@ -75,7 +75,7 @@
 		"Please enter an amount $10 or greater"
 	);
 	    
-    	$.validator.addMethod("acceptTerms", function(value, element) {
+	$.validator.addMethod("tos", function(value, element) {
 		return ($(element).is(":checked") || value == 'yes');
 	}, "Please accept the terms.");
 
