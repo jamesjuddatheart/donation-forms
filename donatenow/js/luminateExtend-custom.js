@@ -77,7 +77,7 @@
 	    
 	$.validator.addMethod("tos", function(value, element) {
 		return ($(element).is(":checked") || value == 'yes');
-	}, "Please accept the terms.");
+	}, "Please accept the privacy policy.");
 
 	$.validator.addMethod("zipCodeValidation", function(value,element) {
 		return (/(^\d{5}$)|(^\d{5}-\d{4}$)/).test(value); // returns boolean
