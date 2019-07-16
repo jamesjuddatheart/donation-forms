@@ -293,18 +293,22 @@ $('textarea').keyup(function() {
 });
 
 $('#tributeType').on('change', function () {
+	var honorFirst = $('input[name="tribute.honoree.name.first"]').val();
+	var honorLast = $('input[name="tribute.honoree.name.last"]').val();
   if(this.value === "honor"){
     $(".honor").show();
     $(".memorial").hide();
     $('input[name="tribute.type"]').val("Tribute");
     $("#imgSampleHonor").show();
-    $("#imgSampleMemorial").hide();
+	$("#imgSampleMemorial").hide();
+	$('input[name="ecard.subject"]').val("In honor of " + honorFirst + ' ' + honorLast);
   } else {
-    $(".memorial").show();
+	$(".memorial").show();
     $(".honor").hide();
     $('input[name="tribute.type"]').val("Memorial");
     $("#imgSampleHonor").hide();
-    $("#imgSampleMemorial").show();
+	$("#imgSampleMemorial").show();
+	$('input[name="ecard.subject"]').val("In memory of " + honorFirst + ' ' + honorLast);
   }
 });
 

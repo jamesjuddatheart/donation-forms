@@ -286,21 +286,9 @@
 							<textarea id='emailCardEmail' name='ecard.recipients' class='required' title="Email Card Recipient"></textarea>
 							<p class="help-block">Please separate each additional email address with a comma, e.g. 'JohnDoe@gmail.com, JaneRoe@hotmail.com'.</p>
 						</div>
-						<div class='input-group col-xs-12 col-sm-6 text-field'>
-							<label for='emailCardFirstName' name='emailCardFirstName' class='required-asterisk'>Honoree First Name:</label>
-							<input type='text' id='emailCardFirstName' name='tribute.honoree.name.first' value='[[S334:giftFirstName]]' class='required' />
-						</div>
-						<div class='input-group col-xs-12 col-sm-6 text-field'>
-							<label for='emailCardLastName' name='emailCardLastName' class='required-asterisk'>Honoree Last Name:</label>
-							<input type='text' id='emailCardLastName' name='tribute.honoree.name.last' value='[[S334:giftLastName]]' class='required' />
-						</div>
-						<div class='input-group col-xs-12 col-sm-12 text-field honor'>
-							<label for='emailCardSubject1' name='emailCardSubject' class='required-asterisk'>Subject Line:</label>
-			                <input type='text' id='emailCardSubject1' name='ecard.subject' value='In honor of [[S334:giftFirstName]] [[S334:giftLastName]]' class='required' />
-			            </div>
-			            <div class='input-group col-xs-12 col-sm-12 text-field memorial'>
-			            	<label for='emailCardSubject2' name='emailCardSubject' class='required-asterisk'>Subject Line:</label>
-			            	<input type='text' id='emailCardSubject2' name='ecard.subject' value='In memory of  ' class='required' />
+						<div class='input-group col-xs-12 col-sm-12 text-field'>
+							<label for='emailCardSubject' name='emailCardSubject' class='required-asterisk'>Subject Line:</label>
+			                <input type='text' id='emailCardSubject' name='ecard.subject' value='' class='required' />
 			            </div>
 			            <div class='input-group col-xs-12 col-sm-9 select-box honor'>
 			            	<label for='emailCardMessage' name='emailCardMessage'>Your Message:</label>
