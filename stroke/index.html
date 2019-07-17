@@ -22,7 +22,7 @@
 	    <input type="hidden" name="is_hon_memorial" value="false" />
 	    <input type="hidden" name="tribute.type" value="" /> <!-- Memorial | Tribute | empty -->
 	    <input type="hidden" name="amount1" id="amount1" value="">
-    	<input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/>
+    	<!-- <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/> -->
 		[[?x[[S334:df_preview]]x::xtruex::
 		<input type="hidden" name="sandbox" id="sandbox" value="true">
 		<input type="hidden" name="df_preview" value="true" />
@@ -214,21 +214,9 @@
 							<textarea id='emailCardEmail' name='ecard.recipients' class='required'></textarea>
 							<p class="help-block">Please separate each additional email address with a comma, e.g. 'JohnDoe@gmail.com, JaneRoe@hotmail.com'.</p>
 						</div>
-						<div class='input-group col-xs-12 col-sm-6 text-field'>
-							<label for='emailCardFirstName' name='emailCardFirstName' class='required-asterisk'>Honoree First Name:</label>
-							<input type='text' id='emailCardFirstName' name='tribute.honoree.name.first' value='' class='required' />
-						</div>
-						<div class='input-group col-xs-12 col-sm-6 text-field'>
-							<label for='emailCardLastName' name='emailCardLastName' class='required-asterisk'>Honoree Last Name:</label>
-							<input type='text' id='emailCardLastName' name='tribute.honoree.name.last' value='' class='required' />
-						</div>
-						<div class='input-group col-xs-12 col-sm-12 text-field honor'>
+						<div class='input-group col-xs-12 col-sm-12 text-field'>
 							<label for='emailCardSubject' name='emailCardSubject' class='required-asterisk'>Subject Line:</label>
-			                <input type='text' id='emailCardSubject' name='ecard.subject' value='In honor of  ' class='required' />
-			            </div>
-			            <div class='input-group col-xs-12 col-sm-12 text-field memorial'>
-			            	<label for='emailCardSubject' name='emailCardSubject' class='required-asterisk'>Subject Line:</label>
-			            	<input type='text' id='emailCardSubject' name='ecard.subject' value='In memory of  ' class='required' />
+			                <input type='text' id='emailCardSubject' name='ecard.subject' value='' class='required' />
 			            </div>
 			            <div class='input-group col-xs-12 col-sm-9 select-box honor'>
 			            	<label for='emailCardMessage' name='emailCardMessage' class='required-asterisk'>Your Message:</label>
@@ -376,14 +364,6 @@
 						<div class='input-group col-xs-5 col-sm-3 text-field'>
 							<label for='printedCardZipCode' name='printedCardZipCode' class='required-asterisk'>Zip Code:</label>
 							<input type='text' id='printedCardZipCode' name='tribute.notify.address.zip' class='required' />
-						</div>
-						<div class='input-group col-xs-12 col-sm-6 text-field'>
-							<label for='printedCardFirstName2' name='printedCardFirstName2' class='required-asterisk'>Honoree First Name:</label>
-							<input type='text' id='printedCardFirstName2' name='tribute.honoree.name.first' value='' class='required' />
-						</div>
-						<div class='input-group col-xs-12 col-sm-6 text-field'>
-							<label for='printedCardLastName' name='printedCardLastName' class='required-asterisk'>Honoree Last Name:</label>
-							<input type='text' id='printedCardLastName' name='tribute.honoree.name.last' value='' class='required' />
 						</div>
 						<div class='input-group col-xs-12 col-sm-9 select-box honor'>
 							<label for='printedCardMessage' name='printedCardMessage' class='required-asterisk'>Your Message:</label>
