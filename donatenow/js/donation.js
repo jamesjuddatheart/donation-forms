@@ -77,8 +77,15 @@ $('input[name=notification_first_name], input[name=notification_last_name]').blu
 });
 
 $('input[name="tribute.honoree.name.first"], input[name="tribute.honoree.name.last"]').blur(function() {
-	$('input[name="honoree_first_name"]').val($('input[name="tribute.honoree.name.first"]').val());
-	$('input[name="honoree_last_name"]').val($('input[name="tribute.honoree.name.last"]').val());
+	var honorFirst = $('input[name="tribute.honoree.name.first"]').val()
+	var honorLast = $('input[name="tribute.honoree.name.last"]').val()
+	$('input[name="honoree_first_name"]').val(honorFirst);
+	$('input[name="honoree_last_name"]').val(honorLast);
+	if ($('#tributeType').val()=="memorial"){
+		$('input[name="ecard.subject"]').val("In memory of " + honorFirst + ' ' + honorLast);
+	} else {
+		$('input[name="ecard.subject"]').val("In honor of " + honorFirst + ' ' + honorLast);
+	}
 });
 
 function noFocus() {
@@ -293,18 +300,22 @@ $('textarea').keyup(function() {
 });
 
 $('#tributeType').on('change', function () {
+  var honorFirst = $('input[name="tribute.honoree.name.first"]').val();
+  var honorLast = $('input[name="tribute.honoree.name.last"]').val();
   if(this.value === "honor"){
     $(".honor").show();
     $(".memorial").hide();
     $('input[name="tribute.type"]').val("Tribute");
     $("#imgSampleHonor").show();
-    $("#imgSampleMemorial").hide();
+	$("#imgSampleMemorial").hide();
+	$('input[name="ecard.subject"]').val("In honor of " + honorFirst + ' ' + honorLast);
   } else {
-    $(".memorial").show();
+	$(".memorial").show();
     $(".honor").hide();
     $('input[name="tribute.type"]').val("Memorial");
     $("#imgSampleHonor").hide();
-    $("#imgSampleMemorial").show();
+	$("#imgSampleMemorial").show();
+	$('input[name="ecard.subject"]').val("In memory of " + honorFirst + ' ' + honorLast);
   }
 });
 
