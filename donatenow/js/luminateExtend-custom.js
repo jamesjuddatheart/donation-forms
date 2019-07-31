@@ -354,7 +354,8 @@ function donateAmazon() {
 				//var ref = data.donationResponse.donation.confirmation_code;
 				var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
 				var cc=$('input[name=card_number]').val();
-				var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();	
+				var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
+				var form=$('input[name=form_id]').val();
 
 			  $('.donation-loading').remove();
 			  $('.donate-now, .header-donate').hide();
@@ -397,6 +398,8 @@ function donateAmazon() {
 				ga('ecommerce:send');
 
 				ga('send', 'pageview', '/donateok.asp');
+				
+				pushDonationSuccessToDataLayer(form, ref, amt);
 			}
 		}
 	});
@@ -432,7 +435,8 @@ function donateApplePay() {
 	//var ref = data.donationResponse.donation.confirmation_code;
 	var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
 	var cc=$('input[name=card_number]').val();
-	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();	
+	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
+	var form=$('input[name=form_id]').val();
 
 	$('.donation-loading').remove();
 	$('.donate-now, .header-donate').hide();
@@ -474,6 +478,8 @@ function donateApplePay() {
 	ga('ecommerce:send');
 
 	ga('send', 'pageview', '/donateok.asp');
+	
+	pushDonationSuccessToDataLayer(form, ref, amt);
 }
 
 function donateVenmo() {
@@ -507,6 +513,7 @@ function donateVenmo() {
 	var cc=$('input[name=card_number]').val();
 	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
 	var venmo_user = $('input[name=venmo_user]').val();
+	var form=$('input[name=form_id]').val();
 
 	$('.donation-loading').remove();
 	$('.donate-now, .header-donate').hide();
@@ -550,6 +557,8 @@ function donateVenmo() {
 	ga('ecommerce:send');
 
 	ga('send', 'pageview', '/donateok.asp');
+	
+	pushDonationSuccessToDataLayer(form, ref, amt);
 }
 
 function donateGooglePay() {
@@ -580,7 +589,8 @@ function donateGooglePay() {
 	//var ref = data.donationResponse.donation.confirmation_code;
 	var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
 	var cc=$('input[name=card_number]').val();
-	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();	
+	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
+	var form=$('input[name=form_id]').val();
 
 	$('.donation-loading').remove();
 	$('.donate-now, .header-donate').hide();
@@ -622,6 +632,8 @@ function donateGooglePay() {
 	ga('ecommerce:send');
 
 	ga('send', 'pageview', '/donateok.asp');
+	
+	pushDonationSuccessToDataLayer(form, ref, amt);
 }
 
 function donateOffline() {
