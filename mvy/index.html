@@ -81,7 +81,11 @@
 		
 
 			<div class='inline onetime display__inline-block' aria-label="giftsel2" [[?xtruex::x[[S80:sustainer_default]]x::style="display: none;"::]]>
-					<div class='input-group gift'>
+				<div class='input-group gift'>
+						<input type='radio' name='gift' id='gift4' value='$25'/>
+						<label for='gift5' class='radio-label' data-amount="25" title="$25" aria-checked="false">$25</label>
+					</div>	
+				<div class='input-group gift'>
 						<input type='radio' name='gift' id='gift5' value='$50'/>
 						<label for='gift5' class='radio-label' data-amount="50" title="$50" aria-checked="false">$50</label>
 					</div>
@@ -91,13 +95,10 @@
 						<label for='gift7' class='radio-label' data-amount="100" title="$100" aria-checked="false">$100</label>
 					</div>
 					<div class='input-group gift'>
-						<input type='radio' name='gift' id='gift8' value='$150'/>
-						<label for='gift8' class='radio-label' data-amount="150" title="$150" aria-checked="false">$150</label>
+						<input type='radio' name='gift' id='gift8' value='$250'/>
+						<label for='gift8' class='radio-label' data-amount="250" title="$250" aria-checked="false">$250</label>
 					</div>
-				<div class="input-group gift">
-						<input type="radio" name="gift" id="gift9" value="$200">
-						<label for="gift9" class="radio-label" data-amount="200" title="$200" aria-checked="false">$200</label>
-					</div>
+			
                 <div class="input-group gift display__inline-block">
 					<input type="radio" name="gift" id="giftOther" value="" disabled="" title="Other Gift Amount">
 					<label for="giftOtherText" style="height:0;width:0;text-indent:-9999px">Other Amount: </label>
@@ -111,13 +112,7 @@
         
 
      
-         <div class="form-group">
-            <div class='input-group col-xs-12 col-sm-6 text-field'>
-	<label for='comments' name='comments'>Designation Box </label>
-             <input type='text' name='comments' id='comments' />
-            <div><em>Please designate your donation. Example:"Please credit my colleague, Jane Smith" or "please credit team Chelsea" or "please credit the R&D group."</em></div>
-          </div>
-        </div>
+     
         <!-- PERSONAL INFORMATION -->
         <div class='form-group'>
           <h2>Your Personal Information<span class='lock'></span></h2>
