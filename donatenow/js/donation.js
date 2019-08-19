@@ -369,6 +369,7 @@ function updateSubmitText() {
 		submit.text('Give $'+ amt + ' ' + freq);
 	}
 }
+updateSubmitText();
 /*
 $('#tributeType input[name^="year"]').click(function() {
   var radioval = $(this).val();
