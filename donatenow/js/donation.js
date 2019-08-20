@@ -39,7 +39,7 @@ function showLevels(frequency,level) {
 		}
 		$('input[name=gift]').removeAttr('checked');
 		if(location.href.indexOf("donatenow_lifeiswhy") > 0) {
-		    $('input[id=gift2]').click().attr('checked','checked').next('button').addClass('active');
+		    $('input[id=gift7]').click().attr('checked','checked').next('button').addClass('active');
 		} else if(location.href.indexOf("jan19_ecc_appeal") > 0) {
 		    $('input[id=gift5]').click().attr('checked','checked').next('button').addClass('active');
 		    $('input[name=other_amount]').val(10);
