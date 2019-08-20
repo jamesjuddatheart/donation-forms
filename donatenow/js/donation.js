@@ -39,7 +39,8 @@ function showLevels(frequency,level) {
 		}
 		$('input[name=gift]').removeAttr('checked');
 		if(location.href.indexOf("donatenow_lifeiswhy") > 0) {
-		    $('input[id=gift8]').click().attr('checked','checked').next('button').addClass('active');
+			$('input[id=gift7]').click().attr('checked','checked').next('button').addClass('active');
+			$('input[name=other_amount]').val(10);
 		} else if(location.href.indexOf("jan19_ecc_appeal") > 0) {
 		    $('input[id=gift5]').click().attr('checked','checked').next('button').addClass('active');
 		    $('input[name=other_amount]').val(10);
@@ -50,7 +51,8 @@ function showLevels(frequency,level) {
 		$('input[name=recurring]').val('false');
 		jQuery("#consentWidgetDiv").hide();
 	}
-	$('#giftOtherText').val('').removeClass('validDonation').valid();;
+	$('#giftOtherText').val('').removeClass('validDonation').valid();
+	updateSubmitText();
 }
 
 $('input[name=occurrence]').click(function(){
@@ -332,11 +334,13 @@ $('.radio-label').click(function(){
 	$('#giftOtherText').valid();
 	$('.radio-label').removeClass("active");
 	$(this).addClass("active");
+	updateSubmitText();
 });
 $('.radio-label').keypress(function(e) {
     if(e.which == 13) {
 	$(this).click();
 	$(this).prev('input').click();
+	updateSubmitText();
     }
 });
 
@@ -347,6 +351,7 @@ $('.radio-input').blur(function(){
 		$('#giftOtherText').valid();
 		$('.radio-label').removeClass("active");
 		$(this).addClass("active");
+		updateSubmitText();
 	}
 });
 $('#AmazonPayButton').keypress(function(e) {
@@ -355,6 +360,17 @@ $('#AmazonPayButton').keypress(function(e) {
     }
 });
 
+
+function updateSubmitText() {
+	amt = $('input[name=other_amount]').val();
+	freq = $('input[name=recurring]').val() == 'true' ? 'Monthly' : 'Now';
+	submit = $('#donate-submit');
+	// only run on specific pages
+	if(location.href.indexOf("donatenow_lifeiswhy") > 0 || location.href.indexOf("donatenow_stroke") > 0 || location.href.indexOf("donatenow_heart_alt") > 0 || location.href.indexOf("donatenow_heart") > 0) {
+		submit.text('Give $'+ amt + ' ' + freq);
+	}
+}
+updateSubmitText();
 /*
 $('#tributeType input[name^="year"]').click(function() {
   var radioval = $(this).val();
