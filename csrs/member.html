@@ -52,7 +52,7 @@
 	    <input type="hidden" name="form_version" value="control" />
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
-	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::10::10]]" />
+	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::75::75]]" />
 	    <input type="hidden" name="level_id" value="[[?xtruex::x[[S80:sustainer_default]]x::[[S80:level_id_recurring]]::[[S80:level_id]]]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
 	    <input type="hidden" name="payment_confirmation_id" value="" />
 	    <input type="hidden" name="check_number" value="" />
@@ -443,6 +443,16 @@
 	            </div>
             </div>
           </div>
+          <div class="inline row" id="privacyText" style="margin-top:.4em;">
+            <div class="input-group checkBox col-xs-12 col-sm-12">
+              <input type="checkbox" name="tos" id="tos" value="true" class="tos required" aria-required="true" title="Please accept the privacy policy">
+              <label for="tos">I accept the
+              <a href="https://www.heart.org/en/about-us/statements-and-policies/privacy-statement" target="_blank">AHA privacy policy</a> *</label>
+            </div>
+            <div class="input-group checkBox col-xs-12 col-sm-12 error">
+              <label id="tos-error" class="error" for="tos" style="color: #d40000;font-size: 1.3em;font-weight: bold;clear: both; display:none;">Please accept the privacy policy.</label>
+            </div>
+          </div>
         </div>
         <!-- END PAYMENT INFORMATION -->
 
@@ -450,7 +460,6 @@
         	<button type='button' class='submit' id='donate-submit'>Make My Payment</button>
 		<!-- button added for accessiblity testing -->
 		<input type="submit" value="submit" style="display:none;" onclick="return false;">
-		<div class="privacyText main-content col-lg-12">By making my payment, I accept the <a href="https://www.heart.org/en/about-us/statements-and-policies/privacy-statement" target="_blank">AHA privacy policy</a></div>
         	<div class='ssl'>
         		<img src='../donation-forms/donatenow/images/comodo-secure-icon.png' alt='Comodo Secure Image' /><a href='https://ssl.comodo.com/'>SSL Certificate</a>
         	</div>

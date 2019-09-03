@@ -75,9 +75,9 @@
 		"Please enter an amount $10 or greater"
 	);
 	    
-    	$.validator.addMethod("acceptTerms", function(value, element) {
+	$.validator.addMethod("tos", function(value, element) {
 		return ($(element).is(":checked") || value == 'yes');
-	}, "Please accept the terms.");
+	}, "Please accept the privacy policy.");
 
 	$.validator.addMethod("zipCodeValidation", function(value,element) {
 		return (/(^\d{5}$)|(^\d{5}-\d{4}$)/).test(value); // returns boolean
@@ -354,7 +354,8 @@ function donateAmazon() {
 				//var ref = data.donationResponse.donation.confirmation_code;
 				var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
 				var cc=$('input[name=card_number]').val();
-				var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();	
+				var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
+				var form=$('input[name=form_id]').val();
 
 			  $('.donation-loading').remove();
 			  $('.donate-now, .header-donate').hide();
@@ -377,7 +378,7 @@ function donateAmazon() {
 
 				});
 
-				$('.thank-you').append('<img src="http://www.offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
+				$('.thank-you').append('<img src="//offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
 				$.getScript("//action.dstillery.com/orbserv/nsjs?adv=cl1014039&ns=1985&nc=HBP-Donate-Now-Landing-Page&ncv=52&dstOrderId="+ref+"&dstOrderAmount="+amt);
 
 				// Custom Tracking code
@@ -397,6 +398,8 @@ function donateAmazon() {
 				ga('ecommerce:send');
 
 				ga('send', 'pageview', '/donateok.asp');
+				
+				pushDonationSuccessToDataLayer(form, ref, amt);
 			}
 		}
 	});
@@ -432,7 +435,8 @@ function donateApplePay() {
 	//var ref = data.donationResponse.donation.confirmation_code;
 	var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
 	var cc=$('input[name=card_number]').val();
-	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();	
+	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
+	var form=$('input[name=form_id]').val();
 
 	$('.donation-loading').remove();
 	$('.donate-now, .header-donate').hide();
@@ -454,7 +458,7 @@ function donateApplePay() {
 		  $('p.confcode').html(ref);
 	});
 
-	$('.thank-you').append('<img src="http://www.offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
+	$('.thank-you').append('<img src="//offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
 	$.getScript("//action.dstillery.com/orbserv/nsjs?adv=cl1014039&ns=1985&nc=HBP-Donate-Now-Landing-Page&ncv=52&dstOrderId="+ref+"&dstOrderAmount="+amt);
 
 	// Custom Tracking code
@@ -474,6 +478,8 @@ function donateApplePay() {
 	ga('ecommerce:send');
 
 	ga('send', 'pageview', '/donateok.asp');
+	
+	pushDonationSuccessToDataLayer(form, ref, amt);
 }
 
 function donateVenmo() {
@@ -507,6 +513,7 @@ function donateVenmo() {
 	var cc=$('input[name=card_number]').val();
 	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
 	var venmo_user = $('input[name=venmo_user]').val();
+	var form=$('input[name=form_id]').val();
 
 	$('.donation-loading').remove();
 	$('.donate-now, .header-donate').hide();
@@ -530,7 +537,7 @@ function donateVenmo() {
 		  $('p.venmo_user').html(venmo_user);
 	});
 
-	$('.thank-you').append('<img src="http://www.offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
+	$('.thank-you').append('<img src="//offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
 	$.getScript("//action.dstillery.com/orbserv/nsjs?adv=cl1014039&ns=1985&nc=HBP-Donate-Now-Landing-Page&ncv=52&dstOrderId="+ref+"&dstOrderAmount="+amt);
 
 	// Custom Tracking code
@@ -550,6 +557,8 @@ function donateVenmo() {
 	ga('ecommerce:send');
 
 	ga('send', 'pageview', '/donateok.asp');
+	
+	pushDonationSuccessToDataLayer(form, ref, amt);
 }
 
 function donateGooglePay() {
@@ -580,7 +589,8 @@ function donateGooglePay() {
 	//var ref = data.donationResponse.donation.confirmation_code;
 	var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
 	var cc=$('input[name=card_number]').val();
-	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();	
+	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
+	var form=$('input[name=form_id]').val();
 
 	$('.donation-loading').remove();
 	$('.donate-now, .header-donate').hide();
@@ -602,7 +612,7 @@ function donateGooglePay() {
 		  $('p.confcode').html(ref);
 	});
 
-	$('.thank-you').append('<img src="http://www.offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
+	$('.thank-you').append('<img src="//offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
 	$.getScript("//action.dstillery.com/orbserv/nsjs?adv=cl1014039&ns=1985&nc=HBP-Donate-Now-Landing-Page&ncv=52&dstOrderId="+ref+"&dstOrderAmount="+amt);
 
 	// Custom Tracking code
@@ -622,6 +632,8 @@ function donateGooglePay() {
 	ga('ecommerce:send');
 
 	ga('send', 'pageview', '/donateok.asp');
+	
+	pushDonationSuccessToDataLayer(form, ref, amt);
 }
 
 function donateOffline() {

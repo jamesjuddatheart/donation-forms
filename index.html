@@ -61,7 +61,7 @@
 	    <input type="hidden" name="is_hon_memorial" value="false" />
 	    <input type="hidden" name="tribute.type" value="" /> <!-- Memorial | Tribute | empty -->
 	    <input type="hidden" name="amount1" id="amount1" value="">
-	    <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/>
+	    <!-- <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/> -->
 	    <input type="hidden" name="remember_me" id="remember_me" value="true" />
 	    <input type="hidden" name="card_option" id="card_option" value="" />
 	    <input type="hidden" name="sitecore_contact_id" id="sitecore_contact_id" value="" />
@@ -286,21 +286,9 @@
 							<textarea id='emailCardEmail' name='ecard.recipients' class='required' title="Email Card Recipient"></textarea>
 							<p class="help-block">Please separate each additional email address with a comma, e.g. 'JohnDoe@gmail.com, JaneRoe@hotmail.com'.</p>
 						</div>
-						<div class='input-group col-xs-12 col-sm-6 text-field'>
-							<label for='emailCardFirstName' name='emailCardFirstName' class='required-asterisk'>Honoree First Name:</label>
-							<input type='text' id='emailCardFirstName' name='tribute.honoree.name.first' value='[[S334:giftFirstName]]' class='required' />
-						</div>
-						<div class='input-group col-xs-12 col-sm-6 text-field'>
-							<label for='emailCardLastName' name='emailCardLastName' class='required-asterisk'>Honoree Last Name:</label>
-							<input type='text' id='emailCardLastName' name='tribute.honoree.name.last' value='[[S334:giftLastName]]' class='required' />
-						</div>
-						<div class='input-group col-xs-12 col-sm-12 text-field honor'>
-							<label for='emailCardSubject1' name='emailCardSubject' class='required-asterisk'>Subject Line:</label>
-			                <input type='text' id='emailCardSubject1' name='ecard.subject' value='In honor of [[S334:giftFirstName]] [[S334:giftLastName]]' class='required' />
-			            </div>
-			            <div class='input-group col-xs-12 col-sm-12 text-field memorial'>
-			            	<label for='emailCardSubject2' name='emailCardSubject' class='required-asterisk'>Subject Line:</label>
-			            	<input type='text' id='emailCardSubject2' name='ecard.subject' value='In memory of  ' class='required' />
+						<div class='input-group col-xs-12 col-sm-12 text-field'>
+							<label for='emailCardSubject' name='emailCardSubject' class='required-asterisk'>Subject Line:</label>
+			                <input type='text' id='emailCardSubject' name='ecard.subject' value='' class='required' />
 			            </div>
 			            <div class='input-group col-xs-12 col-sm-9 select-box honor'>
 			            	<label for='emailCardMessage' name='emailCardMessage'>Your Message:</label>
@@ -450,14 +438,6 @@
 						<div class='input-group col-xs-5 col-sm-6 col-md-3 text-field'>
 							<label for='printedCardZipCode' name='printedCardZipCode' class='required-asterisk'>Zip Code:</label>
 							<input type='text' id='printedCardZipCode' name='tribute.notify.address.zip' class='required zipCodeValidation' />
-						</div>
-						<div class='input-group col-xs-12 col-sm-6 text-field'>
-							<label for='printedCardFirstName2' name='printedCardFirstName2' class='required-asterisk'>Honoree First Name:</label>
-							<input type='text' id='printedCardFirstName2' name='tribute.honoree.name.first' value='[[S334:giftFirstName]]' class='required' />
-						</div>
-						<div class='input-group col-xs-12 col-sm-6 text-field'>
-							<label for='printedCardLastName2' name='printedCardLastName' class='required-asterisk'>Honoree Last Name:</label>
-							<input type='text' id='printedCardLastName2' name='tribute.honoree.name.last' value='[[S334:giftLastName]]' class='required' />
 						</div>
 						<div class='input-group col-xs-12 col-sm-9 select-box honor'>
 							<label for='printedCardMessage' name='printedCardMessage'>Your Message:</label>
@@ -782,7 +762,7 @@
               </select>
             </div>
             <div class='input-group col-xs-6 col-sm-6 col-md-3 select-box'>
-	<label for="year" name="card_exp_date_year" style="">Year</label>
+			<label for="year" name="card_exp_date_year">Year</label>
               <select name='card_exp_date_year' class='required' id='year'>
                 <option value='' selected disabled>Select year</option>
                   <option value="2018">2018</option>
@@ -826,14 +806,23 @@
 	            </div>
             </div>
           </div>
+			<div class="inline row" id="privacyText" style="margin-top:.4em;">
+				<div class="input-group checkBox col-xs-12 col-sm-12">
+					<input type="checkbox" name="tos" id="tos" value="true" class="tos required" aria-required="true" title="Please accept the privacy policy">
+					<label for="tos">I accept the
+					<a href="https://www.heart.org/en/about-us/statements-and-policies/privacy-statement" target="_blank">AHA privacy policy</a> *</label>
+				</div>
+				<div class="input-group checkBox col-xs-12 col-sm-12 error">
+					<label id="tos-error" class="error" for="tos" style="color: #d40000;font-size: 1.3em;font-weight: bold;clear: both; display:none;">Please accept the privacy policy.</label>
+				</div>
+			</div>
         </div>
         <!-- END PAYMENT INFORMATION -->
-
+		
         <div class='button-ssl'>
         	<button type='button' class='submit' id='donate-submit'>Send My Gift</button>
 		<!-- button added for accessiblity testing -->
 		<input type="submit" value="submit" style="display:none;" onclick="return false;">
-		<div class="privacyText main-content col-lg-12">By making my gift, I accept the <a href="https://www.heart.org/en/about-us/statements-and-policies/privacy-statement" target="_blank">AHA privacy policy</a></div>
         	<div class='ssl'>
         		<img src='../donation-forms/donatenow/images/comodo-secure-icon.png' alt='Comodo Secure Image' /><a href='https://ssl.comodo.com/'>SSL Certificate</a>
         	</div>
