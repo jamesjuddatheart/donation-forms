@@ -915,7 +915,8 @@ $('[name^=donor\\.]').each(function(){
 	}
 	
 	// Honor Settings
-	if (location.href.indexOf("donatenow_honor") > 0) {
+	if (location.href.indexOf("donatenow_honor") > 0 ||
+      location.href.indexOf("donatenow_heart_annual") > 0) {
 		$('#tribGift1').click();
 		$('#tributeType > option:nth-child(2)').attr("selected", true)
 		$('#tributeType > option:nth-child(1)').hide();
