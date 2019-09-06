@@ -927,6 +927,11 @@ $('[name^=donor\\.]').each(function(){
 		$("#imgSampleHonor").show();
 		$("#imgSampleMemorial").hide();
 	}
+
+	// Sustainer default
+	if (location.href.indexOf("donatenow_sustainer") > 0) {
+		$('#occurrence2').click();
+	}
 	
 	// LIW customization
 	var why = $.getQuerystring("why");
