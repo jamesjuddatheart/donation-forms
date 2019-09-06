@@ -363,12 +363,16 @@ $('#AmazonPayButton').keypress(function(e) {
 
 function updateSubmitText() {
 	amt = $('input[name=other_amount]').val();
-	freq = $('input[name=recurring]').val() == 'true' ? 'Monthly' : 'Now';
+	occurrence = $('input[name=occurrence]:checked').data('frequency');
+	if (occurrence == 'annual') {
+		freq = 'Annually';
+	} else if (occurrence == 'recurring') {
+		freq = 'Monthly';
+	} else {
+		freq = 'Now';
+	}
 	submit = $('#donate-submit');
-	// only run on specific pages
-	//if(location.href.indexOf("donatenow_lifeiswhy") > 0 || location.href.indexOf("donatenow_stroke") > 0 || location.href.indexOf("donatenow_heart_alt") > 0 || location.href.indexOf("donatenow_heart") > 0) {
-		submit.text('Give $'+ amt + ' ' + freq);
-	//}
+	submit.text('Give $'+ amt + ' ' + freq);
 }
 updateSubmitText();
 /*
