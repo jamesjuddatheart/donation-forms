@@ -17,7 +17,7 @@ function showLevels(frequency,level) {
 			$('.radio-applepay').hide();
 			$('.radio-venmo').hide();
 		}
-		$('.onetime').hide();
+		$('.onetime, .annual').hide();
 		// hide Amazon monthly option and select CC
 		$('.radio-amazon, .radio-googlepay').css('cssText', 'display: none !important');
 		$('#payment1').click();
@@ -26,8 +26,25 @@ function showLevels(frequency,level) {
 		$('input[name=other_amount]').val(25);
 		$('input[name=recurring]').val('true');
 		jQuery("#consentWidgetDiv").show();
+	} else if (frequency == "annual") {
+		$('.recurring, .onetime').hide();
+		$('.annual').show()
+			.addClass('display__inline-block')
+			.removeClass('d-none')
+			.removeAttr('style');
+		if (!$('.radio-applepay').hasClass("hidden")) {
+			$('.radio-applepay').hide();
+			$('.radio-venmo').hide();
+		}
+		$('.radio-amazon, .radio-googlepay').css('cssText', 'display: none !important');
+		$('input[name=gift]').removeAttr('checked');
+		$('input[id=gift10]').click().attr('checked','checked').next('button').addClass('active');
+		$('input[name=other_amount]').val(150);
+		$('#payment1').click();
+		$('input[name=recurring]').val('true');
+		jQuery("#consentWidgetDiv").show();
 	} else {
-		$('.recurring').hide();
+		$('.recurring, .annual').hide();
 		$('.onetime').show()
 			.addClass('display__inline-block')
 			.removeAttr('style');
