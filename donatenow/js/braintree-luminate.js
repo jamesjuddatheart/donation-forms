@@ -117,9 +117,7 @@ var braintree_aha = {
 		  }, function (err, googlePaymentInstance) {
 		  	// Set up Google Pay button
 			if (googlePaymentInstance != undefined) {
-				if (location.href.indexOf("showGooglePay=true") > 0) {
-					jQuery(braintree_aha.googlePaySubmitButton).removeClass("hidden");
-				}
+				jQuery(braintree_aha.googlePaySubmitButton).removeClass("hidden");
 				braintree_aha.googlePaymentInstance = googlePaymentInstance;
 			} else {
 				console.log(err, googlePaymentInstance);
