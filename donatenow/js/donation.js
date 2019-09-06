@@ -366,9 +366,9 @@ function updateSubmitText() {
 	freq = $('input[name=recurring]').val() == 'true' ? 'Monthly' : 'Now';
 	submit = $('#donate-submit');
 	// only run on specific pages
-	if(location.href.indexOf("donatenow_lifeiswhy") > 0 || location.href.indexOf("donatenow_stroke") > 0 || location.href.indexOf("donatenow_heart_alt") > 0 || location.href.indexOf("donatenow_heart") > 0) {
+	//if(location.href.indexOf("donatenow_lifeiswhy") > 0 || location.href.indexOf("donatenow_stroke") > 0 || location.href.indexOf("donatenow_heart_alt") > 0 || location.href.indexOf("donatenow_heart") > 0) {
 		submit.text('Give $'+ amt + ' ' + freq);
-	}
+	//}
 }
 updateSubmitText();
 /*
