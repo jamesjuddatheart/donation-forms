@@ -929,7 +929,7 @@ $('[name^=donor\\.]').each(function(){
 	}
 
 	// Sustainer default
-	if (location.href.indexOf("donatenow_sustainer") > 0) {
+	if (location.href.indexOf("donatenow_sustainer") > 0 || location.href.indexOf("SusTestV1") > 0) {
 		$('#occurrence2').click();
 	}
 	
