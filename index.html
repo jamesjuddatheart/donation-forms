@@ -13,7 +13,6 @@
  .radio-paypal {display:inline-block !important;}
 ::]]
 </style>
-
 <div class="modal fade" id="venmoModal" tabindex="-1" role="dialog" aria-labelledby="venmoModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -31,7 +30,6 @@
     </div>
   </div>
 </div>
-
 <div class="row">
 	<div class="thank-you"></div>
 	<div class="donate-now">
@@ -81,36 +79,22 @@
 		<fieldset>
 			<legend>        	<h2>Your Gift</h2></legend>
 			<div class='inline frequency' aria-label="frequency">
-	[[?xtruex::x[[S80:annual_default]]x::
-     <div class='input-group radio-group' aria-labelledby= 'occurrence3'>
+			[[?xtruex::x[[S80:sustainer_default]]x::
+		<div class='input-group radio-group' aria-labelledby= 'occurrence2'>
+					<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' checked data-level=[[S80:level_id_recurring]] data-frequency="recurring"/>
+					<label for='occurrence2' title="Monthly Gift" aria-checked="false" >Monthly Gift <br class='visible-xs' /></label>
+				</div>
+				<div class='input-group radio-group'  aria-labelledby= 'occurrence1'>
+					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' data-level=[[S80:level_id]] data-frequency="onetime" />
+					<label for='occurrence1' title="One-Time Gift" aria-checked="false" >One-Time Gift</label>
+				</div>
+				<div class='input-group radio-group' aria-labelledby= 'occurrence3'>
 					<input type='radio' name='occurrence' id='occurrence3' value='Annual Gift'  class='active' checked data-level=[[S80:level_id_annual]] data-frequency="annual"/>
 					<label for='occurrence3' title="Annual Gift" aria-checked="true" >Annual Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease<br> and stroke all year long!</span></label>
 				</div>
-    <div class='input-group radio-group' aria-labelledby= 'occurrence2'>
-        <input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' data-level=[[S80:level_id_recurring]] data-frequency="recurring"/>
-        <label for='occurrence2' title="Monthly Gift" aria-checked="false" >Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
-    </div>
-    <div class='input-group radio-group'  aria-labelledby= 'occurrence1'>
-        <input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' data-level=[[S80:level_id]] data-frequency="onetime" />
-        <label for='occurrence1' title="One-Time Gift" aria-checked="false" >One-Time Gift</label>
-    </div>
-   ::
-    [[?xtruex::x[[S80:sustainer_default]]x::
+			::
 				<div class='input-group radio-group'>
-					<input type='radio' name='occurrence' id='occurrence3' value='Annual Gift' data-level=[[S80:level_id_annual]] data-frequency="annual"/>
-					<label for='occurrence3' title="Annual Gift" aria-checked="false" >Annual Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease<br> and stroke all year long!</span></label>
-				</div>
-        <div class='input-group radio-group' aria-labelledby= 'occurrence2'>
-            <input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' checked data-level=[[S80:level_id_recurring]] data-frequency="recurring"/>
-            <label for='occurrence2' title="Monthly Gift" aria-checked="true" >Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
-        </div>
-        <div class='input-group radio-group'  aria-labelledby= 'occurrence1'>
-            <input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' data-level=[[S80:level_id]] data-frequency="onetime" />
-            <label for='occurrence1' title="One-Time Gift" aria-checked="false" >One-Time Gift</label>
-        </div>
-    ::
-				<div class='input-group radio-group'>
-					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' checked data-level=[[S80:level_id]] data-frequency="onetime" />
+					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' checked data-level=[[S80:level_id]] data-frequency="onetime" />
 					<label for='occurrence1' title="One-Time Gift" aria-checked="true" >One-Time Gift</label>
 				</div>
 				<div class='input-group radio-group'>
@@ -118,14 +102,13 @@
 					<label for='occurrence2' title="Monthly Gift" aria-checked="false" >Monthly Gift <br class='visible-xs' /></label>
 				</div>
 				<div class='input-group radio-group'>
-					<input type='radio' name='occurrence' id='occurrence3' value='Annual Gift' data-level=[[S80:level_id_annual]] data-frequency="annual"/>
+					<input type='radio' name='occurrence' id='occurrence3' value='Annual Gift' class='active' data-level=[[S80:level_id_annual]] data-frequency="annual"/>
 					<label for='occurrence3' title="Annual Gift" aria-checked="false" >Annual Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease<br> and stroke all year long!</span></label>
 				</div>
 			]]
         		</div> 
 		</fieldset>
 		<!-- end occurrence options -->
-
 		<fieldset>
 			<div class='inline recurring display__inline-block'  aria-label="giftsel" [[?xtruex::x[[S80:sustainer_default]]x::::style="display: none;"]]>
 				<div class='input-group gift' role='group' aria-labelledby= 'gift1'> 
@@ -145,7 +128,6 @@
 					<button type="button" for='gift4' class='radio-label' data-amount="50" title="$50" aria-checked="false">$50</button>
 				</div>
 			</div> <!-- end recurring -->
-
 			<div class='inline onetime display__inline-block'  aria-label="giftsel2" [[?xtruex::x[[S80:sustainer_default]]x::style="display: none;"::]]>
 					<div class='input-group gift' role='group'  aria-labelledby= 'gift5'>
 						<input type='radio' name='gift' aria-label='40' id='gift5' value='$40'/>
@@ -174,7 +156,6 @@
 		</fieldset>
 		<!-- end form-group -->
         <!-- END YOUR GIFT -->
-
         <!-- PERSONALIZE GIFT -->
 		<div class='form-group'>
 			<fieldset>
@@ -494,7 +475,6 @@
 			</div>
 		</div>
         <!-- END GIFT DEDICATION -->
-
         <!-- GIFT DEDICATION MODAL -->
         <div class='modal fade' tabindex='-1' id='emailSample' role='dialog' aria-labelledby='emailaCardSample'>
           <div class='modal-dialog' role='document'>
@@ -510,7 +490,6 @@
             </div>
           </div>
         </div>
-
         <div class='modal fade' tabindex='-1' id='mailSample' role='dialog' aria-labelledby='emailaCardSample2'>
           <div class='modal-dialog' role='document'>
             <div class='modal-content'>
@@ -525,7 +504,6 @@
           </div>
         </div>
         <!-- END GIFT DEDICATION MODAL -->
-
         <!-- PERSONAL INFORMATION -->
         <div class='form-group'>
 		<legend>
@@ -630,7 +608,6 @@
           </div>
         </div>
         <!-- END PERSONAL INFORMATION -->
-
         <!-- BILLING INFORMATION -->
         <div class='form-group' id='billingInfo'>
           <h2>Billing information<span class='lock'></span></h2>
@@ -720,7 +697,6 @@
           </div>
         </div>
         <!-- END BILLING INFORMATION -->
-
         <!-- PAYMENT INFORMATION -->
         <div class='form-group'>
 		
@@ -866,7 +842,6 @@
       </form>
     </section>
     <!-- END MAIN CONTENT -->
-
 	<!-- SIDEBAR -->
 	[[E51:[[S80:sidebar]]]]
 	<!-- END SIDEBAR -->
