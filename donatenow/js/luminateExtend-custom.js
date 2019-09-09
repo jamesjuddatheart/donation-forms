@@ -928,6 +928,11 @@ $('[name^=donor\\.]').each(function(){
 		$("#imgSampleHonor").show();
 		$("#imgSampleMemorial").hide();
 	}
+
+	// Sustainer default
+	if (location.href.indexOf("donatenow_sustainer") > 0 || location.href.indexOf("SusTestV1") > 0 || location.href.indexOf("donatenow_heart_annual") > 0) {
+		($('input[name=occurrence]:checked').prop("id") == "occurrence3") ? $('#occurrence3').click() : $('#occurrence2').click();
+	}
 	
 	// LIW customization
 	var why = $.getQuerystring("why");
