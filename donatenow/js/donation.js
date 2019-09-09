@@ -39,7 +39,7 @@ function showLevels(frequency,level) {
 		$('.radio-amazon, .radio-googlepay').css('cssText', 'display: none !important');
 		$('input[name=gift]').removeAttr('checked');
 		$('input[id=gift10]').click().attr('checked','checked').next('button').addClass('active');
-		$('input[name=other_amount]').val(150);
+		$('input[name=other_amount]').val(75);
 		$('#payment1').click();
 		$('input[name=recurring]').val('true');
 		jQuery("#consentWidgetDiv").show();
