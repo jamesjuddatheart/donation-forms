@@ -696,11 +696,23 @@
             <div class='input-group radio-group radio-amazon'>
               <input type='radio' name='payment' id='payment2' value='Amazon payments' tabindex="-1"/>
               <label for='payment2'  title="AmazonPay" aria-checked="false" tabindex="0"><span class='amazon-pay text-hide' aria-label="Amazon payments" alt="Amazon payments">Amazon payments</span></label>
-						</div>
-						<div class='input-group radio-group radio-paypal'>
-							<input type='radio' name='payment' id='payment3' value='Paypal payments' tabindex="-1"/>
-							<label for='payment3' title="PayPal" aria-checked="false" tabindex="0"><span class='paypal text-hide' aria-label="Paypal payments" alt="Paypal payments">Paypal payments</span></label>
-						</div>
+			</div>
+			<div class='input-group radio-group radio-paypal'>
+				<input type='radio' name='payment' id='payment3' value='Paypal payments' tabindex="-1"/>
+				<label for='payment3' title="PayPal" aria-checked="false" tabindex="0"><span class='paypal text-hide' aria-label="Paypal payments" alt="Paypal payments">Paypal payments</span></label>
+			</div>
+			<div class='input-group radio-group radio-applepay hidden'>
+              <input type='radio' name='payment' id='payment4' value='ApplePay payments'/>
+              <label for='payment4' title="ApplePay" aria-checked="false"><span class='applepay text-hide' aria-label="ApplePay payments" alt="ApplePay payments">ApplePay payments</span></label>
+            </div>
+            <div class='input-group radio-group radio-venmo hidden'>
+              <input type='radio' name='payment' id='payment5' value='Venmo payments'/>
+              <label for='payment5'  title="Venmo" aria-checked="false"><span class='venmo text-hide' aria-label="Venmo payments" alt="Venmo payments">Venmo payments</span></label>
+            </div>
+            <div class='input-group radio-group radio-googlepay hidden'>
+              <input type='radio' name='payment' id='payment6' value='GooglePay payments'/>
+              <label for='payment6'  title="GooglePay" aria-checked="false"><span class='googlepay text-hide' aria-label="GooglePay payments" alt="GooglePay payments">GooglePay payments</span></label>
+            </div>
 		</fieldset>
           </div>
           <div class='inline row' id='payment1form'>
@@ -735,17 +747,13 @@
             <div class='input-group col-xs-6 col-sm-6 col-md-3 select-box'>
               <select name='card_exp_date_year' class='required' title="Credit Card Year">
                 <option value='' selected disabled>Select year</option>
-                  <option value="2018">2018</option>
-                  <option value="2019">2019</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
-                  <option value="2024">2024</option>
-                  <option value="2025">2025</option>
-                  <option value="2026">2026</option>
-                  <option value="2027">2027</option>
-                  <option value="2028">2028</option>
+				<script type="text/javascript">
+					var d = new Date();
+					var year = d.getFullYear();
+					for (x=year;x<(year+12);x++) {
+						document.write('<option value="'+x+'">'+x+'</option>');
+					}
+				</script>
               </select>
             </div>
           </div>
