@@ -594,6 +594,17 @@
                 <option value='WV'>West Virginia</option>
                 <option value='WI'>Wisconsin</option>
                 <option value='WY'>Wyoming</option>
+				<option value="AS">American Samoa</option>
+				<option value="FM">Federated States of Micronesia</option>
+				<option value="GU">Guam</option>
+				<option value="MH">Marshall Islands</option>
+				<option value="MP">Northern Mariana Islands</option>
+				<option value="PR">Puerto Rico</option>
+				<option value="PW">Palau</option>
+				<option value="VI">Virgin Islands</option>
+				<option value="AA">AA - Armed Forces Americas</option>
+				<option value="AE">AE - Armed Forces</option>
+				<option value="AP">AP - Armed Forces Pacific</option>
               </select>
             </div>
             <div class='input-group col-xs-5 col-sm-6 col-md-3 text-field'>
@@ -688,6 +699,17 @@
                 <option value='WV'>West Virginia</option>
                 <option value='WI'>Wisconsin</option>
                 <option value='WY'>Wyoming</option>
+				<option value="AS">American Samoa</option>
+				<option value="FM">Federated States of Micronesia</option>
+				<option value="GU">Guam</option>
+				<option value="MH">Marshall Islands</option>
+				<option value="MP">Northern Mariana Islands</option>
+				<option value="PR">Puerto Rico</option>
+				<option value="PW">Palau</option>
+				<option value="VI">Virgin Islands</option>
+				<option value="AA">AA - Armed Forces Americas</option>
+				<option value="AE">AE - Armed Forces</option>
+				<option value="AP">AP - Armed Forces Pacific</option>
               </select>
             </div>
             <div class='input-group col-xs-5 col-sm-3 text-field'>
@@ -765,17 +787,13 @@
 			<label for="year" name="card_exp_date_year">Year</label>
               <select name='card_exp_date_year' class='required' id='year'>
                 <option value='' selected disabled>Select year</option>
-                  <option value="2018">2018</option>
-                  <option value="2019">2019</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
-                  <option value="2024">2024</option>
-                  <option value="2025">2025</option>
-                  <option value="2026">2026</option>
-                  <option value="2027">2027</option>
-                  <option value="2028">2028</option>
+				  <script type="text/javascript">
+					var d = new Date();
+					var year = d.getFullYear();
+					for (x=year;x<(year+12);x++) {
+						document.write('<option value="'+x+'">'+x+'</option>');
+					}
+				  </script>
               </select>
             </div>
           </div>
