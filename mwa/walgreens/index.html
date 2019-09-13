@@ -42,10 +42,13 @@
 	    <input type="hidden" name="tribute.type" value="" /> <!-- Memorial | Tribute | empty -->
 	    <input type="hidden" name="amount1" id="amount1" value="">
 	    <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/>
+	    <input type="hidden" name="remember_me" id="remember_me" value="true" />
 	    <input type="hidden" name="card_option" id="card_option" value="" />
-		<input type="hidden" name="device_data" id="device_data" value=""/>
-		<input type="hidden" name="payment_method_nonce" id="payment_method_nonce" value=""/>
-		<input type="hidden" name="processorAuthorizationCode" id="processorAuthorizationCode" value=""/>
+	    <input type="hidden" name="sitecore_contact_id" id="sitecore_contact_id" value="" />
+      <input type="hidden" name="venmo_user" id="venmo_user" value="" />
+      <input type="hidden" name="device_data" id="device_data" value=""/>
+      <input type="hidden" name="payment_method_nonce" id="payment_method_nonce" value=""/>
+      <input type="hidden" name="processorAuthorizationCode" id="processorAuthorizationCode" value=""/>
 		[[?x[[S334:df_preview]]x::xtruex::
 		<input type="hidden" name="sandbox" id="sandbox" value="true">
 		<input type="hidden" name="df_preview" value="true" />
@@ -334,6 +337,10 @@
             <div class='input-group radio-group radio-venmo hidden'>
               <input type='radio' name='payment' id='payment5' value='Venmo payments' tabindex="-1"/>
               <label for='payment5' role="radio" tabindex=0 title="Venmo" aria-checked="false" tabindex="0"><span class='venmo text-hide' aria-label="Venmo payments" alt="Venmo payments">Venmo payments</span></label>
+            </div>
+            <div class='input-group radio-group radio-googlepay hidden'>
+              <input type='radio' name='payment' id='payment6' value='GooglePay payments' tabindex="-1"/>
+              <label for='payment6'  title="GooglePay" aria-checked="false"><span class='googlepay text-hide' aria-label="GooglePay payments" alt="GooglePay payments">GooglePay payments</span></label>
             </div>
 		</fieldset>
           </div>
