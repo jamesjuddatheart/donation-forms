@@ -33,8 +33,10 @@
 	    <input type="hidden" name="finish_success_redirect" value="[[S80:paypal_thankyou]]">
 	    <input type="hidden" name="method" value="donate" />
 	    <input type="hidden" name="form_id" value="[[S80:form_id]]" /> <!-- update per ghost form ID -->
+      <input type="hidden" name="form_title" value="[[S334:pagename]]" />
 	    <input type="hidden" name="validate" value="true" />
 	    <input type="hidden" name="source" value="[[?x[[S80:source]]x::xx::life_is_why::[[S80:source]]]]" /> <!-- update source as needed --> 
+      [[?x[[S80:sub_source]]x::xx::::<input type="hidden" name="sub_source" value="[[S80:sub_source]]" />]]
         <input type="hidden" name="sub_source" value="call_to_action">
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
@@ -114,12 +116,12 @@
 						<button type="button" for='gift7' class='radio-label active' data-amount="10" title="$10" aria-checked="false" tabindex="0">$10</button>
 					</div>
 					<div class='input-group gift'  role='group'  aria-labelledby= 'gift8'>
-						<input type='radio' name='gift' id='gift8'  aria-label='25' value='$25' checked />
-						<button type="button" for='gift8' class='radio-label' data-amount="25"  title="$25" aria-checked="false" tabindex="0">$25</button>
+						<input type='radio' name='gift' id='gift8'  aria-label='50' value='$50' checked />
+						<button type="button" for='gift8' class='radio-label' data-amount="50"  title="$50" aria-checked="false" tabindex="0">$50</button>
 					</div>
 					<div class='input-group gift'  role='group'  aria-labelledby= 'gift9'>
-						<input type='radio' name='gift' id='gift9'  aria-label='50' value='$50'/>
-						<button type="button" for='gift9' class='radio-label' data-amount="50" title="$50" aria-checked="false" tabindex="0">$50</button>
+						<input type='radio' name='gift' id='gift9'  aria-label='100' value='$100'/>
+						<button type="button" for='gift9' class='radio-label' data-amount="100" title="$100" aria-checked="false" tabindex="0">$100</button>
 					</div>
 					<!-- <div class='input-group gift'>
 						<input type='radio' name='gift' id='gift10' value='$250'/>
