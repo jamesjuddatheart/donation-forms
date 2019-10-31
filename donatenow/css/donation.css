@@ -772,6 +772,7 @@ form .form-group .inline .input-group:not([class*="col-"]) {
   display: inline-block;
   width:auto;
   vertical-align:top;
+  margin-bottom: 13px;
 }
 form .form-group .inline .input-group[class*="col-"] {
   float: left;
@@ -904,11 +905,11 @@ form .form-group .input-group.gift .radio-label {
 form .form-group .input-group.radio-group input[type="radio"] ~ label {
   cursor: pointer;
     font-size: 17px;
-    font-weight: normal;
+    font-weight: bold;
     font-family: lub dub, Montserrat;
-    width: 84px;
+    width: 90px;
     height: 44px;
-    border-radius: 20px;
+    border-radius: 44px;
     border: none;
     display: inline;
     align-items: center;
@@ -1323,7 +1324,7 @@ form #payment2form {
 	display: none;
 }
 .display__inline-block {
-  display: inline;
+  display: inline-block;
   vertical-align: top;
   width:auto;
 }
