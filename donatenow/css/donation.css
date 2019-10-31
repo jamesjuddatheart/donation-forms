@@ -1324,7 +1324,7 @@ form #payment2form {
 	display: none;
 }
 .display__inline-block {
-  display: inline-block;
+  display: inline;
   vertical-align: top;
   width:auto;
 }
