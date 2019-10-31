@@ -761,6 +761,7 @@ form .form-group .input-group {
   /* END TEXTAREA STYLING */
   padding-left:0;
 }
+
 form .form-group .input-group.checkBox input[type="checkbox"] {
   opacity: 0;
   position: absolute;
@@ -830,6 +831,27 @@ form .form-group .input-group.radio-group input[type='radio']::-ms-check {
 
     }
 
+form .form-group .input-group.gift .radio-label {
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: normal;
+    font-family: lub dub, Montserrat;
+    width: 84px;
+    height: 44px;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    background-color: #ddd;
+    color: #595959;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+}
+
 form .form-group .input-group.radio-group input[type="radio"] ~ label {
   cursor: pointer;
     font-size: 21px;
@@ -851,7 +873,8 @@ form .form-group .input-group.radio-group input[type="radio"] ~ label {
     transition: 0.5s all ease;
 }
 form .form-group .input-group.radio-group input[type="radio"] ~ label .norm {
-  font-weight: normal;
+    font-weight: normal;
+    font-style: italic;
 }
 form .form-group .input-group.radio-group input[type="radio"] ~ label a {
   font-size: 14px;
@@ -898,7 +921,7 @@ form .form-group .input-group.dropdown input[type="radio"]:checked ~ label:after
 form .form-group .input-group.dropdown.none input[type="radio"]:checked ~ label:after {
   display: none;
 }
-    input[type='radio']:after {
+ form .form-group. input[type='radio']:after {
     width: 17px;
     height: 17px;
     border-radius: 17px;
@@ -913,7 +936,7 @@ form .form-group .input-group.dropdown.none input[type="radio"]:checked ~ label:
 }
 
 
-    input[type='radio']:checked:after {
+ form .form-group .input[type='radio']:checked:after {
     width: 17px;
     height: 17px;
     border-radius: 17px;
