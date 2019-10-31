@@ -1010,25 +1010,6 @@ form .form-group .input-group.gift input[type="radio"] {
   display:none;
 }
 
-form .form-group .input-group.gift .radio-label {
-  cursor: pointer;
-  font-size: 22px;
-  font-weight: normal;
-  width: 82px;
-  height: 44px;
-  border-radius: 5px;
-  border:none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  background-color: #ddd;
-  color: #595959;
-  -webkit-transition: 0.5s all ease;
-  -moz-transition: 0.5s all ease;
-  -o-transition: 0.5s all ease;
-  transition: 0.5s all ease;
-}
 form .form-group .input-group.gift button:hover {
   background-color: #bfbfbf;
   color: #000;
