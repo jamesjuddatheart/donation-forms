@@ -925,6 +925,8 @@ form .form-group .input-group.radio-group input[type="radio"] ~ label {
 form .form-group .input-group.radio-group input[type="radio"] ~ label .norm {
     font-weight: normal;
     font-style: italic;
+    font-size: 15px;
+    padding-left: 23px;
 }
 form .form-group .input-group.radio-group input[type="radio"] ~ label a {
   font-size: 14px;
