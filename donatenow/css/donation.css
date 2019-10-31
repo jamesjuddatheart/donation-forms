@@ -1212,7 +1212,7 @@ form #payment2form {
 	display: none;
 }
 .display__inline-block {
-  display: inline-block;
+  display: inline;
   vertical-align: top;
   width:auto;
 }
@@ -1513,8 +1513,9 @@ footer ul li a:focus {
     margin-top: 10px;
   }
   form .form-group {
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 15px;
+    padding: 15px;
+    font-family: lub dub, Montserrat;
     /* INNER FORM GROUP */
     /* END INNER FORM GROUP */
   }
@@ -1549,16 +1550,39 @@ footer ul li a:focus {
     width: auto;
   }
   form .form-group .input-group.gift input[type="radio"] ~ label {
-    font-size: 26px;
-    width: 106px;
-    height: 43px;
+ cursor: pointer;
+    font-size: 21px;
+    font-weight: normal;
+    font-family: lub dub, Montserrat;
+    width: 84px;
+    height: 44px;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    background-color: #ddd;
+    color: #595959;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    transition: 0.5s all ease;
   }
 
   form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
-    font-size: 26px;
-    height: 43px;
-    max-width: 186px;
-    display:inline;
+    font-size: 25px;
+    font-weight: normal;
+    font-family: lub dub, Montserrat;
+    height: 44px;
+    padding: 0 20px;
+    border: 1px solid #6a6a6a;
+    border-radius: 20px;
+    max-width: 160px;
+    display: inline-block;
+    align-items: center;
+    margin-bottom: -5px;
+    color: #000;
 
   }
   form .form-group .input-group.select-box select,
