@@ -915,7 +915,7 @@ form .form-group .input-group.radio-group input[type="radio"] ~ label {
     justify-content: center;
     margin-bottom: 10px;
     background-color: #fff;
-    color: #595959;
+    color: #000;
     -webkit-transition: 0.5s all ease;
     -moz-transition: 0.5s all ease;
     -o-transition: 0.5s all ease;
