@@ -1020,18 +1020,20 @@ form .form-group .input-group.gift .radio-label.active {
   color: #fff;
 }
 form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
-  font-size: 22px;
-  font-weight: normal;
-  height: 44px;
-  padding: 0 20px;
-  border: 1px solid #6a6a6a;
-  border-radius: 5px;
-  max-width: 174px;
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: -5px;
-  color: #000;
+    font-size: 25px;
+    font-weight: normal;
+    font-family: lub dub, Montserrat;
+    height: 44px;
+    padding: 0 20px;
+    border: 1px solid #6a6a6a;
+    border-radius: 20px;
+    max-width: 160px;
+    display: inline-block;
+    align-items: center;
+    margin-bottom: 4px;
+    color: #000;
 }
+
 form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input.active {
   border: 1px solid #d40000;
 }
