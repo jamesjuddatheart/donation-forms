@@ -41,6 +41,7 @@ nav,
 section,
 summary {
   display: block;
+  background: #fff;
 }
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
@@ -861,11 +862,11 @@ form .form-group .input-group.radio-group input[type="radio"] ~ label {
     height: 44px;
     border-radius: 20px;
     border: none;
-    display: flex;
+    display: inline;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
-    background-color: #ddd;
+    background-color: #fff;
     color: #595959;
     -webkit-transition: 0.5s all ease;
     -moz-transition: 0.5s all ease;
