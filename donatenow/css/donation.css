@@ -903,7 +903,7 @@ form .form-group .input-group.gift .radio-label {
 
 form .form-group .input-group.radio-group input[type="radio"] ~ label {
   cursor: pointer;
-    font-size: 21px;
+    font-size: 17px;
     font-weight: normal;
     font-family: lub dub, Montserrat;
     width: 84px;
