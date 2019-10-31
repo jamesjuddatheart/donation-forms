@@ -1673,7 +1673,7 @@ footer ul li a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     background-color: #ddd;
     color: #595959;
     -webkit-transition: 0.5s all ease;
@@ -1693,7 +1693,7 @@ footer ul li a:focus {
     max-width: 160px;
     display: inline-block;
     align-items: center;
-    margin-bottom: -5px;
+    margin-bottom: 4px;
     color: #000;
 
   }
