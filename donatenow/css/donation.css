@@ -479,8 +479,8 @@ optgroup {
 }
 
 body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  background: #f5f5f5;
+font-family: lub dub, Montserrat;
+background: #fff;
 }
 .container {
   width: 100%;
@@ -503,6 +503,7 @@ body {
   border-bottom: 1px solid #e7e7e7;
 }
 .navbar .container {
+  font-family: lub dub, Montserrat;
   display: flex;
   align-items: center;
 }
