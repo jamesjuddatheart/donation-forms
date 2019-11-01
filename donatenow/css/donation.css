@@ -1006,6 +1006,7 @@ form .form-group .input-group.dropdown.none input[type="radio"]:checked ~ label:
  }
 form .form-group .input-group.gift {
   margin-right: 5px;
+  display: inline-block;
 }
 
 form .form-group .input-group.gift input[type="radio"] {
