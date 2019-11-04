@@ -5,7 +5,7 @@
  *    without disabling user zoom.
  */
 html {
-  font-family: sans-serif;
+  font-family: lub dub;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -16,6 +16,8 @@ html {
  * Remove default margin.
  */
 body {
+  font-family: lub dub, Montserrat;
+  background: none;
   margin: 0;
 }
 /* HTML5 display definitions
@@ -39,6 +41,7 @@ nav,
 section,
 summary {
   display: block;
+  background: #fff;
 }
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
@@ -314,6 +317,54 @@ input[type="radio"] {
   padding: 0;
   /* 2 */
 }
+
+input[type='radio']:after {
+width: 17px;
+    height: 17px;
+    border-radius: 17px;
+    top: 1px;
+    left: 1px;
+    position: relative;
+    background-color: #fff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 8px solid white;
+}
+
+
+    input[type='radio']:checked:after {
+    width: 17px;
+    height: 17px;
+    border-radius: 17px;
+    top: 1px;
+    left: 1px;
+    /* bottom: 6px; */
+    position: relative;
+    background-color: #d40000;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 4px solid white;
+
+    }
+    input[type='radio']::-ms-check {
+    width: 17px;
+    height: 17px;
+    /* border-radius: 17px; */
+    top: 1px;
+    left: 1px;
+    /* bottom: 6px; */
+    position: relative;
+    color: #d40000;
+    background-color: #white;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    /* border: 4px solid grey; */
+
+    }
+
 /**
  * Fix the cursor style for Chrome's increment/decrement buttons. For certain
  * `font-size` values of the `input`, it causes the cursor style of the
@@ -428,8 +479,8 @@ optgroup {
 }
 
 body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  background: #f5f5f5;
+font-family: lub dub, Montserrat;
+background: #fff;
 }
 .container {
   width: 100%;
@@ -452,6 +503,7 @@ body {
   border-bottom: 1px solid #e7e7e7;
 }
 .navbar .container {
+  font-family: lub dub, Montserrat;
   display: flex;
   align-items: center;
 }
@@ -514,20 +566,30 @@ body {
   outline-offset: 2px;
   outline: 3px solid rgba(77, 144, 254, 0.4);
 }
+.main-content {
+ padding-right: 0;
+ display: inline-block;
+ font-family: lub dub, Montserrat;
+}
+
 .main-content h1 {
-  font-size: 26px;
+  font-size: 36px;
   font-weight: normal;
-  color: #d40000;
+  color: #000000;
   padding: 0 8px;
   // margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 .main-content h2 {
-  font-size: 22px;
-  font-weight: normal;
-  color: #d40000;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
   margin-top: 0;
   margin-bottom: 15px;
+  padding-bottom: 15px;
+  font-family: lub dub, Montserrat;
+  border-bottom: 1px solid #e3e3e3;
+
 }
 .main-content h4 {
   font-size: 20px;
@@ -544,7 +606,9 @@ body {
 .main-content p {
   font-size: 16px;
   color: #000;
-  padding-left: 8px;
+  padding-left: 1px;
+  font-family: lub dub, Montserrat;
+
 }
 .main-content a {
   font-size: 14px;
@@ -709,6 +773,7 @@ form .form-group .inline .input-group:not([class*="col-"]) {
   display: inline-block;
   width:auto;
   vertical-align:top;
+  margin-bottom: 13px;
 }
 form .form-group .inline .input-group[class*="col-"] {
   float: left;
@@ -747,6 +812,7 @@ form .form-group .input-group {
   /* END TEXTAREA STYLING */
   padding-left:0;
 }
+
 form .form-group .input-group.checkBox input[type="checkbox"] {
   opacity: 0;
   position: absolute;
@@ -798,18 +864,70 @@ form .form-group .input-group.radio-group input[type="radio"] {
     height: 20px;
    line-height: normal;
 }
+
+form .form-group .input-group.radio-group input[type='radio']::-ms-check {
+    width: 17px;
+    height: 17px;
+    /* border-radius: 17px; */
+    top: 1px;
+    left: 1px;
+    /* bottom: 6px; */
+    position: relative;
+    color: #d40000;
+    background-color: #white;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    /* border: 4px solid grey; */
+
+    }
+
+form .form-group .input-group.gift .radio-label {
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: normal;
+    font-family: lub dub, Montserrat;
+    width: 84px;
+    height: 44px;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    background-color: #ddd;
+    color: #595959;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+}
+
 form .form-group .input-group.radio-group input[type="radio"] ~ label {
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  color: #000;
-  margin-bottom: 20px;
-  text-indent: -30px;
-  padding-left: 30px;
-  line-height: 1;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: lub dub, Montserrat;
+    width: 90px;
+    height: 44px;
+    border-radius: 44px;
+    border: none;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #000;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    transition: 0.5s all ease;
 }
 form .form-group .input-group.radio-group input[type="radio"] ~ label .norm {
-  font-weight: normal;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 15px;
+    padding-left: 23px;
 }
 form .form-group .input-group.radio-group input[type="radio"] ~ label a {
   font-size: 14px;
@@ -856,8 +974,39 @@ form .form-group .input-group.dropdown input[type="radio"]:checked ~ label:after
 form .form-group .input-group.dropdown.none input[type="radio"]:checked ~ label:after {
   display: none;
 }
+ form .form-group. input[type='radio']:after {
+    width: 17px;
+    height: 17px;
+    border-radius: 17px;
+    top: 1px;
+    left: 1px;
+    position: relative;
+    background-color: #fff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 8px solid white;
+}
+
+
+ form .form-group .input[type='radio']:checked:after {
+    width: 17px;
+    height: 17px;
+    border-radius: 17px;
+    top: 1px;
+    left: 1px;
+    /* bottom: 6px; */
+    position: relative;
+    background-color: #d40000;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 4px solid white;
+
+ }
 form .form-group .input-group.gift {
   margin-right: 5px;
+  display: inline-block;
 }
 
 form .form-group .input-group.gift input[type="radio"] {
@@ -866,25 +1015,6 @@ form .form-group .input-group.gift input[type="radio"] {
   display:none;
 }
 
-form .form-group .input-group.gift .radio-label {
-  cursor: pointer;
-  font-size: 22px;
-  font-weight: normal;
-  width: 82px;
-  height: 44px;
-  border-radius: 5px;
-  border:none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  background-color: #ddd;
-  color: #595959;
-  -webkit-transition: 0.5s all ease;
-  -moz-transition: 0.5s all ease;
-  -o-transition: 0.5s all ease;
-  transition: 0.5s all ease;
-}
 form .form-group .input-group.gift button:hover {
   background-color: #bfbfbf;
   color: #000;
@@ -894,18 +1024,20 @@ form .form-group .input-group.gift .radio-label.active {
   color: #fff;
 }
 form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
-  font-size: 22px;
-  font-weight: normal;
-  height: 44px;
-  padding: 0 20px;
-  border: 1px solid #6a6a6a;
-  border-radius: 5px;
-  max-width: 174px;
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: -5px;
-  color: #000;
+    font-size: 25px;
+    font-weight: normal;
+    font-family: lub dub, Montserrat;
+    height: 44px;
+    padding: 0 20px;
+    border: 1px solid #6a6a6a;
+    border-radius: 20px;
+    max-width: 160px;
+    display: inline-block;
+    align-items: center;
+    margin-bottom: 4px;
+    color: #000;
 }
+
 form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input.active {
   border: 1px solid #d40000;
 }
@@ -1198,7 +1330,7 @@ form #payment2form {
 	display: none;
 }
 .display__inline-block {
-  display: inline-block;
+  display: inline;
   vertical-align: top;
   width:auto;
 }
@@ -1499,8 +1631,9 @@ footer ul li a:focus {
     margin-top: 10px;
   }
   form .form-group {
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 15px;
+    padding: 15px;
+    font-family: lub dub, Montserrat;
     /* INNER FORM GROUP */
     /* END INNER FORM GROUP */
   }
@@ -1535,16 +1668,39 @@ footer ul li a:focus {
     width: auto;
   }
   form .form-group .input-group.gift input[type="radio"] ~ label {
-    font-size: 26px;
-    width: 106px;
-    height: 43px;
+ cursor: pointer;
+    font-size: 21px;
+    font-weight: normal;
+    font-family: lub dub, Montserrat;
+    width: 84px;
+    height: 44px;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+    background-color: #ddd;
+    color: #595959;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    transition: 0.5s all ease;
   }
 
   form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
-    font-size: 26px;
-    height: 43px;
-    max-width: 186px;
-    display:inline;
+    font-size: 25px;
+    font-weight: normal;
+    font-family: lub dub, Montserrat;
+    height: 44px;
+    padding: 0 20px;
+    border: 1px solid #6a6a6a;
+    border-radius: 20px;
+    max-width: 160px;
+    display: inline-block;
+    align-items: center;
+    margin-bottom: 4px;
+    color: #000;
 
   }
   form .form-group .input-group.select-box select,
