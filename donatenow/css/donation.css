@@ -584,11 +584,7 @@ background: #fff;
   font-size: 24px;
   font-weight: bold;
   color: #000000;
-  margin-top: 0;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
   font-family: lub dub, Montserrat;
-  border-bottom: 1px solid #e3e3e3;
 
 }
 .main-content h4 {
@@ -1299,7 +1295,7 @@ form .redCTA {
   border: none;
   font-size: 24px;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 31px;
   width: 260px;
   height: 70px;
   -webkit-transition: 0.5s all ease;
