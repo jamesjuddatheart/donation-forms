@@ -859,6 +859,8 @@ form .form-group .input-group.radio-group input[type="radio"] {
     width: 20px;
     height: 20px;
    line-height: normal;
+   border: 1px solid #ddd;
+
 }
 
 form .form-group .input-group.radio-group input[type='radio']::-ms-check {
