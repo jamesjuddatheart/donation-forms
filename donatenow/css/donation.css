@@ -414,6 +414,8 @@ legend {
   /* 2 */
   float: none; 
   /* Firefox and IE fix */
+  margin-bottom: none;
+
 }
 
 a.skip-main {
@@ -1629,8 +1631,8 @@ footer ul li a:focus {
     margin-top: 10px;
   }
   form .form-group {
-    margin-top: 15px;
-    padding: 15px;
+    margin-top: 5px;
+    padding: 55px;
     font-family: lub dub, Montserrat;
     /* INNER FORM GROUP */
     /* END INNER FORM GROUP */
