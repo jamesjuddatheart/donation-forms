@@ -317,7 +317,7 @@ input[type="radio"] {
   padding: 0;
   /* 2 */
 }
-
+/*
 input[type='radio']:before {
 width: 17px;
     height: 17px;
@@ -331,7 +331,7 @@ width: 17px;
     visibility: visible;
     border: 1px solid #a8a8a8;
 }
-
+*/
 
 input[type='radio']:after {
 width: 17px;
