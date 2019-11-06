@@ -894,6 +894,7 @@ form .form-group .input-group.gift .radio-label {
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
+    padding-left: 15px;
     background-color: #ddd;
     color: #595959;
     -webkit-transition: 0.5s all ease;
