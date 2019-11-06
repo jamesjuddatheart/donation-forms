@@ -969,6 +969,7 @@ form .form-group .input-group.dropdown input[type="radio"]:checked ~ label:after
   bottom: 0;
   left: 0;
   right: 0;
+  top: 104px;
 }
 form .form-group .input-group.dropdown.none input[type="radio"]:checked ~ label:after {
   display: none;
@@ -1713,8 +1714,9 @@ footer ul li a:focus {
   form .form-group .inner-form-group {
     margin-left: -20px;
     margin-right: -20px;
-    border: 25px solid #c8c8c8;
+    border: 15px solid #c8c8c8;
     padding: 15px;
+    margin-top: 66px;
   }
   form .form-group .inner-form-group .preview-window, form .form-group .inner-form-group .preview-window-mail {
     margin-top: 10px;
