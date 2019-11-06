@@ -329,7 +329,7 @@ width: 17px;
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 0.25px solid #a8a8a8;
+    border: 8px solid white;
 }
 
 
@@ -345,7 +345,7 @@ width: 17px;
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 0.25px solid #a8a8a8;
+    border: 4px solid white;
 
     }
     input[type='radio']::-ms-check {
@@ -861,8 +861,7 @@ form .form-group .input-group.radio-group input[type="radio"] {
     width: 20px;
     height: 20px;
    line-height: normal;
-   border: 0.25px solid #a8a8a8;
-
+    border: 1px solid #a8a8a8 ;
 }
 
 form .form-group .input-group.radio-group input[type='radio']::-ms-check {
