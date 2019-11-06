@@ -351,8 +351,7 @@ width: 17px;
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 4px solid white;
-
+    border: 4px solid #a8a8a8;
     }
     input[type='radio']::-ms-check {
     width: 17px;
