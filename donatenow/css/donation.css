@@ -1102,6 +1102,7 @@ form .form-group .inner-form-group {
   margin-right: -10px;
   border: 15px solid #c8c8c8;
   padding: 4px;
+  margin-top:66px;
 }
 form .form-group .inner-form-group:before {
   content: '';
