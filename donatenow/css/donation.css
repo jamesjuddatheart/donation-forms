@@ -335,7 +335,7 @@ input[type='radio']:after {
 }
 
   input[type='radio']:checked {
-    border: 2px solid #a8a8a8;
+    border: 1px solid #a8a8a8;
 
     }
 
@@ -351,7 +351,7 @@ input[type='radio']:after {
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 2px solid #a8a8a8;
+    border: 1px solid #a8a8a8;
     }
 
     input[type='radio']::-ms-check {
