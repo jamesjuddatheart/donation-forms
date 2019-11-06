@@ -315,8 +315,6 @@ input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
 /*  padding: 0; */
-border: 2px solid #a8a8a8;
-
   /* 2 */
 }
 
@@ -336,6 +334,10 @@ width: 17px;
     border: 1px solid #a8a8a8;
 }
 
+  input[type='radio']:checked {
+    border: 2px solid #a8a8a8;
+
+    }
 
     input[type='radio']:checked:after {
     width: 17px;
