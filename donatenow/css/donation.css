@@ -414,6 +414,8 @@ legend {
   /* 2 */
   float: none; 
   /* Firefox and IE fix */
+  margin-bottom: none;
+
 }
 
 a.skip-main {
@@ -584,9 +586,6 @@ background: #fff;
   font-size: 24px;
   font-weight: bold;
   color: #000000;
-  margin-top: 0;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
   font-family: lub dub, Montserrat;
 
 }
@@ -862,6 +861,7 @@ form .form-group .input-group.radio-group input[type="radio"] {
     width: 20px;
     height: 20px;
    line-height: normal;
+    border: 1px solid #a8a8a8 ;
 }
 
 form .form-group .input-group.radio-group input[type='radio']::-ms-check {
@@ -1630,8 +1630,8 @@ footer ul li a:focus {
     margin-top: 10px;
   }
   form .form-group {
-    margin-top: 15px;
-    padding: 15px;
+    margin-top: 5px;
+    padding: 5px;
     font-family: lub dub, Montserrat;
     /* INNER FORM GROUP */
     /* END INNER FORM GROUP */
