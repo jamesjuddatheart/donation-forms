@@ -318,6 +318,21 @@ input[type="radio"] {
   /* 2 */
 }
 
+input[type='radio']:before {
+width: 17px;
+    height: 17px;
+    border-radius: 17px;
+    top: 1px;
+    left: 1px;
+    position: relative;
+    background-color: #fff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid #a8a8a8;
+}
+
+
 input[type='radio']:after {
 width: 17px;
     height: 17px;
@@ -329,7 +344,7 @@ width: 17px;
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 8px solid white;
+    border: 1px solid #a8a8a8;
 }
 
 
