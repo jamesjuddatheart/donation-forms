@@ -1701,7 +1701,7 @@ footer ul li a:focus {
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 4px solid white;
+    border: 1px solid white;
 
  }
   form .form-group .input-group.radio-group.col-auto {
