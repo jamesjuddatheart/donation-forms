@@ -348,7 +348,7 @@ width: 17px;
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 2px solid ##a8a8a8;
+    border: 2px solid #a8a8a8;
     }
     }
 }}
@@ -396,7 +396,7 @@ input[type='radio']:after {
     content: '';
     display: inline-block;
     visibility: visible;
-    border: none;
+    border: 1px solid #a8a8a8;
 
     }
 
@@ -1316,7 +1316,7 @@ form .outter-checkbox input[type="checkbox"]:checked ~ label:before {
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 3px solid white;
+    border: 1px solid white;
 
  }
 form .submit,
