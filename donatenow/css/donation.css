@@ -893,7 +893,7 @@ form .form-group .input-group.gift .radio-label {
     cursor: pointer;
     font-size: 21px;
     font-weight: normal;
-    font-family: lub dub, Montserrat;
+    font-family: Montserrat, lub dub;
     width: 84px;
     height: 44px;
     border-radius: 20px;
@@ -915,7 +915,7 @@ form .form-group .input-group.radio-group input[type="radio"] ~ label {
   cursor: pointer;
     font-size: 17px;
     font-weight: bold;
-    font-family: lub dub, Montserrat;
+    font-family: Montserrat, lub dub;
     width: 144px;
     height: 44px;
     border-radius: 44px;
@@ -1035,7 +1035,7 @@ form .form-group .input-group.gift .radio-label.active {
 form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
     font-size: 25px;
     font-weight: normal;
-    font-family: lub dub, Montserrat;
+    font-family: Montserrat, lub dub;
     height: 44px;
     padding: 0 20px;
     border: 1px solid #6a6a6a;
@@ -1642,7 +1642,7 @@ footer ul li a:focus {
   }
   form .form-group {
     margin-top: 5px;
-    font-family: lub dub, Montserrat;
+    font-family: Montserrat, lub dub;
     /* INNER FORM GROUP */
     /* END INNER FORM GROUP */
   }
@@ -1680,7 +1680,7 @@ footer ul li a:focus {
  cursor: pointer;
     font-size: 21px;
     font-weight: normal;
-    font-family: lub dub, Montserrat;
+    font-family: Montserrat, lub dub;
     width: 84px;
     height: 44px;
     border-radius: 20px;
@@ -1700,7 +1700,7 @@ footer ul li a:focus {
   form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
     font-size: 25px;
     font-weight: normal;
-    font-family: lub dub, Montserrat;
+    font-family: Montserrat, lub dub;
     height: 44px;
     padding: 0 20px;
     border: 1px solid #6a6a6a;
