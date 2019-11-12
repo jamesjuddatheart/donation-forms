@@ -581,18 +581,18 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .main-content h1 {
-  font-size: 36px;
-  font-weight: normal;
+  font-size: 48px;
+  font-weight: 500;
   color: #000000;
   padding: 0 8px;
   // margin-top: 0;
-  margin-bottom: 28px;
+  margin-bottom: 18px;
 }
 .main-content h2 {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 48px;
+  font-weight: 500;
   color: #000000;
-  font-family: Monfont-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 
 
 }
@@ -609,15 +609,16 @@ font-family: 'Montserrat', sans-serif;
   margin-bottom: 15px;
 }
 .main-content p {
-  font-size: 16px;
+  font-size: 22px;
+  font-weight: 400;
   color: #000;
   padding-left: 1px;
   font-family: 'Montserrat', sans-serif;
 
 }
 .main-content a {
-  font-size: 14px;
-  font-weight: normal;
+  font-size: 22px;
+  font-weight: 400;
   color: #2e6da4;
 }
 .main-content a:focus {
