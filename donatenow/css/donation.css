@@ -128,12 +128,12 @@ dfn {
  * contexts in Firefox 4+, Safari, and Chrome.
  */
 h1 {
-  font-size: 2em;
+  font-size: 3em;
   margin: 0.67em 0;
 }
 h2 {
-  font-size: 1.2em;
-  font-weight: bold;
+  font-size: 3em;
+  font-weight: 500;
 }
 /**
  * Address styling not present in IE 8/9.
@@ -893,18 +893,18 @@ form .form-group .input-group.radio-group input[type='radio']::-ms-check {
 
 form .form-group .input-group.gift .radio-label {
     cursor: pointer;
-    font-size: 21px;
-    font-weight: normal;
+    font-size: 35px;
+    font-weight: 400;
     font-family: Montserrat, lub dub;
-    width: 84px;
-    height: 44px;
-    border-radius: 20px;
+    width: 102px;
+    height: 55px;
+    border-radius: 42px;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
-    padding-left: 15px;
+    padding-left: 19px;
     background-color: #ddd;
     color: #595959;
     -webkit-transition: 0.5s all ease;
@@ -915,9 +915,9 @@ form .form-group .input-group.gift .radio-label {
 
 form .form-group .input-group.radio-group input[type="radio"] ~ label {
   cursor: pointer;
-    font-size: 17px;
-    font-weight: bold;
-    font-family: Montserrat, lub dub;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: Montserrat;
     width: 144px;
     height: 44px;
     border-radius: 44px;
@@ -940,7 +940,7 @@ form .form-group .input-group.radio-group input[type="radio"] ~ label .norm {
     padding-left: 23px;
 }
 form .form-group .input-group.radio-group input[type="radio"] ~ label a {
-  font-size: 14px;
+  font-size: 22px;
   font-weight: normal;
   color: #2e6da4;
 }
@@ -1035,14 +1035,14 @@ form .form-group .input-group.gift .radio-label.active {
   color: #fff;
 }
 form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
-    font-size: 25px;
-    font-weight: normal;
+    font-size: 35px;
+    font-weight: 400;
     font-family: Montserrat, lub dub;
-    height: 44px;
+    height: 56px;
     padding: 0 20px;
     border: 1px solid #6a6a6a;
-    border-radius: 20px;
-    max-width: 160px;
+    border-radius: 30px;
+    max-width: 180px;
     display: inline-block;
     align-items: center;
     margin-bottom: 4px;
@@ -1700,14 +1700,14 @@ footer ul li a:focus {
   }
 
   form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
-    font-size: 25px;
-    font-weight: normal;
+    font-size: 35px;
+    font-weight: 400;
     font-family: Montserrat, lub dub;
-    height: 44px;
+    height: 56px;
     padding: 0 20px;
     border: 1px solid #6a6a6a;
-    border-radius: 20px;
-    max-width: 160px;
+    border-radius: 30px;
+    max-width: 180px;
     display: inline-block;
     align-items: center;
     margin-bottom: 4px;
