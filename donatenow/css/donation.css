@@ -5,7 +5,7 @@
  *    without disabling user zoom.
  */
 html {
-  font-family: lub dub;
+  font-family: 'Montserrat', sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -16,7 +16,7 @@ html {
  * Remove default margin.
  */
 body {
-  font-family: lub dub, Montserrat;
+  font-family: 'Montserrat', sans-serif;
   background: none;
   margin: 0;
 }
@@ -314,24 +314,30 @@ input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
-  padding: 0;
+/*  padding: 0; */
   /* 2 */
 }
 
+
+
 input[type='radio']:after {
-width: 17px;
-    height: 17px;
-    border-radius: 17px;
-    top: 1px;
-    left: 1px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    top: 0px;
+    left: 0px;
     position: relative;
     background-color: #fff;
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 8px solid white;
+    border: 1px solid #a8a8a8;
 }
 
+  input[type='radio']:checked {
+    border: 1px solid #a8a8a8;
+
+    }
 
     input[type='radio']:checked:after {
     width: 17px;
@@ -345,9 +351,9 @@ width: 17px;
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 4px solid white;
-
+    border: 1px solid #a8a8a8;
     }
+
     input[type='radio']::-ms-check {
     width: 17px;
     height: 17px;
@@ -361,7 +367,7 @@ width: 17px;
     content: '';
     display: inline-block;
     visibility: visible;
-    /* border: 4px solid grey; */
+    border: 1px solid #a8a8a8;
 
     }
 
@@ -414,6 +420,8 @@ legend {
   /* 2 */
   float: none; 
   /* Firefox and IE fix */
+  margin-bottom: none;
+
 }
 
 a.skip-main {
@@ -479,7 +487,7 @@ optgroup {
 }
 
 body {
-font-family: lub dub, Montserrat;
+font-family: 'Montserrat', sans-serif;
 background: #fff;
 }
 .container {
@@ -503,7 +511,7 @@ background: #fff;
   border-bottom: 1px solid #e7e7e7;
 }
 .navbar .container {
-  font-family: lub dub, Montserrat;
+font-family: 'Montserrat', sans-serif;
   display: flex;
   align-items: center;
 }
@@ -569,7 +577,7 @@ background: #fff;
 .main-content {
  padding-right: 0;
  display: inline-block;
- font-family: lub dub, Montserrat;
+font-family: 'Montserrat', sans-serif;
 }
 
 .main-content h1 {
@@ -584,7 +592,8 @@ background: #fff;
   font-size: 24px;
   font-weight: bold;
   color: #000000;
-  font-family: lub dub, Montserrat;
+  font-family: Monfont-family: 'Montserrat', sans-serif;
+
 
 }
 .main-content h4 {
@@ -603,7 +612,7 @@ background: #fff;
   font-size: 16px;
   color: #000;
   padding-left: 1px;
-  font-family: lub dub, Montserrat;
+  font-family: 'Montserrat', sans-serif;
 
 }
 .main-content a {
@@ -849,6 +858,7 @@ form .form-group .input-group.radio-group:not(:last-child) {
 form .form-group .input-group.radio-group[class*="col-"] {
   margin-right: 0;
 }
+
 form .form-group .input-group.radio-group input[type="radio"] {
     /* opacity: 0; */
     position: absolute;
@@ -857,8 +867,10 @@ form .form-group .input-group.radio-group input[type="radio"] {
     left: 6px;
     /* right: 10px; */
     width: 20px;
-    height: 20px;
-   line-height: normal;
+    height: 19px;
+    line-height: normal;
+    border: 1px solid #a8a8a8;
+    border-radius: 10px;
 }
 
 form .form-group .input-group.radio-group input[type='radio']::-ms-check {
@@ -882,7 +894,7 @@ form .form-group .input-group.gift .radio-label {
     cursor: pointer;
     font-size: 21px;
     font-weight: normal;
-    font-family: lub dub, Montserrat;
+    font-family: Montserrat, lub dub;
     width: 84px;
     height: 44px;
     border-radius: 20px;
@@ -891,6 +903,7 @@ form .form-group .input-group.gift .radio-label {
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
+    padding-left: 15px;
     background-color: #ddd;
     color: #595959;
     -webkit-transition: 0.5s all ease;
@@ -903,8 +916,8 @@ form .form-group .input-group.radio-group input[type="radio"] ~ label {
   cursor: pointer;
     font-size: 17px;
     font-weight: bold;
-    font-family: lub dub, Montserrat;
-    width: 90px;
+    font-family: Montserrat, lub dub;
+    width: 144px;
     height: 44px;
     border-radius: 44px;
     border: none;
@@ -966,6 +979,7 @@ form .form-group .input-group.dropdown input[type="radio"]:checked ~ label:after
   bottom: 0;
   left: 0;
   right: 0;
+  top: 104px;
 }
 form .form-group .input-group.dropdown.none input[type="radio"]:checked ~ label:after {
   display: none;
@@ -1022,7 +1036,7 @@ form .form-group .input-group.gift .radio-label.active {
 form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
     font-size: 25px;
     font-weight: normal;
-    font-family: lub dub, Montserrat;
+    font-family: Montserrat, lub dub;
     height: 44px;
     padding: 0 20px;
     border: 1px solid #6a6a6a;
@@ -1098,6 +1112,7 @@ form .form-group .inner-form-group {
   margin-right: -10px;
   border: 15px solid #c8c8c8;
   padding: 4px;
+  margin-top:66px;
 }
 form .form-group .inner-form-group:before {
   content: '';
@@ -1627,9 +1642,8 @@ footer ul li a:focus {
     margin-top: 10px;
   }
   form .form-group {
-    margin-top: 15px;
-    padding: 15px;
-    font-family: lub dub, Montserrat;
+    margin-top: 5px;
+    font-family: Montserrat, lub dub;
     /* INNER FORM GROUP */
     /* END INNER FORM GROUP */
   }
@@ -1667,7 +1681,7 @@ footer ul li a:focus {
  cursor: pointer;
     font-size: 21px;
     font-weight: normal;
-    font-family: lub dub, Montserrat;
+    font-family: Montserrat, lub dub;
     width: 84px;
     height: 44px;
     border-radius: 20px;
@@ -1687,7 +1701,7 @@ footer ul li a:focus {
   form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
     font-size: 25px;
     font-weight: normal;
-    font-family: lub dub, Montserrat;
+    font-family: Montserrat, lub dub;
     height: 44px;
     padding: 0 20px;
     border: 1px solid #6a6a6a;
@@ -1711,8 +1725,9 @@ footer ul li a:focus {
   form .form-group .inner-form-group {
     margin-left: -20px;
     margin-right: -20px;
-    border: 25px solid #c8c8c8;
+    border: 15px solid #c8c8c8;
     padding: 15px;
+    margin-top: 66px;
   }
   form .form-group .inner-form-group .preview-window, form .form-group .inner-form-group .preview-window-mail {
     margin-top: 10px;
