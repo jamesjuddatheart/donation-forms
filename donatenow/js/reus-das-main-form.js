@@ -203,8 +203,10 @@ window.pmx = {
                 $('#gift6').siblings('.radio-label').attr('onclick', '$(\'#giftOtherText\').val(\'\');$(\'input[name=other_amount]\').val(' + (newAmount) + ')');
 
                 // Update Button #3 to new Amount and update inline onclick
-                $('#gift7').siblings('.radio-label').text('$' + (newAmount * 2));
-                $('#gift7').siblings('.radio-label').attr('onclick', '$(\'#giftOtherText\').val(\'\');$(\'input[name=other_amount]\').val(' + (newAmount * 2) + ')');
+                //$('#gift7').siblings('.radio-label').text('$' + (newAmount * 2));
+                //$('#gift7').siblings('.radio-label').attr('onclick', '$(\'#giftOtherText\').val(\'\');$(\'input[name=other_amount]\').val(' + (newAmount * 2) + ')');
+                $('#gift7').attr('aria-label', (newAmount * 2)).val('$' + (newAmount * 2));
+                $('button[for=gift7]').attr({'title':'$' + (newAmount * 2), 'data-amount':(newAmount * 2)}).text('$' + (newAmount * 2)).data('amount', (newAmount * 2));
 
                 // Set the checked state to true so the button shows active
                 $('#gift6').prop('checked', true);
