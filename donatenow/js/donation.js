@@ -46,7 +46,8 @@ function showLevels(frequency,level) {
 		    $('input[name=other_amount]').val(10);
 		} else {
 		    $('input[id=gift7]').click().attr('checked','checked').next('button').addClass('active');
-		    $('input[name=other_amount]').val(100);
+		    // $('input[name=other_amount]').val(100);
+		    $('input[name=other_amount]').val($('button[for=gift7]').data('amount'));
 		}
 		$('input[name=recurring]').val('false');
 		jQuery("#consentWidgetDiv").hide();
