@@ -46,7 +46,8 @@ function showLevels(frequency,level) {
 		    $('input[name=other_amount]').val(10);
 		} else {
 		    $('input[id=gift7]').click().attr('checked','checked').next('button').addClass('active');
-		    $('input[name=other_amount]').val(100);
+		    // $('input[name=other_amount]').val(100);
+		    $('input[name=other_amount]').val($('button[for=gift7]').data('amount'));
 		}
 		$('input[name=recurring]').val('false');
 		jQuery("#consentWidgetDiv").hide();
@@ -362,17 +363,21 @@ $('#AmazonPayButton').keypress(function(e) {
 
 
 function updateSubmitText() {
-	amt = $('input[name=other_amount]').val();
-	occurrence = $('input[name=occurrence]:checked').data('frequency');
-	if (occurrence == 'annual') {
-		freq = 'Annually';
-	} else if (occurrence == 'recurring') {
-		freq = 'Monthly';
+	if(location.href.indexOf("donatenow_legacy_tyson") > 0) {
+		$('#donate-submit').text('Submit');
 	} else {
-		freq = 'Now';
+		amt = $('input[name=other_amount]').val();
+		occurrence = $('input[name=occurrence]:checked').data('frequency');
+		if (occurrence == 'annual') {
+			freq = 'Annually';
+		} else if (occurrence == 'recurring') {
+			freq = 'Monthly';
+		} else {
+			freq = 'Now';
+		}
+		submit = $('#donate-submit');
+		submit.text('Give $'+ amt + ' ' + freq);
 	}
-	submit = $('#donate-submit');
-	submit.text('Give $'+ amt + ' ' + freq);
 }
 updateSubmitText();
 /*
