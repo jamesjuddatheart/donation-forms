@@ -363,17 +363,21 @@ $('#AmazonPayButton').keypress(function(e) {
 
 
 function updateSubmitText() {
-	amt = $('input[name=other_amount]').val();
-	occurrence = $('input[name=occurrence]:checked').data('frequency');
-	if (occurrence == 'annual') {
-		freq = 'Annually';
-	} else if (occurrence == 'recurring') {
-		freq = 'Monthly';
+	if(location.href.indexOf("donatenow_legacy_tyson") > 0) {
+		$('#donate-submit').text('Submit');
 	} else {
-		freq = 'Now';
+		amt = $('input[name=other_amount]').val();
+		occurrence = $('input[name=occurrence]:checked').data('frequency');
+		if (occurrence == 'annual') {
+			freq = 'Annually';
+		} else if (occurrence == 'recurring') {
+			freq = 'Monthly';
+		} else {
+			freq = 'Now';
+		}
+		submit = $('#donate-submit');
+		submit.text('Give $'+ amt + ' ' + freq);
 	}
-	submit = $('#donate-submit');
-	submit.text('Give $'+ amt + ' ' + freq);
 }
 updateSubmitText();
 /*
