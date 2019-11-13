@@ -581,16 +581,16 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .main-content h1 {
-  font-size: 36px;
-  font-weight: normal;
+  font-size: 40px;
+  font-weight: 500;
   color: #000000;
   padding: 0 8px;
   // margin-top: 0;
   margin-bottom: 28px;
 }
 .main-content h2 {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 40px;
+  font-weight: 500;
   color: #000000;
   font-family: 'Montserrat', sans-serif;
 
@@ -1584,13 +1584,13 @@ footer ul li a:focus {
 	display:inline-block;
   }
   .main-content h1 {
-    font-size: 36px;
+    font-size: 40px;
     padding: 0;
     margin-bottom: 28px;
     font-family: montserrat;
   }
   .main-content h2 {
-    font-size: 24px;
+    font-size: 40px;
     font-color:#D40000
     display: inline-block;
     font-family: montserrat;
