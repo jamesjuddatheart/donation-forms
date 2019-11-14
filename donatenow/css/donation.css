@@ -581,18 +581,18 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .main-content h1 {
-  font-size: 36px;
-  font-weight: normal;
+  font-size: 38px;
+  font-weight: 500;
   color: #000000;
   padding: 0 8px;
   // margin-top: 0;
   margin-bottom: 28px;
 }
 .main-content h2 {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 38px;
+  font-weight: 500;
   color: #000000;
-  font-family: Monfont-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 
 
 }
@@ -1464,7 +1464,7 @@ form #payment2form {
 
 .shareText .page-header h1 {
   color: #d40000;
-  font-size: 40px;
+  font-size: 38px;
   text-align:center;
 }
 .simple-social-icons ul.aligncenter {
@@ -1584,14 +1584,16 @@ footer ul li a:focus {
 	display:inline-block;
   }
   .main-content h1 {
-    font-size: 36px;
+    font-size: 38px;
     padding: 0;
     margin-bottom: 28px;
+    font-family: montserrat;
   }
   .main-content h2 {
-    font-size: 24px;
+    font-size: 38px;
     font-color:#D40000
     display: inline-block;
+    font-family: montserrat;
   }
   .main-content h4 {
     display: inline-block;
