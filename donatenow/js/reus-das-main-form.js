@@ -156,6 +156,8 @@ window.pmx = {
                  * postion 2 to the calculated suggested gift amount
                  ****************************************************/
                 newAmount = parseInt(Math.ceil((parseFloat(pmx.values.prevAmount) * 1.5) / 5) * 5);
+                prevAmt = parseInt(Math.ceil(parseFloat(pmx.values.prevAmount)));
+
                 // Hide Postion #4 of the Donation Array
                 $('#gift8').parent('.gift').remove();
 
@@ -166,8 +168,8 @@ window.pmx = {
                 $('#gift5, #gift6, #gift7, #gift8').prop('checked', false);
 
                 // Update Button #1 to new previous donation amount update inline onclick
-                $('#gift5').attr('aria-label', pmx.values.prevAmount).val('$' + pmx.values.prevAmount);
-                $('button[for=gift5]').attr({'title':'$' + pmx.values.prevAmount, 'data-amount': pmx.values.prevAmount}).text('$' + pmx.values.prevAmount).data('amount', pmx.values.prevAmount);
+                $('#gift5').attr('aria-label', prevAmt).val('$' + prevAmt);
+                $('button[for=gift5]').attr({'title':'$' + prevAmt, 'data-amount': prevAmt}).text('$' + prevAmt).data('amount', prevAmt);
 
                 // Update Button #2 to new Amount and update inline onclick
                 $('#gift6').attr('aria-label', newAmount).val('$' + newAmount);
@@ -181,9 +183,11 @@ window.pmx = {
                 $('#gift6').prop('checked', true);
                 $('button[for=gift6]').click();
 
-
+                
             } else if (pmx.values.prevAmount == null && pmx.values.customAmount != null && pmx.values.prevAmount <= 250) {
                 newAmount = parseInt(Math.ceil((parseFloat(pmx.values.customAmount) * 1.5) / 5) * 5);
+                prevAmt = parseInt(Math.ceil(parseFloat(pmx.values.prevAmount)));
+                
                 // Hide Postion #4 of the Donation Array
                 $('#gift8').parent('.gift').remove();
 
@@ -194,8 +198,8 @@ window.pmx = {
                 $('#gift5, #gift6, #gift7, #gift8').prop('checked', false);
 
                 // Update Button #1 to new previous donation amount update inline onclick
-                $('#gift5').attr('aria-label', pmx.values.prevAmount).val('$' + pmx.values.prevAmount);
-                $('button[for=gift5]').attr({'title':'$' + pmx.values.prevAmount, 'data-amount': pmx.values.prevAmount}).text('$' + pmx.values.prevAmount).data('amount', pmx.values.prevAmount);
+                $('#gift5').attr('aria-label', prevAmt).val('$' + prevAmt);
+                $('button[for=gift5]').attr({'title':'$' + prevAmt, 'data-amount': prevAmt}).text('$' + prevAmt).data('amount', prevAmt);
 
                 // Update Button #2 to new Amount and update inline onclick
                 $('#gift6').attr('aria-label', newAmount).val('$' + newAmount);
