@@ -861,6 +861,9 @@ $('[name^=donor\\.]').each(function(){
 		$('input[name=source]').val($.getQuerystring("s_src"));
 	}
 	if ($.getQuerystring("sub_source")) {
+		$('input[name=sub_source]').val($.getQuerystring("sub_source"));
+	}
+	if ($.getQuerystring("s_subsrc")) {
 		$('input[name=sub_source]').val($.getQuerystring("s_subsrc"));
 	}
 		
