@@ -2,15 +2,15 @@
 .radio-cc,
 .radio-amazon,
 .radio-paypal {display:none !important;}
-
+	
 [[?xtruex::x[[S80:CC]]x::
-.radio-cc {display:inline-block !important;}
+ .radio-cc {display:inline-block !important;}
 ::]]
 [[?xtruex::x[[S80:AMAZON]]x::
-.radio-amazon {display:inline-block !important;}
+ .radio-amazon {display:inline-block !important;}
 ::]]
 [[?xtruex::x[[S80:PAYPAL]]x::
-.radio-paypal {display:inline-block !important;}
+ .radio-paypal {display:inline-block !important;}
 ::]]
 </style>
 
@@ -50,18 +50,17 @@
 		<input type="hidden" name="form_title" value="[[S334:pagename]]" />
 	    <input type="hidden" name="validate" value="true" />
 	    <input type="hidden" name="source" value="[[?x[[S80:source]]x::xx::GENERAL::[[S80:source]]]]" /> <!-- update source as needed --> 
-	    [[?x[[S80:sub_source]]x::xx::::<input type="hidden" name="sub_source" value="[[S80:sub_source]]" />]]
 	    <input type="hidden" name="form_version" value="control" />
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
-	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::25::1000]]" />
+	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::25::100]]" />
 	    <input type="hidden" name="level_id" value="[[?xtruex::x[[S80:sustainer_default]]x::[[S80:level_id_recurring]]::[[S80:level_id]]]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
 	    <input type="hidden" name="payment_confirmation_id" value="" />
 	    <input type="hidden" name="check_number" value="" />
 	    <input type="hidden" name="offline_payment_method" value="" />
 	    <input type="hidden" name="PaymentType" id="PaymentType" value="cc" />
-	    <input type="hidden" name="is_hon_memorial" value="true" />
-	    <input type="hidden" name="tribute.type" value="Tribute" /> <!-- Memorial | Tribute | empty -->
+	    <input type="hidden" name="is_hon_memorial" value="false" />
+	    <input type="hidden" name="tribute.type" value="" /> <!-- Memorial | Tribute | empty -->
 	    <input type="hidden" name="amount1" id="amount1" value="">
 	    <!-- <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/> -->
 	    <input type="hidden" name="remember_me" id="remember_me" value="true" />
@@ -71,7 +70,6 @@
 		<input type="hidden" name="device_data" id="device_data" value=""/>
 		<input type="hidden" name="payment_method_nonce" id="payment_method_nonce" value=""/>
 		<input type="hidden" name="processorAuthorizationCode" id="processorAuthorizationCode" value=""/>
-
 		[[?x[[S334:df_preview]]x::xtruex::
 		<input type="hidden" name="sandbox" id="sandbox" value="true">
 		<input type="hidden" name="df_preview" value="true" />
@@ -82,13 +80,13 @@
         <!-- YOUR GIFT -->
 		<div class='form-group'>
 		<fieldset>
-			<legend><h2>Your Gift</h2></legend>
+			<legend>        	<h2>Your Gift</h2></legend>
 			<hr> 
 			<div class='inline frequency' aria-label="frequency">
 			[[?xtruex::x[[S80:sustainer_default]]x::
 				<div class='input-group radio-group' aria-labelledby= 'occurrence2'>
 					<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' checked data-level=[[S80:level_id_recurring]] data-frequency="recurring"/>
-					<label for='occurrence2' title="Monthly Gift" aria-checked="true" >Monthly Gift</label>
+					<label for='occurrence2' title="Monthly Gift" aria-checked="true" >Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
 				</div>
 				<div class='input-group radio-group'  aria-labelledby= 'occurrence1'>
 					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' data-level=[[S80:level_id]] data-frequency="onetime" />
@@ -101,7 +99,7 @@
 				</div>
 				<div class='input-group radio-group'>
 					<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' data-level=[[S80:level_id_recurring]] data-frequency="recurring"/>
-					<label for='occurrence2' title="Monthly Gift" aria-checked="false" >Monthly Gift</label>
+					<label for='occurrence2' title="Monthly Gift" aria-checked="false" >Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
 				</div>
 			]]
         		</div> 
@@ -119,31 +117,31 @@
 					<button type="button" for='gift2' class='radio-label [[?xtruex::x[[S80:sustainer_default]]x::active::]]' data-amount="25"  title="$25" aria-checked="false">$25</button>
 				</div>
 				<div class='input-group gift' role='group'  aria-labelledby= 'gift3'>
-					<input type='radio' name='gift' aria-label='50' id='gift3' value='$50' />
-					<button type="button" for='gift3' class='radio-label' data-amount="50" title="$50" aria-checked="false">$50</button>
+					<input type='radio' name='gift' aria-label='35' id='gift3' value='$35' />
+					<button type="button" for='gift3' class='radio-label' data-amount="35" title="$35" aria-checked="false">$35</button>
 				</div>
 				<div class='input-group gift' role='group'  aria-labelledby= 'gift4'>
-					<input type='radio' name='gift' aria-label='100' id='gift4' value='$100' />
-					<button type="button" for='gift4' class='radio-label' data-amount="100" title="$100" aria-checked="false">$100</button>
+					<input type='radio' name='gift' aria-label='50' id='gift4' value='$50' />
+					<button type="button" for='gift4' class='radio-label' data-amount="50" title="$50" aria-checked="false">$50</button>
 				</div>
 			</div> <!-- end recurring -->
 
 			<div class='inline onetime display__inline-block'  aria-label="giftsel2" [[?xtruex::x[[S80:sustainer_default]]x::style="display: none;"::]]>
 					<div class='input-group gift' role='group'  aria-labelledby= 'gift5'>
-						<input type='radio' name='gift' aria-label='50' id='gift5' value='$50'/>
-						<button type="button" for='gift5' class='radio-label' data-amount="50" title="$50" aria-checked="false">$50</button>
+						<input type='radio' name='gift' aria-label='40' id='gift5' value='$40'/>
+						<button type="button" for='gift5' class='radio-label' data-amount="40" title="$40" aria-checked="false">$40</button>
 					</div>
 					<div class='input-group gift' role='group'  aria-labelledby= 'gift6'>
-						<input type='radio' name='gift' aria-label='500' id='gift6' value='$500'/>
-						<button type="button" for='gift6' class='radio-label' data-amount="500"  title="$500" aria-checked="false">$500</button>
+						<input type='radio' name='gift' aria-label='60' id='gift6' value='$60'/>
+						<button type="button" for='gift6' class='radio-label' data-amount="60"  title="$60" aria-checked="false">$60</button>
 					</div>
 					<div class='input-group gift' role='group'  aria-labelledby= 'gift7'>
-						<input type='radio' name='gift' aria-label='1000' id='gift7' value='$1000' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
-						<button type="button" for='gift7' class='radio-label [[?xtruex::x[[S80:sustainer_default]]x::::active]]' data-amount="1000"  title="$1000" aria-checked="false">$1,000</button>
+						<input type='radio' name='gift' aria-label='100' id='gift7' value='$100' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
+						<button type="button" for='gift7' class='radio-label [[?xtruex::x[[S80:sustainer_default]]x::::active]]' data-amount="100"  title="$100" aria-checked="false">$100</button>
 					</div>
 					<div class='input-group gift' role='group'  aria-labelledby= 'gift8'>
-						<input type='radio' name='gift' aria-label='5000' id='gift8' value='$5000'/>
-						<button type="button" for='gift8' class='radio-label' data-amount="5000"  title="$5000" aria-checked="false">$5,000</button>
+						<input type='radio' name='gift' aria-label='250' id='gift8' value='$250'/>
+						<button type="button" for='gift8' class='radio-label' data-amount="250"  title="$250" aria-checked="false">$250</button>
 					</div>
 				</div> <!-- end 1x -->
 				<!-- OTHER - amount passed to ghost form -->
@@ -152,16 +150,16 @@
 					<label for="giftOtherText" style="height:0;width:0;text-indent:-9999px">Other Amount: </label>
 					<input type='text' class='radio-input' id='giftOtherText' maxlength='10' placeholder='$ Other' title="Enter a value $10 or greater"  />
 				</div>
-			<!-- </div> -->
+			</div>
 		</fieldset>
 		<!-- end form-group -->
         <!-- END YOUR GIFT -->
 
         <!-- PERSONALIZE GIFT -->
-		<!-- 
-        <div class='form-group'>
+		<div class='form-group'>
 			<fieldset>
-				<legend><h2>Make Your Gift a Tribute</h2></legend>
+				<legend><h2>Make Your Gift a Tribute</h2>
+</legend>
 				<hr>
 				<div class='inline tributeSel'  aria-label='tributeGfit'>
 					<label style='font-size: 16px; padding-right: 20px'>Would you like to make this gift in honor or in memory of a friend or loved one?</label><br class='visible-xs' />
@@ -175,9 +173,7 @@
 					</div>
 				</div>
 			</fieldset>
-            -->
 			<!-- start Tribute section -->
-            <!-- 
 			<div class='tributeSection'>
 				<div class='input-group col-xs-12 col-sm-9 select-box'>
 					<label for='tributeType' name='tributeType' class='required-asterisk'>Type of Tribute:</label>
@@ -214,22 +210,20 @@
 						</div>
 						<div class='input-group radio-group dropdown none' role = 'radiogroup' aria-labelledby= 'noCard'>
 							<input type='radio' name='ecard.send' id='noCard' value='false' checked="checked"/>
-							<label for='noCard' title="No Card" aria-checked="false" >No card</label> -->
+							<label for='noCard' title="No Card" aria-checked="false" >No card</label>
 							<!-- name='no_tribute_ack_cardsubmit' -->
-						<!-- </div>
+						</div>
 					</div>
 				</fieldset>
-                -->
 				<!-- SELECT A CARD DESIGN -->
-                <!-- 
 				<div class='inner-form-group emailaCard'>
 					
 					<span class='required-field'>(*Required fields)</span>
 					<div class='inline row'>
 						<div class='input-group col-xs-12 col-sm-12'>
 							<div class='preview-window col-xs-12 col-sm-6'>
-								<img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-1-thumb.jpg' alt='Honor Ecard Thumbnail' class='img-responsive center-block honor' />
-								<img src='../donation-forms/donatenow/images/design-1.jpg' alt='Honor Card Default Design' class='img-responsive center-block memorial' />
+								<img src='../donation-forms/donatenow/images/Honor-HolidayHeart01.jpg' alt='Honor Ecard Thumbnail' class='img-responsive center-block honor' />
+								<img src='../donation-forms/donatenow/images/Memorial-HolidayCandle.jpg' alt='Honor Card Default Design' class='img-responsive center-block memorial' />
 								<p class='text-center'>Your card</p>
 							</div>
 							<fieldset><legend><h4>Please select a card design:</h4></legend>
@@ -237,61 +231,79 @@
 									<div class='row honor'>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-1' name='ecard.id' value='[[S80:honcard1]]' />
-											<label for='hon-design-1'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-1-thumb.jpg' alt='A Heartfelt Gift: Flowers' title='Flowers' class='img-responsive' /></label>
+											<label for='hon-design-1'><img src='../donation-forms/donatenow/images/Honor-HolidayHeart01.jpg' alt='A Heartfelt Gift: wreath' title='holiday wreath' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-2' name='ecard.id' value='[[S80:honcard2]]' />
-											<label for='hon-design-2'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-2-thumb.jpg' alt='A Heartfelt Gift: Rose' title='Rose' class='img-responsive' /></label>
+											<label for='hon-design-1'><img src='../donation-forms/donatenow/images/Honor-HolidayHeart02.jpg' alt='A Heartfelt Gift: heart' title='holiday heart' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-3' name='ecard.id' value='[[S80:honcard3]]' />
-											<label for='hon-design-3'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-3-thumb.jpg' alt='A Heartfelt Gift: Bow' title='Bow' class='img-responsive' /></label>
+											<label for='hon-design-1'><img src='../donation-forms/donatenow/images/Honor-HolidayGiftbox.jpg' alt='A Heartfelt Gift: gift' title='holiday gift' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-4' name='ecard.id' value='[[S80:honcard4]]' />
-											<label for='hon-design-4'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-4-thumb.jpg' alt='A Heartfelt Gift: Heart' title='Heart' class='img-responsive' /></label>
+											<label for='hon-design-1'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-1-thumb.jpg' alt='A Heartfelt Gift: Flowers' title='Flowers' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-5' name='ecard.id' value='[[S80:honcard5]]' />
-											<label for='hon-design-5'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-5-thumb.jpg' alt='A Heartfelt Gift: Cupcake' title='Cupcake' class='img-responsive' /></label>
+											<label for='hon-design-2'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-2-thumb.jpg' alt='A Heartfelt Gift: Rose' title='Rose' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='hon-design-6' name='ecard.id' value='[[S80:honcard6]]' />
+											<label for='hon-design-3'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-3-thumb.jpg' alt='A Heartfelt Gift: Bow' title='Bow' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='hon-design-7' name='ecard.id' value='[[S80:honcard7]]' />
+											<label for='hon-design-4'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-4-thumb.jpg' alt='A Heartfelt Gift: Heart' title='Heart' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='hon-design-8' name='ecard.id' value='[[S80:honcard8]]' />
+											<label for='hon-design-5'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-5-thumb.jpg' alt='A Heartfelt Gift: Cupcake' title='Cupcake' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='hon-design-9' name='ecard.id' value='[[S80:honcard9]]' />
 											<label for='hon-design-6'><img src='../donation-forms/donatenow/images/AHA-Honor-Ecard-6-thumb.jpg' alt='A Heartfelt Gift: Balloons' title='Balloons' class='img-responsive' /></label>
 										</div>
 									</div>
 									<div class='row memorial'>
-										<div class='input-group col-xs-4 col-sm-6'>
+											<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-1' name='ecard.id' value='[[S80:memcard1]]' />
-											<label for='mem-design-1'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb01.jpg' alt='A Heartfelt Gift: Flower' title='Flower' class='img-responsive' /></label>
+											<label for='mem-design-1'><img src='../donation-forms/donatenow/images/Memorial-HolidayCandle.jpg' alt='A Heartfelt Gift: holiday candle' title='candle' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-2' name='ecard.id' value='[[S80:memcard2]]' />
-											<label for='mem-design-2'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb02.jpg' alt='A Heartfelt Gift: Floating Candle Bag' title='Candle' class='img-responsive' /></label>
+											<label for='mem-design-2'><img src='../donation-forms/donatenow/images/Memorial-HolidayHeartHand.jpg' alt='A Heartfelt Gift: holiday heart hand' title='heart hand' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-3' name='ecard.id' value='[[S80:memcard3]]' />
-											<label for='mem-design-3'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb03.jpg' alt='A Heartfelt Gift: Candle' title='candle' class='img-responsive' /></label>
+											<label for='mem-design-1'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb01.jpg' alt='A Heartfelt Gift: Flower' title='Flower' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-4' name='ecard.id' value='[[S80:memcard4]]' />
-											<label for='mem-design-4'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb04.jpg' alt='A Heartfelt Gift: Candle in hands' title='candle' class='img-responsive' /></label>
+											<label for='mem-design-2'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb02.jpg' alt='A Heartfelt Gift: Floating Candle Bag' title='Candle' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-5' name='ecard.id' value='[[S80:memcard5]]' />
-											<label for='mem-design-5'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb05.jpg' alt='A Heartfelt Gift: Holding Hands' title='hands' class='img-responsive' /></label>
+											<label for='mem-design-3'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb03.jpg' alt='A Heartfelt Gift: Candle' title='candle' class='img-responsive' /></label>
 										</div>
 										<div class='input-group col-xs-4 col-sm-6'>
 											<input type='radio' id='mem-design-6' name='ecard.id' value='[[S80:memcard6]]' />
+											<label for='mem-design-4'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb04.jpg' alt='A Heartfelt Gift: Candle in hands' title='candle' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='mem-design-7' name='ecard.id' value='[[S80:memcard7]]' />
+											<label for='mem-design-5'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb05.jpg' alt='A Heartfelt Gift: Holding Hands' title='hands' class='img-responsive' /></label>
+										</div>
+										<div class='input-group col-xs-4 col-sm-6'>
+											<input type='radio' id='mem-design-8' name='ecard.id' value='[[S80:memcard8]]' />
 											<label for='mem-design-6'><img src='../donation-forms/donatenow/images/AHA-Legacy-Ecard-Thumb06.jpg' alt='A Heartfelt Gift: Daisy' title='daisy' class='img-responsive' /></label>
 										</div>
 									</div>
 								</div>
 							</div>
 						</fieldset>
-                        -->
 						<!-- <input type="hidden" name="ecard.send" id="ecard_send" value="false" /> -->
-                        <!-- 
 						<div class='input-group col-xs-12 col-sm-12 text-area'>
 							<label for='emailCardEmail' name='emailCardEmail' class='required-asterisk'>Recipient Email Address(es):</label>
 							<textarea id='emailCardEmail' name='ecard.recipients' class='required' title="Email Card Recipient"></textarea>
@@ -329,10 +341,8 @@
 						</div>
 					</div>
 				</div>
-                -->
 				<!-- END Ecard options -->
 				<!-- START Print Card options -->
-                <!-- 
 				<div class='inner-form-group mailaPrintedCard'>
 					<h4>Please mail a card acknowledging this gift to:</h4>
 					<span class='required-field'>(*Required fields)</span>
@@ -491,16 +501,13 @@
 						</div>
 					</div>
 				</div>
-                --> 
 				<!-- END SELECT A CARD DESIGN -->
-                <!-- 
 			</div>
-		</div> 
-        -->
+		</div>
         <!-- END GIFT DEDICATION -->
 
         <!-- GIFT DEDICATION MODAL -->
-        <!-- <div class='modal fade' tabindex='-1' id='emailSample' role='dialog' aria-labelledby='emailaCardSample'>
+        <div class='modal fade' tabindex='-1' id='emailSample' role='dialog' aria-labelledby='emailaCardSample'>
           <div class='modal-dialog' role='document'>
             <div class='modal-content'>
             <button type='button' class='close' data-dismiss='modal' title ='close' aria-label = 'close'>
@@ -513,9 +520,9 @@
             </div>
             </div>
           </div>
-        </div> -->
+        </div>
 
-        <!-- <div class='modal fade' tabindex='-1' id='mailSample' role='dialog' aria-labelledby='emailaCardSample2'>
+        <div class='modal fade' tabindex='-1' id='mailSample' role='dialog' aria-labelledby='emailaCardSample2'>
           <div class='modal-dialog' role='document'>
             <div class='modal-content'>
             <button type='button' class='close' data-dismiss='modal' title = 'close' aria-label = 'close'>
@@ -527,37 +534,19 @@
             </div>
             </div>
           </div>
-        </div> -->
+        </div>
         <!-- END GIFT DEDICATION MODAL -->
 
         <!-- PERSONAL INFORMATION -->
         <div class='form-group'>
 		<legend>
           <h2>Your Personal Information
-            <span class='lock'></span></h2>
+<span class='lock'></span></h2>
 			</legend>
           <span class='required-field'>(*Required fields)</span>
 		<br>
 		<hr>
 		<div class='inline row'>
-			<div class='input-group col-xs-12 col-sm-7 select-box'>
-				<label for='donorTitle' name='donorTitle' class='required-asterisk'>Title:</label>
-				<select id='donorTitle' name="donor.name.title" class='required'>
-					<option value='' selected disabled>Select</option>
-					<option value='Mr.'>Mr.</option>
-					<option value='Mr. & Mrs.'>Mr. & Mrs.</option>
-					<option value='Mrs.'>Mrs.</option>
-					<option value='Miss'>Miss</option>
-					<option value='Ms.'>Ms.</option>
-					<option value='Dr.'>Dr.</option>
-					<option value='Dr. & Mr.'>Dr. & Mr.</option>
-					<option value='Dr. & Mrs.'>Dr. & Mrs.</option>
-					<option value='Dr. & Dr.'>Dr. & Dr.</option>
-					<option value='Hon.'>Hon.</option>
-					<option value='Sr.'>Sr.</option>
-					<option value='Sra.'>Sra.</option>
-				</select>
-			</div>
             <div class='input-group col-xs-12 col-sm-6 text-field'>
               <label for='firstName' name='firstName' class='required-asterisk'>First Name:</label>
               <input type='text' id='firstName' name='donor.name.first' class='required' />
@@ -673,24 +662,6 @@
 		<br>
 		<hr>
           <div class='inline row'>
-			<div class='input-group col-xs-12 col-sm-7 select-box'>
-				<label for='billingTitle' name='billingTitle' class='required-asterisk'>Title:</label>
-				<select id='billingTitle' name="billing.name.title" class='required'>
-					<option value='' selected disabled>Select</option>
-					<option value='Mr.'>Mr.</option>
-					<option value='Mr. & Mrs.'>Mr. & Mrs.</option>
-					<option value='Mrs.'>Mrs.</option>
-					<option value='Miss'>Miss</option>
-					<option value='Ms.'>Ms.</option>
-					<option value='Dr.'>Dr.</option>
-					<option value='Dr. & Mr.'>Dr. & Mr.</option>
-					<option value='Dr. & Mrs.'>Dr. & Mrs.</option>
-					<option value='Dr. & Dr.'>Dr. & Dr.</option>
-					<option value='Hon.'>Hon.</option>
-					<option value='Sr.'>Sr.</option>
-					<option value='Sra.'>Sra.</option>
-				</select>
-			</div>
             <div class='input-group col-xs-12 col-sm-6 text-field'>
               <label for='billingFirstName' name='billingFirstName' class='required-asterisk'>First Name:</label>
               <input type='text' id='billingFirstName' name='billing.name.first' class='required' />
@@ -916,8 +887,14 @@
         </div>
 		<hr>
         <div class='row bottom-links'>
-          <div class='col-xs-12 col-sm-12'>
-            <a href='https://www.heart.org/-/media/files/bernard-j-tyson-fund/bernard-j-tyson-fund-printable-donation-form.pdf'>Mail your Donation to the Bernard J. Tyson Fund for Equitable Health and Well-Being</a>
+          <div class='col-xs-12 col-sm-5'>
+            <a href='https://www.heart.org/idc/groups/heart-public/@wcm/@tcs/documents/downloadable/ucm_430364.pdf'>Mail a Memorial or Tribute Donation</a>
+          </div>
+          <div class='col-xs-12 col-sm-4'>
+            <a href='https://www.heart.org/idc/groups/heart-public/@wcm/@tcs/documents/downloadable/ucm_430363.pdf'>Mail a General Donation</a>
+          </div>
+          <div class='col-xs-12 col-sm-3'>
+            <a href='http://www.heart.org/HEARTORG/Giving/ForIndividuals/OtherWaystoGive/OtherWaystoGive_UCM_001143_SubHomePage.jsp'>Other Ways to Give</a>
           </div>
         </div>
       </form>
