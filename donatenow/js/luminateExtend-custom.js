@@ -863,6 +863,9 @@ $('[name^=donor\\.]').each(function(){
 	if ($.getQuerystring("sub_source")) {
 		$('input[name=sub_source]').val($.getQuerystring("sub_source"));
 	}
+	if ($.getQuerystring("s_subsrc")) {
+		$('input[name=sub_source]').val($.getQuerystring("s_subsrc"));
+	}
 		
 	if ($.getQuerystring("level_id")) {
 		$('input[name=level_id][value='+$.getQuerystring("level_id")+']').attr("checked","checked");
