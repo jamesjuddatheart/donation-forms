@@ -1591,9 +1591,9 @@ footer ul li a:focus {
   }
   .main-content h2 {
     font-size: 38px;
-    font-color:#D40000
+    font-color:#D40000;
     display: inline-block;
-    font-family: montserrat;
+    font-family: 'montserrat';
   }
   .main-content h4 {
     display: inline-block;
@@ -1627,12 +1627,32 @@ footer ul li a:focus {
     float: none;
     margin: 0 auto;
     padding: 0 20px;
-  }
+    background: #fff;
+
+   }
+  .thank-you p {
+    font-size: 16px;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+ }
+  .text-center{
+    font-size: 16px;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+ }
+
+  .tyTxt{
+    font-size: 16px;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+ }
+	
   .main-content.thank-you .video {
     float: none;
     margin: 0 auto;
     padding: 30px;
   }
+
   .main-content.thank-you .video .copy {
     margin-top: 30px;
   }
@@ -1645,7 +1665,7 @@ footer ul li a:focus {
   }
   form .form-group {
     margin-top: 5px;
-    font-family: Montserrat, lub dub;
+    font-family: 'Montserrat', sans-serif;
     /* INNER FORM GROUP */
     /* END INNER FORM GROUP */
   }
@@ -1807,6 +1827,7 @@ footer ul li a:focus {
 /* Override the default color from the cms global styles */
 a, a:link, a:hover {
   color: #d40000;
+  font-weight: 600;
 }
 
 /* Life is Why specific styles */
