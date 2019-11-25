@@ -1630,6 +1630,28 @@ footer ul li a:focus {
     background: #fff;
 
   }
+.thank-you p{
+font-size: 16px;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+}
+.text-center{
+font-size: 16px;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tyTxt{
+font-size: 16px;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+}
+.tyTxt a, a:link, a:hover {
+    font-size: 16px;
+    color: #d40000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
   .main-content.thank-you .video {
     float: none;
     margin: 0 auto;
