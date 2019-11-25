@@ -1827,6 +1827,7 @@ footer ul li a:focus {
 /* Override the default color from the cms global styles */
 a, a:link, a:hover {
   color: #d40000;
+  font-weight: 600;
 }
 
 /* Life is Why specific styles */
