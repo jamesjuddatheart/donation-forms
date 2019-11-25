@@ -1591,9 +1591,9 @@ footer ul li a:focus {
   }
   .main-content h2 {
     font-size: 38px;
-    font-color:#D40000
+    font-color:#D40000;
     display: inline-block;
-    font-family: montserrat;
+    font-family: 'montserrat';
   }
   .main-content h4 {
     display: inline-block;
@@ -1629,29 +1629,24 @@ footer ul li a:focus {
     padding: 0 20px;
     background: #fff;
 
-  }
-.thank-you p{
-font-size: 16px;
-    color: #000;
-    font-family: 'Montserrat', sans-serif;
-}
-.text-center{
-font-size: 16px;
-    color: #000;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.tyTxt{
-font-size: 16px;
-    color: #000;
-    font-family: 'Montserrat', sans-serif;
-}
-.tyTxt a, a:link, a:hover {
+   }
+  .thank-you p {
     font-size: 16px;
-    color: #d40000;
+    color: #000;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-}
+ }
+  .text-center{
+    font-size: 16px;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+ }
+
+  .tyTxt{
+    font-size: 16px;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+ }
+	
   .main-content.thank-you .video {
     float: none;
     margin: 0 auto;
@@ -1670,7 +1665,7 @@ font-size: 16px;
   }
   form .form-group {
     margin-top: 5px;
-    font-family: Montserrat, lub dub;
+    font-family: 'Montserrat', sans-serif;
     /* INNER FORM GROUP */
     /* END INNER FORM GROUP */
   }
