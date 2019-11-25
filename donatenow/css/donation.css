@@ -1627,12 +1627,47 @@ footer ul li a:focus {
     float: none;
     margin: 0 auto;
     padding: 0 20px;
+    background: #fff;
+
   }
   .main-content.thank-you .video {
     float: none;
     margin: 0 auto;
     padding: 30px;
   }
+
+.thank-you p{
+font-size: 16px;
+    color: #000;
+    padding-left: 1px;
+    font-family: 'Montserrat', sans-serif;
+}
+.text-center{
+font-size: 16px;
+    color: #000;
+    padding-left: 1px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tyTxt{
+font-size: 16px;
+    color: #000;
+    padding-left: 1px;
+    font-family: 'Montserrat', sans-serif;
+}
+.tyTxt a, a:link, a:hover {
+    font-size: 16px;
+    color: #d40000;
+    padding-left: 1px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+	.vidBox {margin: 20px 0;}
+	.tyTxt a {font-size: inherit !important;}
+
+	@media only screen and (max-width: 768px) {
+	.vidBox {width: 99%}
+	}
   .main-content.thank-you .video .copy {
     margin-top: 30px;
   }
