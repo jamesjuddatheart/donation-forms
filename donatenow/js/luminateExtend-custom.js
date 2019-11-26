@@ -145,10 +145,7 @@
 
 	// PayPal redirect
 	if (typeof data.donationResponse.redirect != "undefined") {
-		location.href = data.donationResponse.redirect.url  + "?cons_id=${donationResponse/donation/cons_id}" +
-		"&amount=${donationResponse/donation/amount/formatted}" +
-		"&transaction_id=${donationResponse/donation/transaction_id}" +
-		"&confirmation_code=${donationResponse/donation/confirmation_code}";
+		location.href = data.donationResponse.redirect.url
 		return;
 	}
         
