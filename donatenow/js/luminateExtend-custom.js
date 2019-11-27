@@ -145,7 +145,7 @@
 
 	// PayPal redirect
 	if (typeof data.donationResponse.redirect != "undefined") {
-		location.href = data.donationResponse.redirect.url
+		location.href = data.donationResponse.redirect.url;
 		return;
 	}
         
