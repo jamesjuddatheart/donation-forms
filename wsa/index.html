@@ -24,7 +24,7 @@
 	    <input type="hidden" name="recurring" value="true" />
 	    <input type="hidden" name="extproc" value="" />
 	    <input type="hidden" name="finish_error_redirect" value="[[S8]]">
-	    <input type="hidden" name="finish_success_redirect" value="[[S80:paypal_thankyou]]?cons_id=${donationResponse/donation/cons_id}&amount=${donationResponse/donation/amount/formatted}&confirmation_code=${donationResponse/donation/confirmation_code}&form=[[S80:form_id]]">
+	    <input type="hidden" name="finish_success_redirect" value="[[S80:paypal_thankyou]]#cons_id=${donationResponse/donation/cons_id}&amount=${donationResponse/donation/amount/formatted}&confirmation_code=${donationResponse/donation/confirmation_code}&form=[[S80:form_id]]">
 	    <input type="hidden" name="method" value="donate" />
 	    <input type="hidden" name="form_id" value="[[S80:form_id]]" /> <!-- update per ghost form ID -->
 		<input type="hidden" name="form_title" value="[[S334:pagename]]" />
