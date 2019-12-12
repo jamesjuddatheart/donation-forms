@@ -4,6 +4,8 @@
  * 2. Prevent iOS and IE text size adjust after device orientation change,
  *    without disabling user zoom.
  */
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 html {
   font-family: 'Montserrat', sans-serif;
   /* 1 */
