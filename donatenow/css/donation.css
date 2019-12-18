@@ -531,7 +531,7 @@ font-family: 'Montserrat', sans-serif;
   height: 60px;
 }
 .navbar .header-left .navbar-brand-stroke {
-  background-image: url(../../../donation-forms/images/ASA_LOGO-HT-new_r_k.png);
+  background-image: url(../../../donation-forms/images/ASA_LOGO_HT-new_r_k.png);
   background-size: 100% auto;
   background-repeat: no-repeat;
   display: block;
@@ -1556,7 +1556,8 @@ footer ul li a:focus {
   .navbar {
     margin-bottom: 46px;
   }
-  .navbar .header-left .navbar-brand {
+  .navbar .header-left .navbar-brand,
+  .navbar .header-left .navbar-brand-stroke {
     width: 150px;
     height: 85px;
     margin-left: 0 !important;
