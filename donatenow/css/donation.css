@@ -530,6 +530,14 @@ font-family: 'Montserrat', sans-serif;
   width: 107px;
   height: 60px;
 }
+.navbar .header-left .navbar-brand .stroke {
+  background-image: url(../../../donation-forms/images/ASA_LOGO-HT-new_r_k.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  display: block;
+  width: 107px;
+  height: 60px;
+}
 .navbar .header-left .navbar-brand:focus {
   outline-offset: 2px;
   outline: 3px solid rgba(77, 144, 254, 0.4);
