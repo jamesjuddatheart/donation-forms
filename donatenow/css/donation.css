@@ -538,7 +538,8 @@ font-family: 'Montserrat', sans-serif;
   width: 107px;
   height: 60px;
 }
-.navbar .header-left .navbar-brand:focus {
+.navbar .header-left .navbar-brand:focus,
+.navbar .header-left .navbar-brand-stroke:focus {
   outline-offset: 2px;
   outline: 3px solid rgba(77, 144, 254, 0.4);
 }
