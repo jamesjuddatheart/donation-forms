@@ -195,7 +195,8 @@
 			var street1 = $('input[name="billing.address.street1"]').val();
 			var street2 = $('input[name="billing.address.street2"]').val();
 			var city = $('input[name="billing.address.city"]').val();
-			var state = $('select[name="billing.address.state"]').val();
+			var state = $('[name="billing.address.state"]').val();
+			var country = $('select[name="billing.address.country"]').val();
 			var zip = $('input[name="billing.address.zip"]').val();
 			var transactionId = data.donationResponse.donation.transaction_id;
 			var ref = data.donationResponse.donation.confirmation_code;
@@ -241,6 +242,7 @@
   			  $('p.street2').html(street2);
 			  $('p.city').html(city);
 			  $('p.state').html(state);
+			  $('p.country').html(country);
 			  $('p.zip').html(zip);
 			  $('p.email').html(email);
 			  $('p.freq').html(freq);
@@ -354,7 +356,7 @@ function donateAmazon() {
 				var street1 = $('input[name="donor.address.street1"]').val();
 				var street2 = $('input[name="donor.address.street2"]').val();
 				var city = $('input[name="donor.address.city"]').val();
-				var state = $('select[name="donor.address.state"]').val();
+				var state = $('[name="donor.address.state"]').val();
 				var zip = $('input[name="donor.address.zip"]').val();
 				var country = $('select[name="donor.address.country"]').val();
 				//var ref = data.donationResponse.donation.confirmation_code;
@@ -435,7 +437,7 @@ function donateApplePay() {
 	var street1 = $('input[name="donor.address.street1"]').val();
 	var street2 = $('input[name="donor.address.street2"]').val();
 	var city = $('input[name="donor.address.city"]').val();
-	var state = $('select[name="donor.address.state"]').val();
+	var state = $('[name="donor.address.state"]').val();
 	var zip = $('input[name="donor.address.zip"]').val();
 	var country = $('select[name="donor.address.country"]').val();
 	//var ref = data.donationResponse.donation.confirmation_code;
@@ -511,7 +513,7 @@ function donateVenmo() {
 	var street1 = $('input[name="donor.address.street1"]').val();
 	var street2 = $('input[name="donor.address.street2"]').val();
 	var city = $('input[name="donor.address.city"]').val();
-	var state = $('select[name="donor.address.state"]').val();
+	var state = $('[name="donor.address.state"]').val();
 	var zip = $('input[name="donor.address.zip"]').val();
 	var country = $('select[name="donor.address.country"]').val();
 	//var ref = data.donationResponse.donation.confirmation_code;
@@ -589,7 +591,7 @@ function donateGooglePay() {
 	var street1 = $('input[name="donor.address.street1"]').val();
 	var street2 = $('input[name="donor.address.street2"]').val();
 	var city = $('input[name="donor.address.city"]').val();
-	var state = $('select[name="donor.address.state"]').val();
+	var state = $('[name="donor.address.state"]').val();
 	var zip = $('input[name="donor.address.zip"]').val();
 	var country = $('select[name="donor.address.country"]').val();
 	//var ref = data.donationResponse.donation.confirmation_code;
