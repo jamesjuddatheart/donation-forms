@@ -373,6 +373,13 @@ $('#city, #state').blur(function(){
 	$('input[name=finish_success_redirect]').val(successURL);
 });
 
+$('#donorState').change(function(){
+   $('#donor.address.state').val($(this).text());
+});
+$('#billingState').change(function(){
+   $('#billing.address.state').val($(this).text());
+});
+
 function updateSubmitText() {
 	if(location.href.indexOf("donatenow_legacy_tyson") > 0) {
 		$('#donate-submit').text('Submit');
