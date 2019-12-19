@@ -375,6 +375,8 @@ $('#city, #state').blur(function(){
 
 $('#donorState').change(function(){
    $('input[name="donor.address.state"]').val($(this).find('option:selected').val());
+   $('input[name="billing.address.state"]').val($(this).find('option:selected').val());
+   $('#billingState').val($(this).val());
 });
 $('#billingState').change(function(){
    $('input[name="billing.address.state"]').val($(this).find('option:selected').val());
