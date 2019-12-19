@@ -48,11 +48,11 @@
 			   $(this).val($("[name='"+$(this).attr("name").replace("billing.","donor.")+"']").val());
 		  }
 		});
-	        if ($('input[name=donor.address.state]').val() == "") {
-			$('input[name=donor.address.state]').val($('select[name=donorState] option:selected').val());
+	        if ($('input[name="donor.address.state"]').val() == "") {
+			$('input[name="donor.address.state"]').val($('select[name=donorState] option:selected').val());
 		}
-	        if ($('input[name=billing.address.state]').val() == "") {
-			$('input[name=billing.address.state]').val($('select[name=billingState] option:selected').val());
+	        if ($('input[name="billing.address.state"]').val() == "") {
+			$('input[name="billing.address.state"]').val($('select[name=billingState] option:selected').val());
 		}
 	      
 	        $('input[name=compliance]').val("true");
