@@ -557,6 +557,8 @@
             </div>
             <div class='input-group col-xs-7 col-sm-6 col-md-6 select-box'>
               <label for='state' name='state' class='required-asterisk'>State:</label>
+              <input type='text' id='state'  name='donor.address.state' class='required' />
+	      <!-- 
               <select id='state'  name='donor.address.state' class='required'>
                 <option value='' selected disabled>Please select</option>
                 <option value='AL'>Alabama</option>
@@ -621,7 +623,7 @@
 		<option value="AA">AA - Armed Forces Americas</option>
 		<option value="AE">AE - Armed Forces</option>
 		<option value="AP">AP - Armed Forces Pacific</option>
-              </select>
+              </select> -->
             </div>
             <div class='input-group col-xs-7 col-sm-6 col-md-6 select-box'>
 		<label for='country' name='country' class='required-asterisk'>Country:</label>
@@ -879,7 +881,7 @@
 		</select>
 	    </div>
             <div class='input-group col-xs-5 col-sm-6 col-md-6 text-field'>
-              <label for='zipCode' name='zipCode' class='required-asterisk'>Zip Code:</label>
+              <label for='zipCode' name='zipCode' class='required-asterisk'>Zip / Postal Code:</label>
               <input type='text' id='zipCode'  name='donor.address.zip' class='required zipCodeValidation' />
             </div>
             <div class='input-group checkBox col-xs-12 col-sm-12'>
@@ -919,7 +921,9 @@
             </div>
             <div class='input-group col-xs-7 col-sm-3 col-md-6 select-box'>
               <label for='billingState' name='billingState' class='required-asterisk'>State:</label>
-              <select id='billingState' name='billing.address.state' class='required'>
+              <input type='text' id='billingState' name='billing.address.state' class='required' />
+  	      <!--
+	      <select id='billingState' name='billing.address.state' class='required'>
                 <option value='' selected disabled>Please select</option>
                 <option value='AL'>Alabama</option>
                 <option value='AK'>Alaska</option>
@@ -983,7 +987,7 @@
 		<option value="AA">AA - Armed Forces Americas</option>
 		<option value="AE">AE - Armed Forces</option>
 		<option value="AP">AP - Armed Forces Pacific</option>
-              </select>
+              </select> -->
             </div>
             <div class='input-group col-xs-7 col-sm-3 col-md-6 select-box'>
 		<label for='billingCountry' name='billingCountry' class='required-asterisk'>Country:</label>
@@ -1241,7 +1245,7 @@
 		</select>
 	    </div>
             <div class='input-group col-xs-5 col-sm-3 col-md-6 text-field'>
-              <label for='billingZipCode' name='billingZipCode' class='required-asterisk'>Zip Code:</label>
+              <label for='billingZipCode' name='billingZipCode' class='required-asterisk'>Zip / Postal Code:</label>
               <input type='text' id='billingZipCode' name='billing.address.zip' class='required zipCodeValidation' />
             </div>
           </div>
