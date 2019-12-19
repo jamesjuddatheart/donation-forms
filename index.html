@@ -62,6 +62,9 @@
 	    <input type="hidden" name="is_hon_memorial" value="false" />
 	    <input type="hidden" name="tribute.type" value="" /> <!-- Memorial | Tribute | empty -->
 	    <input type="hidden" name="amount1" id="amount1" value="">
+	    <input type='hidden' name='donor.address.state' value="" />
+	    <input type='hidden' name='billing.address.state' value="" />
+
 	    <!-- <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/> -->
 	    <input type="hidden" name="remember_me" id="remember_me" value="true" />
 	    <input type="hidden" name="card_option" id="card_option" value="" />
@@ -555,11 +558,13 @@
               <label for='city' class='required-asterisk'>City:</label>
               <input type='text' id='city'  name='donor.address.city' class='required' />
             </div>
+            <div class='input-group col-xs-7 col-sm-6 col-md-6 select-box hidden'>
+              <label for='province' class='required-asterisk'>State / Province:</label>
+              <input type='text' id='province' name='donorProvince' class='required' />
+            </div>
             <div class='input-group col-xs-7 col-sm-6 col-md-6 select-box'>
-              <label for='state' name='state' class='required-asterisk'>State:</label>
-              <input type='text' id='state'  name='donor.address.state' class='required' />
-	      <!-- 
-              <select id='state'  name='donor.address.state' class='required'>
+              <label for='donorState' class='required-asterisk'>State:</label>
+              <select id='donorState' name='donorState' class='required'>
                 <option value='' selected disabled>Please select</option>
                 <option value='AL'>Alabama</option>
                 <option value='AK'>Alaska</option>
@@ -623,7 +628,7 @@
 		<option value="AA">AA - Armed Forces Americas</option>
 		<option value="AE">AE - Armed Forces</option>
 		<option value="AP">AP - Armed Forces Pacific</option>
-              </select> -->
+              </select>
             </div>
             <div class='input-group col-xs-7 col-sm-6 col-md-6 select-box'>
 		<label for='country' name='country' class='required-asterisk'>Country:</label>
@@ -919,11 +924,13 @@
               <label for='billingCity' name='billingCity' class='required-asterisk'>City:</label>
               <input type='text' id='billingCity' name='billing.address.city' class='required' />
             </div>
+            <div class='input-group col-xs-7 col-sm-3 col-md-6 select-box hidden'>
+              <label for='billingProvince' class='required-asterisk'>State / Province:</label>
+	      <input type='text' id='billingProvince' name='billingProvince' class='required hidden' />
+            </div>
             <div class='input-group col-xs-7 col-sm-3 col-md-6 select-box'>
-              <label for='billingState' name='billingState' class='required-asterisk'>State:</label>
-              <input type='text' id='billingState' name='billing.address.state' class='required' />
-  	      <!--
-	      <select id='billingState' name='billing.address.state' class='required'>
+              <label for='billingState' class='required-asterisk'>State:</label>
+	      <select id='billingState' name='billingState' class='required'>
                 <option value='' selected disabled>Please select</option>
                 <option value='AL'>Alabama</option>
                 <option value='AK'>Alaska</option>
