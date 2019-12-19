@@ -380,7 +380,7 @@ $('#billingState').change(function(){
    $('#billing.address.state').val($(this).text());
 });
 $('select#country').change(function(){
-   if ($(this).text() != "United States") {
+   if ($(this).val() != "United States") {
 	$('.input-group.state').addClass('hidden');
 	$('.input-group.province').removeClass('hidden');
    } else {
@@ -389,7 +389,7 @@ $('select#country').change(function(){
    }
 });
 $('select#billingCountry').change(function(){
-   if ($(this).text() != "United States") {
+   if ($(this).val() != "United States") {
 	$('.input-group.bstate').addClass('hidden');
 	$('.input-group.bprovince').removeClass('hidden');
    } else {
