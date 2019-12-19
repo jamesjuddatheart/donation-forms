@@ -374,10 +374,10 @@ $('#city, #state').blur(function(){
 });
 
 $('#donorState').change(function(){
-   $('input[name="donor.address.state"]').val($(this).text());
+   $('input[name="donor.address.state"]').val($(this).val());
 });
 $('#billingState').change(function(){
-   $('input[name="billing.address.state"]').val($(this).text());
+   $('input[name="billing.address.state"]').val($(this).val());
 });
 $('select#country').change(function(){
    if ($(this).val() != "United States") {
