@@ -385,9 +385,13 @@ $('select#country').change(function(){
    if ($(this).val() != "United States") {
 	$('.input-group.state').addClass('hidden');
 	$('.input-group.province').removeClass('hidden');
+	$('.input-group.bstate').addClass('hidden');
+	$('.input-group.bprovince').removeClass('hidden');
    } else {
 	$('.input-group.province').addClass('hidden');
 	$('.input-group.state').removeClass('hidden');
+	$('.input-group.bprovince').addClass('hidden');
+	$('.input-group.bstate').removeClass('hidden');
    }
 });
 $('select#billingCountry').change(function(){
