@@ -22,7 +22,7 @@ jQuery("select#country").change(function(){
 	   jQuery.each(data,function(index,state) {
 	      statehtml += "<option value='" + state + "'>" + state + "</option>";
 	   });
-	   statehtml += "<option value='none'>None</option>";
+	   statehtml += "<option value='none'>N/A</option>";
 	   jQuery("select#state").append(statehtml);
 	});
 });
