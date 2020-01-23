@@ -4,6 +4,27 @@
 		$(this).find('.icon').addClass("active");
 	});
 */
+/* build country dropdown */
+var selhtml = "";
+var countryList = {};
+jQuery("select#country option").remove();
+jQuery.getJSON("/donation-form-data/country_code_key.txt",function(data){
+	jQuery.each(data,function(index,country) {
+		countryList[country["countryname"]] = country["countrycode"];
+		selhtml += "<option value='" + country["countryname"] + "' " + ((country["countryname"] == "United States") ? "selected" : "") + ">" + country["countryname"] + "</option>";
+	});
+	jQuery("select#country").append(selhtml);
+});
+
+jQuery("select#country").change(function(){
+	var statehtml = "";
+	jQuery.getJSON("/donation-form-data/country_" + countryList[this.value] + ".txt",function(data){
+	   jQuery.each(data,function(index,state) {
+	      statehtml += "<option value='" + state + "'>" + state + "</option>";
+	   });
+	   jQuery("select#state").append(statehtml);
+	});
+});
 
 function showLevels(frequency,level) {
 	$('input[name=level_id]').val(level);
@@ -376,12 +397,12 @@ $('#city, #state').blur(function(){
 $('#donorState').change(function(){
    $('input[name="donor.address.state"]').val($(this).find('option:selected').val());
    $('input[name="billing.address.state"]').val($(this).find('option:selected').val());
-   $('#billingState').val($(this).val());
+   $('#billingStatex').val($(this).val());
 });
-$('#billingState').change(function(){
+$('#billingStatex').change(function(){
    $('input[name="billing.address.state"]').val($(this).find('option:selected').val());
 });
-$('select#country').change(function(){
+$('select#countryx').change(function(){
    if ($(this).val() != "United States") {
 	$('.input-group.state').addClass('hidden');
 	$('.input-group.province').removeClass('hidden');
@@ -394,7 +415,7 @@ $('select#country').change(function(){
 	$('.input-group.bstate').removeClass('hidden');
    }
 });
-$('select#billingCountry').change(function(){
+$('select#billingCountryx').change(function(){
    if ($(this).val() != "United States") {
 	$('.input-group.bstate').addClass('hidden');
 	$('.input-group.bprovince').removeClass('hidden');
