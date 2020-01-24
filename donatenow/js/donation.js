@@ -10,7 +10,7 @@ var countryList = {};
 jQuery("select#country option, select#billingCountry option").remove();
 jQuery.getJSON("/donation-form-data/country_code_key.txt",function(data){
 	jQuery.each(data,function(index,country) {
-		countryList[country["countryname"]] = country["countrycode"];
+		countryList[country["countryname"].replace("'","_")] = country["countrycode"];
 		selhtml += "<option value='" + country["countryname"] + "' " + ((country["countryname"] == "United States") ? "selected" : "") + ">" + country["countryname"] + "</option>";
 	});
 	jQuery("select#country, select#billingCountry").append(selhtml);
@@ -19,7 +19,7 @@ jQuery.getJSON("/donation-form-data/country_code_key.txt",function(data){
 jQuery("select#country").change(function(){
 	jQuery("select#state option, select#billingState option").remove();
 	var statehtml = "<option value=''>Please select</option>";
-	jQuery.getJSON("/donation-form-data/country_" + countryList[this.value] + ".txt",function(data){
+	jQuery.getJSON("/donation-form-data/country_" + countryList[this.value.replace("'","_")] + ".txt",function(data){
 	   jQuery.each(data,function(index,state) {
 	      statehtml += "<option value='" + state + "'>" + state + "</option>";
 	   });
