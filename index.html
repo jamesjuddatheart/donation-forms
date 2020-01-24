@@ -811,13 +811,9 @@
               <label for='city' class='required-asterisk'>City:</label>
               <input type='text' id='city'  name='donor.address.city' class='required' />
             </div>
-            <div class='input-group col-xs-12 col-sm-4 col-md-4 select-box hidden province'>
-              <label for='province' class='required-asterisk'>State / Province:</label>
-              <input type='text' id='province' name='donor.address.state' class='required' />
-            </div>
-            <div class='input-group col-xs-12 col-sm-4 col-md-4 select-box state'>
-              <label for='donorState' class='required-asterisk'>State:</label>
-              <select id='donorState' name='donorState' class='required'>
+            <div class='input-group col-xs-12 col-sm-4 col-md-4'>
+              <label for='state' class='required-asterisk'>State / Province:</label>
+              <select id='state' name='donor.address.state' class='required'>
                 <option value='' selected disabled>Please select</option>
                 <option value='AL'>Alabama</option>
                 <option value='AK'>Alaska</option>
@@ -1177,13 +1173,9 @@
               <label for='billingCity' name='billingCity' class='required-asterisk'>City:</label>
               <input type='text' id='billingCity' name='billing.address.city' class='required' />
             </div>
-            <div class='input-group col-xs-12 col-sm-4 col-md-4 select-box hidden bprovince'>
-              <label for='billingProvince' class='required-asterisk'>State / Province:</label>
-	      <input type='text' id='billingProvince' name='billing.address.state' class='required' />
-            </div>
-            <div class='input-group col-xs-12 col-sm-4 col-md-4 select-box bstate'>
+            <div class='input-group col-xs-12 col-sm-4 col-md-4'>
               <label for='billingState' class='required-asterisk'>State:</label>
-	      <select id='billingState' name='billingState' class='required'>
+	      <select id='billingState' name='billing.address.state' class='required'>
                 <option value='' selected disabled>Please select</option>
                 <option value='AL'>Alabama</option>
                 <option value='AK'>Alaska</option>
