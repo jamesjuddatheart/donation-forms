@@ -10,7 +10,7 @@ var countryList = {};
 jQuery("select#country option, select#billingCountry option").remove();
 jQuery.getJSON("/donation-form-data/country_code_key.txt",function(data){
 	jQuery.each(data,function(index,country) {
-		countryList[country["countryname"] = country["countrycode"];
+		countryList[country["countryname"]] = country["countrycode"];
 		selhtml += '<option value="' + country["countryname"] + '" ' + ((country["countryname"] == "United States") ? "selected" : "") + '>' + country["countryname"] + '</option>';
 	});
 	jQuery("select#country, select#billingCountry").append(selhtml);
