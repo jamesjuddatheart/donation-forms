@@ -44,7 +44,7 @@
 	    <input type="hidden" name="recurring" value="[[?xtruex::x[[S80:sustainer_default]]x::true::]]" />
 	    <input type="hidden" name="extproc" value="" />
 	    <input type="hidden" name="finish_error_redirect" value="[[S8]]">
-	    <input type="hidden" name="finish_success_redirect" value="[[S80:paypal_thankyou]]">
+	    <input type="hidden" name="finish_success_redirect" value="[[S80:paypal_thankyou]]#cons_id=${donationResponse/donation/cons_id}&amount=${donationResponse/donation/amount/formatted}&confirmation_code=${donationResponse/donation/confirmation_code}&form=[[S80:form_id]]">
 	    <input type="hidden" name="method" value="donate" />
 	    <input type="hidden" name="form_id" value="[[S80:form_id]]" /> <!-- update per ghost form ID -->
       <input type="hidden" name="form_title" value="[[S334:pagename]]" />
@@ -52,9 +52,10 @@
 	    <input type="hidden" name="source" value="[[?x[[S80:source]]x::xx::GENERAL::[[S80:source]]]]" /> <!-- update source as needed --> 
       [[?x[[S80:sub_source]]x::xx::::<input type="hidden" name="sub_source" value="[[S80:sub_source]]" />]]
 	    <input type="hidden" name="form_version" value="control" />
+	    <input type="hidden" name="gift_type" value="[[S80:gift_type]]" />
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
-	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::100::100]]" />
+	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::25::100]]" />
 	    <input type="hidden" name="level_id" value="[[?xtruex::x[[S80:sustainer_default]]x::[[S80:level_id_recurring]]::[[S80:level_id]]]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
 	    <input type="hidden" name="payment_confirmation_id" value="" />
 	    <input type="hidden" name="check_number" value="" />
@@ -63,9 +64,10 @@
 	    <input type="hidden" name="is_hon_memorial" value="false" />
 	    <input type="hidden" name="tribute.type" value="" /> <!-- Memorial | Tribute | empty -->
 	    <input type="hidden" name="amount1" id="amount1" value="">
-	    <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/>
+	<!--    <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value=""/> -->
 	    <input type="hidden" name="remember_me" id="remember_me" value="true" />
 	    <input type="hidden" name="card_option" id="card_option" value="" />
+	    <input type="hidden" name="sitecore_contact_id" id="sitecore_contact_id" value="" />
   	    <input type="hidden" name="venmo_user" id="venmo_user" value="" />
 		<input type="hidden" name="device_data" id="device_data" value=""/>
 		<input type="hidden" name="payment_method_nonce" id="payment_method_nonce" value=""/>
@@ -77,24 +79,71 @@
 		:: 
 		<!-- <input type="hidden" name="sandbox" id="sandbox" value="false">  --> 
 		]]
-        <!-- YOUR payment -->
+        <!-- YOUR GIFT -->
 		<div class='form-group'>
 		<fieldset>
-			<legend>        	<h2>Your Payment</h2></legend>
-			
+			<legend>        	<h2>Your Gift</h2></legend>
+			<div class='inline frequency' aria-label="frequency">
+			[[?xtruex::x[[S80:sustainer_default]]x::
+				<div class='input-group radio-group' aria-labelledby= 'occurrence2'>
+					<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' checked data-level=[[S80:level_id_recurring]] data-frequency="recurring"/>
+					<label for='occurrence2' title="Monthly Gift" aria-checked="true" >Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
+				</div>
+				<div class='input-group radio-group'  aria-labelledby= 'occurrence1'>
+					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' data-level=[[S80:level_id]] data-frequency="onetime" />
+					<label for='occurrence1' title="One-Time Gift" aria-checked="false" >One-Time Gift</label>
+				</div>
+			::
+				<div class='input-group radio-group'>
+					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' checked data-level=[[S80:level_id]] data-frequency="onetime" />
+					<label for='occurrence1' title="One-Time Gift" aria-checked="true" >One-Time Gift</label>
+				</div>
+				<div class='input-group radio-group'>
+					<input type='radio' name='occurrence' id='occurrence2' value='Monthly Gift' data-level=[[S80:level_id_recurring]] data-frequency="recurring"/>
+					<label for='occurrence2' title="Monthly Gift" aria-checked="false" >Monthly Gift <br class='visible-xs' /><span class='norm'>Help fight heart disease and stroke all year long!</span></label>
+				</div>
+			]]
+        		</div> 
 		</fieldset>
 		<!-- end occurrence options -->
 
 		<fieldset>
-
+			<div class='inline recurring display__inline-block'  aria-label="giftsel" [[?xtruex::x[[S80:sustainer_default]]x::::style="display: none;"]]>
+				<div class='input-group gift' role='group' aria-labelledby= 'gift1'> 
+					<input type='radio' name='gift' aria-label='10' id='gift1' value='$10' />
+					<button type="button" for='gift1' class='radio-label' data-amount="10" title="$10" aria-checked="false">$10</button>
+				</div>
+				<div class='input-group gift' role='group'  aria-labelledby= 'gift2'>
+					<input type='radio' name='gift' aria-label='25' id='gift2' value='$25' [[?xtruex::x[[S80:sustainer_default]]x::checked::]] />
+					<button type="button" for='gift2' class='radio-label [[?xtruex::x[[S80:sustainer_default]]x::active::]]' data-amount="25"  title="$25" aria-checked="false">$25</button>
+				</div>
+				<div class='input-group gift' role='group'  aria-labelledby= 'gift3'>
+					<input type='radio' name='gift' aria-label='35' id='gift3' value='$35' />
+					<button type="button" for='gift3' class='radio-label' data-amount="35" title="$35" aria-checked="false">$35</button>
+				</div>
+				<div class='input-group gift' role='group'  aria-labelledby= 'gift4'>
+					<input type='radio' name='gift' aria-label='50' id='gift4' value='$50' />
+					<button type="button" for='gift4' class='radio-label' data-amount="50" title="$50" aria-checked="false">$50</button>
+				</div>
+			</div> <!-- end recurring -->
 
 			<div class='inline onetime display__inline-block'  aria-label="giftsel2" [[?xtruex::x[[S80:sustainer_default]]x::style="display: none;"::]]>
 					<div class='input-group gift' role='group'  aria-labelledby= 'gift5'>
-						<input type='radio' name='gift' aria-label='100' id='gift5' value='$100' [[?xtruex::x[[S80:sustainer_default]]x::::checked]]/>
-						<button type="button" for='gift5' class='radio-label  [[?xtruex::x[[S80:sustainer_default]]x::::active]]' data-amount="100" title="$100" aria-checked="false">$100</button>
+						<input type='radio' name='gift' aria-label='40' id='gift5' value='$40'/>
+						<button type="button" for='gift5' class='radio-label' data-amount="40" title="$40" aria-checked="false">$40</button>
 					</div>
-				
-					
+					<div class='input-group gift' role='group'  aria-labelledby= 'gift6'>
+						<input type='radio' name='gift' aria-label='60' id='gift6' value='$60'/>
+						<button type="button" for='gift6' class='radio-label' data-amount="60"  title="$60" aria-checked="false">$60</button>
+					</div>
+					<div class='input-group gift' role='group'  aria-labelledby= 'gift7'>
+						<input type='radio' name='gift' aria-label='100' id='gift7' value='$100' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
+						<button type="button" for='gift7' class='radio-label [[?xtruex::x[[S80:sustainer_default]]x::::active]]' data-amount="100"  title="$100" aria-checked="false">$100</button>
+					</div>
+					<div class='input-group gift' role='group'  aria-labelledby= 'gift8'>
+						<input type='radio' name='gift' aria-label='250' id='gift8' value='$250'/>
+						<button type="button" for='gift8' class='radio-label' data-amount="250"  title="$250" aria-checked="false">$250</button>
+					</div>
 				</div> <!-- end 1x -->
 				<!-- OTHER - amount passed to ghost form -->
 				<div class='input-group gift display__inline-block' role='group'  aria-labelledby= 'giftOther'>
@@ -102,7 +151,12 @@
 					<label for="giftOtherText" style="height:0;width:0;text-indent:-9999px">Other Amount: </label>
 					<input type='text' class='radio-input' id='giftOtherText' maxlength='10' placeholder='$ Other' title="Enter a value $10 or greater"  />
 				</div>
+			  <div class='input-group checkBox col-xs-12 col-sm-12'>
+              <input type='checkbox' name='brooch_opt_outsubmit' id='brooch_opt_outsubmit' value='False'  />
+              <label for='brooch_opt_outsubmit'>Please do not send me a complimentary gift. </label>
+            </div>
 			</div>
+			
 		</fieldset>
 		<!-- end form-group -->
         <!-- END YOUR GIFT -->
@@ -162,10 +216,7 @@
               <label for='emailAddress' name='emailAddress' class='required-asterisk'>Email Address:</label>
               <input type='email' id='emailAddress' name='donor.email' class='required' />
             </div>
-            <div class='input-group checkBox col-xs-12 col-sm-12'>
-              <input type='checkbox' name='donor.email_opt_in' id='recieveEmail' value='true' checked />
-              <label for='recieveEmail'>Yes, I'd like to receive email from American Heart Association</label>
-            </div>
+          
             <div class='input-group col-xs-12 col-sm-12 text-field'>
               <label for='streetAddress1' name='streetAddress1' class='required-asterisk'>Street Address 1:</label>
               <input type='text' id='streetAddress1' name='donor.address.street1' class='required' />
@@ -233,6 +284,17 @@
                 <option value='WV'>West Virginia</option>
                 <option value='WI'>Wisconsin</option>
                 <option value='WY'>Wyoming</option>
+                <option value="AS">American Samoa</option>
+                <option value="FM">Federated States of Micronesia</option>
+                <option value="GU">Guam</option>
+                <option value="MH">Marshall Islands</option>
+                <option value="MP">Northern Mariana Islands</option>
+                <option value="PR">Puerto Rico</option>
+                <option value="PW">Palau</option>
+                <option value="VI">Virgin Islands</option>
+                <option value="AA">AA - Armed Forces Americas</option>
+                <option value="AE">AE - Armed Forces</option>
+                <option value="AP">AP - Armed Forces Pacific</option>
               </select>
             </div>
             <div class='input-group col-xs-5 col-sm-6 col-md-3 text-field'>
@@ -327,6 +389,17 @@
                 <option value='WV'>West Virginia</option>
                 <option value='WI'>Wisconsin</option>
                 <option value='WY'>Wyoming</option>
+                <option value="AS">American Samoa</option>
+                <option value="FM">Federated States of Micronesia</option>
+                <option value="GU">Guam</option>
+                <option value="MH">Marshall Islands</option>
+                <option value="MP">Northern Mariana Islands</option>
+                <option value="PR">Puerto Rico</option>
+                <option value="PW">Palau</option>
+                <option value="VI">Virgin Islands</option>
+                <option value="AA">AA - Armed Forces Americas</option>
+                <option value="AE">AE - Armed Forces</option>
+                <option value="AP">AP - Armed Forces Pacific</option>
               </select>
             </div>
             <div class='input-group col-xs-5 col-sm-3 text-field'>
@@ -454,15 +527,25 @@
         </div>
         <!-- END PAYMENT INFORMATION -->
 
-      <div class='button-ssl'>
-        	<button type='button' class='submit' id='donate-submit'>Pay Renewal Fee</button>
+        <div class='button-ssl'>
+        	<button type='button' class='submit' id='donate-submit'>Send My Gift</button>
 		<!-- button added for accessiblity testing -->
 		<input type="submit" value="submit" style="display:none;" onclick="return false;">
         	<div class='ssl'>
         		<img src='../donation-forms/donatenow/images/comodo-secure-icon.png' alt='Comodo Secure Image' /><a href='https://ssl.comodo.com/'>SSL Certificate</a>
         	</div>
         </div>
-     
+        <div class='row bottom-links'>
+          <div class='col-xs-12 col-sm-5'>
+            <a href='https://www.heart.org/idc/groups/heart-public/@wcm/@tcs/documents/downloadable/ucm_430364.pdf'>I Prefer to Mail My Memorial or Tribute Gift</a>
+          </div>
+          <div class='col-xs-12 col-sm-4'>
+            <a href='https://www.heart.org/idc/groups/heart-public/@wcm/@tcs/documents/downloadable/ucm_430363.pdf'>I Prefer to Mail My Donation</a>
+          </div>
+          <div class='col-xs-12 col-sm-3'>
+            <a href='http://www.heart.org/HEARTORG/Giving/ForIndividuals/OtherWaystoGive/OtherWaystoGive_UCM_001143_SubHomePage.jsp'>Other Ways to Give</a>
+          </div>
+        </div>
       </form>
     </section>
     <!-- END MAIN CONTENT -->

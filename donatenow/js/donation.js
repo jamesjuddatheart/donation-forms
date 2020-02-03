@@ -4,6 +4,29 @@
 		$(this).find('.icon').addClass("active");
 	});
 */
+/* build country dropdown */
+var selhtml = "";
+var countryList = {};
+jQuery("select#country option, select#billingCountry option").remove();
+jQuery.getJSON("/donation-form-data/country_code_key.txt",function(data){
+	jQuery.each(data,function(index,country) {
+		countryList[country["countryname"]] = country["countrycode"];
+		selhtml += '<option value="' + country["countryname"] + '" ' + ((country["countryname"] == "United States") ? "selected" : "") + '>' + country["countryname"] + '</option>';
+	});
+	jQuery("select#country, select#billingCountry").append(selhtml);
+});
+
+jQuery("select#country").change(function(){
+	jQuery("select#state option, select#billingState option").remove();
+	var statehtml = "<option value=''>Please select</option>";
+	jQuery.getJSON("/donation-form-data/country_" + countryList[this.value] + ".txt",function(data){
+	   jQuery.each(data,function(index,state) {
+	      statehtml += "<option value='" + state + "'>" + state + "</option>";
+	   });
+	   statehtml += "<option value='none'>N/A</option>";
+	   jQuery("select#state, select#billingState").append(statehtml);
+	});
+});
 
 function showLevels(frequency,level) {
 	$('input[name=level_id]').val(level);
@@ -371,6 +394,37 @@ $('#city, #state').blur(function(){
 	}
 	successURL = successURL + params;
 	$('input[name=finish_success_redirect]').val(successURL);
+});
+
+$('#donorState').change(function(){
+   $('input[name="donor.address.state"]').val($(this).find('option:selected').val());
+   $('input[name="billing.address.state"]').val($(this).find('option:selected').val());
+   $('#billingStatex').val($(this).val());
+});
+$('#billingStatex').change(function(){
+   $('input[name="billing.address.state"]').val($(this).find('option:selected').val());
+});
+$('select#countryx').change(function(){
+   if ($(this).val() != "United States") {
+	$('.input-group.state').addClass('hidden');
+	$('.input-group.province').removeClass('hidden');
+	$('.input-group.bstate').addClass('hidden');
+	$('.input-group.bprovince').removeClass('hidden');
+   } else {
+	$('.input-group.province').addClass('hidden');
+	$('.input-group.state').removeClass('hidden');
+	$('.input-group.bprovince').addClass('hidden');
+	$('.input-group.bstate').removeClass('hidden');
+   }
+});
+$('select#billingCountryx').change(function(){
+   if ($(this).val() != "United States") {
+	$('.input-group.bstate').addClass('hidden');
+	$('.input-group.bprovince').removeClass('hidden');
+   } else {
+	$('.input-group.bprovince').addClass('hidden');
+	$('.input-group.bstate').removeClass('hidden');
+   }
 });
 
 function updateSubmitText() {

@@ -23,10 +23,6 @@ ga('require', 'GTM-M37NXBT');
 ga('send', 'pageview');
 
 
-ga('create', 'UA-12551341-7', 'auto', 't2', {'allowLinker': true});
-ga('t2.require', 'linker');
-ga('t2.linker:autoLink', ['heart.org']);      // Domains that are linked from this page.
-ga('t2.send', 'pageview');                          // Send hits after initializing the auto-linker plug-in.
 
 /*
 	var _gaq = _gaq || [];
