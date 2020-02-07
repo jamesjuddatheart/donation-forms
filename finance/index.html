@@ -53,7 +53,7 @@
 	    <input type="hidden" name="form_version" value="control" />
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
-	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::25::100]]" />
+	 <!--   <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::25::100]]" /> -->
 	    <input type="hidden" name="level_id" value="[[?xtruex::x[[S80:sustainer_default]]x::[[S80:level_id_recurring]]::[[S80:level_id]]]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
 	    <input type="hidden" name="payment_confirmation_id" value="" />
 	    <input type="hidden" name="check_number" value="" />
@@ -150,13 +150,13 @@
              <input type='text' name='company_name' id='company_name' />
 		  </div>
 					 <div class='input-group col-xs-12 col-sm-6 text-field'>
-	<label for='company_name' name='company_name' class='required-asterisk'>Invoice Number:<br> (as indicated on your invoice) </label>
+	<label for='number' name='number' class='required-asterisk'>Invoice Number:<br> (as indicated on your invoice) </label>
 
-             <input type='text' name='company_name' id='company_name' />
+             <input type='text' name='number' id='number' />
 		  </div>
 	 <div class='input-group col-xs-12 col-sm-6 text-field'>
-	<label for='company_name' name='company_name' class='required-asterisk'>Company Name: </label>
-             <input type='text' name='company_name' id='company_name' />
+	<label for='customer_number' name='customer_number' class='required-asterisk'>Customer Number: </label>
+             <input type='text' name='customer_number' id='customer_number' />
 		  </div>
             <div class='input-group col-xs-12 col-sm-9 text-field'>
               <label for='emailAddress' name='emailAddress' class='required-asterisk'>Email Address:</label>
