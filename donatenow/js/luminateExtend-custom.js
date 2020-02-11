@@ -89,7 +89,7 @@
 		return (/(^\d{5}$)|(^\d{5}-\d{4}$)/).test(value); // returns boolean
 	}, "Please enter a valid US zip code (use a hyphen if 9 digits).");
 	    
-      $('#donate-submit').click(function() {
+      $('#donate-submit, #donate-submit-general').click(function() {
 		if ($(form).valid()) {
 			switch ($('#PaymentType').val()) {
 				case "cc" : 
