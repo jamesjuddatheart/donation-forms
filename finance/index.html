@@ -110,7 +110,7 @@
 				<div class='input-group gift display__inline-block' role='group'  aria-labelledby= 'giftOther'>
 					<input type='radio' name='gift' id='giftOther' value='' disabled title="Enter Gift Amount"/>
 					<label for="giftOtherText" style="height:0;width:0;text-indent:-9999px">Gift Amount: </label>
-					<input type='text' class='amount-input' id='giftOtherText' maxlength='10' placeholder='$ $ $' title="Enter a value $10 or greater" inputmode="numeric" style="max-width: 190px;" />
+					<input type='text' class='amount-input' id='giftOtherText' maxlength='10' placeholder='$' title="Enter a value $10 or greater" inputmode="numeric" style="max-width: 190px;" />
 				</div>
 			</div>
 		</fieldset>
@@ -145,17 +145,16 @@
               <label for='lastName' name='lastName' class='required-asterisk'>Last Name:</label>
               <input type='text' id='lastName' name='donor.name.last' class='required' />
             </div>
-			 <div class='input-group col-xs-12 col-sm-6 text-field'>
-	<label for='company_name' name='company_name' class='required-asterisk'>Customer Number:<br> (as indicated on your invoice) </label>
+			 <div class='input-group col-xs-12 col-sm-12 text-field'>
+	<label for='company_name' name='company_name'>Company Name: </label>
              <input type='text' name='company_name' id='company_name' />
 		  </div>
 					 <div class='input-group col-xs-12 col-sm-6 text-field'>
 	<label for='number' name='number' class='required-asterisk'>Invoice Number:<br> (as indicated on your invoice) </label>
-
              <input type='text' name='number' id='number' />
 		  </div>
 	 <div class='input-group col-xs-12 col-sm-6 text-field'>
-	<label for='customer_number' name='customer_number' class='required-asterisk'>Customer Number: </label>
+	<label for='customer_number' name='customer_number' class='required-asterisk'>Customer Number: <br> (as indicated on your invoice) </label>
              <input type='text' name='customer_number' id='customer_number' />
 		  </div>
             <div class='input-group col-xs-12 col-sm-9 text-field'>
@@ -163,7 +162,7 @@
               <input type='email' id='emailAddress' name='donor.email' class='required' />
             </div>
             <div class='input-group checkBox col-xs-12 col-sm-12'>
-              <input type='checkbox' name='donor.email_opt_in' id='recieveEmail' value='true' checked />
+              <input type='checkbox' name='donor.email_opt_in' id='recieveEmail' value='false' />
               <label for='recieveEmail'>Yes, I'd like to receive email from American Heart Association</label>
             </div>
             <div class='input-group col-xs-12 col-sm-6 col-md-6 select-box'>
@@ -908,10 +907,10 @@
               <input type='radio' name='payment' id='payment5' value='Venmo payments' />
               <label for='payment5'  title="Venmo" aria-checked="false" ><span class='venmo text-hide' aria-label="Venmo payments" alt="Venmo payments">Venmo payments</span></label>
             </div>
-            <div class='input-group radio-group radio-googlepay hidden'>
+        <!--    <div class='input-group radio-group radio-googlepay hidden'>
               <input type='radio' name='payment' id='payment6' value='GooglePay payments' />
               <label for='payment6'  title="GooglePay" aria-checked="false"><span class='googlepay text-hide' aria-label="GooglePay payments" alt="GooglePay payments">GooglePay payments</span></label>
-            </div>
+            </div> -->
 		</fieldset>
           </div>
           <div class='inline row' id='payment1form'>
@@ -999,7 +998,7 @@
         <!-- END PAYMENT INFORMATION -->
 		
         <div class='button-ssl'>
-        	<button type='button' class='submit' id='donate-submit-general'>Send My Gift</button>
+        	<button type='button' class='submit' id='donate-submit-general'>Submit Payment</button>
 		<!-- button added for accessiblity testing -->
 		<input type="submit" value="submit" style="display:none;" onclick="return false;">
         	<div class='ssl'>
