@@ -445,6 +445,20 @@ function updateSubmitText() {
 	}
 }
 updateSubmitText();
+
+const formatter = new Intl.NumberFormat('en-US', {
+	style: 'currency',
+	currency: 'USD',
+	minimumFractionDigits: 2
+});
+
+$('.amount-input').blur(function(){
+	if (this.value != "") {
+		this.value=this.value.replace('.00', '').replace('$','').replace(',','');
+		$('input[name=other_amount]').val(this.value);
+		jQuery("#giftOtherText").val(formatter.format(this.value));
+	}
+});
 /*
 $('#tributeType input[name^="year"]').click(function() {
   var radioval = $(this).val();

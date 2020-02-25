@@ -1046,7 +1046,8 @@ form .form-group .input-group.gift .radio-label.active {
   background-color: #d40000;
   color: #fff;
 }
-form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
+form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input,
+form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].amount-input {
     font-size: 25px;
     font-weight: normal;
     font-family: Montserrat, lub dub;
@@ -1061,10 +1062,12 @@ form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radi
     color: #000;
 }
 
-form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input.active {
+form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input.active,
+form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].amount-input.active {
   border: 1px solid #d40000;
 }
-form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input.error {
+form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input.error,
+form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].amount-input.error {
   border: 2px solid #d40000;
 }
 form .form-group .input-group.select-box label,
@@ -1734,7 +1737,8 @@ footer ul li a:focus {
     transition: 0.5s all ease;
   }
 
-  form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input {
+  form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].radio-input,
+  form .form-group .input-group.gift input[type="radio"] ~ input[type="text"].amount-input {
     font-size: 25px;
     font-weight: normal;
     font-family: Montserrat, lub dub;
