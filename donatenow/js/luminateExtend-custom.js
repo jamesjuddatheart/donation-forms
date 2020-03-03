@@ -72,7 +72,7 @@
 		function(value, element) {
 			element.value=element.value.replace("$","");
 			value = element.value;
-			if (value >= 10 && < 50001) {
+			if (value >= 10 && value <= 100000) {
 				return true;
 			} else {
 				return false;
