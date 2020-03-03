@@ -78,7 +78,7 @@
 				return false;
 			}
 		},
-		"Please enter an between $10 and $50000."
+		"Please enter an amount between $10 and $50000."
 	);
 	    
 	$.validator.addMethod("tos", function(value, element) {
