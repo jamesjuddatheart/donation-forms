@@ -72,13 +72,13 @@
 		function(value, element) {
 			element.value=element.value.replace("$","");
 			value = element.value;
-			if (value >= 10) {
+			if (value >= 10 && value <= 100000) {
 				return true;
 			} else {
 				return false;
 			}
 		},
-		"Please enter an amount $10 or greater"
+		"Please enter an amount between $10 and $50000."
 	);
 	    
 	$.validator.addMethod("tos", function(value, element) {
