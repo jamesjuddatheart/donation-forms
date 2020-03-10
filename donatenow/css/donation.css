@@ -1833,8 +1833,8 @@ footer ul li a:focus {
 }
 
 @media only screen and (max-width: 768px) {
-   .main-content h1 {
-  font-size: 28px;
+ .main-content h1 {
+  font-size: 30px;
   font-weight: 500;
   color: #000000;
   padding: 0 8px;
@@ -1846,7 +1846,11 @@ footer ul li a:focus {
  font-weight: 500;
  color: #000000;
  font-family: 'Montserrat', sans-serif;
-
+}
+form .form-group {
+    background: white;
+    margin-top: 5px;
+    padding: 6px 10px;
 }
   .sidebar {
     width: auto;
