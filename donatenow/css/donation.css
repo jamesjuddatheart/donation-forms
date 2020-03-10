@@ -1852,6 +1852,22 @@ form .form-group {
     margin-top: 5px;
     padding: 6px 10px;
 }
+.navbar .header-right .livechat .livechat-text {
+    font-size: 10px;
+    font-weight: bold;
+    color: #000;
+}
+.navbar .header-right .phone .phone-text {
+    font-size: 10px;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+}
+.navbar .header-right .phone a {
+    font-size: 10px;
+    font-weight: bold;
+    color: #d40000;
+}
   .sidebar {
     width: auto;
     display: none !important;
