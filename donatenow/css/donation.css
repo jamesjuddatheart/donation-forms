@@ -1868,6 +1868,16 @@ form .form-group {
     font-weight: bold;
     color: #d40000;
 }
+.navbar .header-right .livechat a {
+    background-image: url(../images/chat-icon.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 29px;
+    height: 29px;
+    vertical-align: middle;
+    margin-left: 3px;
+}
   .sidebar {
     width: auto;
     display: none !important;
