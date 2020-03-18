@@ -41,7 +41,7 @@ jQuery(document).ready(function($) {
 	includeCustomFBPixel(amt);
 	
 	/* ECOMMERCE TRACKING CODE */ 
-	ga('require', 'ecommerce');
+	/*ga('require', 'ecommerce');
 	ga('ecommerce:addTransaction', {
 	  'id': ref,
 	  'affiliation': 'AHA PayPal Donation',
@@ -51,6 +51,7 @@ jQuery(document).ready(function($) {
 	});
 	ga('ecommerce:send');
 	ga('send', 'pageview', '/donateok.asp');
+	*/
 	
 	pushDonationSuccessToDataLayer(form, ref, amt);
 });
