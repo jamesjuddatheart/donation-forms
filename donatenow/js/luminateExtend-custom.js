@@ -914,6 +914,7 @@ $('[name^=donor\\.]').each(function(){
 
 	// Legacy Tribute Settings
 	if (location.href.indexOf("donatenow_legacy") > 0 ||
+	    location.href.indexOf("legacycom_pdmedia") > 0 || 
       location.href.indexOf("donatenow_byard_jones_heart_health_fund") > 0) {
     		$('#tribGift1').click();
 		$('#tributeType > option:nth-child(3)').attr("selected", true)
