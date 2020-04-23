@@ -81,7 +81,8 @@
         <!-- YOUR GIFT -->
 		<div class='form-group'>
 		<fieldset>
-			<legend>        	<h2>Payment Amount</h2></legend>
+			<legend>        	<h2>Payment Amount<span class='lock'></span></h2>
+</legend>  <span class='required-field'>(*Required fields)</span>
 			<hr> 
 			<div class='inline frequency' aria-label="frequency">
 			[[?xtruex::x[[S80:sustainer_default]]x::
@@ -108,7 +109,7 @@
 				</div> <!-- end 1x -->
 				<!-- OTHER - amount passed to ghost form -->
 				<div class='input-group gift display__inline-block' role='group'  aria-labelledby= 'giftOther'>
-					<input type='radio' name='gift' id='giftOther' value='' disabled title="Enter Gift Amount"/>
+					<input type='radio' name='gift' id='giftOther' value='' disabled title="Enter Gift Amount" class='required'/>
 					<label for="giftOtherText" style="height:0;width:0;text-indent:-9999px" class='required-asterisk'>Gift Amount:</label>
 					<input type='text' class='amount-input' id='giftOtherText' maxlength='10' placeholder='$' title="Enter a value between $10 and $50000" inputmode="numeric" style="max-width: 193px;" class='required'/>
 					<p style = "font-size=8px">Minimum $10<br>
