@@ -53,7 +53,7 @@
 	    <input type="hidden" name="form_version" value="control" />
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
-	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::25::100]]" />
+	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::25::5000]]" />
 	    <input type="hidden" name="level_id" value="[[?xtruex::x[[S80:sustainer_default]]x::[[S80:level_id_recurring]]::[[S80:level_id]]]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
 	    <input type="hidden" name="payment_confirmation_id" value="" />
 	    <input type="hidden" name="check_number" value="" />
@@ -81,59 +81,56 @@
         <!-- YOUR GIFT -->
 		<div class='form-group'>
 		<fieldset>
-			<legend>        	<h2>Payment Amount<span class='lock'></span></h2>
-</legend>  <span class='required-field'>(*Required fields)</span>
+			<legend>        	<h2>Your Gift</h2></legend>
 			<hr> 
 			<div class='inline frequency' aria-label="frequency">
-			[[?xtruex::x[[S80:sustainer_default]]x::
-				
-				<div class='input-group radio-group'  aria-labelledby= 'occurrence1'>
+		
+				 <!-- <div class='input-group radio-group'  aria-labelledby= 'occurrence1'>
 					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' data-level=[[S80:level_id]] data-frequency="onetime" />
-					<label for='occurrence1' title="One-Time Gift" aria-checked="false" >Amount</label>
-				</div>
-			::
-				<div class='input-group radio-group'>
-					<input type='radio' name='occurrence' id='occurrence1' value='One-Time Gift' class='active' checked data-level=[[S80:level_id]] data-frequency="onetime" class='required-asterisk'/>
-					<label for='occurrence1' title="One-Time Gift" aria-checked="true" class='required-asterisk' >Amount</label>
-				</div>
-				
-			]]
+					 <label for='occurrence1' title="One-Time Gift" aria-checked="false" >One-Time Gift</label> 
+				</div> -->
+			
         		</div> 
 		</fieldset>
 		<!-- end occurrence options -->
 
 		<fieldset>
-			
+		
+
 			<div class='inline onetime display__inline-block'  aria-label="giftsel2" [[?xtruex::x[[S80:sustainer_default]]x::style="display: none;"::]]>
-					
+					<div class='input-group gift' role='group'  aria-labelledby= 'gift5'>
+						<input type='radio' name='gift' aria-label='1000' id='gift5' value='$1000'/>
+						<button type="button" for='gift5' class='radio-label' data-amount="1000" title="$1000" aria-checked="false">$1000</button>
+					</div>
+					<div class='input-group gift' role='group'  aria-labelledby= 'gift6'>
+						<input type='radio' name='gift' aria-label='2500' id='gift6' value='$2500'/>
+						<button type="button" for='gift6' class='radio-label' data-amount="2500"  title="$2500" aria-checked="false">$2500</button>
+					</div>
+					<div class='input-group gift' role='group'  aria-labelledby= 'gift7'>
+						<input type='radio' name='gift' aria-label='5000' id='gift7' value='$5000' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
+						<button type="button" for='gift7' class='radio-label [[?xtruex::x[[S80:sustainer_default]]x::::active]]' data-amount="5000"  title="$5000" aria-checked="false">$5000</button>
+					</div>
+					<div class='input-group gift' role='group'  aria-labelledby= 'gift8'>
+						<input type='radio' name='gift' aria-label='10000' id='gift8' value='$10000'/>
+						<button type="button" for='gift8' class='radio-label' data-amount="10000"  title="$10000" aria-checked="false">$10000</button>
+					</div>
 				</div> <!-- end 1x -->
 				<!-- OTHER - amount passed to ghost form -->
 				<div class='input-group gift display__inline-block' role='group'  aria-labelledby= 'giftOther'>
-					<input type='radio' name='gift' id='giftOther' value='' disabled title="Enter Gift Amount" class='required'/>
-					<label for="giftOtherText" style="height:0;width:0;text-indent:-9999px" class='required-asterisk'>Gift Amount:</label>
-					<input type='text' class='amount-input required valid' id='giftOtherText' maxlength='10' placeholder='$' title="Enter a value between $10 and $50000" inputmode="numeric" style="max-width: 193px;" required="True" />
-					<p style = "font-size=8px">Minimum $10<br>
-    Maximum $50,000</p>
+					<input type='radio' name='gift' id='giftOther' value='' disabled title="Other Gift Amount"/>
+					<label for="giftOtherText" style="height:0;width:0;text-indent:-9999px">Other Amount: </label>
+					<input type='text' class='radio-input' id='giftOtherText' maxlength='10' placeholder='$ Other' title="Enter a value between $10 and $50000"  />
 				</div>
 			</div>
 		</fieldset>
 		<!-- end form-group -->
         <!-- END YOUR GIFT -->
 
-        <!-- PERSONALIZE GIFT -->
-		
-        <!-- END GIFT DEDICATION -->
-
-        <!-- GIFT DEDICATION MODAL -->
-        
-
-        
-        <!-- END GIFT DEDICATION MODAL -->
 
         <!-- PERSONAL INFORMATION -->
         <div class='form-group'>
 		<legend>
-          <h2> Customer Information
+          <h2>Your Personal Information
 <span class='lock'></span></h2>
 			</legend>
           <span class='required-field'>(*Required fields)</span>
@@ -148,32 +145,16 @@
               <label for='lastName' name='lastName' class='required-asterisk'>Last Name:</label>
               <input type='text' id='lastName' name='donor.name.last' class='required' />
             </div>
-			 <div class='input-group col-xs-12 col-sm-12 text-field'>
-	<label for='company_name' name='company_name' >Company Name: </label>
-             <input type='text' name='company_name' id='company_name'/>
-		  </div>
-					 <div class='input-group col-xs-12 col-sm-6 text-field'>
-	<label for='number' name='number' class='required-asterisk'>Invoice Number:<br>(as indicated on your invoice) </label>
-             <input type='text' name='number' id='number' class='required'/>
-		  </div>
-	 <div class='input-group col-xs-12 col-sm-6 text-field'>
-	<label for='customer_number' name='customer_number' class='required-asterisk'>Customer Number: <br>(as indicated on your invoice) </label>
-             <input type='text' name='customer_number' id='customer_number' class='required'/>
-		  </div>
-			 <div class='input-group col-xs-12 col-sm-9 text-field'>
-              <label for='donor_phone' name='donor_phone'>Phone Number:</label>
-              <input type='text' name='donor.phone' id='donor_phone'/>
-            </div>
             <div class='input-group col-xs-12 col-sm-9 text-field'>
               <label for='emailAddress' name='emailAddress' class='required-asterisk'>Email Address:</label>
               <input type='email' id='emailAddress' name='donor.email' class='required' />
             </div>
-			 
             <div class='input-group checkBox col-xs-12 col-sm-12'>
-              <input type='checkbox' name='donor.email_opt_in' id='recieveEmail' value='false' />
+              <input type='checkbox' name='donor.email_opt_in' id='recieveEmail' value='true' checked />
               <label for='recieveEmail'>Yes, I'd like to receive email from American Heart Association</label>
             </div>
-            <div class='input-group col-xs-12 col-sm-6 col-md-6 select-box'>
+<!--
+	    <div class='input-group col-xs-12 col-sm-6 col-md-6 select-box'>
 		<label for='country' name='country' class='required-asterisk'>Country:</label>
 		<select name="donor.address.country" id="country" class='required'>
 			<option value="">Please select</option>
@@ -428,6 +409,7 @@
 			<option value="Zimbabwe">Zimbabwe</option>
 		</select>
 	    </div>
+-->
             <div class='input-group col-xs-12 col-sm-12 text-field'>
               <label for='streetAddress1' name='streetAddress1' class='required-asterisk'>Street Address 1:</label>
               <input type='text' id='streetAddress1' name='donor.address.street1' class='required' />
@@ -440,13 +422,9 @@
               <label for='city' class='required-asterisk'>City:</label>
               <input type='text' id='city'  name='donor.address.city' class='required' />
             </div>
-            <div class='input-group col-xs-12 col-sm-4 col-md-4 select-box hidden province'>
-              <label for='province' class='required-asterisk'>State / Province:</label>
-              <input type='text' id='province' name='donor.address.state' class='required' />
-            </div>
-            <div class='input-group col-xs-12 col-sm-4 col-md-4 select-box state'>
-              <label for='donorState' class='required-asterisk'>State:</label>
-              <select id='donorState' name='donorState' class='required'>
+            <div class='input-group col-xs-12 col-sm-4 col-md-4 select-box'>
+              <label for='state' class='required-asterisk'>State:</label>
+              <select id='state' name='donor.address.state' class='required'>
                 <option value='' selected disabled>Please select</option>
                 <option value='AL'>Alabama</option>
                 <option value='AK'>Alaska</option>
@@ -513,7 +491,7 @@
               </select>
             </div>
             <div class='input-group col-xs-12 col-sm-4 col-md-4 text-field'>
-              <label for='zipCode' name='zipCode' class='required-asterisk'>Zip / Postal Code:</label>
+              <label for='zipCode' name='zipCode' class='required-asterisk'>Postal Code:</label>
               <input type='text' id='zipCode'  name='donor.address.zip' class='required zipCodeValidation' />
             </div>
             <div class='input-group checkBox col-xs-12 col-sm-12'>
@@ -539,6 +517,7 @@
               <label for='billingLastName' name='billingLastName' class='required-asterisk'>Last Name:</label>
               <input type='text' id='billingLastName' name='billing.name.last' class='required' />
             </div>
+<!--
             <div class='input-group col-xs-12 col-sm-6 col-md-6 select-box'>
 		<label for='billingCountry' name='billingCountry' class='required-asterisk'>Country:</label>
 		<select name="billing.address.country" id="billingCountry" class='required'>
@@ -794,6 +773,7 @@
 			<option value="Zimbabwe">Zimbabwe</option>
 		</select>
 	    </div>
+-->
             <div class='input-group col-xs-12 col-sm-12 text-field'>
               <label for='billingStreetAddress1' name='billingStreetAddress1' class='required-asterisk'>Street Address 1:</label>
               <input type='text' id='billingStreetAddress1' name='billing.address.street1' class='required' />
@@ -806,13 +786,9 @@
               <label for='billingCity' name='billingCity' class='required-asterisk'>City:</label>
               <input type='text' id='billingCity' name='billing.address.city' class='required' />
             </div>
-            <div class='input-group col-xs-12 col-sm-4 col-md-4 select-box hidden bprovince'>
-              <label for='billingProvince' class='required-asterisk'>State / Province:</label>
-	      <input type='text' id='billingProvince' name='billing.address.state' class='required' />
-            </div>
-            <div class='input-group col-xs-12 col-sm-4 col-md-4 select-box bstate'>
+            <div class='input-group col-xs-12 col-sm-4 col-md-4 select-box'>
               <label for='billingState' class='required-asterisk'>State:</label>
-	      <select id='billingState' name='billingState' class='required'>
+	      <select id='billingState' name='billing.address.state' class='required'>
                 <option value='' selected disabled>Please select</option>
                 <option value='AL'>Alabama</option>
                 <option value='AK'>Alaska</option>
@@ -879,7 +855,7 @@
               </select>
             </div>
             <div class='input-group col-xs-12 col-sm-4 col-md-4 text-field'>
-              <label for='billingZipCode' name='billingZipCode' class='required-asterisk'>Zip / Postal Code:</label>
+              <label for='billingZipCode' name='billingZipCode' class='required-asterisk'>Postal Code:</label>
               <input type='text' id='billingZipCode' name='billing.address.zip' class='required zipCodeValidation' />
             </div>
           </div>
@@ -915,10 +891,10 @@
               <input type='radio' name='payment' id='payment5' value='Venmo payments' />
               <label for='payment5'  title="Venmo" aria-checked="false" ><span class='venmo text-hide' aria-label="Venmo payments" alt="Venmo payments">Venmo payments</span></label>
             </div>
-        <!--    <div class='input-group radio-group radio-googlepay hidden'>
+            <div class='input-group radio-group radio-googlepay hidden'>
               <input type='radio' name='payment' id='payment6' value='GooglePay payments' />
               <label for='payment6'  title="GooglePay" aria-checked="false"><span class='googlepay text-hide' aria-label="GooglePay payments" alt="GooglePay payments">GooglePay payments</span></label>
-            </div> -->
+            </div>
 		</fieldset>
           </div>
           <div class='inline row' id='payment1form'>
@@ -1006,7 +982,7 @@
         <!-- END PAYMENT INFORMATION -->
 		
         <div class='button-ssl'>
-        	<button type='button' class='submit' id='donate-submit-general'>Submit Payment</button>
+        	<button type='button' class='submit' id='donate-submit'>Send My Gift</button>
 		<!-- button added for accessiblity testing -->
 		<input type="submit" value="submit" style="display:none;" onclick="return false;">
         	<div class='ssl'>
