@@ -583,6 +583,7 @@ font-family: 'Montserrat', sans-serif;
   height: 33px;
   vertical-align: middle;
   margin-left: 5px;
+  cursor: pointer;
 }
 .navbar .header-right .livechat a:focus {
   outline-offset: 2px;
