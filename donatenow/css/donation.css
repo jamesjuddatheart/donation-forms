@@ -573,7 +573,8 @@ font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: #000;
 }
-.navbar .header-right .livechat a {
+.navbar .header-right .livechat a,
+#chat-button {
   background-image: url(../images/chat-icon.png);
   background-size: 100% auto;
   background-repeat: no-repeat;
