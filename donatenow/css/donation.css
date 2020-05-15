@@ -573,8 +573,7 @@ font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: #000;
 }
-.navbar .header-right .livechat a,
-#chat-button {
+.navbar .header-right .livechat a {
   background-image: url(../images/chat-icon.png);
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -589,10 +588,16 @@ font-family: 'Montserrat', sans-serif;
   outline-offset: 2px;
   outline: 3px solid rgba(77, 144, 254, 0.4);
 }
+#chat-button {
+  background-color: #d40000;
+  color: #fff;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
 .main-content {
  padding-right: 0;
  display: inline-block;
-font-family: 'Montserrat', sans-serif;
+ font-family: 'Montserrat', sans-serif;
 }
 
 .main-content h1 {
@@ -608,8 +613,6 @@ font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: #000000;
   font-family: 'Montserrat', sans-serif;
-
-
 }
 .main-content h4 {
   font-size: 20px;
@@ -628,7 +631,6 @@ font-family: 'Montserrat', sans-serif;
   color: #000;
   padding-left: 1px;
   font-family: 'Montserrat', sans-serif;
-
 }
 .main-content a {
   font-size: 16px;
@@ -1647,24 +1649,23 @@ footer ul li a:focus {
     margin: 0 auto;
     padding: 0 20px;
     background: #fff;
-
    }
   .thank-you p {
     font-size: 16px;
     color: #000;
     font-family: 'Montserrat', sans-serif;
- }
+  }
   .text-center{
     font-size: 16px;
     color: #000;
     font-family: 'Montserrat', sans-serif;
- }
+  }
 
   .tyTxt{
     font-size: 16px;
     color: #000;
     font-family: 'Montserrat', sans-serif;
- }
+  }
 	
   .main-content.thank-you .video {
     float: none;
@@ -1836,41 +1837,41 @@ footer ul li a:focus {
 
 @media only screen and (max-width: 768px) {
  .main-content h1 {
-  font-size: 30px;
-  font-weight: 500;
-  color: #000000;
-  padding: 0 8px;
-  // margin-top: 0;
-  margin-bottom: 28px;
-}
-.main-content h2 {
- font-size: 28px;
- font-weight: 500;
- color: #000000;
- font-family: 'Montserrat', sans-serif;
-}
-form .form-group {
+    font-size: 30px;
+    font-weight: 500;
+    color: #000000;
+    padding: 0 8px;
+    /* // margin-top: 0; */
+    margin-bottom: 28px;
+  }
+  .main-content h2 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+  }
+  form .form-group {
     background: white;
     margin-top: 5px;
     padding: 6px 10px;
-}
-.navbar .header-right .livechat .livechat-text {
+  }
+  .navbar .header-right .livechat .livechat-text {
     font-size: 10px;
     font-weight: bold;
     color: #000;
-}
-.navbar .header-right .phone .phone-text {
+  }
+  .navbar .header-right .phone .phone-text {
     font-size: 10px;
     font-weight: bold;
     color: #000;
     text-transform: uppercase;
-}
-.navbar .header-right .phone a {
+  }
+  .navbar .header-right .phone a {
     font-size: 10px;
     font-weight: bold;
     color: #d40000;
-}
-.navbar .header-right .livechat a {
+  }
+  .navbar .header-right .livechat a {
     background-image: url(../images/chat-icon.png);
     background-size: 100% auto;
     background-repeat: no-repeat;
@@ -1879,7 +1880,7 @@ form .form-group {
     height: 29px;
     vertical-align: middle;
     margin-left: 3px;
-}
+  }
   .sidebar {
     width: auto;
     display: none !important;
