@@ -33,7 +33,7 @@
 	    <input type="hidden" name="form_version" value="control" />
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
-	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::100::100]]" />
+	    <input type="hidden" name="other_amount" value="[[?xtruex::x[[S80:sustainer_default]]x::50::100]]" />
 	    <input type="hidden" name="level_id" value="[[?xtruex::x[[S80:sustainer_default]]x::[[S80:level_id_recurring]]::[[S80:level_id]]]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
 	    <input type="hidden" name="payment_confirmation_id" value="" /> 
 	    <input type="hidden" name="check_number" value="" />
@@ -83,12 +83,12 @@
 
 			<div class='inline onetime display__inline-block' aria-label="giftsel2" [[?xtruex::x[[S80:sustainer_default]]x::style="display: none;"::]]>
 					<div class='input-group gift'>
-						<input type='radio' name='gift' id='gift5' value='$50'/>
+						<input type='radio' name='gift' id='gift5' value='$50' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
 						<label for='gift5' class='radio-label' data-amount="50" title="$50" aria-checked="false">$50</label>
 					</div>
 					
 					<div class='input-group gift'>
-						<input type='radio' name='gift' id='gift7' value='$100' [[?xtruex::x[[S80:sustainer_default]]x::::checked]] />
+						<input type='radio' name='gift' id='gift7' value='$100'  />
 						<label for='gift7' class='radio-label' data-amount="100" title="$100" aria-checked="false">$100</label>
 					</div>
 					<div class='input-group gift'>
