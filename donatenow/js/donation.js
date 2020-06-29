@@ -17,14 +17,14 @@ jQuery.getJSON("/donation-form-data/country_code_key.txt",function(data){
 });
 
 jQuery("select#country").change(function(){
-	jQuery("select#state option, select#billingState option").remove();
+	jQuery("select#state option, select#donorState option, select#billingState option").remove();
 	var statehtml = "<option value=''>Please select</option>";
 	jQuery.getJSON("/donation-form-data/country_" + countryList[this.value] + ".txt",function(data){
 	   jQuery.each(data,function(index,state) {
 	      statehtml += "<option value='" + state + "'>" + state + "</option>";
 	   });
 	   statehtml += "<option value='none'>N/A</option>";
-	   jQuery("select#state, select#billingState").append(statehtml);
+	   jQuery("select#state, select#donorState, select#billingState").append(statehtml);
 	});
 });
 
