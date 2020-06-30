@@ -941,7 +941,7 @@ $('[name^=donor\\.]').each(function(){
 	}
 
 	// Sustainer default
-	if (location.href.indexOf("donatenow_sustainer") > 0 || location.href.indexOf("SusTestV1") > 0 || location.href.indexOf("donatenow_heart_annual") > 0) {
+	if (location.href.indexOf("donatenow_sustainer") > 0 || location.href.indexOf("SusTestV1") > 0 || location.href.indexOf("donatenow_heart_annual") > 0 || location.href.indexOf("jul20_sustainer") > 0) {
 		($('input[name=occurrence]:checked').prop("id") == "occurrence3") ? $('#occurrence3').click() : $('#occurrence2').click();
 	}
 	
