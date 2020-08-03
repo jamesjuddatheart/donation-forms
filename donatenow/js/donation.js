@@ -466,7 +466,8 @@ if(!window.doublethedonation) {
 }
 jQuery(document).on("doublethedonation_company_id", function () {
 	var dtd_company_id = jQuery('input[name="doublethedonation_company_id"]').val();
-	jQuery("#double_the_donation_company_idhidden").val(dtd_company_id);
+	// jQuery("#double_the_donation_company_idhidden").val(dtd_company_id);
+	jQuery("#double_the_donation_company_id").val(dtd_company_id);
 });
 
 /*
