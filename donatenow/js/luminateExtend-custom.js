@@ -653,14 +653,14 @@ function donateGooglePay() {
 	
 	pushDonationSuccessToDataLayer(form, ref, amt);
 	const widgetData ={
-		email = email,
-		firstName = first,
-		lastName = last,
-		transactionId = donateReponse.transactionId,
-		confirmationcode = donateReponse.confirmatonCode,
-		amt	= amt,
-		form = form
-	}
+		email: email,
+		firstName: first,
+		lastName: last,
+		transactionId: donateReponse.transactionId,
+		confirmationcode: donateReponse.confirmatonCode,
+		amt: amt,
+		form: form
+	};
 	doubleDonationConfirmation(widgetData);
 }
 
@@ -670,7 +670,7 @@ function donateOffline() {
 	let responseData = {
 		transactionId:'',
 		confirmatonCode:'',
-	}
+	};
 
 	$.ajax({
 		method: "POST",
