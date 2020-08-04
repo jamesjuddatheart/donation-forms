@@ -309,6 +309,7 @@ function donateAmazon() {
 	var status = "";
 	var amt = 0;
 	var ref = 0;
+	let donateReponse = {};
 
 	$.ajax({
 		method: "POST",
@@ -349,7 +350,11 @@ function donateAmazon() {
 				amazon.Login.logout();
 
 				//make offline donation in luminate to record transaction
-				if ($('input[name="df_preview"]').val() != "true") donateOffline();
+				// if ($('input[name="df_preview"]').val() != "true") donateOffline();
+				// if ($('input[name="df_preview"]').val() != "true") {
+					donateReponse = donateOffline();
+				// }
+				console.log(donateReponse);
 
 				//var amt = data.donationResponse.donation.amount.decimal;
 				var email = $('input[name="donor.email"]').val();
@@ -386,7 +391,8 @@ function donateAmazon() {
 				  $('tr.amazon').show();
 				  $('p.amount').html("$"+amt);
 				  $('p.confcode').html(ref);
-
+				  $('p.transactionId').html(donateReponse.transactionId);
+				  $('p.convioCode').html(donateReponse.confirmatonCode);
 				});
 
 				$('.thank-you').append('<img src="//offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
@@ -411,6 +417,16 @@ function donateAmazon() {
 				ga('send', 'pageview', '/donateok.asp');
 				
 				pushDonationSuccessToDataLayer(form, ref, amt);
+				const widgetData ={
+					email: email,
+					firstName: first,
+					lastName: last,
+					transactionId: donateReponse.transactionId,
+					confirmationcode: donateReponse.confirmatonCode,
+					amt: amt,
+					form: form
+				};
+				doubleDonationConfirmation(widgetData);
 			}
 		}
 	});
@@ -680,6 +696,7 @@ function donateOffline() {
 		url:"https://hearttools.heart.org/donate/convio-offline/addOfflineDonation-new.php?"+params+"&callback=?",
 		success: function(data){
 			// donateCallback.success(data.data);
+			console.log(data);
 			responseData.transactionId = data.donationResponse.donation.transaction_id;
 			responseData.confirmatonCode = data.donationResponse.donation.confirmation_code;
 		}
