@@ -290,8 +290,9 @@
 				amt: amt,
 				form: form
 			};
-			doubleDonationConfirmation(widgetData);
-			
+			if (jQuery('input[name=doublethedonation_company_id]').val() !== "") {
+				doubleDonationConfirmation(widgetData);
+			}
 
 			pushDonationSuccessToDataLayer(form, transactionId, amt);
         }
@@ -322,7 +323,6 @@ function donateAmazon() {
 	var status = "";
 	var amt = 0;
 	var ref = 0;
-	let donateReponse = {};
 
 	$.ajax({
 		method: "POST",
@@ -364,10 +364,7 @@ function donateAmazon() {
 
 				//make offline donation in luminate to record transaction
 				// if ($('input[name="df_preview"]').val() != "true") donateOffline();
-				// if ($('input[name="df_preview"]').val() != "true") {
-					donateReponse = donateOffline();
-				// }
-				console.log(donateReponse);
+				donateOffline(donateOfflineCallback);
 
 				//var amt = data.donationResponse.donation.amount.decimal;
 				var email = $('input[name="donor.email"]').val();
@@ -381,9 +378,9 @@ function donateAmazon() {
 				var zip = $('input[name="donor.address.zip"]').val();
 				var country = $('select[name="donor.address.country"]').val();
 				//var ref = data.donationResponse.donation.confirmation_code;
-				var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
-				var cc=$('input[name=card_number]').val();
-				var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
+				// var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
+				// var cc=$('input[name=card_number]').val();
+				// var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
 				var form=$('input[name=form_id]').val();
 
 			  $('.donation-loading').remove();
@@ -404,8 +401,9 @@ function donateAmazon() {
 				  $('tr.amazon').show();
 				  $('p.amount').html("$"+amt);
 				  $('p.confcode').html(ref);
-				  $('p.transactionId').html(donateReponse.transactionId);
-				  $('p.convioCode').html(donateReponse.confirmatonCode);
+				  if (jQuery('input[name=doublethedonation_company_id]').val() !== "") {
+					$('#match-pro').removeClass('hidden');
+				  }
 				});
 
 				$('.thank-you').append('<img src="//offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
@@ -439,7 +437,9 @@ function donateAmazon() {
 					amt: amt,
 					form: form
 				};
-				doubleDonationConfirmation(widgetData);
+				if (jQuery('input[name=doublethedonation_company_id]').val() !== "") {
+					doubleDonationConfirmation(widgetData);
+				}
 			}
 		}
 	});
@@ -606,7 +606,6 @@ function donateGooglePay() {
 	$('.donation-form').hide();
 	// var params = $('.donation-form').serialize();
 	// var status = "";
-	let donateReponse;
 	var amt = $('input[name=other_amount]').val();
 	var ref = 'GOOGLEPAY:'+$('input[name=processorAuthorizationCode]').val();
 	//save off amazon id into custom field
@@ -615,9 +614,8 @@ function donateGooglePay() {
 
 	//make offline donation in luminate to record transaction
 	if ($('input[name="df_preview"]').val() != "true") {
-		donateReponse = donateOffline();
+		donateOffline();
 	}
-	console.log(donateReponse);
 
 	//var amt = data.donationResponse.donation.amount.decimal;
 	var email = $('input[name="donor.email"]').val();
@@ -654,9 +652,9 @@ function donateGooglePay() {
 		  $('tr.amazon').show();
 		  $('p.amount').html("$"+amt);
 		  $('p.confcode').html(ref);
-		  $('p.transactionId').html(donateReponse.transactionId);
-		  $('p.convioCode').html(donateReponse.confirmatonCode);
-
+		  if (jQuery('input[name=doublethedonation_company_id]').val() !== "") {
+			$('#match-pro').removeClass('hidden');
+		  }
 	});
 
 	$('.thank-you').append('<img src="//offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
@@ -681,25 +679,21 @@ function donateGooglePay() {
 	ga('send', 'pageview', '/donateok.asp');
 	
 	pushDonationSuccessToDataLayer(form, ref, amt);
-	const widgetData ={
-		email: email,
-		firstName: first,
-		lastName: last,
-		transactionId: donateReponse.transactionId,
-		confirmationcode: donateReponse.confirmatonCode,
-		amt: amt,
-		form: form
-	};
-	doubleDonationConfirmation(widgetData);
+	// const widgetData ={
+	// 	email: email,
+	// 	firstName: first,
+	// 	lastName: last,
+	// 	transactionId: donateReponse.transactionId,
+	// 	confirmationcode: donateReponse.confirmatonCode,
+	// 	amt: amt,
+	// 	form: form
+	// };
+	// doubleDonationConfirmation(widgetData);
 }
 
 // TODO call doubleDonationConfirmation() from here to inlucde confirmaion code/transacion id for posting back
-function donateOffline() {
+function donateOffline(donateOfflineCallback) {
 	var params = $('.donation-form').serialize();
-	let responseData = {
-		transactionId:'',
-		confirmatonCode:'',
-	};
 
 	$.ajax({
 		method: "POST",
@@ -707,16 +701,29 @@ function donateOffline() {
 		cache:false,
 		dataType: "json",
 		url:"https://hearttools.heart.org/donate/convio-offline/addOfflineDonation-new.php?"+params+"&callback=?",
-		success: function(data){
+		success: donateOfflineCallback
 			// donateCallback.success(data.data);
 			// console.log(data);
 			// responseData.transactionId = data.donationResponse.donation.transaction_id;
 			// responseData.confirmatonCode = data.donationResponse.donation.confirmation_code;
 			// doubleDonationConfirmation();
-		}
 	});
+}
 
-	return responseData;
+function donateOfflineCallback(responseData) {
+	const widgetData = {
+		transactionId: responseData.data.donationResponse.donation.transaction_id,
+		confirmatonCode: responseData.data.donationResponse.donation.confirmation_code,
+		email: $('input[name="donor.email"]').val(),
+		first: $('input[name="donor.name.first"]').val(),
+		last: $('input[name="donor.name.last"]').val(),
+		amt: $('input[name=other_amount]').val(),
+		form: $('input[name=form_id]').val()
+	};
+
+	if (jQuery('input[name=doublethedonation_company_id]').val() !== "") {
+		doubleDonationConfirmation(widgetData);
+	}
 }
 
 function getAmazonAddress() {
@@ -751,21 +758,18 @@ function includeCustomFBPixel(amt) {
 }
 
 function doubleDonationConfirmation(widgetData) {
+	let ddCompanyId = jQuery('input[name=doublethedonation_company_id]').val();
 
 	//hides monthly giving duration options; and sets duration to no end date
-
 	var domain = doublethedonation.integrations.core.strip_domain(widgetData.email);
 	doublethedonation.plugin.load_config();
 	doublethedonation.plugin.set_donation_id(widgetData.transactionId);
 	doublethedonation.plugin.set_donation_campaign(widgetData.form);
 	doublethedonation.plugin.email_domain(domain);
 
-	if (jQuery('input[name=doublethedonation_company_id]').val() !== "") {
-		doublethedonation.plugin.set_company(jQuery('input[name=doublethedonation_company_id]').val());
+	if (ddCompanyId !== "") {
+		doublethedonation.plugin.set_company(ddCompanyId);
 	}
-	// if ("[[S120:dc:custom:custom_string107]") {
-	// 	doublethedonation.plugin.set_company("[[S120:dc:custom:custom_string107]]");
-	// }
 
 	doublethedonation.integrations.core.register_donation({
 		"360matchpro_public_key": "360MatchPro Public Key",
@@ -775,10 +779,9 @@ function doubleDonationConfirmation(widgetData) {
 		"donor_first_name": widgetData.firstName,
 		"donor_last_name": widgetData.lastName,
 		"donor_email": widgetData.email,
-		"doublethedonation_company_id": jQuery('input[name=doublethedonation_company_id]').val(),
+		"doublethedonation_company_id": ddCompanyId,
 		"doublethedonation_status": null
 	});
-
 }
 
 
