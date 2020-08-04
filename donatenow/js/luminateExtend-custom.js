@@ -254,6 +254,9 @@
 			  $('p.carddate').html(cdate);
 			  $('p.amount').html("$"+data.donationResponse.donation.amount.decimal);
 			  $('p.confcode').html(ref);
+			  if (jQuery('input[name=doublethedonation_company_id]').val() !== "") {
+				  $('#match-pro').removeClass('hidden');
+			  }
 			});
 
 
@@ -278,6 +281,16 @@
 
 			ga('send', 'pageview', '/donateok.asp');
 
+			let widgetData = {
+				email: email,
+				firstName: first,
+				lastName: last,
+				transactionId: transactionId,
+				confirmationCode: ref,
+				amt: amt,
+				form: form
+			};
+			doubleDonationConfirmation(widgetData);
 			
 
 			pushDonationSuccessToDataLayer(form, transactionId, amt);
@@ -696,9 +709,10 @@ function donateOffline() {
 		url:"https://hearttools.heart.org/donate/convio-offline/addOfflineDonation-new.php?"+params+"&callback=?",
 		success: function(data){
 			// donateCallback.success(data.data);
-			console.log(data);
-			responseData.transactionId = data.donationResponse.donation.transaction_id;
-			responseData.confirmatonCode = data.donationResponse.donation.confirmation_code;
+			// console.log(data);
+			// responseData.transactionId = data.donationResponse.donation.transaction_id;
+			// responseData.confirmatonCode = data.donationResponse.donation.confirmation_code;
+			// doubleDonationConfirmation();
 		}
 	});
 
@@ -736,7 +750,7 @@ function includeCustomFBPixel(amt) {
     };
 }
 
-function doubleDonationConfirmation(widgetData){
+function doubleDonationConfirmation(widgetData) {
 
 	//hides monthly giving duration options; and sets duration to no end date
 
