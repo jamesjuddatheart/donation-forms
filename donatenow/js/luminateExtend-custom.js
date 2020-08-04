@@ -428,18 +428,6 @@ function donateAmazon() {
 				ga('send', 'pageview', '/donateok.asp');
 				
 				pushDonationSuccessToDataLayer(form, ref, amt);
-				const widgetData ={
-					email: email,
-					firstName: first,
-					lastName: last,
-					transactionId: donateReponse.transactionId,
-					confirmationcode: donateReponse.confirmatonCode,
-					amt: amt,
-					form: form
-				};
-				if (jQuery('input[name=doublethedonation_company_id]').val() !== "") {
-					doubleDonationConfirmation(widgetData);
-				}
 			}
 		}
 	});
@@ -604,8 +592,6 @@ function donateVenmo() {
 function donateGooglePay() {
 	window.scrollTo(0, 0);
 	$('.donation-form').hide();
-	// var params = $('.donation-form').serialize();
-	// var status = "";
 	var amt = $('input[name=other_amount]').val();
 	var ref = 'GOOGLEPAY:'+$('input[name=processorAuthorizationCode]').val();
 	//save off amazon id into custom field
@@ -614,24 +600,18 @@ function donateGooglePay() {
 
 	//make offline donation in luminate to record transaction
 	if ($('input[name="df_preview"]').val() != "true") {
-		donateOffline();
+		donateOffline(donateOfflineCallback);
 	}
 
-	//var amt = data.donationResponse.donation.amount.decimal;
 	var email = $('input[name="donor.email"]').val();
 	var first = $('input[name="donor.name.first"]').val();
 	var last = $('input[name="donor.name.last"]').val();
-	// var full = $('input[name="donor.name.first"]').val()+' '+$('input[name="donor.name.last"]').val();
 	var street1 = $('input[name="donor.address.street1"]').val();
 	var street2 = $('input[name="donor.address.street2"]').val();
 	var city = $('input[name="donor.address.city"]').val();
 	var state = $('[name="donor.address.state"]').val();
 	var zip = $('input[name="donor.address.zip"]').val();
 	var country = $('select[name="donor.address.country"]').val();
-	//var ref = data.donationResponse.donation.confirmation_code;
-	// var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
-	// var cc=$('input[name=card_number]').val();
-	// var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
 	var form=$('input[name=form_id]').val();
 
 	$('.donation-loading').remove();
@@ -679,19 +659,8 @@ function donateGooglePay() {
 	ga('send', 'pageview', '/donateok.asp');
 	
 	pushDonationSuccessToDataLayer(form, ref, amt);
-	// const widgetData ={
-	// 	email: email,
-	// 	firstName: first,
-	// 	lastName: last,
-	// 	transactionId: donateReponse.transactionId,
-	// 	confirmationcode: donateReponse.confirmatonCode,
-	// 	amt: amt,
-	// 	form: form
-	// };
-	// doubleDonationConfirmation(widgetData);
 }
 
-// TODO call doubleDonationConfirmation() from here to inlucde confirmaion code/transacion id for posting back
 function donateOffline(donateOfflineCallback) {
 	var params = $('.donation-form').serialize();
 
@@ -702,14 +671,11 @@ function donateOffline(donateOfflineCallback) {
 		dataType: "json",
 		url:"https://hearttools.heart.org/donate/convio-offline/addOfflineDonation-new.php?"+params+"&callback=?",
 		success: donateOfflineCallback
-			// donateCallback.success(data.data);
-			// console.log(data);
-			// responseData.transactionId = data.donationResponse.donation.transaction_id;
-			// responseData.confirmatonCode = data.donationResponse.donation.confirmation_code;
-			// doubleDonationConfirmation();
 	});
 }
-
+/**
+ * Get the Transaction ID and Confirmation Code for transactions added via the API
+ */
 function donateOfflineCallback(responseData) {
 	const widgetData = {
 		transactionId: responseData.data.donationResponse.donation.transaction_id,
