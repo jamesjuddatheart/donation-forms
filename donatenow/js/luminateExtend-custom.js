@@ -208,6 +208,7 @@
 			var form=$('input[name=form_id]').val();
 			var freq = $('input[name=occurrence]:checked').val();
 			let ddCompanyId = $('input[name=doublethedonation_company_id]').val();
+			let campaign_name = $('input[name=instance]').val() == "heartdev" ? "heartdev " : "" + $('input[name=campaign_name]').val();
 			/* 
 			if ($('input[name=occurrence]:checked').val() == 'Monthly Gift') {
 				var freq = 'monthly';
@@ -288,7 +289,7 @@
 				transactionId: transactionId,
 				confirmationCode: ref,
 				amt: amt,
-				form: form
+				form: campaign_name
 			};
 			if (ddCompanyId !== "") {
 				doubleDonationConfirmation(widgetData);
