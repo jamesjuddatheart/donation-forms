@@ -723,7 +723,7 @@ function doubleDonationConfirmation(widgetData) {
 	}
 
 	doublethedonation.integrations.core.register_donation({
-		"360matchpro_public_key": "360MatchPro Public Key",
+		"360matchpro_public_key": "w5JH5j9ID4Cf6zMh",
 		"campaign": widgetData.form,
 		"donation_identifier": widgetData.transactionId,
 		"donation_amount": widgetData.amt,
