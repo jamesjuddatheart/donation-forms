@@ -678,7 +678,7 @@ function donateOfflineCallback(responseData) {
 		form: campaign_name
 	};
 
-	if (jQuery('input[name=doublethedonation_company_id]').val() !== "") {
+	if (jQuery('input[name=doublethedonation_company_id]').length && jQuery('input[name=doublethedonation_company_id]').val() !== "") {
 		doubleDonationConfirmation(widgetData);
 	}
 }
