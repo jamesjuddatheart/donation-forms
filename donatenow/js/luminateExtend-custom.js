@@ -659,10 +659,15 @@ function donateOffline(donateOfflineCallback) {
 		success: donateOfflineCallback
 	});
 }
+
 /**
  * Get the Transaction ID and Confirmation Code for transactions added via the API
+ * @param {*} responseData
  */
 function donateOfflineCallback(responseData) {
+	const nameField = $('input[name=campaign_name]').length ? $('input[name=campaign_name]').val() : "American Heart Association";
+	const campaign_name = $('input[name=instance]').val() == "heartdev" ? "heartdev " : "" + nameField;
+
 	const widgetData = {
 		transactionId: responseData.data.donationResponse.donation.transaction_id,
 		confirmatonCode: responseData.data.donationResponse.donation.confirmation_code,
@@ -670,7 +675,7 @@ function donateOfflineCallback(responseData) {
 		first: $('input[name="donor.name.first"]').val(),
 		last: $('input[name="donor.name.last"]').val(),
 		amt: $('input[name=other_amount]').val(),
-		form: $('input[name=form_id]').val()
+		form: campaign_name
 	};
 
 	if (jQuery('input[name=doublethedonation_company_id]').val() !== "") {
@@ -708,7 +713,10 @@ function includeCustomFBPixel(amt) {
 		});
     };
 }
-
+/**
+ * Post matching gift info
+ * @param {*} widgetData
+ */
 function doubleDonationConfirmation(widgetData) {
 	let ddCompanyId = jQuery('input[name=doublethedonation_company_id]').val();
 
