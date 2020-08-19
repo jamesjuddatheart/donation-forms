@@ -209,7 +209,7 @@
 			var freq = $('input[name=occurrence]:checked').val();
 			let ddCompanyId = $('input[name=doublethedonation_company_id]').val();
 			let nameField = $('input[name=campaign_name]').length ? $('input[name=campaign_name]').val() : "American Heart Association";
-			let campaign_name = $('input[name=instance]').val() == "heartdev" ? "heartdev " : "" + nameField;
+			let campaign_name = ($('input[name=instance]').val() == "heartdev" ? "heartdev " : "") + nameField;
 			/* 
 			if ($('input[name=occurrence]:checked').val() == 'Monthly Gift') {
 				var freq = 'monthly';
@@ -667,7 +667,7 @@ function donateOffline(donateOfflineCallback) {
  */
 function donateOfflineCallback(responseData) {
 	const nameField = $('input[name=campaign_name]').length ? $('input[name=campaign_name]').val() : "American Heart Association";
-	const campaign_name = $('input[name=instance]').val() == "heartdev" ? "heartdev " : "" + nameField;
+	const campaign_name = ($('input[name=instance]').val() == "heartdev" ? "heartdev " : "") + nameField;
 
 	const widgetData = {
 		transactionId: responseData.data.donationResponse.donation.transaction_id,
