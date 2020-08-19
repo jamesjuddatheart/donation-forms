@@ -208,7 +208,8 @@
 			var form=$('input[name=form_id]').val();
 			var freq = $('input[name=occurrence]:checked').val();
 			let ddCompanyId = $('input[name=doublethedonation_company_id]').val();
-			let campaign_name = $('input[name=instance]').val() == "heartdev" ? "heartdev " : "" + $('input[name=campaign_name]').val();
+			let nameField = $('input[name=campaign_name]').length ? $('input[name=campaign_name]').val() : "American Heart Association";
+			let campaign_name = $('input[name=instance]').val() == "heartdev" ? "heartdev " : "" + nameField;
 			/* 
 			if ($('input[name=occurrence]:checked').val() == 'Monthly Gift') {
 				var freq = 'monthly';
