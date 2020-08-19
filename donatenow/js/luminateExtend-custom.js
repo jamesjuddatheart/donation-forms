@@ -724,7 +724,7 @@ function doubleDonationConfirmation(widgetData) {
 	//hides monthly giving duration options; and sets duration to no end date
 	var domain = doublethedonation.integrations.core.strip_domain(widgetData.email);
 	doublethedonation.plugin.load_config();
-	doublethedonation.plugin.set_donation_id(widgetData.transactionId);
+	doublethedonation.plugin.set_donation_id(widgetData.confirmatonCode);
 	doublethedonation.plugin.set_donation_campaign(widgetData.form);
 	doublethedonation.plugin.email_domain(domain);
 
@@ -735,7 +735,7 @@ function doubleDonationConfirmation(widgetData) {
 	doublethedonation.integrations.core.register_donation({
 		"360matchpro_public_key": "w5JH5j9ID4Cf6zMh",
 		"campaign": widgetData.form,
-		"donation_identifier": widgetData.transactionId,
+		"donation_identifier": widgetData.confirmatonCode,
 		"donation_amount": widgetData.amt,
 		"donor_first_name": widgetData.firstName,
 		"donor_last_name": widgetData.lastName,
@@ -743,6 +743,11 @@ function doubleDonationConfirmation(widgetData) {
 		"doublethedonation_company_id": ddCompanyId,
 		"doublethedonation_status": null
 	});
+	try {
+		doublethedonation.plugin.load_plugin();
+	} catch(error){
+		console.log("Could not load DTD tools: " + error); 
+	}
 }
 
 
