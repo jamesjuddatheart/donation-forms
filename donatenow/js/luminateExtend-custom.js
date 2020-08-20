@@ -678,8 +678,8 @@ function donateOfflineCallback(responseData) {
 		confirmationCode: responseData.data.donationResponse.donation.confirmation_code,
 		transactionDate: responseData.data.donationResponse.donation.date_time,
 		email: $('input[name="donor.email"]').val(),
-		first: $('input[name="donor.name.first"]').val(),
-		last: $('input[name="donor.name.last"]').val(),
+		firstName: $('input[name="donor.name.first"]').val(),
+		lastName: $('input[name="donor.name.last"]').val(),
 		amt: $('input[name=other_amount]').val(),
 		form: campaign_name
 	};
