@@ -294,6 +294,12 @@
 			};
 			if (ddCompanyId !== "") {
 				doubleDonationConfirmation(widgetData);
+				doublethedonation.plugin.set_company(ddCompanyId);
+				try {
+					doublethedonation.plugin.load_plugin();
+				} catch(error){
+					console.log("Could not load DTD tools: " + error); 
+				}
 			}
 
 			pushDonationSuccessToDataLayer(form, transactionId, amt);
@@ -744,11 +750,6 @@ function doubleDonationConfirmation(widgetData) {
 		"doublethedonation_company_id": ddCompanyId,
 		"doublethedonation_status": null
 	});
-	try {
-		doublethedonation.plugin.load_plugin();
-	} catch(error){
-		console.log("Could not load DTD tools: " + error); 
-	}
 }
 
 
