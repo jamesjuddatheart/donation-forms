@@ -748,7 +748,7 @@ function doubleDonationConfirmation(widgetData) {
 		"doublethedonation_status": null
 	});
 
-	// delayed trigger widget
+	// delay triggering the widget
 	setTimeout(function() {
 		doublethedonation.plugin.load_plugin();
 	}, 1000);
