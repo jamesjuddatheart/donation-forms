@@ -294,14 +294,11 @@
 				form: campaign_name,
 				transactionDate: transactionDate
 			};
+			console.log(widgetData);
 			if (ddCompanyId !== "") {
 				doubleDonationConfirmation(widgetData);
 				doublethedonation.plugin.set_company(ddCompanyId);
 			}
-			setTimeout(function() {
-				doublethedonation.plugin.load_plugin();
-			}, 1000);
-
 
 			pushDonationSuccessToDataLayer(form, transactionId, amt);
         }
@@ -678,7 +675,7 @@ function donateOfflineCallback(responseData) {
 
 	const widgetData = {
 		transactionId: responseData.data.donationResponse.donation.transaction_id,
-		confirmatonCode: responseData.data.donationResponse.donation.confirmation_code,
+		confirmationCode: responseData.data.donationResponse.donation.confirmation_code,
 		transactionDate: responseData.data.donationResponse.donation.date_time,
 		email: $('input[name="donor.email"]').val(),
 		first: $('input[name="donor.name.first"]').val(),
@@ -727,12 +724,12 @@ function includeCustomFBPixel(amt) {
  * @param {*} widgetData
  */
 function doubleDonationConfirmation(widgetData) {
-	let ddCompanyId = jQuery('input[name=doublethedonation_company_id]').val();
+	const ddCompanyId = jQuery('input[name=doublethedonation_company_id]').val();
 
 	//hides monthly giving duration options; and sets duration to no end date
 	var domain = doublethedonation.integrations.core.strip_domain(widgetData.email);
 	doublethedonation.plugin.load_config();
-	doublethedonation.plugin.set_donation_id(widgetData.confirmatonCode);
+	doublethedonation.plugin.set_donation_id(widgetData.confirmationCode);
 	doublethedonation.plugin.set_donation_campaign(widgetData.form);
 	doublethedonation.plugin.email_domain(domain);
 
@@ -744,7 +741,7 @@ function doubleDonationConfirmation(widgetData) {
 	doublethedonation.integrations.core.register_donation({
 		"360matchpro_public_key": "w5JH5j9ID4Cf6zMh",
 		"campaign": widgetData.form,
-		"donation_identifier": widgetData.confirmatonCode,
+		"donation_identifier": widgetData.confirmationCode,
 		"donation_amount": widgetData.amt,
 		"donor_first_name": widgetData.firstName,
 		"donor_last_name": widgetData.lastName,
@@ -752,6 +749,11 @@ function doubleDonationConfirmation(widgetData) {
 		"doublethedonation_company_id": ddCompanyId,
 		"doublethedonation_status": null
 	});
+
+	// delayed trigger widget
+	setTimeout(function() {
+		doublethedonation.plugin.load_plugin();
+	}, 1000);
 }
 
 function registerDoubleDonation(widgetData) {
@@ -762,7 +764,7 @@ function registerDoubleDonation(widgetData) {
 	doublethedonation.integrations.core.register_donation({
 		"360matchpro_public_key": "w5JH5j9ID4Cf6zMh",   //Replace this key with your 360MatchPro public key
 		"campaign": widgetData.form,
-		"donation_identifier": widgetData.confirmatonCode,
+		"donation_identifier": widgetData.confirmationCode,
 		"donation_amount": widgetData.amt,
 		"donor_first_name": widgetData.firstName,
 		"donor_last_name": widgetData.lastName,
