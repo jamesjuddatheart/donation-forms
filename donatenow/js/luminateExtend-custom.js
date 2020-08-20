@@ -294,7 +294,6 @@
 				form: campaign_name,
 				transactionDate: transactionDate
 			};
-			console.log(widgetData);
 			if (ddCompanyId !== "") {
 				doubleDonationConfirmation(widgetData);
 				doublethedonation.plugin.set_company(ddCompanyId);
