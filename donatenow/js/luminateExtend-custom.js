@@ -730,6 +730,7 @@ function doubleDonationConfirmation(widgetData) {
 
 	if (ddCompanyId !== "") {
 		doublethedonation.plugin.set_company(ddCompanyId);
+		console.log(ddCompanyId);
 	}
 
 	doublethedonation.integrations.core.register_donation({
