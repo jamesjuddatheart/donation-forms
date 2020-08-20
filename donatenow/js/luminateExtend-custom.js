@@ -210,6 +210,7 @@
 			let ddCompanyId = $('input[name=doublethedonation_company_id]').val();
 			let nameField = $('input[name=campaign_name]').length ? $('input[name=campaign_name]').val() : "American Heart Association";
 			let campaign_name = ($('input[name=instance]').val() == "heartdev" ? "heartdev " : "") + nameField;
+			let transactionDate = data.donationResponse.donation.date_time;
 			/* 
 			if ($('input[name=occurrence]:checked').val() == 'Monthly Gift') {
 				var freq = 'monthly';
@@ -290,17 +291,17 @@
 				transactionId: transactionId,
 				confirmationCode: ref,
 				amt: amt,
-				form: campaign_name
+				form: campaign_name,
+				transactionDate: transactionDate
 			};
 			if (ddCompanyId !== "") {
 				doubleDonationConfirmation(widgetData);
 				doublethedonation.plugin.set_company(ddCompanyId);
-				try {
-					doublethedonation.plugin.load_plugin();
-				} catch(error){
-					console.log("Could not load DTD tools: " + error); 
-				}
 			}
+			setTimeout(function() {
+				doublethedonation.plugin.load_plugin();
+			}, 1000);
+
 
 			pushDonationSuccessToDataLayer(form, transactionId, amt);
         }
@@ -678,6 +679,7 @@ function donateOfflineCallback(responseData) {
 	const widgetData = {
 		transactionId: responseData.data.donationResponse.donation.transaction_id,
 		confirmatonCode: responseData.data.donationResponse.donation.confirmation_code,
+		transactionDate: responseData.data.donationResponse.donation.date_time,
 		email: $('input[name="donor.email"]').val(),
 		first: $('input[name="donor.name.first"]').val(),
 		last: $('input[name="donor.name.last"]').val(),
@@ -750,6 +752,33 @@ function doubleDonationConfirmation(widgetData) {
 		"doublethedonation_company_id": ddCompanyId,
 		"doublethedonation_status": null
 	});
+}
+
+function registerDoubleDonation(widgetData) {
+	const ddCompanyId = jQuery('input[name=doublethedonation_company_id]').val();
+	const ddStatus = jQuery('input[name=doubledonation_status]').val();
+	const ddEnteredText = jQuery('input[name=doublethedonation_entered_text]').val();
+
+	doublethedonation.integrations.core.register_donation({
+		"360matchpro_public_key": "w5JH5j9ID4Cf6zMh",   //Replace this key with your 360MatchPro public key
+		"campaign": widgetData.form,
+		"donation_identifier": widgetData.confirmatonCode,
+		"donation_amount": widgetData.amt,
+		"donor_first_name": widgetData.firstName,
+		"donor_last_name": widgetData.lastName,
+		"donor_email": widgetData.email,
+		// "donor_address": {"zip": 30301,         //numeric, but string (eg. "30301", "30101-123") will work
+		// 				  "city": "Atlanta",
+		// 				  "state": "GA",
+		// 				  "address1": "8769 Party Central Drive",
+		// 				  "address2": "suite 901",
+		// 				  "country" : "US"},   //ISO 3166-1 alpha-2 country code (eg. "US", "CA", "GB")
+		// "donor_phone": "(123) 456-7890",       //This is an example. Your phone number can be formatted differently.
+		"donation_datetime": widgetData.transactionDate,
+		"doublethedonation_company_id": ddCompanyId,     // only needed if using streamlined search
+		"doublethedonation_status": ddStatus,    // only needed if using streamlined search
+		"doublethedonation_entered_text": ddEnteredText // only needed if streamlined search used on donation page
+	  });
 }
 
 
