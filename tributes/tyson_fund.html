@@ -71,6 +71,8 @@
 		<input type="hidden" name="device_data" id="device_data" value=""/>
 		<input type="hidden" name="payment_method_nonce" id="payment_method_nonce" value=""/>
 		<input type="hidden" name="processorAuthorizationCode" id="processorAuthorizationCode" value=""/>
+		<input type="hidden" name="double_the_donation_company_id" id="double_the_donation_company_id" value=""/>
+		<input type="hidden" name="campaign_name" id="campaign_name" value="[[?x[[S80:campaign_name]]x::xx::Bernard J. Tyson Impact Fund::[[S80:campaign_name]]]]"/>
 
 		[[?x[[S334:df_preview]]x::xtruex::
 		<input type="hidden" name="sandbox" id="sandbox" value="true">
@@ -674,6 +676,18 @@
           </div>
         </div>
         <!-- END PERSONAL INFORMATION -->
+
+		<div class="form-group" id="dd-widget">
+		  <h2>Employer Matching (Optional)</h2>
+		  <br>
+		  <hr>
+		  <div class="inline row">
+			<div class='input-group col-xs-12 col-sm-12 text-field'>
+			<p>Does your employer have a matching gift program? Please use the field below to find out.</p>
+			  <div id="dd-company-name-input"></div>
+            </div>
+		  </div>
+		</div>
 
         <!-- BILLING INFORMATION -->
         <div class='form-group' id='billingInfo'>
