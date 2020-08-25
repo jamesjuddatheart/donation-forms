@@ -1916,6 +1916,24 @@ a, a:link, a:hover {
 }
 /* End LIW specific styles */
 
+/*** Matching Gift Widget ***/
+#dd-container .mg-forms-button, 
+#dd-container .mg-guidelines-button,
+#dd-container button.lets-check {
+	background-color:#C10E21;
+	border-color: #C10E21;
+}
+#dd-container .mg-forms-button:active,
+#dd-container .mg-forms-button:hover,
+#dd-container .mg-guidelines-button:active,
+#dd-container .mg-guidelines-button:hover,
+#dd-container button.lets-check:active,
+#dd-container button.lets-check:hover,
+{
+	background-color: #990000;
+	border-color: #990000;
+}
+
 /* processing div */
 .processing {
 	display: none;
