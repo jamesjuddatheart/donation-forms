@@ -413,7 +413,7 @@ $('select#countryx').change(function(){
    } else {
 	$('.input-group.province').addClass('hidden');
 	$('.input-group.state').removeClass('hidden');
-	$('.input-group.bprovince').addClass('hidden');
+		$('.input-group.bprovince').addClass('hidden');
 	$('.input-group.bstate').removeClass('hidden');
    }
 });
@@ -459,6 +459,17 @@ $('.amount-input').blur(function(){
 		jQuery("#giftOtherText").val(formatter.format(this.value));
 	}
 });
+
+// Double the Donation Widget
+if(!window.doublethedonation) {
+	jQuery("#dd-company-name-input").html("<div class='form-row'><div class='form-content'><input type='text'/></div></div>");
+}
+jQuery(document).on("doublethedonation_company_id", function () {
+	var dtd_company_id = jQuery('input[name="doublethedonation_company_id"]').val();
+	// jQuery("#double_the_donation_company_idhidden").val(dtd_company_id);
+	jQuery("#double_the_donation_company_id").val(dtd_company_id);
+});
+
 /*
 $('#tributeType input[name^="year"]').click(function() {
   var radioval = $(this).val();
