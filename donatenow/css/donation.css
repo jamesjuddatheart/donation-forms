@@ -1921,8 +1921,8 @@ a, a:link, a:hover {
 #dd-container .mg-guidelines-button,
 #dd-container button.lets-check 
 {
-	background-color:#C10E21;
-	border-color: #C10E21;
+	background-color:#C10E21 !important;
+	border-color: #C10E21 !important;
 }
 #dd-container .mg-forms-button:active,
 #dd-container .mg-forms-button:hover,
@@ -1952,8 +1952,8 @@ a, a:link, a:hover {
 #dd-container button.lets-check.disabled:focus,
 #dd-container button.lets-check[disabled]:focus
 {
-	background-color: #990000;
-	border-color: #990000;
+	background-color: #990000 !important;
+	border-color: #990000 !important;
 }
 
 /* processing div */
