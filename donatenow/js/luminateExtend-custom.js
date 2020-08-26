@@ -57,6 +57,7 @@
 
 		// copy donation widget selected company
 		$("#double_the_donation_company_id").val($('input[name=doublethedonation_company_id]').val());
+		$("input[name=finish_success_redirect]").val($("input[name=finish_success_redirect]").val() + '&ddCompanyId=' + $('input[name=doublethedonation_company_id]').val());
 		$('input[name=compliance]').val("true");
 		
         window.scrollTo(0, 0);
@@ -750,7 +751,9 @@ function doubleDonationConfirmation(widgetData) {
 
 	// delay triggering the widget
 	setTimeout(function() {
-		doublethedonation.plugin.load_plugin();
+		if (window.doublethedonation) {
+			doublethedonation.plugin.load_plugin();
+		}
 	}, 1000);
 }
 
