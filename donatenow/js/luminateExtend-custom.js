@@ -256,9 +256,6 @@
 			  $('p.carddate').html(cdate);
 			  $('p.amount').html("$"+data.donationResponse.donation.amount.decimal);
 			  $('p.confcode').html(ref);
-			  if (ddCompanyId !== "") {
-				  $('#match-pro').removeClass('hidden');
-			  }
 			});
 
 
@@ -400,9 +397,6 @@ function donateAmazon() {
 				  $('tr.amazon').show();
 				  $('p.amount').html("$"+amt);
 				  $('p.confcode').html(ref);
-				  if (jQuery('input[name=doublethedonation_company_id]').val() !== "") {
-					$('#match-pro').removeClass('hidden');
-				  }
 				});
 
 				$('.thank-you').append('<img src="//offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
@@ -475,9 +469,6 @@ function donateApplePay() {
 		  $('tr.amazon').show();
 		  $('p.amount').html("$"+amt);
 		  $('p.confcode').html(ref);
-		  if (jQuery('input[name=doublethedonation_company_id]').val() !== "") {
-			$('#match-pro').removeClass('hidden');
-		  }
 	});
 
 	$('.thank-you').append('<img src="//offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
@@ -550,9 +541,6 @@ function donateVenmo() {
 		  $('p.confcode').html(ref);
 		  $('p.venmo_user').closest('tr').removeClass("hidden");
 		  $('p.venmo_user').html(venmo_user);
-		  if (jQuery('input[name=doublethedonation_company_id]').val() !== "") {
-			$('#match-pro').removeClass('hidden');
-		  }
 	});
 
 	$('.thank-you').append('<img src="//offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
@@ -622,9 +610,6 @@ function donateGooglePay() {
 		  $('tr.amazon').show();
 		  $('p.amount').html("$"+amt);
 		  $('p.confcode').html(ref);
-		  if (jQuery('input[name=doublethedonation_company_id]').val() !== "") {
-			$('#match-pro').removeClass('hidden');
-		  }
 	});
 
 	$('.thank-you').append('<img src="//offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
