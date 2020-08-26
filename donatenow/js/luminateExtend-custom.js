@@ -57,7 +57,6 @@
 
 		// copy donation widget selected company
 		$("#double_the_donation_company_id").val($('input[name=doublethedonation_company_id]').val());
-		$("input[name=finish_success_redirect]").val($("input[name=finish_success_redirect]").val() + '&ddCompanyId=' + $('input[name=doublethedonation_company_id]').val());
 		$('input[name=compliance]').val("true");
 		
         window.scrollTo(0, 0);
