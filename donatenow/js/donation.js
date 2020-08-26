@@ -386,16 +386,6 @@ $('#AmazonPayButton').keypress(function(e) {
 });
 
 // update paypal success url
-// $('#city, #state').blur(function(){
-// 	var params = "&city=" + encodeURI($('#city').val()) + "&state=" + $('#state').val();
-// 	var successURL = $('input[name=finish_success_redirect]').val();
-// 	var len = successURL.indexOf("&city");
-// 	if (len > 0){
-// 		successURL = successURL.substring(0, len);
-// 	}
-// 	successURL = successURL + params;
-// 	$('input[name=finish_success_redirect]').val(successURL);
-// });
 function updatePayPalSuccessUrl(){
 	let params = "&city=" + encodeURI($('#city').val()) +
 		"&state=" + $('#state').val() +
