@@ -29,14 +29,13 @@ jQuery(document).ready(function($) {
     var ref = $.getQuerystring("confirmation_code");
     var form = $.getQuerystring("form");
     var city = $.getQuerystring("city");
-	var state = $.getQuerystring("state");
-
-	var email = $.getQuerystring("email");
-	var campaign_name = $.getQuerystring("campaign");
-	var transactionDate = $.getQuerystring("transaction_date");
-	var first = $.getQuerystring("first");
-	var last = $.getQuerystring("last");
-	var ddCompanyId = $.getQuerystring("ddCompanyId");
+    var state = $.getQuerystring("state");
+    var email = $.getQuerystring("email");
+    var campaign_name = $.getQuerystring("campaign");
+    var transactionDate = $.getQuerystring("transaction_date");
+    var first = $.getQuerystring("first");
+    var last = $.getQuerystring("last");
+    var ddCompanyId = $.getQuerystring("ddCompanyId");
 
 
     $('p.confcode').html(ref);
