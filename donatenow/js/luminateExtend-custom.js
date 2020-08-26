@@ -207,7 +207,10 @@
 			var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();	
 			var form=$('input[name=form_id]').val();
 			var freq = $('input[name=occurrence]:checked').val();
-			let ddCompanyId = $('input[name=doublethedonation_company_id]').val();
+			let ddCompanyId = "";
+			if (jQuery('input[name=doublethedonation_company_id]').length > 0) {
+				ddCompanyId = $('input[name=doublethedonation_company_id]').val();
+			}
 			let nameField = $('input[name=campaign_name]').length ? $('input[name=campaign_name]').val() : "American Heart Association";
 			let campaign_name = ($('input[name=instance]').val() == "heartdev" ? "heartdev " : "") + nameField;
 			let transactionDate = data.donationResponse.donation.date_time;
