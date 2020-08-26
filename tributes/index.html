@@ -24,7 +24,7 @@
 	    <input type="hidden" name="recurring" value="[[?xtruex::x[[S80:sustainer_default]]x::true::]]" />
 	    <input type="hidden" name="extproc" value="" />
 	    <input type="hidden" name="finish_error_redirect" value="[[S8]]">
-	    <input type="hidden" name="finish_success_redirect" value="[[S80:paypal_thankyou]]#cons_id=${donationResponse/donation/cons_id}&amount=${donationResponse/donation/amount/formatted}&confirmation_code=${donationResponse/donation/confirmation_code}&form=[[S80:form_id]]">
+	    <input type="hidden" name="finish_success_redirect" value="[[S80:paypal_thankyou]]#cons_id=${donationResponse/donation/cons_id}&amount=${donationResponse/donation/amount/formatted}&confirmation_code=${donationResponse/donation/confirmation_code}&transaction_date=${donationResponse/donation/date_time}&form=[[S80:form_id]]&campaign=[[?x[[S80:campaign_name]]x::xx::American Heart Association::[[S80:campaign_name]]]]">
 	    <input type="hidden" name="method" value="donate" />
 	    <input type="hidden" name="form_id" value="[[S80:form_id]]" /> <!-- update per ghost form ID -->
 		<input type="hidden" name="form_title" value="[[S334:pagename]]" />
@@ -40,7 +40,14 @@
 	    <input type="hidden" name="is_hon_memorial" value="false" />
 	    <input type="hidden" name="tribute.type" value="" /> <!-- Memorial | Tribute | empty -->
 	    <input type="hidden" name="amount1" id="amount1" value="">
-    	<!-- <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/> -->
+		<!-- <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/> -->
+	    <input type="hidden" name="card_option" id="card_option" value="" />
+  	    <input type="hidden" name="venmo_user" id="venmo_user" value="" />
+		<input type="hidden" name="device_data" id="device_data" value=""/>
+		<input type="hidden" name="payment_method_nonce" id="payment_method_nonce" value=""/>
+		<input type="hidden" name="processorAuthorizationCode" id="processorAuthorizationCode" value=""/>
+		<input type="hidden" name="double_the_donation_company_id" id="double_the_donation_company_id" value=""/>
+		<input type="hidden" name="campaign_name" id="campaign_name" value="[[?x[[S80:campaign_name]]x::xx::American Heart Association::[[S80:campaign_name]]]]"/>
 		[[?x[[S334:df_preview]]x::xtruex::
 		<input type="hidden" name="sandbox" id="sandbox" value="true">
 		<input type="hidden" name="df_preview" value="true" />
@@ -591,6 +598,18 @@
           </div>
         </div>
         <!-- END PERSONAL INFORMATION -->
+
+		<div class="form-group" id="dd-widget">
+		  <h2>Employer Matching (Optional)</h2>
+		  <br>
+		  <hr>
+		  <div class="inline row">
+			<div class='input-group col-xs-12 col-sm-12 text-field'>
+			<p>Does your employer have a matching gift program? Please use the field below to find out.</p>
+			  <div id="dd-company-name-input"></div>
+            </div>
+		  </div>
+		</div>
 
         <!-- BILLING INFORMATION -->
         <div class='form-group' id='billingInfo'>
