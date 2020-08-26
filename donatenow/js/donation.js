@@ -270,6 +270,7 @@ $( '#payment3' ).on('click', function () {
 	if ($('input[name=occurrence]:checked').data("frequency") == "recurring") {
 	  $('input[name=level_id]').val($('input[name=occurrence]:checked').data("level"));
 	}
+	updatePayPalSuccessUrl();
 });
 
 $( '#payment4' ).on('click',function () {
@@ -385,16 +386,31 @@ $('#AmazonPayButton').keypress(function(e) {
 });
 
 // update paypal success url
-$('#city, #state').blur(function(){
-	var params = "&city=" + encodeURI($('#city').val()) + "&state=" + $('#state').val();
-	var successURL = $('input[name=finish_success_redirect]').val();
-	var len = successURL.indexOf("&city");
+// $('#city, #state').blur(function(){
+// 	var params = "&city=" + encodeURI($('#city').val()) + "&state=" + $('#state').val();
+// 	var successURL = $('input[name=finish_success_redirect]').val();
+// 	var len = successURL.indexOf("&city");
+// 	if (len > 0){
+// 		successURL = successURL.substring(0, len);
+// 	}
+// 	successURL = successURL + params;
+// 	$('input[name=finish_success_redirect]').val(successURL);
+// });
+function updatePayPalSuccessUrl(){
+	let params = "&city=" + encodeURI($('#city').val()) +
+		"&state=" + $('#state').val() +
+		"&email=" + encodeURI($('#emailAddress').val()) +
+		"&first=" + encodeURI($('#firstName').val()) +
+		"&last=" + encodeURI($('#lastName').val()) +
+		"&ddCompanyId=" + jQuery('input[name=doublethedonation_company_id]').val();
+	let successURL = $('input[name=finish_success_redirect]').val();
+	const len = successURL.indexOf("&city");
 	if (len > 0){
 		successURL = successURL.substring(0, len);
 	}
 	successURL = successURL + params;
 	$('input[name=finish_success_redirect]').val(successURL);
-});
+}
 
 $('#donorState').change(function(){
    $('input[name="donor.address.state"]').val($(this).find('option:selected').val());
