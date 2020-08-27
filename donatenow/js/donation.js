@@ -270,6 +270,7 @@ $( '#payment3' ).on('click', function () {
 	if ($('input[name=occurrence]:checked').data("frequency") == "recurring") {
 	  $('input[name=level_id]').val($('input[name=occurrence]:checked').data("level"));
 	}
+	updatePayPalSuccessUrl();
 });
 
 $( '#payment4' ).on('click',function () {
@@ -385,16 +386,21 @@ $('#AmazonPayButton').keypress(function(e) {
 });
 
 // update paypal success url
-$('#city, #state').blur(function(){
-	var params = "&city=" + encodeURI($('#city').val()) + "&state=" + $('#state').val();
-	var successURL = $('input[name=finish_success_redirect]').val();
-	var len = successURL.indexOf("&city");
+function updatePayPalSuccessUrl(){
+	let params = "&city=" + encodeURI($('#city').val()) +
+		"&state=" + $('#state').val() +
+		"&email=" + encodeURI($('#emailAddress').val()) +
+		"&first=" + encodeURI($('#firstName').val()) +
+		"&last=" + encodeURI($('#lastName').val()) +
+		"&ddCompanyId=" + jQuery('input[name=doublethedonation_company_id]').val();
+	let successURL = $('input[name=finish_success_redirect]').val();
+	const len = successURL.indexOf("&city");
 	if (len > 0){
 		successURL = successURL.substring(0, len);
 	}
 	successURL = successURL + params;
 	$('input[name=finish_success_redirect]').val(successURL);
-});
+}
 
 $('#donorState').change(function(){
    $('input[name="donor.address.state"]').val($(this).find('option:selected').val());
@@ -413,7 +419,7 @@ $('select#countryx').change(function(){
    } else {
 	$('.input-group.province').addClass('hidden');
 	$('.input-group.state').removeClass('hidden');
-	$('.input-group.bprovince').addClass('hidden');
+		$('.input-group.bprovince').addClass('hidden');
 	$('.input-group.bstate').removeClass('hidden');
    }
 });
@@ -459,6 +465,17 @@ $('.amount-input').blur(function(){
 		jQuery("#giftOtherText").val(formatter.format(this.value));
 	}
 });
+
+// Double the Donation Widget
+if(!window.doublethedonation) {
+	jQuery("#dd-company-name-input").html("<div class='form-row'><div class='form-content'><input type='text'/></div></div>");
+}
+jQuery(document).on("doublethedonation_company_id", function () {
+	var dtd_company_id = jQuery('input[name="doublethedonation_company_id"]').val();
+	// jQuery("#double_the_donation_company_idhidden").val(dtd_company_id);
+	jQuery("#double_the_donation_company_id").val(dtd_company_id);
+});
+
 /*
 $('#tributeType input[name^="year"]').click(function() {
   var radioval = $(this).val();

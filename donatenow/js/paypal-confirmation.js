@@ -30,6 +30,13 @@ jQuery(document).ready(function($) {
     var form = $.getQuerystring("form");
     var city = $.getQuerystring("city");
     var state = $.getQuerystring("state");
+    var email = $.getQuerystring("email");
+    var campaign_name = $.getQuerystring("campaign");
+    var transactionDate = $.getQuerystring("transaction_date");
+    var first = $.getQuerystring("first");
+    var last = $.getQuerystring("last");
+    var ddCompanyId = $.getQuerystring("ddCompanyId");
+
 
     $('p.confcode').html(ref);
     $('p.amount').html(amt);
@@ -52,6 +59,22 @@ jQuery(document).ready(function($) {
 	ga('ecommerce:send');
 	ga('send', 'pageview', '/donateok.asp');
 	*/
+
+	// Double Donation Widget
+	let widgetData = {
+		email: email,
+		firstName: first,
+		lastName: last,
+		transactionId: "",
+		confirmationCode: ref,
+		amt: amt,
+		form: campaign_name,
+		transactionDate: transactionDate
+	};
+	if (ddCompanyId !== "") {
+		doublethedonation.plugin.set_company(ddCompanyId);
+		doubleDonationConfirmation(widgetData);
+	}
 	
 	pushDonationSuccessToDataLayer(form, ref, amt);
 });

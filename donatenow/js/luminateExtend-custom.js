@@ -54,8 +54,10 @@
 	        if ($('input[name="billing.address.state"]').val() == "") {
 			$('input[name="billing.address.state"]').val($('select[name=billingState] option:selected').val());
 		}
-	      
-	        $('input[name=compliance]').val("true");
+
+		// copy donation widget selected company
+		$("#double_the_donation_company_id").val($('input[name=doublethedonation_company_id]').val());
+		$('input[name=compliance]').val("true");
 		
         window.scrollTo(0, 0);
         $(this).hide();
@@ -204,8 +206,14 @@
 			var cc=$('input[name=card_number]').val();
 			var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();	
 			var form=$('input[name=form_id]').val();
-
 			var freq = $('input[name=occurrence]:checked').val();
+			let ddCompanyId = "";
+			if (jQuery('input[name=doublethedonation_company_id]').length > 0) {
+				ddCompanyId = $('input[name=doublethedonation_company_id]').val();
+			}
+			let nameField = $('input[name=campaign_name]').length ? $('input[name=campaign_name]').val() : "American Heart Association";
+			let campaign_name = ($('input[name=instance]').val() == "heartdev" ? "heartdev " : "") + nameField;
+			let transactionDate = data.donationResponse.donation.date_time;
 			/* 
 			if ($('input[name=occurrence]:checked').val() == 'Monthly Gift') {
 				var freq = 'monthly';
@@ -275,7 +283,21 @@
 
 			ga('send', 'pageview', '/donateok.asp');
 
-			
+			// Double Donation Widget
+			let widgetData = {
+				email: email,
+				firstName: first,
+				lastName: last,
+				transactionId: transactionId,
+				confirmationCode: ref,
+				amt: amt,
+				form: campaign_name,
+				transactionDate: transactionDate
+			};
+			if (ddCompanyId !== "") {
+				doubleDonationConfirmation(widgetData);
+				doublethedonation.plugin.set_company(ddCompanyId);
+			}
 
 			pushDonationSuccessToDataLayer(form, transactionId, amt);
         }
@@ -346,23 +368,18 @@ function donateAmazon() {
 				amazon.Login.logout();
 
 				//make offline donation in luminate to record transaction
-				if ($('input[name="df_preview"]').val() != "true") donateOffline();
+				// if ($('input[name="df_preview"]').val() != "true") donateOffline();
+				donateOffline(donateOfflineCallback);
 
-				//var amt = data.donationResponse.donation.amount.decimal;
 				var email = $('input[name="donor.email"]').val();
 				var first = $('input[name="donor.name.first"]').val();
 				var last = $('input[name="donor.name.last"]').val();
-				var full = $('input[name="donor.name.first"]').val()+' '+$('input[name="donor.name.last"]').val();
 				var street1 = $('input[name="donor.address.street1"]').val();
 				var street2 = $('input[name="donor.address.street2"]').val();
 				var city = $('input[name="donor.address.city"]').val();
 				var state = $('[name="donor.address.state"]').val();
 				var zip = $('input[name="donor.address.zip"]').val();
 				var country = $('select[name="donor.address.country"]').val();
-				//var ref = data.donationResponse.donation.confirmation_code;
-				var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
-				var cc=$('input[name=card_number]').val();
-				var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
 				var form=$('input[name=form_id]').val();
 
 			  $('.donation-loading').remove();
@@ -383,7 +400,6 @@ function donateAmazon() {
 				  $('tr.amazon').show();
 				  $('p.amount').html("$"+amt);
 				  $('p.confcode').html(ref);
-
 				});
 
 				$('.thank-you').append('<img src="//offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
@@ -418,8 +434,6 @@ function donateAmazon() {
 function donateApplePay() {
 	window.scrollTo(0, 0);
 	$('.donation-form').hide();
-	var params = $('.donation-form').serialize();
-	var status = "";
 	var amt = $('input[name=other_amount]').val();
 	var ref = 'APPLEPAY:'+$('input[name=processorAuthorizationCode]').val();
 	//save off amazon id into custom field
@@ -427,23 +441,17 @@ function donateApplePay() {
 	$('input[name=payment_confirmation_id]').val(ref);
 
 	//make offline donation in luminate to record transaction
-	if ($('input[name="df_preview"]').val() != "true") donateOffline();
+	if ($('input[name="df_preview"]').val() != "true") donateOffline(donateOfflineCallback);
 
-	//var amt = data.donationResponse.donation.amount.decimal;
 	var email = $('input[name="donor.email"]').val();
 	var first = $('input[name="donor.name.first"]').val();
 	var last = $('input[name="donor.name.last"]').val();
-	var full = $('input[name="donor.name.first"]').val()+' '+$('input[name="donor.name.last"]').val();
 	var street1 = $('input[name="donor.address.street1"]').val();
 	var street2 = $('input[name="donor.address.street2"]').val();
 	var city = $('input[name="donor.address.city"]').val();
 	var state = $('[name="donor.address.state"]').val();
 	var zip = $('input[name="donor.address.zip"]').val();
 	var country = $('select[name="donor.address.country"]').val();
-	//var ref = data.donationResponse.donation.confirmation_code;
-	var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
-	var cc=$('input[name=card_number]').val();
-	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
 	var form=$('input[name=form_id]').val();
 
 	$('.donation-loading').remove();
@@ -494,8 +502,6 @@ function donateVenmo() {
 	window.scrollTo(0, 0);
         $('.processing').hide();
 	$('.donation-form').hide();
-	var params = $('.donation-form').serialize();
-	var status = "";
 	var amt = $('input[name=other_amount]').val();
 	var ref = 'VENMO:'+$('input[name=processorAuthorizationCode]').val();
 	//save off amazon id into custom field
@@ -503,23 +509,18 @@ function donateVenmo() {
 	$('input[name=payment_confirmation_id]').val(ref);
 
 	//make offline donation in luminate to record transaction
-	if ($('input[name="df_preview"]').val() != "true") donateOffline();
+	if ($('input[name="df_preview"]').val() != "true") donateOffline(donateOfflineCallback);
 
 	//var amt = data.donationResponse.donation.amount.decimal;
 	var email = $('input[name="donor.email"]').val();
 	var first = $('input[name="donor.name.first"]').val();
 	var last = $('input[name="donor.name.last"]').val();
-	var full = $('input[name="donor.name.first"]').val()+' '+$('input[name="donor.name.last"]').val();
 	var street1 = $('input[name="donor.address.street1"]').val();
 	var street2 = $('input[name="donor.address.street2"]').val();
 	var city = $('input[name="donor.address.city"]').val();
 	var state = $('[name="donor.address.state"]').val();
 	var zip = $('input[name="donor.address.zip"]').val();
 	var country = $('select[name="donor.address.country"]').val();
-	//var ref = data.donationResponse.donation.confirmation_code;
-	var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
-	var cc=$('input[name=card_number]').val();
-	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
 	var venmo_user = $('input[name=venmo_user]').val();
 	var form=$('input[name=form_id]').val();
 
@@ -572,8 +573,6 @@ function donateVenmo() {
 function donateGooglePay() {
 	window.scrollTo(0, 0);
 	$('.donation-form').hide();
-	var params = $('.donation-form').serialize();
-	var status = "";
 	var amt = $('input[name=other_amount]').val();
 	var ref = 'GOOGLEPAY:'+$('input[name=processorAuthorizationCode]').val();
 	//save off amazon id into custom field
@@ -581,23 +580,19 @@ function donateGooglePay() {
 	$('input[name=payment_confirmation_id]').val(ref);
 
 	//make offline donation in luminate to record transaction
-	if ($('input[name="df_preview"]').val() != "true") donateOffline();
+	if ($('input[name="df_preview"]').val() != "true") {
+		donateOffline(donateOfflineCallback);
+	}
 
-	//var amt = data.donationResponse.donation.amount.decimal;
 	var email = $('input[name="donor.email"]').val();
 	var first = $('input[name="donor.name.first"]').val();
 	var last = $('input[name="donor.name.last"]').val();
-	var full = $('input[name="donor.name.first"]').val()+' '+$('input[name="donor.name.last"]').val();
 	var street1 = $('input[name="donor.address.street1"]').val();
 	var street2 = $('input[name="donor.address.street2"]').val();
 	var city = $('input[name="donor.address.city"]').val();
 	var state = $('[name="donor.address.state"]').val();
 	var zip = $('input[name="donor.address.zip"]').val();
 	var country = $('select[name="donor.address.country"]').val();
-	//var ref = data.donationResponse.donation.confirmation_code;
-	var cdate = $('select[name="card_exp_date_month"]').val() + "/" + $('select[name="card_exp_date_year"]').val();
-	var cc=$('input[name=card_number]').val();
-	var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();
 	var form=$('input[name=form_id]').val();
 
 	$('.donation-loading').remove();
@@ -644,7 +639,7 @@ function donateGooglePay() {
 	pushDonationSuccessToDataLayer(form, ref, amt);
 }
 
-function donateOffline() {
+function donateOffline(donateOfflineCallback) {
 	var params = $('.donation-form').serialize();
 
 	$.ajax({
@@ -653,12 +648,34 @@ function donateOffline() {
 		cache:false,
 		dataType: "json",
 		url:"https://tools.heart.org/donate/convio-offline/addOfflineDonation-new.php?"+params+"&callback=?",
-		success: function(data){
-			//donateCallback.success(data.data);
-		}
+		success: donateOfflineCallback}
 	});
-
 }
+
+/**
+ * Get the Transaction ID and Confirmation Code for transactions added via the API
+ * @param {*} responseData
+ */
+function donateOfflineCallback(responseData) {
+	const nameField = $('input[name=campaign_name]').length ? $('input[name=campaign_name]').val() : "American Heart Association";
+	const campaign_name = ($('input[name=instance]').val() == "heartdev" ? "heartdev " : "") + nameField;
+
+	const widgetData = {
+		transactionId: responseData.data.donationResponse.donation.transaction_id,
+		confirmationCode: responseData.data.donationResponse.donation.confirmation_code,
+		transactionDate: responseData.data.donationResponse.donation.date_time,
+		email: $('input[name="donor.email"]').val(),
+		firstName: $('input[name="donor.name.first"]').val(),
+		lastName: $('input[name="donor.name.last"]').val(),
+		amt: $('input[name=other_amount]').val(),
+		form: campaign_name
+	};
+
+	if (jQuery('input[name=doublethedonation_company_id]').length && jQuery('input[name=doublethedonation_company_id]').val() !== "") {
+		doubleDonationConfirmation(widgetData);
+	}
+}
+
 function getAmazonAddress() {
 	var params = $('.donation-form').serialize();
 	$.ajax({
@@ -688,6 +705,43 @@ function includeCustomFBPixel(amt) {
 			currency: 'USD', 
 		});
     };
+}
+/**
+ * Post matching gift info
+ * @param {*} widgetData
+ */
+function doubleDonationConfirmation(widgetData) {
+	const ddCompanyId = jQuery('input[name=doublethedonation_company_id]').val();
+
+	//hides monthly giving duration options; and sets duration to no end date
+	var domain = doublethedonation.integrations.core.strip_domain(widgetData.email);
+	doublethedonation.plugin.load_config();
+	doublethedonation.plugin.set_donation_id(widgetData.confirmationCode);
+	doublethedonation.plugin.set_donation_campaign(widgetData.form);
+	doublethedonation.plugin.email_domain(domain);
+
+	if (ddCompanyId !== "") {
+		doublethedonation.plugin.set_company(ddCompanyId);
+	}
+
+	doublethedonation.integrations.core.register_donation({
+		"360matchpro_public_key": "w5JH5j9ID4Cf6zMh",
+		"campaign": widgetData.form,
+		"donation_identifier": widgetData.confirmationCode,
+		"donation_amount": widgetData.amt,
+		"donor_first_name": widgetData.firstName,
+		"donor_last_name": widgetData.lastName,
+		"donor_email": widgetData.email,
+		"doublethedonation_company_id": ddCompanyId,
+		"doublethedonation_status": null
+	});
+
+	// delay triggering the widget
+	setTimeout(function() {
+		if (window.doublethedonation) {
+			doublethedonation.plugin.load_plugin();
+		}
+	}, 1000);
 }
 
 (function ($) {
@@ -969,17 +1023,6 @@ $('[name^=donor\\.]').each(function(){
 
 // END QUERY STRING CODE 
 
-/* TODO: remove unused 
-	if ($.getQuerystring("amount")) {
-		//$('label.active').removeClass("active");
-		//$('label.level_other').addClass("active");
-		$('.level-other-input').slideDown();
-        $('#other-amount-entered').removeAttr('disabled');
-        $('#other-amount-entered').attr('name', 'other_amount_entered');
-		$('input[name=other_amount]').val($.getQuerystring("amount"));
-		$('input[name=other_amount_entered]').val($.getQuerystring("amount"));
-	}
-*/		
 	var tmpDate = new Date().getTime();
 	var _user_id = ''; // IMPORTANT! Set to the user's ID, username, or email address, or '' if not yet known.
 	var _session_id = 's'+tmpDate; // Set to a unique session ID for the visitor's current browsing session.
