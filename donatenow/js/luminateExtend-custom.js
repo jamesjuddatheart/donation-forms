@@ -648,13 +648,13 @@ function donateOffline(donateOfflineCallback) {
 		cache:false,
 		dataType: "json",
 		url:"https://tools.heart.org/donate/convio-offline/addOfflineDonation-new.php?"+params+"&callback=?",
-		success: donateOfflineCallback}
+		success: donateOfflineCallback
 	});
 }
 
 /**
  * Get the Transaction ID and Confirmation Code for transactions added via the API
- * @param {*} responseData
+ * @param {*} responseData - From the donateOffline success callback
  */
 function donateOfflineCallback(responseData) {
 	const nameField = $('input[name=campaign_name]').length ? $('input[name=campaign_name]').val() : "American Heart Association";
