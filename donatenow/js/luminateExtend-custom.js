@@ -334,7 +334,7 @@ function donateAmazon() {
 		async: false,
 		cache:false,
 		dataType: "json",
-		url:"https://hearttools.heart.org/donate/amazon/payWithAmazon.php?"+params+"&callback=?",
+		url:"https://tools.heart.org/donate/amazon/payWithAmazon.php?"+params+"&callback=?",
 		success: function(data){
 			if ($('label[for="type-monthly"] .active').length > 0) {
 				status = data.data.AuthorizeOnBillingAgreementResult.AuthorizationDetails.AuthorizationStatus.State;
@@ -647,14 +647,14 @@ function donateOffline(donateOfflineCallback) {
 		async: false,
 		cache:false,
 		dataType: "json",
-		url:"https://hearttools.heart.org/donate/convio-offline/addOfflineDonation-new.php?"+params+"&callback=?",
+		url:"https://tools.heart.org/donate/convio-offline/addOfflineDonation-new.php?"+params+"&callback=?",
 		success: donateOfflineCallback
 	});
 }
 
 /**
  * Get the Transaction ID and Confirmation Code for transactions added via the API
- * @param {*} responseData
+ * @param {*} responseData - From the donateOffline success callback
  */
 function donateOfflineCallback(responseData) {
 	const nameField = $('input[name=campaign_name]').length ? $('input[name=campaign_name]').val() : "American Heart Association";
@@ -683,7 +683,7 @@ function getAmazonAddress() {
 		async: false,
 		cache:false,
 		dataType: "json",
-		url:"https://hearttools.heart.org/donate/amazon/getAmazonAddress.php?"+params+"&callback=?",
+		url:"https://tools.heart.org/donate/amazon/getAmazonAddress.php?"+params+"&callback=?",
 		success: function(data){
 			var address = data.data.GetBillingAgreementDetailsResult.BillingAgreementDetails.BillingAddress.PhysicalAddress;
 			$('input[name="donor.address.street1"]').val(address.AddressLine1);

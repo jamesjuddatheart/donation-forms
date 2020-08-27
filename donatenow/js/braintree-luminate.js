@@ -65,9 +65,9 @@ var braintree_aha = {
 	initializeBraintree: function() {
 		
 		//if apple pay is available then start BT process
-		var tokenURL = "https://hearttools.heart.org/braintree_new/gettoken.php";
+		var tokenURL = "https://tools.heart.org/braintree_new/gettoken.php";
 		if ($('input[name=instance]').val() == "heartdev") {
-			tokenURL = "https://hearttools.heart.org/braintree_new/gettoken-test.php";
+			tokenURL = "https://tools.heart.org/braintree_new/gettoken-test.php";
 		}
 		$.getJSON(tokenURL + "?callback=?",function(data){
 			console.log(data);
@@ -178,9 +178,9 @@ var braintree_aha = {
 		var postParams = $(braintree_aha.donation_form).serialize();
 		postParams += "&amount="+$('input[name=other_amount]').val();
 				
-		var tokenURL = "https://hearttools.heart.org/braintree_new/checkout.php";
+		var tokenURL = "https://tools.heart.org/braintree_new/checkout.php";
 		if ($('input[name=instance]').val() == "heartdev") {
-			tokenURL = "https://hearttools.heart.org/braintree_new/checkout-test.php";
+			tokenURL = "https://tools.heart.org/braintree_new/checkout-test.php";
 		}
 		$.getJSON(tokenURL + '?callback=?', postParams)
 			.done(function(data) {
@@ -309,9 +309,9 @@ var braintree_aha = {
 		var postParams = $(braintree_aha.donation_form).serialize();
 		postParams += "&amount="+$('input[name=other_amount]').val();
 				
-		var tokenURL = "https://hearttools.heart.org/braintree_new/checkout.php";
+		var tokenURL = "https://tools.heart.org/braintree_new/checkout.php";
 		if ($('input[name=instance]').val() == "heartdev") {
-			tokenURL = "https://hearttools.heart.org/braintree_new/checkout-test.php";
+			tokenURL = "https://tools.heart.org/braintree_new/checkout-test.php";
 		}
 		$.getJSON(tokenURL + '?callback=?', postParams)
 			.done(function(data) {
@@ -498,9 +498,9 @@ var braintree_aha = {
 		var postParams = $(braintree_aha.donation_form).serialize();
 		postParams += "&amount="+$('input[name=other_amount]').val();
 				
-		var tokenURL = "https://hearttools.heart.org/braintree_new/checkout.php";
+		var tokenURL = "https://tools.heart.org/braintree_new/checkout.php";
 		if ($('input[name=instance]').val() == "heartdev") {
-			tokenURL = "https://hearttools.heart.org/braintree_new/checkout-test.php";
+			tokenURL = "https://tools.heart.org/braintree_new/checkout-test.php";
 		}
 		$.getJSON(tokenURL + '?callback=?', postParams)
 			.done(function(data) {
