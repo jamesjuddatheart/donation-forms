@@ -207,10 +207,7 @@
 			var ctype = $('input[name=card_number]').attr("class").replace(" valid","").toUpperCase();	
 			var form=$('input[name=form_id]').val();
 			var freq = $('input[name=occurrence]:checked').val();
-			let ddCompanyId = "";
-			if (jQuery('input[name=doublethedonation_company_id]').length > 0) {
-				ddCompanyId = $('input[name=doublethedonation_company_id]').val();
-			}
+			let ddCompanyId = $('input[name=doublethedonation_company_id]').val();
 			let nameField = $('input[name=campaign_name]').length ? $('input[name=campaign_name]').val() : "American Heart Association";
 			let campaign_name = ($('input[name=instance]').val() == "heartdev" ? "heartdev " : "") + nameField;
 			let transactionDate = data.donationResponse.donation.date_time;
@@ -292,12 +289,16 @@
 				confirmationCode: ref,
 				amt: amt,
 				form: campaign_name,
-				transactionDate: transactionDate
+				transactionDate: transactionDate,
+				ddCompanyId: ddCompanyId
 			};
 			if (ddCompanyId !== "") {
+				doublethedonation.plugin.set_company(ddCompanyId);
+			}
+			// Call only if the widget is on the form
+			if (jQuery('input[name=doublethedonation_company_id]').length > 0) {
 				doubleDonationConfirmation(widgetData);
 			}
-			doublethedonation.plugin.set_company(ddCompanyId);
 
 			pushDonationSuccessToDataLayer(form, transactionId, amt);
         }
@@ -659,6 +660,7 @@ function donateOffline(donateOfflineCallback) {
 function donateOfflineCallback(responseData) {
 	const nameField = $('input[name=campaign_name]').length ? $('input[name=campaign_name]').val() : "American Heart Association";
 	const campaign_name = ($('input[name=instance]').val() == "heartdev" ? "heartdev " : "") + nameField;
+	const ddCompanyId = jQuery('input[name=doublethedonation_company_id]').val();
 
 	const widgetData = {
 		transactionId: responseData.data.donationResponse.donation.transaction_id,
@@ -668,11 +670,12 @@ function donateOfflineCallback(responseData) {
 		firstName: $('input[name="donor.name.first"]').val(),
 		lastName: $('input[name="donor.name.last"]').val(),
 		amt: $('input[name=other_amount]').val(),
-		form: campaign_name
+		form: campaign_name,
+		ddCompanyId: ddCompanyId
 	};
 
 	// Call only if the widget is on the form
-	if (jQuery('input[name=doublethedonation_company_id]').length) {
+	if (jQuery('input[name=doublethedonation_company_id]').length > 0) {
 		doubleDonationConfirmation(widgetData);
 	}
 }
@@ -712,7 +715,6 @@ function includeCustomFBPixel(amt) {
  * @param {*} widgetData
  */
 function doubleDonationConfirmation(widgetData) {
-	const ddCompanyId = jQuery('input[name=doublethedonation_company_id]').val();
 
 	var domain = doublethedonation.integrations.core.strip_domain(widgetData.email);
 	doublethedonation.plugin.load_config();
@@ -720,7 +722,7 @@ function doubleDonationConfirmation(widgetData) {
 	doublethedonation.plugin.set_donation_campaign(widgetData.form);
 	doublethedonation.plugin.email_domain(domain);
 
-	if (ddCompanyId !== "") {
+	if (widgetData.ddCompanyId !== "") {
 		doublethedonation.plugin.set_company(ddCompanyId);
 	}
 
@@ -732,7 +734,7 @@ function doubleDonationConfirmation(widgetData) {
 		"donor_first_name": widgetData.firstName,
 		"donor_last_name": widgetData.lastName,
 		"donor_email": widgetData.email,
-		"doublethedonation_company_id": ddCompanyId,
+		"doublethedonation_company_id": widgetData.ddCompanyId,
 		"doublethedonation_status": null
 	});
 
