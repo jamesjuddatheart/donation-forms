@@ -296,8 +296,8 @@
 			};
 			if (ddCompanyId !== "") {
 				doubleDonationConfirmation(widgetData);
-				doublethedonation.plugin.set_company(ddCompanyId);
 			}
+			doublethedonation.plugin.set_company(ddCompanyId);
 
 			pushDonationSuccessToDataLayer(form, transactionId, amt);
         }
@@ -671,7 +671,8 @@ function donateOfflineCallback(responseData) {
 		form: campaign_name
 	};
 
-	if (jQuery('input[name=doublethedonation_company_id]').length && jQuery('input[name=doublethedonation_company_id]').val() !== "") {
+	// Call only if the widget is on the form
+	if (jQuery('input[name=doublethedonation_company_id]').length) {
 		doubleDonationConfirmation(widgetData);
 	}
 }
@@ -713,7 +714,6 @@ function includeCustomFBPixel(amt) {
 function doubleDonationConfirmation(widgetData) {
 	const ddCompanyId = jQuery('input[name=doublethedonation_company_id]').val();
 
-	//hides monthly giving duration options; and sets duration to no end date
 	var domain = doublethedonation.integrations.core.strip_domain(widgetData.email);
 	doublethedonation.plugin.load_config();
 	doublethedonation.plugin.set_donation_id(widgetData.confirmationCode);
