@@ -139,7 +139,7 @@
       error: function(data) {
         $('#donation-errors').remove();
 
-        $('.donation-form').prepend('<div id="donation-errors">' + 
+        $('.donation-form').prepend('<div id="donation-errors" role="alert" aria-atomic="true">' +
                                       '<div class="alert alert-danger">' + 
                                         data.errorResponse.message + 
                                       '</div>' + 
