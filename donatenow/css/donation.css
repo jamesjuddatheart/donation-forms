@@ -760,6 +760,15 @@ form {
 label {
 	white-space: normal;
 }
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 26px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #c10e21;
+}
 .sidebar {
   display: inline-block;
   vertical-align: top;
