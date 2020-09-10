@@ -139,7 +139,7 @@
       error: function(data) {
         $('#donation-errors').remove();
 
-        $('.donation-form').prepend('<div id="donation-errors">' + 
+        $('.donation-form').prepend('<div id="donation-errors" role="alert" aria-atomic="true">' +
                                       '<div class="alert alert-danger">' + 
                                         data.errorResponse.message + 
                                       '</div>' + 
@@ -1011,11 +1011,11 @@ $('[name^=donor\\.]').each(function(){
 	// Get amount passed from query string
 	var amount = $.getQuerystring("amount");
 	if (amount.length > 0) {
-		var match = $('label[data-amount=' + $.getQuerystring("amount") + ']');
+		var match = $('button[data-amount=' + amount + ']');
 		if(match.length>=1){
 			$(match).click();
 		} else {
-			console.log($.getQuerystring("amount"));
+			console.log(amount);
 			$('input[name="gift"]').prop( "checked", false );
 			$('.radio-input').click();
 			$('#giftOtherText').val(amount);
