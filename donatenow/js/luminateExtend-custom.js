@@ -1015,16 +1015,17 @@ $('[name^=donor\\.]').each(function(){
 	const amount = $.getQuerystring("amount");
 	if (amount.length > 0) {
 		// select appropriate option - onetime vs recurring gift arrays
-		const match = $('button[data-amount=' + amount + ']');
-		const arrayVisible = $('button[data-amount=' + amount + ']').parent().parent().attr('style') == "display: none;";
-		if(!arrayVisible && match.length>=1) {
-			$(match).click();
+		const giftButton = $('button[data-amount=' + amount + ']');
+		const giftButtonVisible = $(giftButton).parent().parent().attr('style') != "display: none;" && giftButton.length;
+		if(giftButtonVisible) {
+			$(giftButton).click();
 		} else {
 			console.log(amount);
-			$('input[name="gift"]').prop( "checked", false );
-			$('.radio-input').click();
-			$('#giftOtherText').val(amount);
-			$('input[name=other_amount]').val(amount);
+			$('.radio-label').removeClass("active");
+			$('input[name="gift"]').removeAttr('checked').prop("checked", false);
+			$('#giftOtherText').addClass("active").valid();
+			$('#giftOtherText, input[name=other_amount]').val(amount);
+			updateSubmitText();
 		}
 	}
 
