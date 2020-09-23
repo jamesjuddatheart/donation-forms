@@ -1014,8 +1014,11 @@ $('[name^=donor\\.]').each(function(){
 	// Get amount passed from query string
 	var amount = $.getQuerystring("amount");
 	if (amount.length > 0) {
+		// select appropriate option - onetime vs recurring gift arrays
 		var match = $('button[data-amount=' + amount + ']');
-		if(match.length>=1){
+		if($('#occurrence2').prop('checked') && match.length>=1) {
+			$(match).click();
+		} else if ($('#occurrence1').prop('checked') && match.length>=1) {
 			$(match).click();
 		} else {
 			console.log(amount);
