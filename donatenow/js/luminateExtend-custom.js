@@ -1012,13 +1012,12 @@ $('[name^=donor\\.]').each(function(){
 	}
 
 	// Get amount passed from query string
-	var amount = $.getQuerystring("amount");
+	const amount = $.getQuerystring("amount");
 	if (amount.length > 0) {
 		// select appropriate option - onetime vs recurring gift arrays
-		var match = $('button[data-amount=' + amount + ']');
-		if($('#occurrence2').prop('checked') && match.length>=1) {
-			$(match).click();
-		} else if ($('#occurrence1').prop('checked') && match.length>=1) {
+		const match = $('button[data-amount=' + amount + ']');
+		const arrayVisible = $('button[data-amount=' + amount + ']').parent().parent().attr('style') == "display: none;";
+		if(!arrayVisible && match.length>=1) {
 			$(match).click();
 		} else {
 			console.log(amount);
