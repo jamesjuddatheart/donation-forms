@@ -139,7 +139,7 @@
       error: function(data) {
         $('#donation-errors').remove();
 
-        $('.donation-form').prepend('<div id="donation-errors" role="alert" aria-atomic="true">' +
+        $('.donation-form').prepend('<div id="donation-errors" role="alert" aria-atomic="true" aria-live="assertive">' +
                                       '<div class="alert alert-danger">' + 
                                         data.errorResponse.message + 
                                       '</div>' + 
@@ -191,6 +191,7 @@
         else {
 			var amt = data.donationResponse.donation.amount.decimal;
 			var email = $('input[name="donor.email"]').val();
+			var phone = $('input[name="donor.phone"]').val();
 			var first = $('input[name="billing.name.first"]').val();
 			var last = $('input[name="billing.name.last"]').val();
 			var full = $('input[name="billing.name.first"]').val()+' '+$('input[name="billing.name.last"]').val();
@@ -283,6 +284,7 @@
 			// Double Donation Widget
 			let widgetData = {
 				email: email,
+				phone: phone,
 				firstName: first,
 				lastName: last,
 				transactionId: transactionId,
@@ -667,6 +669,7 @@ function donateOfflineCallback(responseData) {
 		confirmationCode: responseData.data.donationResponse.donation.confirmation_code,
 		transactionDate: responseData.data.donationResponse.donation.date_time,
 		email: $('input[name="donor.email"]').val(),
+		phone: $('input[name="donor.phone"]').val(),
 		firstName: $('input[name="donor.name.first"]').val(),
 		lastName: $('input[name="donor.name.last"]').val(),
 		amt: $('input[name=other_amount]').val(),
@@ -734,6 +737,7 @@ function doubleDonationConfirmation(widgetData) {
 		"donor_first_name": widgetData.firstName,
 		"donor_last_name": widgetData.lastName,
 		"donor_email": widgetData.email,
+		"donor_phone": widgetData.phone,
 		"doublethedonation_company_id": widgetData.ddCompanyId,
 		"doublethedonation_status": null
 	});
@@ -830,13 +834,6 @@ $('[name^=donor\\.]').each(function(){
 	$('select[name="donor.address.state"]').val($.getQuerystring("state"));	
 	$('input[name="donor.address.zip"]').val($.getQuerystring("zip"));	
 	$('input[name="donor.email"]').val($.getQuerystring("email"));	
-
-	$('.group1').show();
-	$('.group2').hide();
-	if($.getQuerystring("group") == "0") {
-		$('.group1').hide();
-		$('.group2').show();
-	}	      
 
 // END QUERY STRING CODE 
       // This example displays an address form, using the autocomplete feature
@@ -997,8 +994,14 @@ $('[name^=donor\\.]').each(function(){
 	}
 
 	// Sustainer default
-	if (location.href.indexOf("donatenow_sustainer") > 0 || location.href.indexOf("SusTestV1") > 0 || location.href.indexOf("donatenow_heart_annual") > 0 || location.href.indexOf("jul20_sustainer") > 0) {
-		($('input[name=occurrence]:checked').prop("id") == "occurrence3") ? $('#occurrence3').click() : $('#occurrence2').click();
+	const sustainerDefault = (location.href.indexOf("donatenow_sustainer") > 0 || location.href.indexOf("SusTestV1") > 0 || location.href.indexOf("donatenow_heart_annual") > 0 || location.href.indexOf("jul20_sustainer") > 0);
+	// Get frequency from query string
+	const frequency = $.getQuerystring("frequency");
+
+	if (sustainerDefault || frequency == "recurring") {
+		showLevels("recurring", $('#occurrence2').data("level"));
+		$('#occurrence2').attr('checked', 'checked').prop('checked', true);
+		// $('#occurrence2').click();
 	}
 	
 	// LIW customization
