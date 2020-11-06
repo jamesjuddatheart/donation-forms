@@ -127,6 +127,8 @@
 					break;
 			}
 		} else { 
+			const h = document.querySelector("#donateform > div:nth-child(36) > legend > h2");
+			h.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
 			return false;
 		}
       });
