@@ -143,3 +143,13 @@ amazon.Login.MODLogoutClickHandler = function() {
 	$("#AmazonPayButton").show();
 };
 
+// Amazon V2
+var amazonPayButton = amazon.Pay.renderButton('.amazon-pay', {
+   merchantId: 'A1ZM7MXG16NQQB',
+   ledgerCurrency: 'USD',          
+   sandbox: true, 
+   checkoutLanguage: 'en_US', 
+   productType: 'PayAndShip', 
+   placement: 'Cart',
+   buttonColor: 'Gold'
+});
