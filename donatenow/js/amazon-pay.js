@@ -156,6 +156,11 @@ const amazonPayButton = amazon.Pay.renderButton('#amazon-pay', {
    buttonColor: 'Gold'
 });
 
+jQuery(document).ready(function($){
+	isSandbox;
+	amazonPayButton;
+});
+
 /**
  * Build payload details
  */
