@@ -144,21 +144,19 @@ amazon.Login.MODLogoutClickHandler = function() {
 };
 
 // Amazon V2
-const isSandbox = $("input[name=df_preview]").val() == "true";
+function isSandbox() {
+	return ($("input[name=df_preview]").val()) ? "true" : "false";
+}
+
 // Render Amazon Pay Button
 const amazonPayButton = amazon.Pay.renderButton('#amazon-pay', {
    merchantId: 'A1ZM7MXG16NQQB',
    ledgerCurrency: 'USD',          
-   sandbox: isSandbox,
+   sandbox: isSandbox(),
    checkoutLanguage: 'en_US', 
    productType: 'PayAndShip', 
    placement: 'Cart',
    buttonColor: 'Gold'
-});
-
-jQuery(document).ready(function($){
-	isSandbox;
-	amazonPayButton;
 });
 
 /**
@@ -220,7 +218,7 @@ function buildSignatureParams() {
 function getSignature(amazonPayInitCheckout) {
 	let paramPayload = URLEncode(buildSignatureParams());
 	let tokenURL = "https://tools.heart.org/donate/amazon/v2/getsignature.php?payload=" + paramPayload;
-	if(isSandbox) {
+	if(isSandbox()) {
 		tokenURL + '&sandbox=true';
 	}
 	console.log(tokenURL);
