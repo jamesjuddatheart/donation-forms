@@ -149,7 +149,7 @@ function isSandbox() {
 }
 
 // Render Amazon Pay Button
-const amazonPayButton = amazon.Pay.renderButton('#amazon-pay', {
+var amazonPayButton = amazon.Pay.renderButton('#amazon-pay', {
    merchantId: 'A1ZM7MXG16NQQB',
    ledgerCurrency: 'USD',          
    sandbox: isSandbox(),
