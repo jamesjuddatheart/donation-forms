@@ -98,8 +98,6 @@
 					$(form).submit();  
 					break;
 				case "amazon" :
-					// build payload
-					let payload = buildPayLoad();
 					getSignature(amazonPayInitCheckout);
 
 					// if (typeof amazon.Login.AmazonBillingAgreementId != "undefined") {

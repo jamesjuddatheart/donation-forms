@@ -234,15 +234,12 @@ function getSignature(amazonPayInitCheckout) {
 
 /**
  * Submit to Amazon
- * @param {*} payload generated payload data
  * @param {*} signatureData returned signature
  */
 function amazonPayInitCheckout(signatureData) {
-	console.log('init space');
-	console.log(payload);
+	let payload = buildPayLoad();
 	// sign payload
-	const signature = signatureData.signature;
-	console.log(signature);
+	let signature = signatureData.signature;
 
 	amazonPayButton.initCheckout({
 		createCheckoutSessionConfig: {
