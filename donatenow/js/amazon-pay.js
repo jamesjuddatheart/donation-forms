@@ -144,12 +144,108 @@ amazon.Login.MODLogoutClickHandler = function() {
 };
 
 // Amazon V2
-var amazonPayButton = amazon.Pay.renderButton('.amazon-pay', {
+const isSandbox = $("input[name=df_preview]").val() == "true";
+// Render Amazon Pay Button
+const amazonPayButton = amazon.Pay.renderButton('#amazon-pay', {
    merchantId: 'A1ZM7MXG16NQQB',
    ledgerCurrency: 'USD',          
-   sandbox: true, 
+   sandbox: isSandbox,
    checkoutLanguage: 'en_US', 
    productType: 'PayAndShip', 
    placement: 'Cart',
    buttonColor: 'Gold'
 });
+
+/**
+ * Build payload details
+ */
+function buildPayLoad() {
+	// return URL -- incorporate current URL
+	const checkoutResultReturnUrl = location.href + ((location.href.indexOf("?")>0) ? '&' : '?') + 'amazon=thankyou';
+	const amznPayLoad = {
+		"webCheckoutDetails": {
+			"checkoutResultReturnUrl": checkoutResultReturnUrl,
+			"checkoutMode": "ProcessOrder"
+		},
+		"storeId": "amzn1.application-oa2-client.38bb1196ffea48f2b70647a398ce8a27",
+		"paymentDetails": {
+			"paymentIntent": "AuthorizeWithCapture",
+			"chargeAmount": {
+				"amount": $('input[name=other_amount]').val(),
+				"currencyCode": "USD"
+			},
+			"presentmentCurrency":"USD"
+		},
+		"merchantMetadata": {
+			"merchantReferenceId":"Single-Donation",
+			"merchantStoreName":"The American Heart Association",
+			"noteToBuyer":"Thank you for your donation"
+		},
+		"addressDetails": {
+			"name": $('input[name="donor.name.first"]').val() + " " + $('input[name="donor.name.last"]').val(),
+			"addressLine1": $('input[name="donor.address.street1"]').val(),
+			"city": $('input[name="donor.address.city"]').val(),
+			"stateOrRegion": $('[name="donor.address.state"]').val(),
+			"postalCode": $('input[name="donor.address.zip"]').val(),
+			// "countryCode": $('select[name="donor.address.country"]').val(),
+			// "phoneNumber": "212555555"
+		}
+	};
+	return amznPayLoad;
+}
+
+function buildSignatureParams() {
+	const returnUrl = location.href + ((location.href.indexOf("?")>0) ? '&' : '?') + 'amazon=thankyou';
+	const signParams = "&other_amount=" + $('input[name=other_amount]').val() +
+	"&first_name=" + $('input[name="donor.name.first"]').val() +
+	"&last_name=" + $('input[name="donor.name.last"]').val() +
+	"&street1=" + $('input[name="donor.address.street1"]').val() +
+	"&city=" + $('input[name="donor.address.city"]').val() +
+	"&state=" + $('[name="donor.address.state"]').val() +
+	"&zip=" + $('input[name="donor.address.zip"]').val();
+	// "&country=" + $('select[name="donor.address.country"]').val();
+
+	return signParams + "&return_url_js=" + returnUrl;
+}
+
+/**
+ * 
+ * @param {*} amazonPayInitCheckout Callback function to process signature
+ */
+function getSignature(amazonPayInitCheckout) {
+	let paramPayload = URLEncode(buildSignatureParams());
+	let tokenURL = "https://tools.heart.org/donate/amazon/v2/getsignature.php?payload=" + paramPayload;
+	if(isSandbox) {
+		tokenURL + '&sandbox=true';
+	}
+	console.log(tokenURL);
+
+	$.ajax({
+		method: "POST",
+		cache:false,
+		dataType: "json",
+		url: tokenURL + "&callback=?",
+		success: amazonPayInitCheckout
+	});
+}
+
+/**
+ * Submit to Amazon
+ * @param {*} payload generated payload data
+ * @param {*} signatureData returned signature
+ */
+function amazonPayInitCheckout(signatureData) {
+	console.log('init space');
+	console.log(payload);
+	// sign payload
+	const signature = signatureData.signature;
+	console.log(signature);
+
+	amazonPayButton.initCheckout({
+		createCheckoutSessionConfig: {
+		payloadJSON: payload,
+		signature: signature,
+		publicKeyId: 'AEO5HN4OQCCDG4JLTOW6WQF3'
+		}
+	});
+}
