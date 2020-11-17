@@ -99,21 +99,6 @@
 					break;
 				case "amazon" :
 					getSignature(amazonPayInitCheckout);
-
-					// if (typeof amazon.Login.AmazonBillingAgreementId != "undefined") {
-					// 	if ($('label[for="type-monthly"] .active').length > 0) {
-					// 		if (amazon.Login.MODBuyerBillingAgreementConsentStatus === "true") {
-					// 			donateAmazon();
-					// 		} else {
-					// 			alert("Consent is needed before making donation");
-					// 		}
-					// 	} else {
-					// 		donateAmazon();
-					// 	}
-					// } else {
-					// 	alert("Please login to Amazon and select payment before submitting");
-					// 	return false;
-					// }
 					break;
 				case "APPLEPAY":
 					braintree_aha.submitApplePayDonation();					
