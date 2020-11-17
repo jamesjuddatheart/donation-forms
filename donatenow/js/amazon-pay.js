@@ -149,16 +149,15 @@ function isSandbox() {
 }
 
 // Render Amazon Pay Button
-var amazonPayButton = amazon.Pay.renderButton('#amazon-pay', {
-   merchantId: 'A1ZM7MXG16NQQB',
-   ledgerCurrency: 'USD',          
-   sandbox: isSandbox(),
-   checkoutLanguage: 'en_US', 
-   productType: 'PayOnly',
-   placement: 'Cart',
-   buttonColor: 'Gold'
-});
-amazonPayButton;
+// var amazonPayButton = amazon.Pay.renderButton('#amazon-pay', {
+//    merchantId: 'A1ZM7MXG16NQQB',
+//    ledgerCurrency: 'USD',
+//    sandbox: isSandbox(),
+//    checkoutLanguage: 'en_US',
+//    productType: 'PayOnly',
+//    placement: 'Cart',
+//    buttonColor: 'Gold'
+// });
 
 /**
  * Build payload details
