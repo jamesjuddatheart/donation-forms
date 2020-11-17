@@ -154,7 +154,7 @@ var amazonPayButton = amazon.Pay.renderButton('#amazon-pay', {
    ledgerCurrency: 'USD',          
    sandbox: isSandbox(),
    checkoutLanguage: 'en_US', 
-   productType: 'PayAndShip', 
+   productType: 'PayOnly',
    placement: 'Cart',
    buttonColor: 'Gold'
 });
@@ -171,6 +171,7 @@ function buildPayLoad() {
 			"checkoutMode": "ProcessOrder"
 		},
 		"storeId": "amzn1.application-oa2-client.38bb1196ffea48f2b70647a398ce8a27",
+		"chargePermissionType": "OneTime",
 		"paymentDetails": {
 			"paymentIntent": "AuthorizeWithCapture",
 			"chargeAmount": {
@@ -184,15 +185,15 @@ function buildPayLoad() {
 			"merchantStoreName":"The American Heart Association",
 			"noteToBuyer":"Thank you for your donation"
 		},
-		"addressDetails": {
-			"name": $('input[name="donor.name.first"]').val() + " " + $('input[name="donor.name.last"]').val(),
-			"addressLine1": $('input[name="donor.address.street1"]').val(),
-			"city": $('input[name="donor.address.city"]').val(),
-			"stateOrRegion": $('[name="donor.address.state"]').val(),
-			"postalCode": $('input[name="donor.address.zip"]').val(),
-			// "countryCode": $('select[name="donor.address.country"]').val(),
-			// "phoneNumber": "212555555"
-		}
+		// "addressDetails": {
+		// 	"name": $('input[name="donor.name.first"]').val() + " " + $('input[name="donor.name.last"]').val(),
+		// 	"addressLine1": $('input[name="donor.address.street1"]').val(),
+		// 	"city": $('input[name="donor.address.city"]').val(),
+		// 	"stateOrRegion": $('[name="donor.address.state"]').val(),
+		// 	"postalCode": $('input[name="donor.address.zip"]').val(),
+		// 	// "countryCode": $('select[name="donor.address.country"]').val(),
+		// 	// "phoneNumber": "212555555"
+		// }
 	};
 	return amznPayLoad;
 }
