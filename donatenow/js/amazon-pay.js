@@ -244,7 +244,7 @@ function amazonPayInitCheckout(signatureData) {
 
 	amazonPayButton.initCheckout({
 		createCheckoutSessionConfig: {
-		payloadJSON: payload,
+		payloadJSON: JSON.stringify(payload),
 		signature: signature,
 		publicKeyId: 'AEO5HN4OQCCDG4JLTOW6WQF3'
 		}
