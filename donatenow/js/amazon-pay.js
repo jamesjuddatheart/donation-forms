@@ -158,6 +158,7 @@ var amazonPayButton = amazon.Pay.renderButton('#amazon-pay', {
    placement: 'Cart',
    buttonColor: 'Gold'
 });
+amazonPayButton;
 
 /**
  * Build payload details
