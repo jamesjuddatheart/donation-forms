@@ -145,7 +145,7 @@ amazon.Login.MODLogoutClickHandler = function() {
 
 // Amazon V2
 function isSandbox() {
-	return ($("input[name=df_preview]").val()) ? "true" : "false";
+	return ($("input[name=df_preview]").val()) ? true : false;
 }
 
 // Render Amazon Pay Button
