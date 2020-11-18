@@ -196,7 +196,7 @@ function buildSignatureParams() {
 	"&city=" + $('input[name="donor.address.city"]').val() +
 	"&state=" + $('[name="donor.address.state"]').val() +
 	"&zip=" + $('input[name="donor.address.zip"]').val();
-	// "&country=" + $('select[name="donor.address.country"]').val();
+	// "&custom_note=" + custom string;
 
 	return signParams + "&return_url_js=" + returnUrl;
 }
@@ -229,6 +229,9 @@ function getSignature(amazonPayInitCheckout) {
 function amazonPayInitCheckout(signatureData) {
 	let payload = signatureData.payload;
 	let signature = signatureData.signature;
+
+	Cookies.set('amz_aha_signature', signature);
+	Cookies.set('amz_aha_amt', $('input[name=other_amount]').val());
 
 	amazonPayButton.initCheckout({
 		createCheckoutSessionConfig: {
