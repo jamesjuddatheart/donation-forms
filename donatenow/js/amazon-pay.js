@@ -145,7 +145,10 @@ amazon.Login.MODLogoutClickHandler = function() {
 
 // Amazon V2
 function isSandbox() {
-	return ($("input[name=df_preview]").val()) ? true : false;
+	if ($("input[name=df_preview]").val() || $("input[name=instance]").val() == 'heartdev') {
+		return true;
+	}
+	return false;
 }
 
 /**
@@ -230,8 +233,8 @@ function amazonPayInitCheckout(signatureData) {
 	let payload = signatureData.payload;
 	let signature = signatureData.signature;
 
-	Cookies.set('amz_aha_signature', signature);
-	Cookies.set('amz_aha_amt', $('input[name=other_amount]').val());
+	localStorage.setItem('amz_aha_signature', signature);
+	localStorage.setItem('amz_aha_amt', $('input[name=other_amount]').val());
 
 	amazonPayButton.initCheckout({
 		createCheckoutSessionConfig: {
@@ -240,4 +243,126 @@ function amazonPayInitCheckout(signatureData) {
 		publicKeyId: 'AEO5HN4OQCCDG4JLTOW6WQF3'
 		}
 	});
+}
+
+function amazonPayVerifyCheckout(amazonCheckoutSessionId, amzSignature, amzAmt) {
+	let params = "amazonCheckoutSessionId=" + amazonCheckoutSessionId + "amount=" + amzAmt + "&signature=" + amzSignature;
+	if(isSandbox()) {
+		params = 'sandbox=true&' + params;
+	}
+	params = URLEncode(params);
+
+	$.ajax({
+		method: "POST",
+		cache: false,
+		dataType: "json",
+		url: "https://tools.heart.org/donate/amazon/v2/checkout.php?" + params + "&callback=?",
+		success: function(data) { //callbackSuccess
+			console.log(data);
+			//save off amazon id into custom field
+			$('input[name=check_number]').val(data.chargePermissionId);
+			$('input[name=payment_confirmation_id]').val('AMAZON:'+data.chargePermissionId);
+			donateOffline(donateOfflineCallback);
+			showConfirmationPage();
+			clearStorage();
+		},
+		error: function(data) { //callbackFail
+			console.log(data);
+			$('#donation-errors').append('<div class="alert alert-danger" role="alert">' + data.toString() + '</div>');
+			$('.donation-loading').remove();
+			$('.donation-form').show();
+		}
+	});
+}
+
+// Re-populate from localStorage
+function populateForm(lsForm) {
+	// build array of saved data
+	let donateData = {};
+	const formPairs = lsForm.split("&");
+	for(let key in formPairs) {
+		donateData[formPairs[key].split("=")[0]] = formPairs[key].split('=')[1];
+	}
+	// populate selects
+	$('.donation-form select').each(function(){
+		$(this).val(donateData[this.name]);
+		// $('select[name="'+this.name+'"]').val(donateData[this.name]);
+	});
+	// populate inputs
+	$('.donation-form input').each(function(){
+		$(this).val(decodeURI(donateData[this.name]));
+	});
+	// populate checkboxs
+	$('.donation-form input:checkbox').each(function(){
+		if(donateData[this.name]){
+			$(this).prop('checked', true);
+		}
+	});
+	// populate radios, exclude gift amount
+	$('.donation-form input:radio').not('input[name=occurrence], input[name=gift]').each(function(){
+		if (decodeURI(donateData[this.name]) == $(this).val()) {
+			$(this).click();
+		}
+	});
+	// reset gift amount
+	populateAmount(donateData['other_amount']);
+}
+
+function showConfirmationPage() {
+	const email = $('input[name="donor.email"]').val();
+	const first = $('input[name="donor.name.first"]').val();
+	const last = $('input[name="donor.name.last"]').val();
+	const street1 = $('input[name="donor.address.street1"]').val();
+	const street2 = $('input[name="donor.address.street2"]').val();
+	const city = $('input[name="donor.address.city"]').val();
+	const state = $('[name="donor.address.state"]').val();
+	const zip = $('input[name="donor.address.zip"]').val();
+	const country = $('select[name="donor.address.country"]').val();
+	const form = $('input[name=form_id]').val();
+	const amt = $('input[name=other_amount]').val();
+	const ref = $('input[name=check_number]').val();
+
+	$('.donation-loading').remove();
+	$('.donate-now, .header-donate').hide();
+	$('.thank-you').show();
+	$.get(donation_thank_you_page,function(datat){
+		$('.thank-you').html($(datat).find('.thank-you').html());
+		$('p.first').html(first);
+		$('p.last').html(last);
+		$('p.street1').html(street1);
+		$('p.street2').html(street2);
+		$('p.city').html(city);
+		$('p.state').html(state);
+		$('p.zip').html(zip);
+		$('p.country').html(country);
+		$('p.email').html(email);
+		$('tr.cardGroup').hide();
+		$('tr.amazon').show();
+		$('p.amount').html("$"+amt);
+		$('p.confcode').html(ref);
+	});
+
+	$('.thank-you').append('<img src="//offeredby.net/silver/track/rvm.cfm?cid=28556&oid='+ref+'&amount='+amt+'&quantity=1" height="1" width="1">');
+	$.getScript("//action.dstillery.com/orbserv/nsjs?adv=cl1014039&ns=1985&nc=HBP-Donate-Now-Landing-Page&ncv=52&dstOrderId="+ref+"&dstOrderAmount="+amt);
+
+	// Custom Tracking code
+	includeCustomFBPixel(amt);
+
+	/* ECOMMERCE TRACKING CODE */
+	ga('require', 'ecommerce');
+	ga('ecommerce:addTransaction', {
+		'id': ref,
+		'affiliation': 'AHA Amazon Donation',
+		'revenue': amt,
+		'city': $('input[name="donor.address.city"]').val(),
+		'state': $('select[name="donor.address.state"]').val()  // local currency code.
+	});
+	ga('ecommerce:send');
+	ga('send', 'pageview', '/donateok.asp');
+
+	pushDonationSuccessToDataLayer(form, ref, amt);
+}
+
+function clearStorage() {
+	localStorage.removeItem('amzAhaToken').removeItem('amz_aha_amt').removeItem('ahaDonate');
 }
