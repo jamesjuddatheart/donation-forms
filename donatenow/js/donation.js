@@ -460,7 +460,6 @@ function populateAmount(amount) {
 	if(giftButtonVisible) {
 		$(giftButton).click();
 	} else {
-		console.log(amount);
 		$('.radio-label').removeClass("active");
 		$('input[name="gift"]').removeAttr('checked').prop("checked", false);
 		$('#giftOtherText').addClass("active").valid();
