@@ -329,11 +329,11 @@ function donateAmazon(amazonCheckoutSessionId) {
 	populateForm(lsForm);
 
 	// get signature token
-	const amzSignature = localStorage.getItem('amzAhaToken');
+	const amzSignature = localStorage.getItem('amz_aha_signature');
 	const amzAmt = localStorage.getItem('amz_aha_amt');
 	// verify checkout
 	// if successful post to LO (called in success function)
-	amazonPayVerifyCheckout(amazonCheckoutSessionId, amzSignature, amzAmt);
+	amazonPayVerifyCheckout(amazonCheckoutSessionId, amzAmt);
 
 	// handle error
 	if (amazonErr) {

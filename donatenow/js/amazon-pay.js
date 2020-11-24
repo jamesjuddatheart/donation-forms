@@ -167,7 +167,7 @@ function buildSignatureParams() {
  * @param {*} amazonPayInitCheckout Callback function to process signature
  */
 function getSignature(amazonPayInitCheckout) {
-	let params = "payload=" + URLEncode(buildSignatureParams());
+	let params = URLEncode(buildSignatureParams());
 	if(isSandbox()) {
 		params = 'sandbox=true&' + params;
 	}
