@@ -98,6 +98,7 @@
 					$(form).submit();
 					break;
 				case "amazon" :
+					clearStorage();
 					const amzFrom = $('.donation-form').serialize();
 					localStorage.setItem('ahaDonate', amzFrom);
 					getSignature(amazonPayInitCheckout);
@@ -336,7 +337,7 @@ function donateAmazon(amazonCheckoutSessionId) {
 
 	// handle error
 	if (amazonErr) {
-		$('#donation-errors').append('<div class="alert alert-danger" role="alert">There was an error. Please check your payment details and try again.</div>');
+		$('#donation-errors').prepend('<div class="alert alert-danger" role="alert">There was an error. Please check your payment details and try again.</div>');
 		$('.donation-loading').remove();
 		$('.donation-form').show();
 	}
@@ -345,7 +346,7 @@ function donateAmazon(amazonCheckoutSessionId) {
 function donateAmazonOld() {
 	window.scrollTo(0, 0);
 	$('.donation-form').hide();
-	$('.donation-form').before('<div class="well donation-loading">' +
+	$('.donation-form').before('<div class="well donation-loading">' + 
 					 'Thank You!  We are now processing your donation from Amazon ...' +
 				   '</div>');
 	// read saved form data
