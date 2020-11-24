@@ -156,7 +156,7 @@ function isSandbox() {
  */
 function buildSignatureParams() {
 	const returnUrl = location.href + ((location.href.indexOf("?")>0) ? '&' : '?') + 'amazon=thankyou';
-	const signParams = "&other_amount=" + $('input[name=other_amount]').val();
+	const signParams = "other_amount=" + $('input[name=other_amount]').val();
 	// "&custom_note=" + custom string;
 
 	return signParams + "&return_url_js=" + returnUrl;
@@ -218,10 +218,12 @@ function amazonPayVerifyCheckout(amazonCheckoutSessionId, amzAmt) {
 
 			if (data.response.status != 200) {
 				// handle error
+				const reason = JSON.parse(data.response.response);
+
 				$('#donation-errors').remove();
 				$('.donation-form').prepend('<div id="donation-errors" role="alert" aria-atomic="true" aria-live="assertive">' +
 						'<div class="alert alert-danger">' +
-						(typeof(data.response)!="undefined") ? data.response.response.reasonCode.toString() : 'There was an error. Please check your payment details and try again.' +
+						(typeof(data.response)!="undefined") ? reason.reasonCode.toString() : 'There was an error. Please check your payment details and try again.' +
 						'</div>' +
 					'</div>');
 				$('.donation-loading').remove();
