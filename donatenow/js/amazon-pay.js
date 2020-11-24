@@ -152,53 +152,11 @@ function isSandbox() {
 }
 
 /**
- * Build payload details
+ * Build the URL parameters for the signature request
  */
-function buildPayLoad() {
-	// return URL -- incorporate current URL
-	const checkoutResultReturnUrl = location.href + ((location.href.indexOf("?")>0) ? '&' : '?') + 'amazon=thankyou';
-	const amznPayLoad = {
-		"webCheckoutDetails": {
-			"checkoutResultReturnUrl": checkoutResultReturnUrl,
-			"checkoutMode": "ProcessOrder"
-		},
-		"storeId": "amzn1.application-oa2-client.38bb1196ffea48f2b70647a398ce8a27",
-		"chargePermissionType": "OneTime",
-		"paymentDetails": {
-			"paymentIntent": "AuthorizeWithCapture",
-			"chargeAmount": {
-				"amount": $('input[name=other_amount]').val(),
-				"currencyCode": "USD"
-			},
-			"presentmentCurrency":"USD"
-		},
-		"merchantMetadata": {
-			"merchantReferenceId":"Single-Donation",
-			"merchantStoreName":"The American Heart Association",
-			"noteToBuyer":"Thank you for your donation"
-		},
-		// "addressDetails": {
-		// 	"name": $('input[name="donor.name.first"]').val() + " " + $('input[name="donor.name.last"]').val(),
-		// 	"addressLine1": $('input[name="donor.address.street1"]').val(),
-		// 	"city": $('input[name="donor.address.city"]').val(),
-		// 	"stateOrRegion": $('[name="donor.address.state"]').val(),
-		// 	"postalCode": $('input[name="donor.address.zip"]').val(),
-		// 	// "countryCode": $('select[name="donor.address.country"]').val(),
-		// 	// "phoneNumber": "212555555"
-		// }
-	};
-	return amznPayLoad;
-}
-
 function buildSignatureParams() {
 	const returnUrl = location.href + ((location.href.indexOf("?")>0) ? '&' : '?') + 'amazon=thankyou';
-	const signParams = "&other_amount=" + $('input[name=other_amount]').val() +
-	"&first_name=" + $('input[name="donor.name.first"]').val() +
-	"&last_name=" + $('input[name="donor.name.last"]').val() +
-	"&street1=" + $('input[name="donor.address.street1"]').val() +
-	"&city=" + $('input[name="donor.address.city"]').val() +
-	"&state=" + $('[name="donor.address.state"]').val() +
-	"&zip=" + $('input[name="donor.address.zip"]').val();
+	const signParams = "&other_amount=" + $('input[name=other_amount]').val();
 	// "&custom_note=" + custom string;
 
 	return signParams + "&return_url_js=" + returnUrl;
@@ -209,18 +167,16 @@ function buildSignatureParams() {
  * @param {*} amazonPayInitCheckout Callback function to process signature
  */
 function getSignature(amazonPayInitCheckout) {
-	let paramPayload = URLEncode(buildSignatureParams());
-	let tokenURL = "https://tools.heart.org/donate/amazon/v2/getsignature.php?payload=" + paramPayload;
+	let params = "payload=" + URLEncode(buildSignatureParams());
 	if(isSandbox()) {
-		tokenURL + '&sandbox=true';
+		params = 'sandbox=true&' + params;
 	}
-	console.log(tokenURL);
 
 	$.ajax({
 		method: "POST",
 		cache:false,
 		dataType: "json",
-		url: tokenURL + "&callback=?",
+		url: "https://tools.heart.org/donate/amazon/v2/getsignature.php?" + params + "&callback=?",
 		success: amazonPayInitCheckout
 	});
 }
@@ -245,8 +201,8 @@ function amazonPayInitCheckout(signatureData) {
 	});
 }
 
-function amazonPayVerifyCheckout(amazonCheckoutSessionId, amzSignature, amzAmt) {
-	let params = "amazonCheckoutSessionId=" + amazonCheckoutSessionId + "amount=" + amzAmt + "&signature=" + amzSignature;
+function amazonPayVerifyCheckout(amazonCheckoutSessionId, amzAmt) {
+	let params = "amazonCheckoutSessionId=" + amazonCheckoutSessionId + "&amount=" + amzAmt;
 	if(isSandbox()) {
 		params = 'sandbox=true&' + params;
 	}
@@ -258,17 +214,32 @@ function amazonPayVerifyCheckout(amazonCheckoutSessionId, amzSignature, amzAmt) 
 		dataType: "json",
 		url: "https://tools.heart.org/donate/amazon/v2/checkout.php?" + params + "&callback=?",
 		success: function(data) { //callbackSuccess
-			console.log(data);
-			//save off amazon id into custom field
-			$('input[name=check_number]').val(data.chargePermissionId);
-			$('input[name=payment_confirmation_id]').val('AMAZON:'+data.chargePermissionId);
-			donateOffline(donateOfflineCallback);
-			showConfirmationPage();
-			clearStorage();
+			console.log(data.response);
+
+			if (data.response.status != 200) {
+				// handle error
+				$('#donation-errors').remove();
+				$('.donation-form').prepend('<div id="donation-errors" role="alert" aria-atomic="true" aria-live="assertive">' +
+						'<div class="alert alert-danger">' +
+						(typeof(data.response)!="undefined") ? data.response.response.reasonCode.toString() : 'There was an error. Please check your payment details and try again.' +
+						'</div>' +
+					'</div>');
+				$('.donation-loading').remove();
+				$('.donation-form').show();
+			} else {
+				//save off amazon id into custom field
+				$('input[name=check_number]').val(data.response.response.chargePermissionId);
+				$('input[name=payment_confirmation_id]').val('AMAZON:'+data.response.response.chargePermissionId);
+				donateOffline(donateOfflineCallback);
+				showConfirmationPage();
+				clearStorage();
+			}
+			
 		},
-		error: function(data) { //callbackFail
-			console.log(data);
-			$('#donation-errors').append('<div class="alert alert-danger" role="alert">' + data.toString() + '</div>');
+		error: function(data) {
+			console.log(data.response);
+			$('#donation-errors').remove();
+			$('.donation-form').prepend(`<div id="donation-errors" role="alert" aria-atomic="true" aria-live="assertive"><div class="alert alert-danger">There was an error. Please check your payment details and try again.</div></div>`);
 			$('.donation-loading').remove();
 			$('.donation-form').show();
 		}
@@ -283,14 +254,13 @@ function populateForm(lsForm) {
 	for(let key in formPairs) {
 		donateData[formPairs[key].split("=")[0]] = formPairs[key].split('=')[1];
 	}
+	// populate inputs
+	$('.donation-form input').not('input:checkbox, input:radio').each(function(){
+		$(this).val(decodeURI(donateData[this.name]).replace('%40', '@'));
+	});
 	// populate selects
 	$('.donation-form select').each(function(){
 		$(this).val(donateData[this.name]);
-		// $('select[name="'+this.name+'"]').val(donateData[this.name]);
-	});
-	// populate inputs
-	$('.donation-form input').each(function(){
-		$(this).val(decodeURI(donateData[this.name]));
 	});
 	// populate checkboxs
 	$('.donation-form input:checkbox').each(function(){
@@ -298,12 +268,13 @@ function populateForm(lsForm) {
 			$(this).prop('checked', true);
 		}
 	});
-	// populate radios, exclude gift amount
-	$('.donation-form input:radio').not('input[name=occurrence], input[name=gift]').each(function(){
+	// populate radios, exclude gift amount and payment type
+	$('.donation-form input:radio').not('input[name=occurrence], input[name=gift], input[name=payment]').each(function(){
 		if (decodeURI(donateData[this.name]) == $(this).val()) {
 			$(this).click();
 		}
 	});
+	$('#payment2').click();
 	// reset gift amount
 	populateAmount(donateData['other_amount']);
 }
@@ -364,5 +335,7 @@ function showConfirmationPage() {
 }
 
 function clearStorage() {
-	localStorage.removeItem('amzAhaToken').removeItem('amz_aha_amt').removeItem('ahaDonate');
+	localStorage.removeItem('amz_aha_signature');
+	localStorage.removeItem('amz_aha_amt');
+	localStorage.removeItem('ahaDonate');
 }
