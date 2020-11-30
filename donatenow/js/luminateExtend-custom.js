@@ -98,10 +98,7 @@
 					$(form).submit();
 					break;
 				case "amazon" :
-					clearStorage();
-					const amzFrom = $('.donation-form').serialize();
-					localStorage.setItem('ahaDonate', amzFrom);
-					getSignature(amazonPayInitCheckout);
+					submitAmazonDonation();
 					break;
 				case "APPLEPAY":
 					braintree_aha.submitApplePayDonation();
@@ -328,11 +325,8 @@ function donateAmazon(amazonCheckoutSessionId) {
 	}
 	populateForm(lsForm);
 
-	// get signature token
-	const amzSignature = localStorage.getItem('amz_aha_signature');
 	const amzAmt = localStorage.getItem('amz_aha_amt');
 	// verify checkout
-	// if successful post to LO (called in success function)
 	amazonPayVerifyCheckout(amazonCheckoutSessionId, amzAmt);
 
 	// handle error
@@ -687,7 +681,7 @@ function donateOffline(donateOfflineCallback) {
 function donateOfflineCallback(responseData) {
 	const nameField = $('input[name=campaign_name]').length ? $('input[name=campaign_name]').val() : "American Heart Association";
 	const campaign_name = ($('input[name=instance]').val() == "heartdev" ? "heartdev " : "") + nameField;
-	const ddCompanyId = jQuery('input[name=doublethedonation_company_id]').val();
+	const ddCompanyId = (jQuery("#double_the_donation_company_id").val() !== "") ? jQuery("#double_the_donation_company_id").val() : jQuery('input[name=doublethedonation_company_id]').val();
 
 	const widgetData = {
 		transactionId: responseData.data.donationResponse.donation.transaction_id,
@@ -703,7 +697,7 @@ function donateOfflineCallback(responseData) {
 	};
 
 	// Call only if the widget is on the form
-	if (jQuery('input[name=doublethedonation_company_id]').length > 0) {
+	if (ddCompanyId.length || jQuery('input[name=doublethedonation_company_id]').length > 0) {
 		doubleDonationConfirmation(widgetData);
 	}
 }
