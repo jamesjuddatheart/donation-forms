@@ -315,23 +315,17 @@ function donateAmazon(amazonCheckoutSessionId) {
 	$('.donation-form').before('<div class="well donation-loading">' +
 			'Thank You!  We are now processing your donation from Amazon ...' +
 			'</div>');
-	let amazonErr = false;
 
-	// todo check local storage
 	let lsForm = localStorage.getItem('ahaDonate');
-	if (!lsForm.length) {
-		amazonErr = true;
+	if (lsForm != null) {
+		// verify checkout
+		populateForm(lsForm);
+		const amzAmt = localStorage.getItem('amz_aha_amt');
+		amazonPayVerifyCheckout(amazonCheckoutSessionId, amzAmt);
+	} else {
+		// handle missing data
 		console.log('no data found');
-	}
-	populateForm(lsForm);
-
-	const amzAmt = localStorage.getItem('amz_aha_amt');
-	// verify checkout
-	amazonPayVerifyCheckout(amazonCheckoutSessionId, amzAmt);
-
-	// handle error
-	if (amazonErr) {
-		$('#donation-errors').prepend('<div class="alert alert-danger" role="alert">There was an error. Please check your payment details and try again.</div>');
+		$('.donation-form').prepend('<div id="donation-errors" role="alert" aria-atomic="true" aria-live="assertive"><div class="alert alert-danger" role="alert">There was an error. Please check your payment details and try again.</div></div>');
 		$('.donation-loading').remove();
 		$('.donation-form').show();
 	}
@@ -745,7 +739,7 @@ function doubleDonationConfirmation(widgetData) {
 	doublethedonation.plugin.email_domain(domain);
 
 	if (widgetData.ddCompanyId !== "") {
-		doublethedonation.plugin.set_company(ddCompanyId);
+		doublethedonation.plugin.set_company(widgetData.ddCompanyId);
 	}
 
 	doublethedonation.integrations.core.register_donation({

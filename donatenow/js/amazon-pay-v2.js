@@ -78,12 +78,17 @@ function amazonPayVerifyCheckout(amazonCheckoutSessionId, amazonAmount) {
 
 			if (data.status != 200) {
 				// handle error
+				let errorMessage = 'Your payment was not successful. Please try another payment method.';
+				// if (typeof(data.response)!="undefined") {
+				// 	errorMessage = data.response.reasonCode + '<br>';
+				// 	errorMessage += data.response.message;
+				// }
+
 				$('#donation-errors').remove();
 				$('.donation-form').prepend('<div id="donation-errors" role="alert" aria-atomic="true" aria-live="assertive">' +
 						'<div class="alert alert-danger">' +
-						(typeof(data.response)!="undefined") ? data.response.reasonCode : 'There was an error. Please check your payment details and try again.' +
-						'</div>' +
-					'</div>');
+						errorMessage +
+						'</div></div>');
 				$('.donation-loading').remove();
 				$('.donation-form').show();
 			} else {
@@ -210,7 +215,6 @@ function clearStorage() {
 function submitAmazonDonation() {
 	clearStorage();
 	$("#double_the_donation_company_id").val($('input[name=doublethedonation_company_id]').val());
-	$('input[name=compliance]').val("true");
 	const amzFrom = $('.donation-form, input[name!=card_number]').serialize();
 	localStorage.setItem('ahaDonate', amzFrom);
 	getSignature(amazonPayInitCheckout);
