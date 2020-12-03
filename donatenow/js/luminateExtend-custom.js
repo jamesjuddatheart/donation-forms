@@ -95,35 +95,22 @@
 		if ($(form).valid()) {
 			switch ($('#PaymentType').val()) {
 				case "cc" : 
-					$(form).submit();  
+					$(form).submit();
 					break;
 				case "amazon" :
-					if (typeof amazon.Login.AmazonBillingAgreementId != "undefined") {
-						if ($('label[for="type-monthly"] .active').length > 0) {				
-							if (amazon.Login.MODBuyerBillingAgreementConsentStatus === "true") {
-								donateAmazon();
-							} else {
-								alert("Consent is needed before making donation");
-							}
-						} else {
-							donateAmazon();					
-						}
-					} else {
-						alert("Please login to Amazon and select payment before submitting");
-						return false;
-					}
+					submitAmazonDonation();
 					break;
 				case "APPLEPAY":
-					braintree_aha.submitApplePayDonation();					
+					braintree_aha.submitApplePayDonation();
 					break;
 				case "VENMO":
 					var venmoData = "Donate to the American Heart Association";
 					venmoData += "<div style='font-size:40px'>$" + $('input[name=other_amount]').val() + "</div>";
 					$('#venmoModal .modal-body').html(venmoData);
-					$('#venmoModal').modal();					
+					$('#venmoModal').modal();
 					break;
 				case "GOOGLEPAY":
-					braintree_aha.submitGooglePayDonation();					
+					braintree_aha.submitGooglePayDonation();
 					break;
 			}
 		} else { 
@@ -322,12 +309,36 @@ function submitToVenmo() {
 	braintree_aha.submitVenmoDonation();
 }
 
-function donateAmazon() {
+function donateAmazon(amazonCheckoutSessionId) {
+	window.scrollTo(0, 0);
+	$('.donation-form').hide();
+	$('.donation-form').before('<div class="well donation-loading">' +
+			'Thank You!  We are now processing your donation from Amazon ...' +
+			'</div>');
+
+	let lsForm = localStorage.getItem('ahaDonate');
+	if (lsForm != null) {
+		// verify checkout
+		populateForm(lsForm);
+		const amzAmt = localStorage.getItem('amz_aha_amt');
+		amazonPayVerifyCheckout(amazonCheckoutSessionId, amzAmt);
+	} else {
+		// handle missing data
+		console.log('no data found');
+		$('.donation-form').prepend('<div id="donation-errors" role="alert" aria-atomic="true" aria-live="assertive"><div class="alert alert-danger" role="alert">There was an error. Please check your payment details and try again.</div></div>');
+		$('.donation-loading').remove();
+		$('.donation-form').show();
+	}
+}
+
+function donateAmazonOld() {
 	window.scrollTo(0, 0);
 	$('.donation-form').hide();
 	$('.donation-form').before('<div class="well donation-loading">' + 
-					 'Thank You!  We are now processing your donation using Amazon ...' + 
+					 'Thank You!  We are now processing your donation from Amazon ...' +
 				   '</div>');
+	// read saved form data
+	// add 
 	var params = $('.donation-form').serialize();
 	var amazonErr = false;
 	var status = "";
@@ -664,7 +675,7 @@ function donateOffline(donateOfflineCallback) {
 function donateOfflineCallback(responseData) {
 	const nameField = $('input[name=campaign_name]').length ? $('input[name=campaign_name]').val() : "American Heart Association";
 	const campaign_name = ($('input[name=instance]').val() == "heartdev" ? "heartdev " : "") + nameField;
-	const ddCompanyId = jQuery('input[name=doublethedonation_company_id]').val();
+	const ddCompanyId = (jQuery("#double_the_donation_company_id").val() !== "") ? jQuery("#double_the_donation_company_id").val() : jQuery('input[name=doublethedonation_company_id]').val();
 
 	const widgetData = {
 		transactionId: responseData.data.donationResponse.donation.transaction_id,
@@ -680,7 +691,7 @@ function donateOfflineCallback(responseData) {
 	};
 
 	// Call only if the widget is on the form
-	if (jQuery('input[name=doublethedonation_company_id]').length > 0) {
+	if (ddCompanyId.length || jQuery('input[name=doublethedonation_company_id]').length > 0) {
 		doubleDonationConfirmation(widgetData);
 	}
 }
@@ -728,7 +739,7 @@ function doubleDonationConfirmation(widgetData) {
 	doublethedonation.plugin.email_domain(domain);
 
 	if (widgetData.ddCompanyId !== "") {
-		doublethedonation.plugin.set_company(ddCompanyId);
+		doublethedonation.plugin.set_company(widgetData.ddCompanyId);
 	}
 
 	doublethedonation.integrations.core.register_donation({
@@ -1016,19 +1027,13 @@ $('[name^=donor\\.]').each(function(){
 	// Get amount passed from query string
 	const amount = $.getQuerystring("amount");
 	if (amount.length > 0) {
-		// select appropriate option - onetime vs recurring gift arrays
-		const giftButton = $('button[data-amount=' + amount + ']');
-		const giftButtonVisible = $(giftButton).parent().parent().attr('style') != "display: none;" && giftButton.length;
-		if(giftButtonVisible) {
-			$(giftButton).click();
-		} else {
-			console.log(amount);
-			$('.radio-label').removeClass("active");
-			$('input[name="gift"]').removeAttr('checked').prop("checked", false);
-			$('#giftOtherText').addClass("active").valid();
-			$('#giftOtherText, input[name=other_amount]').val(amount);
-			updateSubmitText();
-		}
+		populateAmount(amount);
+	}
+
+	// Get Amazon confirmation id
+	const amzConfirmationId = $.getQuerystring('amazonCheckoutSessionId');
+	if (amzConfirmationId) {
+		donateAmazon(amzConfirmationId);
 	}
 
 // END QUERY STRING CODE 

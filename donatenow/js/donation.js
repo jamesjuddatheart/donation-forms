@@ -452,6 +452,22 @@ function updateSubmitText() {
 }
 updateSubmitText();
 
+// Set the donation amount
+function populateAmount(amount) {
+	// select appropriate option - onetime vs recurring gift arrays
+	const giftButton = $('button[data-amount=' + amount + ']');
+	const giftButtonVisible = $(giftButton).parent().parent().attr('style') != "display: none;" && giftButton.length;
+	if(giftButtonVisible) {
+		$(giftButton).click();
+	} else {
+		$('.radio-label').removeClass("active");
+		$('input[name="gift"]').removeAttr('checked').prop("checked", false);
+		$('#giftOtherText').addClass("active").valid();
+		$('#giftOtherText, input[name=other_amount]').val(amount);
+		updateSubmitText();
+	}
+}
+
 const formatter = new Intl.NumberFormat('en-US', {
 	style: 'currency',
 	currency: 'USD',
