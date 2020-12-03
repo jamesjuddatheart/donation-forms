@@ -589,7 +589,18 @@
                 <option value='WA'>Washington</option>
                 <option value='WV'>West Virginia</option>
                 <option value='WI'>Wisconsin</option>
-                <option value='WY'>Wyoming</option>
+				<option value='WY'>Wyoming</option>
+				<option value="AS">American Samoa</option>
+		<option value="FM">Federated States of Micronesia</option>
+		<option value="GU">Guam</option>
+		<option value="MH">Marshall Islands</option>
+		<option value="MP">Northern Mariana Islands</option>
+		<option value="PR">Puerto Rico</option>
+		<option value="PW">Palau</option>
+		<option value="VI">Virgin Islands</option>
+		<option value="AA">AA - Armed Forces Americas</option>
+		<option value="AE">AE - Armed Forces</option>
+		<option value="AP">AP - Armed Forces Pacific</option>
               </select>
             </div>
             <div class='input-group col-xs-5 col-sm-6 col-md-3 text-field'>
@@ -695,11 +706,22 @@
                 <option value='WA'>Washington</option>
                 <option value='WV'>West Virginia</option>
                 <option value='WI'>Wisconsin</option>
-                <option value='WY'>Wyoming</option>
+				<option value='WY'>Wyoming</option>
+				<option value="AS">American Samoa</option>
+		<option value="FM">Federated States of Micronesia</option>
+		<option value="GU">Guam</option>
+		<option value="MH">Marshall Islands</option>
+		<option value="MP">Northern Mariana Islands</option>
+		<option value="PR">Puerto Rico</option>
+		<option value="PW">Palau</option>
+		<option value="VI">Virgin Islands</option>
+		<option value="AA">AA - Armed Forces Americas</option>
+		<option value="AE">AE - Armed Forces</option>
+		<option value="AP">AP - Armed Forces Pacific</option>
               </select>
             </div>
-            <div class='input-group col-xs-5 col-sm-3 text-field'>
-              <label for='billingZipCode' name='billingZipCode' class='required-asterisk'>Zip Code:</label>
+            <div class='input-group col-xs-12 col-sm-4 col-md-4 text-field'>
+              <label for='billingZipCode' name='billingZipCode' class='required-asterisk'>Postal Code:</label>
               <input type='text' id='billingZipCode' name='billing.address.zip' class='required zipCodeValidation' />
             </div>
           </div>
@@ -758,46 +780,18 @@
 			<label for="year" name="card_exp_date_year">Year</label>
               <select name='card_exp_date_year' class='required' id='year'>
                 <option value='' selected disabled>Select year</option>
-                  <option value="2018">2018</option>
-                  <option value="2019">2019</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
-                  <option value="2024">2024</option>
-                  <option value="2025">2025</option>
-                  <option value="2026">2026</option>
-                  <option value="2027">2027</option>
-                  <option value="2028">2028</option>
+				<script type="text/javascript">
+					var d = new Date();
+					var year = d.getFullYear();
+					for (x=year;x<(year+12);x++) {
+						document.write('<option value="'+x+'">'+x+'</option>');
+					}
+				</script>
               </select>
             </div>
           </div>
           <div class='inline' id='payment2form' style="display:block">
-            <div class='input-group'>
-              <div id="AmazonPayment" style="margin-right: 22px;">
-	            	<div id="AmazonLogin">Please login to Amazon before continuing:</div>
-	            	<!-- BUTTON WIDGET -->
-	            	<div id="AmazonPayButton" role="button" tabindex=0 title="Amazon Pay"> </div>
-	            	<!-- WALLET WIDGET -->
-	            	<div id="walletWidgetDiv"> </div>
-	            	<!-- RECURRING PAYMENTS WIDGET -->
-	            	<div id="consentWidgetDiv"> </div>
-	            	<!-- LOGOUT LINK -->
-	            	<div id="AmazonLogoutButton"> <a class="" href="#" onClick="javascript:amazon.Login.MODLogoutClickHandler()">Log out of Amazon Payments</a> </div>
-	            	<br />
-	            	<p>Amazon Payments is the secure payment for the American Heart Association. <a href="https://payments.amazon.com/help/Amazon-Simple-Pay/Creating-Managing-Your-Account/Verifying-Your-Account"         target="_blank">Learn more</a> about Amazon Payments.</p>
-	            	<p>Amazon Payments protects your privacy and security.</p>
-	            	<!-- BEGIN AMAZON PAYMENTS ADDITION -->
-	            	<input type="hidden" name="AmazonBillingAgreementId" value="" />
-	            	<!-- Passed on to Amazon REST call: SetBillingAgreementDetails -->
-	            	<input type="hidden" name="AmazonOrderReferenceId" value="" />
-	            	<!-- Passed to Amazon after Amazon returns error. -->
-	            	<input type="hidden" name="AmazonAccessToken" value="" />
-	            	<!-- Can be saved on our back end for getting updated user information at a later time. -->
-	            	<input type="hidden" name="AmazonPaymentSelected" value="" />
-	            	<!-- END AMAZON PAYMENTS ADDITION -->
-	            </div>
-            </div>
+            
           </div>
 			<div class="inline row" id="privacyText" style="margin-top:.4em;">
 				<div class="input-group checkBox col-xs-12 col-sm-12">
@@ -822,10 +816,10 @@
         </div>
         <div class='row bottom-links'>
           <div class='col-xs-12 col-sm-5'>
-            <a href='https://www.heart.org/idc/groups/heart-public/@wcm/@tcs/documents/downloadable/ucm_430364.pdf'>I Prefer to Mail my Memorial or Tribute Gift</a>
+            <a href='https://www.heart.org/idc/groups/heart-public/@wcm/@tcs/documents/downloadable/ucm_430364.pdf'>Mail a Memorial or Tribute Donation</a>
           </div>
           <div class='col-xs-12 col-sm-4'>
-            <a href='https://www.heart.org/idc/groups/heart-public/@wcm/@tcs/documents/downloadable/ucm_430363.pdf'>I Prefer to Mail my Donation</a>
+            <a href='https://www.heart.org/-/media/files/get-involved/donate/american-heart-association-printable-donation-form'>Mail a General Donation</a>
           </div>
           <div class='col-xs-12 col-sm-3'>
             <a href='http://www.heart.org/HEARTORG/Giving/ForIndividuals/OtherWaystoGive/OtherWaystoGive_UCM_001143_SubHomePage.jsp'>Other Ways to Give</a>

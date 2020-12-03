@@ -142,4 +142,3 @@ amazon.Login.MODLogoutClickHandler = function() {
 	$("input[name=AmazonAccessToken]").val("");
 	$("#AmazonPayButton").show();
 };
-
