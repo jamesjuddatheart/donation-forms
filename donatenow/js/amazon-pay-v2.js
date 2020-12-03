@@ -1,6 +1,6 @@
 // Amazon V2
 function isSandbox() {
-	if ($("input[name=instance]").val() == 'heartdev' || $("input[name=df_preview]").val()) {
+	if ($("input[name=df_preview]").val()) {
 		return true;
 	}
 	return false;
