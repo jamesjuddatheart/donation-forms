@@ -10,7 +10,11 @@ function isSandbox() {
  * Build the URL parameters for the signature request
  */
 function buildSignatureParams() {
-	const returnUrl = location.href + ((location.href.indexOf("?")>0) ? '&' : '?') + 'amazon=thankyou';
+	let returnUrl = location.href;
+	if (returnUrl.indexOf('amazonCheckoutSessionId')>0){
+		returnUrl = returnUrl.substring(0, returnUrl.indexOf('amazonCheckoutSessionId')-1);
+	}
+	returnUrl = returnUrl.replaceAll('&','%26');
 	const signParams = "other_amount=" + $('input[name=other_amount]').val();
 	// "&custom_note=" + custom string;
 
