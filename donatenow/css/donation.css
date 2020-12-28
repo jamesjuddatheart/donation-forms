@@ -772,7 +772,7 @@ label {
 .sidebar {
   display: inline-block;
   vertical-align: top;
-  width: 32%;
+  width: 40%;
 }
 form input[type="checkbox"] ~ label:focus,
 form input[type="radio"] ~ label:focus,
