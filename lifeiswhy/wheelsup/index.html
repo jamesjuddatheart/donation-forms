@@ -37,10 +37,10 @@
 	    <input type="hidden" name="validate" value="true" />
 	    <input type="hidden" name="source" value="[[?x[[S80:source]]x::xx::life_is_why::[[S80:source]]]]" /> <!-- update source as needed --> 
       [[?x[[S80:sub_source]]x::xx::::<input type="hidden" name="sub_source" value="[[S80:sub_source]]" />]]
-        <input type="hidden" name="sub_source" value="call_to_action">
+        <input type="hidden" name="sub_source" value="wheelsup">
 	    <input type="hidden" name="payment_source" value="CC" />
 	    <input type="hidden" name="_session" value="" />
-	    <input type="hidden" name="other_amount" value="10" />
+	    <input type="hidden" name="other_amount" value="50" />
 	    <input type="hidden" name="level_id" value="[[S80:level_id]]" /> <!-- update per ghost form's user entered recurring amount level ID -->
 	    <input type="hidden" name="payment_confirmation_id" value="" />
         <input type="hidden" name="PaymentType" id="PaymentType" value="cc" />
@@ -88,21 +88,22 @@
 			<legend class="text-hide">Select Amount</legend>
 			<div class='inline recurring d-none' aria-label="giftsel">
 				<div class='input-group gift' role='group'  aria-labelledby= 'gift1'>
-					<input type='radio' name='gift' id='gift1'  aria-label='10' value='$10' />
-					<button type="button" for='gift1' class='radio-label' data-amount="10"  title="$10" aria-checked="false" tabindex="0">$10</button>
+					<input type='radio' name='gift' id='gift1'  aria-label='50' value='$50' />
+					<button type="button" for='gift1' class='radio-label' data-amount="50"  title="$50" aria-checked="false" tabindex="0">$50</button>
 				</div>
 				<div class='input-group gift' role='group'  aria-labelledby= 'gift2'>
-					<input type='radio' name='gift' id='gift2'  aria-label='25' value='$25' />
-					<button type="button" for='gift2' class='radio-label' data-amount="25"  title="$25" aria-checked="false" tabindex="0">$25</button>
+					<input type='radio' name='gift' id='gift2'  aria-label='100' value='$100' />
+					<button type="button" for='gift2' class='radio-label' data-amount="100"  title="$100" aria-checked="false" tabindex="0">$100</button>
 				</div>
 				<div class='input-group gift'  role='group'  aria-labelledby= 'gift3'>
-					<input type='radio' name='gift' id='gift3'  aria-label='50' value='$50' />
-					<button type="button" for='gift3' class='radio-label' data-amount="50"  title="$50" aria-checked="false" tabindex="0">$50</button>
+					<input type='radio' name='gift' id='gift3'  aria-label='500' value='$500' />
+					<button type="button" for='gift3' class='radio-label' data-amount="500"  title="$500" aria-checked="false" tabindex="0">$500</button>
 				</div>
-				<!-- <div class='input-group gift'>
-					<input type='radio' name='gift' id='gift4' value='$250' tabindex="-1" />
-					<label for='gift4' class='radio-label' data-amount="250"  title="$250" aria-checked="false">$250</label>
+				 <div class='input-group gift'>
+					<input type='radio' name='gift' id='gift4' value='$1000' />
+					<label for='gift4' class='radio-label' data-amount="1000"  title="$1000" aria-checked="false">$1000</label>
 				</div>
+        <!--
 				<div class='input-group gift'>
 					<input type='radio' name='gift' id='gift5' value='$500' tabindex="-1" />
 					<label for='gift5' class='radio-label' data-amount="500"  title="$500" aria-checked="false">$500</label>
@@ -115,21 +116,22 @@
 
 			<div class='inline onetime display__inline-block' aria-label="giftsel2">
 					<div class='input-group gift' role='group'  aria-labelledby= 'gift7'>
-						<input type='radio' name='gift' id='gift7'  aria-label='10' value='$10' checked />
-						<button type="button" for='gift7' class='radio-label active' data-amount="10" title="$10" aria-checked="false" tabindex="0">$10</button>
+						<input type='radio' name='gift' id='gift7'  aria-label='50' value='$50' checked />
+						<button type="button" for='gift7' class='radio-label active' data-amount="50" title="$50" aria-checked="false" tabindex="0">$50</button>
 					</div>
 					<div class='input-group gift'  role='group'  aria-labelledby= 'gift8'>
-						<input type='radio' name='gift' id='gift8'  aria-label='25' value='$25' checked />
-						<button type="button" for='gift8' class='radio-label' data-amount="25"  title="$25" aria-checked="false" tabindex="0">$25</button>
+						<input type='radio' name='gift' id='gift8'  aria-label='100' value='$100' checked />
+						<button type="button" for='gift8' class='radio-label' data-amount="100"  title="$100" aria-checked="false" tabindex="0">$100</button>
 					</div>
 					<div class='input-group gift'  role='group'  aria-labelledby= 'gift9'>
-						<input type='radio' name='gift' id='gift9'  aria-label='50' value='$50'/>
-						<button type="button" for='gift9' class='radio-label' data-amount="50" title="$50" aria-checked="false" tabindex="0">$50</button>
+						<input type='radio' name='gift' id='gift9'  aria-label='500' value='$500'/>
+						<button type="button" for='gift9' class='radio-label' data-amount="500" title="$500" aria-checked="false" tabindex="0">$500</button>
 					</div>
-					<!-- <div class='input-group gift'>
-						<input type='radio' name='gift' id='gift10' value='$250'/>
-						<label for='gift10' class='radio-label' data-amount="250" title="$250" aria-checked="false">$250</label>
+					 <div class='input-group gift'>
+						<input type='radio' name='gift' id='gift10' value='$1000'/>
+						<label for='gift10' class='radio-label' data-amount="1000" title="$1000" aria-checked="false" tabindex="0">$1000</label>
 					</div>
+				<!--
 					<div class='input-group gift'>
 						<input type='radio' name='gift' id='gift11' value='$500'/>
 						<label for='gift11' class='radio-label' data-amount="500"  title="$500" aria-checked="false">$500</label>

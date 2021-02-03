@@ -10,7 +10,11 @@ function isSandbox() {
  * Build the URL parameters for the signature request
  */
 function buildSignatureParams() {
-	const returnUrl = location.href + ((location.href.indexOf("?")>0) ? '&' : '?') + 'amazon=thankyou';
+	let returnUrl = location.href;
+	if (returnUrl.indexOf('amazonCheckoutSessionId')>0){
+		returnUrl = returnUrl.substring(0, returnUrl.indexOf('amazonCheckoutSessionId')-1);
+	}
+	returnUrl = returnUrl.replaceAll('&','%26');
 	const signParams = "other_amount=" + $('input[name=other_amount]').val();
 	// "&custom_note=" + custom string;
 
@@ -44,7 +48,7 @@ function amazonPayInitCheckout(signatureData) {
 	let payload = signatureData.payload;
 	let signature = signatureData.signature;
 
-	localStorage.setItem('amz_aha_signature', signature);
+	// localStorage.setItem('amz_aha_signature', signature);
 	localStorage.setItem('amz_aha_amt', $('input[name=other_amount]').val());
 
 	amazonPayButton.initCheckout({
@@ -125,7 +129,7 @@ function populateForm(lsForm) {
 	}
 	// populate inputs
 	$('.donation-form input').not('input:checkbox, input:radio').each(function(){
-		$(this).val(decodeURI(donateData[this.name]).replace('%40', '@'));
+		$(this).val(decodeURI(donateData[this.name]).replace('%40', '@').replaceAll('+', ' ').replaceAll('%2B', ' '));
 	});
 	// populate selects
 	$('.donation-form select').each(function(){
