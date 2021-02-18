@@ -64,7 +64,7 @@
 	    <input type="hidden" name="amount1" id="amount1" value="">
 
 	    <!-- <input type="hidden" name="donor.email_opt_in" id="donor_email_opt_in" value="true"/> -->
-	    <input type="hidden" name="remember_me" id="remember_me" value="true" />
+	    <input type="hidden" name="remember_me" id="remember_me" value="false" />
 	    <input type="hidden" name="card_option" id="card_option" value="" />
 	    <input type="hidden" name="sitecore_contact_id" id="sitecore_contact_id" value="" />
   	    <input type="hidden" name="venmo_user" id="venmo_user" value="" />
@@ -453,28 +453,6 @@
           <div class='inline' id='payment2form'>
             <div class='input-group'>
               <div id="AmazonPayment" style="margin-right: 22px;">
-	            	<div id="AmazonLogin">Please login to Amazon before continuing:</div>
-	            	<!-- BUTTON WIDGET -->
-	            	<div id="AmazonPayButton" role="button" tabindex=0 title="Amazon Pay"> </div>
-	            	<!-- WALLET WIDGET -->
-	            	<div id="walletWidgetDiv"> </div>
-	            	<!-- RECURRING PAYMENTS WIDGET -->
-	            	<div id="consentWidgetDiv"> </div>
-	            	<!-- LOGOUT LINK -->
-	            	<div id="AmazonLogoutButton"> <a class="" href="#" onClick="javascript:amazon.Login.MODLogoutClickHandler()">Log out of Amazon Payments</a> </div>
-	            	<br />
-	            	<p>Amazon Payments is the secure payment for the American Heart Association. <a href="https://payments.amazon.com/help/Amazon-Simple-Pay/Creating-Managing-Your-Account/Verifying-Your-Account"         target="_blank">Learn more</a> about Amazon Payments.</p>
-	            	<p>Amazon Payments protects your privacy and security.</p>
-	            	<!-- BEGIN AMAZON PAYMENTS ADDITION -->
-	            	<input type="hidden" name="AmazonBillingAgreementId" value="" />
-	            	<!-- Passed on to Amazon REST call: SetBillingAgreementDetails -->
-	            	<input type="hidden" name="AmazonOrderReferenceId" value="" />
-	            	<!-- Passed to Amazon after Amazon returns error. -->
-	            	<input type="hidden" name="AmazonAccessToken" value="" />
-	            	<!-- Can be saved on our back end for getting updated user information at a later time. -->
-	            	<input type="hidden" name="AmazonPaymentSelected" value="" />
-	            	<!-- END AMAZON PAYMENTS ADDITION -->
-	            </div>
             </div>
           </div>
 			<div class="inline row" id="privacyText" style="margin-top:.4em;">
