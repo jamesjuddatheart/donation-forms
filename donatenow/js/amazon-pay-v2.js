@@ -1,6 +1,6 @@
 // Amazon V2
 function isSandbox() {
-	if ($("input[name=df_preview]").val()) {
+	if ($("input[name=df_preview]").val() || location.href.indexOf('df_preview')>0 ) {
 		return true;
 	}
 	return false;
@@ -14,7 +14,7 @@ function buildSignatureParams() {
 	if (returnUrl.indexOf('amazonCheckoutSessionId')>0){
 		returnUrl = returnUrl.substring(0, returnUrl.indexOf('amazonCheckoutSessionId')-1);
 	}
-	// returnUrl = returnUrl.replaceAll('&','%26');
+	returnUrl = returnUrl.replaceAll('&','%26');
 	const signParams = "other_amount=" + $('input[name=other_amount]').val();
 	// "&custom_note=" + custom string;
 
