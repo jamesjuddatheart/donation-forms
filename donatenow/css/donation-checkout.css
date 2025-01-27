@@ -324,7 +324,7 @@ input[type="radio"] {
 
 div.donation-level-container {
     background: #fff;
-    border-radius: 35px;
+  /*  border-radius: 35px; */
     border: 0;
     float: left;
     width: 125px;
