@@ -322,8 +322,24 @@ input[type="radio"] {
   /* 2 */
 }
 
-
-
+div.donation-level-container {
+    background: #fff;
+    border-radius: 35px;
+    border: 0;
+    float: left;
+    width: 125px;
+    margin: 10px 2% 10px 0;
+    position: relative;
+    border: 2px solid #000;
+}
+div.donation-level-amount-container, div.donation-level-label-container {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+}
+div.donation-level-amount-container {
+    cursor: pointer;
+}
 input[type='radio']:after {
     width: 20px;
     height: 20px;
@@ -351,7 +367,7 @@ input[type='radio']:after {
     left: 1px;
     /* bottom: 6px; */
     position: relative;
-    background-color: #d40000;
+   /* background-color: #d40000; */
     content: '';
     display: inline-block;
     visibility: visible;
