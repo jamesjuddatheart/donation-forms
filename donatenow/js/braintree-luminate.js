@@ -508,8 +508,8 @@ var braintree_aha = {
 				console.log(data.result);
 				//
 				if (data.error == "") {
-					//$('input[name=processorAuthorizationCode]').val(data.result.processorAuthorizationCode);
 					$('input[name=processorAuthorizationCode]').val(data.result.processorAuthorizationCode);
+					// $('input[name=processorAuthorizationCode]').val(data.result.id);
 					session.completePayment(ApplePaySession.STATUS_SUCCESS);
 					callback_success();
 				} else {
