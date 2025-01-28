@@ -391,7 +391,7 @@ div.donation-level-amount-container, div.donation-level-label-container {
 }
 div.responsive .donation-levels .donation-level-input-container [type=radio]:checked, 
 div.responsive .donation-levels .donation-level-input-container [type=radio]:not(:checked) {
-    padding: 2px 5px;
+    margin: 2px 5px;
 }
 div.responsive .donation-levels .donation-level-container.active .donation-level-input-container label, div.responsive .donation-levels .donation-level-container:hover .donation-level-input-container label {
     color: #fff;
