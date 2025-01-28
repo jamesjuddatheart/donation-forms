@@ -321,6 +321,8 @@ input[type="radio"] {
 /*  padding: 0; */
   /* 2 */
 }
+
+
 div.donation-form-container.responsive {
     padding: 0;
     border: 0;
@@ -331,11 +333,23 @@ div.donation-level-container {
     border-radius: 35px;
     border: 0;
     float: left;
-    width: 125px;
+    width: 140px;
     margin: 10px 2% 10px 0;
     position: relative;
     border: 2px solid #000;
-
+    display:flex;
+    justify-content: space-around;
+}
+div.donation-level-input-container, div.generic-repeat-label-checkbox-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px;
+}
+label + div.donation-level-user-entered {
+	margin-left: 0;
+	margin-top: 0;
+	display: none;
 }
 .donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row.active {
     color: #fff;
@@ -367,10 +381,9 @@ div.donation-level-amount-container, div.donation-level-label-container {
     max-width: 780px;
     vertical-align: text-top;
 }
-div.responsive .donation-levels .donation-level-input-container [type=radio]:checked, div.responsive .donation-levels .donation-level-input-container [type=radio]:not(:checked) {
-    position: absolute;
-    left: 10px;
-    top: 20px;
+div.responsive .donation-levels .donation-level-input-container [type=radio]:checked, 
+div.responsive .donation-levels .donation-level-input-container [type=radio]:not(:checked) {
+    padding: 5px;
 }
 div.responsive .donation-levels .donation-level-container.active .donation-level-input-container label, div.responsive .donation-levels .donation-level-container:hover .donation-level-input-container label {
     color: #fff;
