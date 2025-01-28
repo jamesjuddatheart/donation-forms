@@ -343,6 +343,11 @@ div.responsive .donation-levels .donation-level-input-container [type=radio]:che
 }
 div.responsive .donation-levels .donation-level-container.active .donation-level-input-container label, div.responsive .donation-levels .donation-level-container:hover .donation-level-input-container label {
     color: #fff;
+    
+}
+.donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row.active, div.donation-level-container.active, div.donation-level-container:hover {
+    background-color: #c10e21;
+    border-color: #c10e21;
 }
 div.responsive label {
     white-space: normal;
