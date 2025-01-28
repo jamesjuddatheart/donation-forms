@@ -336,7 +336,24 @@ div.donation-level-container {
     border: 2px solid #000;
 
 }
-
+div.designated-giving-recurring-row [type=radio]:checked+label, div.designated-giving-recurring-row [type=radio]:not(:checked)+label {
+    padding: 15px 15px 15px 40px;
+    margin-right: 10px;
+}
+.donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row.active {
+    color: #fff;
+}
+.donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row {
+    float: left;
+    border: 2px solid #c10e21;
+    border-radius: 60px;
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.designated-giving-recurring-row.active, div.donation-level-container.active, div.donation-level-container:hover {
+    background-color: #c10e21;
+}
 div.donation-level-amount-container, div.donation-level-label-container {
     display: inline-block;
     zoom: 1;
