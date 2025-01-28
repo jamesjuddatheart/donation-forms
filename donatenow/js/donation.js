@@ -492,8 +492,10 @@ jQuery(document).on("doublethedonation_company_id", function () {
 	jQuery("#double_the_donation_company_id").val(dtd_company_id);
 });
 
+jQuery(document).ready(function(){
 jQuery('.donation-level-user-entered input').attr("placeholder","Amount").after("<div class='other-amt-note'><em>$25 minimum donation</em></div>");
 
+jQuery('.donation-level-container:last-child').addClass('enterAmt');
 jQuery('.donation-level-container').click(function(){
   jQuery('.donation-level-container').removeClass('active');
   jQuery('.formMessage p').removeClass('active');
@@ -515,6 +517,7 @@ jQuery('.donation-level-container').click(function(){
   if(jQuery('.enterAmt.active').hasClass('level'+x)) {
     jQuery('.donation-level-user-entered').show();
   }
+});
 });
 
 document.cookie="level="+level;
