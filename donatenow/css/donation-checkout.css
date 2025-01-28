@@ -329,8 +329,14 @@ div.donation-form-container.responsive {
 }
 
 .form-donation-level,
-.form-donation-level form-content {
+.form-donation-level .form-content {
   width:100%;
+}
+
+.don-standard-levels.form-row {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 20px;
 }
 
 div.donation-level-container {
