@@ -327,7 +327,6 @@ div.donation-level-container {
   /*  border-radius: 35px; */
     border: 0;
     float: left;
-    width: 125px;
     margin: 10px 2% 10px 0;
     position: relative;
     border: 2px solid #000;
@@ -336,6 +335,28 @@ div.donation-level-amount-container, div.donation-level-label-container {
     display: block;
     text-align: center;
     padding: 10px 0;
+}
+div.responsive .donation-levels .donation-level-input-container [type=radio]:checked, div.responsive .donation-levels .donation-level-input-container [type=radio]:not(:checked) {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+}
+div.responsive .donation-levels .donation-level-container.active .donation-level-input-container label, div.responsive .donation-levels .donation-level-container:hover .donation-level-input-container label {
+    color: #fff;
+}
+div.responsive label {
+    white-space: normal;
+}
+div.responsive .donation-levels .donation-level-input-container label {
+    clear: both;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 400 !important;
+    color: #000;
+    cursor: pointer;
 }
 div.donation-level-amount-container {
     cursor: pointer;
