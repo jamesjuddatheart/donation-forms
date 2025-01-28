@@ -340,6 +340,9 @@ div.designated-giving-recurring-row [type=radio]:checked+label, div.designated-g
     padding: 15px 15px 15px 40px;
     margin-right: 10px;
 }
+#level_flexiblegift_type_Row {
+    margin-top: 20px;
+}
 .donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row.active {
     color: #fff;
 }
