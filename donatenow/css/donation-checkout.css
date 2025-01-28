@@ -348,7 +348,7 @@ div.designated-giving-recurring-row [type=radio]:checked+label, div.designated-g
 }
 .donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row {
     float: left;
-    border: 2px solid #c10e21;
+    border: 2px solid #000;
     border-radius: 60px;
     position: relative;
     margin-right: 10px;
