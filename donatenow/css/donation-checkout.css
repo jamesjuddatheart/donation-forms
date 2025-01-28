@@ -327,12 +327,14 @@ div.donation-form-container.responsive {
 }
 div.donation-level-container {
     background: #fff;
-  /*  border-radius: 35px; */
+    border-radius: 35px;
     border: 0;
     float: left;
+    width: 125px;
     margin: 10px 2% 10px 0;
     position: relative;
     border: 2px solid #000;
+
 }
 div.donation-level-amount-container, div.donation-level-label-container {
     display: block;
@@ -348,6 +350,7 @@ div.responsive .donation-levels .donation-level-container.active .donation-level
     color: #fff;
     
 }
+
 .donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row.active, div.donation-level-container.active, div.donation-level-container:hover {
     background-color: #c10e21;
     border-color: #c10e21;
