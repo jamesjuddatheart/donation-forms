@@ -328,6 +328,11 @@ div.donation-form-container.responsive {
     border: 0;
 }
 
+.form-donation-level,
+.form-donation-level form-content {
+  width:100%;
+}
+
 div.donation-level-container {
     background: #fff;
     border-radius: 35px;
