@@ -501,7 +501,7 @@ jQuery('.donation-level-container').click(function(){
   jQuery(this).find('input[type=radio]').attr("aria-checked","true");
   jQuery(this).addClass('active');
   for (var x=0;x<10;x++) {
-    if($(this).hasClass('level'+x)){
+    if(jQuery(this).hasClass('level'+x)){
        var level = 'level'+x;
        if(jQuery('.donation-level-container.active').hasClass('level'+x)) {
 	   jQuery('.formMessage .level'+x).addClass('active');
@@ -515,7 +515,7 @@ jQuery('.donation-level-container').click(function(){
   if(jQuery('.enterAmt.active').hasClass('level'+x)) {
     jQuery('.donation-level-user-entered').show();
   }
-}
+});
 
 document.cookie="level="+level;
 //var amt = $(this).find('.donation-level-amount-container').text();
