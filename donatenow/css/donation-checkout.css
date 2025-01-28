@@ -336,10 +336,12 @@ div.donation-level-container {
     border: 2px solid #000;
 
 }
+
 div.donation-level-amount-container, div.donation-level-label-container {
-    display: block;
-    text-align: center;
-    padding: 10px 0;
+    display: inline-block;
+    zoom: 1;
+    max-width: 780px;
+    vertical-align: text-top;
 }
 div.responsive .donation-levels .donation-level-input-container [type=radio]:checked, div.responsive .donation-levels .donation-level-input-container [type=radio]:not(:checked) {
     position: absolute;
