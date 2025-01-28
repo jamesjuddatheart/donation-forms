@@ -325,6 +325,7 @@ div.donation-form-container.responsive {
     padding: 0;
     border: 0;
 }
+
 div.donation-level-container {
     background: #fff;
     border-radius: 35px;
@@ -335,6 +336,9 @@ div.donation-level-container {
     position: relative;
     border: 2px solid #000;
 
+}
+.donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row.active {
+    color: #fff;
 }
 div.designated-giving-recurring-row [type=radio]:checked+label, div.designated-giving-recurring-row [type=radio]:not(:checked)+label {
     padding: 15px 15px 15px 40px;
