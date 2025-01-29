@@ -385,8 +385,10 @@ label + div.donation-level-user-entered {
 .donation-level-container.enterAmt.active label + div.donation-level-user-entered {
   display: block !important;
 }
-.donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row.active {
+.donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row.active,
+.donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row:hover{
     color: #fff;
+    background-color: #c10e21;
 }
 div.designated-giving-recurring-row [type=radio]:checked+label, div.designated-giving-recurring-row [type=radio]:not(:checked)+label {
     paddingx: 15px 15px 15px 40px;
