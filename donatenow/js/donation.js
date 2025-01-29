@@ -523,7 +523,7 @@ document.cookie="level="+level;
 //var amt = $(this).find('.donation-level-amount-container').text();
 //$('.donateSubmit').text('Donate '+amt);
 
-});
+//});
 /*
 $('#tributeType input[name^="year"]').click(function() {
   var radioval = $(this).val();
