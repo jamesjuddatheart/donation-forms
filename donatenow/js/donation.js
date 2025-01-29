@@ -494,7 +494,7 @@ jQuery(document).on("doublethedonation_company_id", function () {
 
 console.log("apply donation updates");
 jQuery('.donation-level-user-entered input').attr("placeholder","Amount").after("<div class='other-amt-note'><em>$25 minimum donation</em></div>");
-
+jQuery('.donation-level-container input[type=radio]:checked').closest('.donation-level-container').addClass('active');
 jQuery('.donation-level-container:last-child').addClass('enterAmt');
 jQuery('.donation-level-container').click(function(){
   jQuery('.donation-level-container').removeClass('active');
@@ -511,12 +511,14 @@ jQuery('.donation-level-container').click(function(){
        break;
     }
   }
+});
 
-  //check last entry to see if active
-  jQuery('.donation-level-user-entered').hide();
-  if(jQuery('.enterAmt.active').hasClass('level'+x)) {
-    jQuery('.donation-level-user-entered').show();
-  }
+jQuery('.designated-giving-recurring-row input[type=radio]:checked').closest('.designated-giving-recurring-row').addClass('active');
+jQuery('.designated-giving-recurring-row').click(function(){
+  jQuery('.designated-giving-recurring-row').removeClass('active');
+  jQuery('.designated-giving-recurring-row input[type=radio]').attr("aria-checked","false");
+  jQuery(this).find('input[type=radio]').attr("aria-checked","true");
+  jQuery(this).addClass('active');
 });
 
 document.cookie="level="+level;
