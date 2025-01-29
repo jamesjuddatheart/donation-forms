@@ -332,6 +332,7 @@ div#level_flexiblegift_type_Row {
 div.donation-form-container.responsive {
     padding: 0;
     border: 0;
+    background: none;
 }
 
 .form-donation-level,
