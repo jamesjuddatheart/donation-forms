@@ -493,7 +493,7 @@ jQuery(document).on("doublethedonation_company_id", function () {
 });
 
 console.log("apply donation updates");
-jQuery('.donation-level-user-entered input').attr("placeholder","Amount").after("<div class='other-amt-note'><em>$25 minimum donation</em></div>");
+jQuery('.donation-level-user-entered input').attr("placeholder","Amount").after("<div class='other-amt-note'><em>$10 minimum donation</em></div>");
 jQuery('.donation-level-container input[type=radio]:checked').closest('.donation-level-container').addClass('active');
 jQuery('.donation-level-container:last-child').addClass('enterAmt');
 jQuery('.donation-level-container').click(function(){
