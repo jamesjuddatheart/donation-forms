@@ -384,6 +384,7 @@ label + div.donation-level-user-entered {
 }
 .donation-level-container.enterAmt.active label + div.donation-level-user-entered {
   display: block !important;
+  text-align: center;
 }
 .donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row.active,
 .donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row:hover{
