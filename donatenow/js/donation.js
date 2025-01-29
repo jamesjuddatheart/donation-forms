@@ -492,7 +492,7 @@ jQuery(document).on("doublethedonation_company_id", function () {
 	jQuery("#double_the_donation_company_id").val(dtd_company_id);
 });
 
-
+console.log("apply donation updates");
 jQuery('.donation-level-user-entered input').attr("placeholder","Amount").after("<div class='other-amt-note'><em>$25 minimum donation</em></div>");
 
 jQuery('.donation-level-container:last-child').addClass('enterAmt');
