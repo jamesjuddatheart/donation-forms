@@ -362,7 +362,7 @@ label + div.donation-level-user-entered {
   margin-top: 0;
   display: none;
 }
-.donation-level-container.enterAmt.activelabel + div.donation-level-user-entered {
+.donation-level-container.enterAmt.active label + div.donation-level-user-entered {
   display: block;
 }
 .donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row.active {
