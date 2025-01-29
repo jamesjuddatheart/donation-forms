@@ -369,6 +369,12 @@ label + div.donation-level-user-entered {
   margin-top: 0;
   display: none;
 }
+.donation-level-user-entered input {
+	width:110px;
+}
+.other-amt-note {
+	color:#fff;
+}
 .donation-level-container.enterAmt.active label + div.donation-level-user-entered {
   display: block !important;
 }
