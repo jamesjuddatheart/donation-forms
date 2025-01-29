@@ -391,6 +391,7 @@ label + div.donation-level-user-entered {
 div.designated-giving-recurring-row [type=radio]:checked+label, div.designated-giving-recurring-row [type=radio]:not(:checked)+label {
     paddingx: 15px 15px 15px 40px;
     line-height: 30px;
+    margin-bottom: 0px;
 }
 #level_flexiblegift_type_Row {
     margin-top: 20px;
