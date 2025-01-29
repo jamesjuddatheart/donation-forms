@@ -357,13 +357,20 @@ div.donation-level-input-container, div.generic-repeat-label-checkbox-container 
 	align-items: center;
 	padding: 0px;
 }
+.enterAmt div.donation-level-input-container label {
+	max-width: 80%;
+}
+.enterAmt div.donation-level-input-container {
+	flex-wrap: wrap;
+}
+
 label + div.donation-level-user-entered {
   margin-left: 0;
   margin-top: 0;
   display: none;
 }
 .donation-level-container.enterAmt.active label + div.donation-level-user-entered {
-  display: block;
+  display: block !important;
 }
 .donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row.active {
     color: #fff;
