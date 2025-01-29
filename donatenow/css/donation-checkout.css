@@ -322,7 +322,13 @@ input[type="radio"] {
   /* 2 */
 }
 
-
+.donation-form-content .form-row {
+    margin-left: 0;
+    margin-right: 0;
+}
+div#level_flexiblegift_type_Row {
+    padding: 0 20px;
+}
 div.donation-form-container.responsive {
     padding: 0;
     border: 0;
@@ -382,8 +388,8 @@ label + div.donation-level-user-entered {
     color: #fff;
 }
 div.designated-giving-recurring-row [type=radio]:checked+label, div.designated-giving-recurring-row [type=radio]:not(:checked)+label {
-    padding: 15px 15px 15px 40px;
-    margin-right: 10px;
+    paddingx: 15px 15px 15px 40px;
+    line-height: 30px;
 }
 #level_flexiblegift_type_Row {
     margin-top: 20px;
@@ -398,9 +404,16 @@ div.designated-giving-recurring-row [type=radio]:checked+label, div.designated-g
     position: relative;
     margin-right: 10px;
     margin-bottom: 10px;
+    display:flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    align-items: center;
 }
 .designated-giving-recurring-row.active, div.donation-level-container.active, div.donation-level-container:hover {
     background-color: #c10e21;
+}
+.donation-form-container #level_flexiblegift_type_Row .designated-giving-recurring-row input {
+	margin: 2px 5px;
 }
 div.donation-level-amount-container, div.donation-level-label-container {
     display: inline-block;
