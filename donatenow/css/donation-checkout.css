@@ -1498,6 +1498,96 @@ form .mailaPrintedCard,
 form #payment2form {
   display: none;
 }
+div.responsive a.next-step,
+div.responsive a.step-button,
+div.responsive button.action-button,
+div.responsive button.next-step,
+div.responsive button.step-button,
+div.responsive input.step-button {
+  min-width:190px;
+  height:60px;
+  padding:0 20px;
+  line-height:60px;
+  font-size:24px;
+  font-weight:400;
+  background:0 0;
+  background-color:#d01d20!important;
+  color:#fff;
+  text-decoration:none;
+  border:0;
+  max-width:none;
+  border-radius:60px
+}
+div.responsive a.step-button:hover,
+div.responsive button.step-button:hover,
+div.responsive input.step-button:hover {
+  background:#900!important
+}
+div.responsive input[type=number],
+div.responsive input[type=password],
+div.responsive input[type=text],
+div.responsive select,
+div.responsive textarea,
+select,
+select[size] {
+  border:1px solid #acacac!important;
+  border-radius:0!important;
+  width:280px;
+  margin:0;
+  line-height:45px;
+  padding:0 0 0 10px;
+  height:45px;
+  max-height:45px;
+  background:#fff;
+  background-color:#fff
+}
+@media all and (max-width:480px) {
+  #tr_recognition_namerec_namename {
+    width:200px
+  }
+  div.responsive input[type=number],
+  div.responsive input[type=password],
+  div.responsive input[type=text],
+  div.responsive select,
+  div.responsive textarea,
+  select,
+  select[size] {
+    width:220px
+  }
+}
+div.responsive .donation-level-user-entered input[type=text] {
+  margin:0 0 0 8px;
+  max-width:90px
+}
+.other-amt-note {
+  margin:0 5px 20px;
+  font-style:italic;
+  font-size:.8em;
+  text-align:center;
+  color:#000
+}
+.active .other-amt-note {
+  color:#fff
+}
+div.payment-field-container #responsive_payment_typecc_number_row input {
+  width:280px
+}
+#level_flexiblegift_type_Row {
+  margin-top:20px
+}
+.designated-giving-recurring-row {
+  margin-bottom:0
+}
+div.designated-giving-recurring-row input,
+div.designated-giving-recurring-row label {
+  line-height:initial
+}
+.payment-type-selection-container {
+  margin-bottom:10px
+}
+.payment-type-element-container h3 {
+  display:none
+}
 #billing_addr_country_row input.ui-autocomplete-input,
 #billing_addr_street1_row input,
 #billing_addr_street2_row input,
