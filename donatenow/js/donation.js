@@ -492,6 +492,40 @@ jQuery(document).on("doublethedonation_company_id", function () {
 	jQuery("#double_the_donation_company_id").val(dtd_company_id);
 });
 
+console.log("apply donation updates");
+jQuery('.donation-level-user-entered input').attr("placeholder","Amount").after("<div class='other-amt-note'><em>$10 minimum donation</em></div>");
+jQuery('.donation-level-container input[type=radio]:checked').closest('.donation-level-container').addClass('active');
+jQuery('.donation-level-container:last-child').addClass('enterAmt');
+jQuery('.donation-level-container').click(function(){
+  jQuery('.donation-level-container').removeClass('active');
+  jQuery('.formMessage p').removeClass('active');
+  jQuery('.donation-level-container input[type=radio]').attr("aria-checked","false");
+  jQuery(this).find('input[type=radio]').attr("aria-checked","true");
+  jQuery(this).addClass('active');
+  for (var x=0;x<10;x++) {
+    if(jQuery(this).hasClass('level'+x)){
+       var level = 'level'+x;
+       if(jQuery('.donation-level-container.active').hasClass('level'+x)) {
+	   jQuery('.formMessage .level'+x).addClass('active');
+       }
+       break;
+    }
+  }
+});
+
+jQuery('.designated-giving-recurring-row input[type=radio]:checked').closest('.designated-giving-recurring-row').addClass('active');
+jQuery('.designated-giving-recurring-row').click(function(){
+  jQuery('.designated-giving-recurring-row').removeClass('active');
+  jQuery('.designated-giving-recurring-row input[type=radio]').attr("aria-checked","false");
+  jQuery(this).find('input[type=radio]').attr("aria-checked","true");
+  jQuery(this).addClass('active');
+});
+
+document.cookie="level="+level;
+//var amt = $(this).find('.donation-level-amount-container').text();
+//$('.donateSubmit').text('Donate '+amt);
+
+//});
 /*
 $('#tributeType input[name^="year"]').click(function() {
   var radioval = $(this).val();
