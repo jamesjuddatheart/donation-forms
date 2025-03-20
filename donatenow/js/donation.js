@@ -521,7 +521,7 @@ jQuery('.designated-giving-recurring-row').click(function(){
   jQuery(this).addClass('active');
 });
 
-document.cookie="level="+level;
+// document.cookie="level="+level;
 //var amt = $(this).find('.donation-level-amount-container').text();
 //$('.donateSubmit').text('Donate '+amt);
 
