@@ -65,11 +65,13 @@ var braintree_aha = {
 	initializeBraintree: function() {
 		
 		//if apple pay is available then start BT process
-		var tokenURL = "https://tools.heart.org/braintree_new/gettoken.php";
+		// var tokenURL = "https://tools.heart.org/braintree_new/gettoken.php";
+		var tokenURL = "/donation-forms/donatenow/js/gettoken.json";
 		if ($('input[name=instance]').val() == "heartdev") {
-			tokenURL = "https://tools.heart.org/braintree_new/gettoken-test.php";
+			// tokenURL = "https://tools.heart.org/braintree_new/gettoken-test.php";
+			tokenURL = "/donation-forms/donatenow/js/gettoken.json";
 		}
-		$.getJSON(tokenURL + "?callback=?",function(data){
+		$.getJSON(tokenURL,function(data){
 			console.log(data);
 			braintree_client_token = data.token;
 
