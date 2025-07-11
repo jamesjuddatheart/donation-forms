@@ -69,7 +69,7 @@ var braintree_aha = {
 		if ($('input[name=instance]').val() == "heartdev") {
 			tokenURL = "https://tools.heart.org/braintree_new/gettoken-test.php";
 		}
-		$.getJSON(tokenURL + "?callback=?",function(data){
+		$.getJSON(tokenURL + '?callback=?',function(data){
 			console.log(data);
 			braintree_client_token = data.token;
 
@@ -541,4 +541,4 @@ var braintree_aha = {
 // START PROCESS
 //==========================================
 ahaBraintreePlugin = Object.create(braintree_aha);
-ahaBraintreePlugin.initializeBraintree();
+// ahaBraintreePlugin.initializeBraintree();
